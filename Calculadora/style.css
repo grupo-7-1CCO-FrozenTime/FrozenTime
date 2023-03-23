@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
+
+.tudo {
+    background-image: url("aa.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    display: inline;
+}
+
+.pai {
+    display: flex;
+    flex-direction: row;
+}
+
+.div_caixa {
+    padding: 0px 5px;
+    width: 45vw;
+    height: 39vw;
+    border: solid 5px #ffffff;
+    border-radius: 40px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px #84939b;
+    margin-left: 50px;
+    margin-top: 63px;
+}
+
+
+#imagem {
+    width: 110px;
+    height: 110px;
+}
+
+.Titulo{
+    font-family: 'Barlow', sans-serif;
+    font-size: 15pt;
+    align-items: center;
+    display: flex;
+
+}
+
+.perguntas {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 25pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+    margin-bottom: 1%;
+    
+}
+
+.p {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 11px;
+}
+
+.input {
+    border: solid 1px rgb(255, 255, 255);
+    box-shadow: 4px 4px #84939b;
+    border-radius: 15px;
+    padding: 19px;
+    width: 90%;
+    margin-left: 5px;
+    margin-top: 1%;
+   
+}
+
+.botao {
+    width: 25vw;
+    height: 7vh;
+    color: white;
+    font-size: 15pt;
+    border-radius: 15px;
+    border: 1px solid #397FDB;
+    background-color: #397FDB;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    margin-left: 40px;
+    box-shadow: 4px 5px #3c3b3b;
+    
+}
+
+.bolinha1 {
+    width: 3vw;
+    height: 6vh;
+    background-color:#47adc2;
+    border-radius: 100%;
+    margin-left: 99%;
+
+}
+
+.bolinha2 {
+    width: 3vw;
+    height: 6vh;
+    background-color:#2a1f6e;
+    border-radius: 100%;
+    margin-left: 60%;
+    margin-top: 4%;
+}
+ 
+.resposta {
+    width: 50%;
+    height: 75%;
+    color: rgba(255, 255, 255, 0.71);
+    font-family: 'Barlow', sans-serif;
+    font-size: 18pt;
+    margin-top: 200px;
+    margin-left: 380px;
+    margin-right: 150px;
+}
+
+.dados {
+    color:#47adc2;
+    font-size: 20pt;
+}

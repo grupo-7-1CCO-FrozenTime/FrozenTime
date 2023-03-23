@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Orçamento</title>
+</head>
+
+<body class="tudo">
+
+    <div class="pai">
+        
+        <div class="div_caixa">
+                <!--Criação do título com a imagem-->
+            <div class="Titulo">
+
+                <img id="imagem" src="imagemCalculadora.png" alt="calculadora">
+                <b><h1>SIMULE SEUS LUCROS CONOSCO!</h1></b>
+
+            </div> 
+
+                <!--Criação das duas perguntas-->
+
+            <div class="perguntas">
+                <p class="p"><b>Insira:</b></p> 
+                
+                <input class="input" id="ipt_area" placeholder="Área do lote: Xm²">
+                
+                <p class="p"><b>Agora informe:</b></p> 
+                
+                <input class="input" id="ipt_lucro" placeholder="Lucro anual:">
+                
+            </div>
+
+            <br><br>
+
+            <!--Criação do Botão-->
+            <div id="div_botao">
+                <button class="botao" onclick="calcular()">CALCULAR</button>
+            </div>
+            <div class="bolinha1"></div>
+            <br><br>
+            <div class="bolinha2"></div>
+        </div>
+
+        <!--Receber a resposta do cliente-->
+        <div class="resposta" id="msg"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function calcular() {
+        var area = ipt_area.value;
+        var qtdSensor = area * 2;
+        var lucro = ipt_lucro.value;
+        var perda = lucro * 0.43;
+        var margem = perda * 0.15;
+
+        if (area < 0 || lucro < 0) {
+            alert("Número inválido, preencha novamente")
+            area = ""; lucro = "";
+        }
+        else {
+        msg.innerHTML += `Com um lote de área <b class="dados">${area} m²</b>, seus produtos precisam de apenas <b class="dados">${qtdSensor}</b> sensores para manter a excelente qualidade que representa sua empresa!` 
+        msg.innerHTML += `<br><br>Com base em pesquisas científicas, com um lucro de <b class="dados">R$${lucro}</b> reais, sua empresa tem uma perda estimada em <b class="dados">R$${perda}</b> reais. Com os nossos sensores, você consegue aumentar seus lucros em até <b class="dados">R$${margem}</b> reais!`
+        }
+    }
+        
+</script>
