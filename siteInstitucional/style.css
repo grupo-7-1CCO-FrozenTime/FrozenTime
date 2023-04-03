@@ -1,0 +1,214 @@
+  @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Noto+Sans&display=swap');
+
+
+.body_index{
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
+    url('img/background.jpg');
+    background-size: cover;  
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.body_contato{
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat,
+    url('img/background_contato.jpeg');
+    background-size: cover;  
+    background-repeat: no-repeat;
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.cabecalho {
+    margin: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 60%;
+    height: 60%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+ul img{
+    width: 60%;
+    height: 50%;
+}
+
+.caixa_titulo {
+    display:  flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 45%;
+    margin-left: 15%;
+    padding: 10px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+.titulo {
+    font-size: 50px;
+    margin-bottom: 17px;
+}
+
+.btn_saibaMais {
+    font-size: 25px;
+    width: 45%;
+    height: 45px;
+    /* margin-left: 20px; */
+    /* padding: 9px; */
+    margin:0;
+    border: none;
+    border-radius: 20px;
+    background-color: #288396;
+    color: #ffffff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.192);
+    margin-bottom: 274px;
+}
+
+.contato {
+    display: flex;
+}
+
+.localizacao {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    width: 50%;
+    height: 500px;
+    justify-content: center;
+}
+
+.localizacao p {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#rua{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+#rua img{
+    width: 45px;
+    height: 45px;
+}
+
+iframe {
+    border-radius: 15px;
+    height: 200px;
+    width: 310px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#info p {
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+#info img {
+    width: 20px;
+    height: 20px;
+}
+
+#whats, #telefone, #email {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.formulario {
+    height: 80%;
+    width: 50%;
+}
+
+.formulario h1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 32px;
+    color: #E6E6E6;
+    font-weight: 550;
+    margin-left: 5%;
+    margin-bottom: 0;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario input, #txtArea{
+    background-color: #EFE9E9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #174556;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25); 
+}
+
+#iptNome, #iptEmail, #iptCelular {
+    height: 6px;
+    width: 270px;
+}
+
+/* #iptMensagem {
+    padding-bottom: 150px; 
+    width: 300px;
+}
+
+#iptMensagem textarea {
+    white-space: pre-wrap;
+} */
+
+#txtArea {
+    width: 270px;
+    font-family: 'Noto Sans', sans-serif;
+    resize: none;
+}
+
+#btnMsg {
+    border: 2px solid rgba(255, 255, 255, 0.76);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0B0368;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-bottom: 70px;
+}
+
