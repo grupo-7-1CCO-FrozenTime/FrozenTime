@@ -39,8 +39,9 @@ body {
     color: black;
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 30px;
+    margin: 10%;
 }
 
 #divQuemSomos h1 {
@@ -59,7 +60,6 @@ body {
     display: flex;
     align-items: center;
     width: 50%;
-    justify-content: center;
     height: 100px;
 }
 
