@@ -1,0 +1,46 @@
+.div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.a{
+    font-size: small;
+    margin: 3px;
+}
+
+.box{
+    display: block;
+    background-color: #f5f1e6;
+}
+
+.input{
+    padding-bottom: 5px;
+    margin-right: 0;
+}
+
+.bloco{
+    display: none;
+    color: black;
+    background-color: #f5f1e6;
+}
+
+.bloco h1{
+    background-color: #f5f1e6;
+    font-style: Inter;
+}
+
+.aa{
+    background-color: #f5f1e6;
+    color: black;
+    text-decoration: underline;
+    font-size: small;
+}
+
+.bloco p{
+    display: flex;
+    justify-content: center;
+    color: #9B8252;
+    background-color: #f5f1e6;
+    margin-bottom: 0;
+}
