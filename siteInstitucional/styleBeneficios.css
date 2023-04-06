@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+body {
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.397), #00000062)repeat,
+    url('./img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+}
+.divHorientacao{
+    display:flex; justify-content: space-evenly;
+}
+
+.card {
+    margin-top: 5%;
+    width: 265px;
+    height: 170px;
+    background: rgba(27, 30, 43, 0.6);
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    border: 1px solid #000000;
+    color: white;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+}
+.card div{
+    display: flex; justify-content: center;
+}
+.card div p{
+    text-align: center;
+}
+.conteudoCard{
+    display: flex;
+    justify-content: center;
+}
+
+/*----- FOOTER ------*/
+.footer{
+    background-color: #8BC3DE;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+hr{
+    width: 120px;
+    border: 0.2px solid black; 
+    transform: rotate(90deg);
+    margin-top: 50%;
+}
+ul{
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    align-self: flex-start;
+    display: flex;
+    font-size: 14px;
+    margin-top: 6%;
+}
+
+li:hover{
+    cursor: pointer;
+    color: #1B1E2B;
+}
