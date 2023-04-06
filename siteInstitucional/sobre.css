@@ -42,6 +42,7 @@ body {
     justify-content: space-evenly;
     padding: 30px;
     margin: 10%;
+    width: 100%;
 }
 
 #divQuemSomos h1 {
@@ -94,6 +95,13 @@ body {
 .card h1 {
     font-size: 15px;
 }
+    .card img{
+        margin-left: 40px;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
 
 .pic-ctn {
     width: 100vw;
