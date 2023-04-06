@@ -166,3 +166,37 @@ img:nth-child(6) {
 img:nth-child(7) {
     animation-delay: 12s;
 }
+
+/*----- FOOTER ------*/
+.footer{
+    background-color: #8BC3DE;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+hr{
+    width: 120px;
+    border: 0.2px solid black; 
+    transform: rotate(90deg);
+    margin-top: 50%;
+}
+ul{
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    align-self: flex-start;
+    display: flex;
+    font-size: 14px;
+    margin-top: 6%;
+}
+
+li:hover{
+    cursor: pointer;
+    color: #1B1E2B;
+}
