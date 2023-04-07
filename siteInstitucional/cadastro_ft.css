@@ -120,35 +120,50 @@ textarea::placeholder{
     background-color: #f5f1e6;
 }
 
-.footer{
+
+
+/* footer */
+.footer {
     background-color: #8BC3DE;
     height: 200px;
-    width: 100%;
+    width: 1481px;
     display: flex;
     justify-content: center;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
+    /* margin-right: 2%; */
+    margin: 0;
 }
-hr{
+
+.footer hr {
     width: 120px;
-    border: 0.2px solid black; 
+    border: 0.2px solid black;
     transform: rotate(90deg);
     margin-top: 50%;
 }
-ul{
+
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     list-style: none;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    
+
 }
-li{
+
+.footer li {
     align-self: flex-start;
     display: flex;
     font-size: 14px;
     margin-top: 6%;
 }
 
-li:hover{
+.footer li:hover {
     cursor: pointer;
     color: #1B1E2B;
+}
+
+#institucional {
+    margin-bottom: 45px;
 }

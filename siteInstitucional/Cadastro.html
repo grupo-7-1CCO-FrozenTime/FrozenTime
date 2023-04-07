@@ -84,6 +84,59 @@
         </div>
     </div>
 
+    <div class="footer" style="margin-top: 25px;">
+        <div style="width:90%; display:flex; justify-content: space-evenly;align-items: center;">
+
+            <div>
+                <ul>
+                    <li>
+                        <img width="70%" src="./icon/icon.svg">
+                    </li>
+                    <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
+                </ul>
+
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h2>Navegue</h2>
+                    </li>
+                    <li>Solução</li>
+                    <li>Simulação</li>
+                    <li>Sobre</li>
+                </ul>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h2>Contatos</h2>
+                    </li>
+                    <li>Whatsapp</li>
+                    <li>Telefone</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul id="institucional">
+                    <li>
+                        <h2>Institucional</h2>
+                    </li>
+                    <li>Sobre Nós</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
@@ -91,14 +144,16 @@
     function proximo() {
         var validacoes = ipt_nome.value == "" || ipt_cnpj.value == "" || ipt_endereco.value == "" || ipt_endereco.value == "" || ipt_cidade.value == "" || ipt_bairro.value == "" || ipt_rua.value == "" || ipt_numero.value == "" || ipt_complemento.value == "";
 
-        if(validacoes){
+        if (validacoes) {
             alert("Por favor, preencher todos os campos")
-        } else{ div_pagina1.style.display = "none"
-                div_pagina2.style.display = "block"}
+        } else {
+            div_pagina1.style.display = "none"
+            div_pagina2.style.display = "block"
+        }
 
     }
 
-    function cadastrar(){
+    function cadastrar() {
         var validacoes = ipt_repre.value == "" || ipt_email.value == "" || ipt_tel.value == "" || ipt_whats.value == "" || ipt_senha.value == "" || ipt_confir.value == "";
 
         var telefone = ipt_tel.value
@@ -107,19 +162,19 @@
         var whats = ipt_whats.value
         var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
 
-        if(validacoes){
+        if (validacoes) {
             alert("Por favor, preencher todos os campos")
-        } 
+        }
 
-        if(length){
+        if (length) {
             alert("Favor, por um telefone válido")
         }
 
-        if(app){
+        if (app) {
             alert("Favor, por um WhatsApp válido")
         }
-      
-        if(ipt_senha.value != ipt_confir.value){
+
+        if (ipt_senha.value != ipt_confir.value) {
             alert("As senhas devem ser iguais")
         }
 

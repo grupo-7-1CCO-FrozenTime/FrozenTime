@@ -14,7 +14,7 @@
 
 <body>
     <nav class="header">
-        <a href="index.html"><img src="imagens/Logo com nome.png" id="logo"></a>
+        <a href="index.html"><img src="./imagens/Logo com nome Isa.png" id="logo"></a>
 
 
         <div class="navBar">
@@ -43,7 +43,7 @@
     <div class="banner">
         <div class="container">
             <div class="card">
-                <img src="./imagens/Logo sem nome.png" alt="Logo da empresa sem seu nome" class="imagem">
+                <img src="./imagens/Logo sem nome Isa.png" alt="Logo da empresa sem seu nome" class="imagem">
                 <img src="./imagens/image-removebg-preview 4.png" alt="nome da empresa">
             </div>
 
@@ -72,9 +72,8 @@
             </div>
         </div>
 
-
-
     </div>
+
     <div class="footer" style="margin-top: 25px;">
         <div style="width:90%; display:flex; justify-content: space-evenly;align-items: center;">
 
@@ -117,7 +116,7 @@
                 <hr>
             </div>
             <div>
-                <ul>
+                <ul id="institucional">
                     <li>
                         <h2>Institucional</h2>
                     </li>
@@ -133,12 +132,16 @@
 </html>
 <script>
     function enviar() {
+        if(ipt_email.value != ""){
         div_box.style.display = "none";
         div_bloco.style.display = "block";
         par_email.innerHTML = `${ipt_email.value}`
+        } else {
+            alert("Favor, informar um e-mail")
+        }
     }
 
-    function trocar(){
+    function trocar() {
         div_box.style.display = "block";
         div_bloco.style.display = "none";
         ipt_email.value = "";
