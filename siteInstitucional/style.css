@@ -19,6 +19,7 @@
     height: 100%;
     margin-left: 50px;
     margin-right: 50px;
+    margin: 0;
 }
 
 .cabecalho {
@@ -184,15 +185,6 @@ form {
     width: 270px;
 }
 
-/* #iptMensagem {
-    padding-bottom: 150px; 
-    width: 300px;
-}
-
-#iptMensagem textarea {
-    white-space: pre-wrap;
-} */
-
 #txtArea {
     width: 270px;
     font-family: 'Noto Sans', sans-serif;
@@ -210,5 +202,52 @@ form {
     margin-top: 20px;
     margin-left: 25%;
     margin-bottom: 70px;
+}
+
+
+
+.footer {
+    background-color: #8BC3DE;
+    height: 200px;
+    width: 1481px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1%;
+    /* margin-right: 2%; */
+    margin: 0;
+}
+
+.footer hr {
+    width: 120px;
+    border: 0.2px solid black;
+    transform: rotate(90deg);
+    margin-top: 50%;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.footer li {
+    align-self: flex-start;
+    display: flex;
+    font-size: 14px;
+    margin-top: 6%;
+}
+
+.footer li:hover {
+    cursor: pointer;
+    color: #1B1E2B;
+}
+
+#institucional {
+    margin-bottom: 45px;
 }
 
