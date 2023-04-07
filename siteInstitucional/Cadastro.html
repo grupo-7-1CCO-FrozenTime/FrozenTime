@@ -13,7 +13,7 @@
 <body>
 
     <nav class="header">
-        <a href="index.html"><img src="imagens/Logo com nome.png" id="logo"></a>
+        <a href="index.html"><img src="./imagens/Logo com nome Isa.png" id="logo"></a>
 
 
         <div class="navBar">
@@ -42,20 +42,20 @@
     <div class="banner">
         <div class="container">
             <div class="card">
-                <img src="./imagens/Logo sem nome.png" alt="Logo da empresa sem seu nome" class="imagem">
+                <img src="./imagens/Logo sem nome Isa.png" alt="Logo da empresa sem seu nome" class="imagem">
                 <img src="./imagens/image-removebg-preview 4.png" alt="nome da empresa">
             </div>
 
             <div class="form">
                 <div id="div_pagina1" class="pag1">
-                    <input class="input" type="text" placeholder="Nome da Empresa"> <br>
-                    <input class="input" type="number" placeholder="CNPJ"><br>
-                    <input class="input" type="text" placeholder="Endereço"><br>
-                    <input class="input" type="text" placeholder="Cidade"><br>
-                    <input class="input" type="text" placeholder="Bairro"><br>
-                    <input class="input" type="text " placeholder="Rua"><br>
-                    <input class="input" type="number" placeholder="Número"><br>
-                    <input class="input" type="text" placeholder="Complemento"><br>
+                    <input id="ipt_nome" class="input" type="text" placeholder="Nome da Empresa" autofocus> <br>
+                    <input id="ipt_cnpj" class="input" type="number" placeholder="CNPJ"><br>
+                    <input id="ipt_endereco" class="input" type="text" placeholder="Endereço"><br>
+                    <input id="ipt_cidade" class="input" type="text" placeholder="Cidade"><br>
+                    <input id="ipt_bairro" class="input" type="text" placeholder="Bairro"><br>
+                    <input id="ipt_rua" class="input" type="text " placeholder="Rua"><br>
+                    <input id="ipt_numero" class="input" type="number" placeholder="Número"><br>
+                    <input id="ipt_complemento" class="input" type="text" placeholder="Complemento"><br>
                     <br>
 
                     <div class="div">
@@ -66,12 +66,12 @@
 
                 </div>
                 <div id="div_pagina2" class="pag2">
-                    <input class="input" type="text" placeholder="Nome completo"><br>
-                    <input class="input" type="email" placeholder="Email"><br>
-                    <input class="input" type="tel" placeholder="Telefone"><br>
-                    <input class="input" type="tel" placeholder="WhatsApp"><br>
-                    <input class="input" type="password" placeholder="Senha"><br>
-                    <input class="input" type="password" placeholder="Confirmar senha"> <br>
+                    <input id="ipt_repre" class="input" type="text" placeholder="Nome completo"><br>
+                    <input id="ipt_email" class="input" type="email" placeholder="Email"><br>
+                    <input id="ipt_tel" class="input" type="tel" placeholder="Telefone"><br>
+                    <input id="ipt_whats" class="input" type="tel" placeholder="WhatsApp"><br>
+                    <input id="ipt_senha" class="input" type="password" placeholder="Senha"><br>
+                    <input id="ipt_confir" class="input" type="password" placeholder="Confirmar senha"> <br>
 
                     <div class="div">
                         <button onclick="cadastrar()" class="botao">Cadastrar</button>
@@ -84,65 +84,44 @@
         </div>
     </div>
 
-    <div class="footer" style="margin-top: 25px;">
-        <div style="width:90%; display:flex; justify-content: space-evenly;align-items: center;">
-
-            <div>
-                <ul>
-                    <li>
-                        <img width="70%" src="./icon/icon.svg">
-                    </li>
-                    <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
-                </ul>
-
-            </div>
-            <div>
-                <hr>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <h2>Navegue</h2>
-                    </li>
-                    <li>Solução</li>
-                    <li>Simulação</li>
-                    <li>Sobre</li>
-                </ul>
-            </div>
-            <div>
-                <hr>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <h2>Contatos</h2>
-                    </li>
-                    <li>Whatsapp</li>
-                    <li>Telefone</li>
-                    <li>E-mail</li>
-                </ul>
-            </div>
-            <div>
-                <hr>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <h2>Institucional</h2>
-                    </li>
-                    <li>Sobre Nós</li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-
 </body>
 
 </html>
 <script>
     function proximo() {
-        div_pagina1.style.display = "none"
-        div_pagina2.style.display = "block"
+        var validacoes = ipt_nome.value == "" || ipt_cnpj.value == "" || ipt_endereco.value == "" || ipt_endereco.value == "" || ipt_cidade.value == "" || ipt_bairro.value == "" || ipt_rua.value == "" || ipt_numero.value == "" || ipt_complemento.value == "";
+
+        if(validacoes){
+            alert("Por favor, preencher todos os campos")
+        } else{ div_pagina1.style.display = "none"
+                div_pagina2.style.display = "block"}
+
+    }
+
+    function cadastrar(){
+        var validacoes = ipt_repre.value == "" || ipt_email.value == "" || ipt_tel.value == "" || ipt_whats.value == "" || ipt_senha.value == "" || ipt_confir.value == "";
+
+        var telefone = ipt_tel.value
+        var length = telefone.length != "" && (telefone.length > 9 || telefone.length < 9);
+
+        var whats = ipt_whats.value
+        var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
+
+        if(validacoes){
+            alert("Por favor, preencher todos os campos")
+        } 
+
+        if(length){
+            alert("Favor, por um telefone válido")
+        }
+
+        if(app){
+            alert("Favor, por um WhatsApp válido")
+        }
+      
+        if(ipt_senha.value != ipt_confir.value){
+            alert("As senhas devem ser iguais")
+        }
+
     }
 </script>
