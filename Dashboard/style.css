@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+a, h3, h4{
+    font-family: 'Inter', sans-serif;
+}
+p{
+    font-weight: bold;
+}
