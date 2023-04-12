@@ -6,91 +6,163 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frozen Time</title>
-    <link rel="stylesheet" href="css/cadastro_ft.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="header">
-        <a href="index.html"><img src="./imagens/Logo com nome Isa.png" id="logo"></a>
+    <header>
+        <nav class="cabecalho">
+            <a href="index.html"><img src="img/logo.png" id="logo" /></a>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="solucao.html">Solução</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li>
+                        <a href="login.html"><img src="img/login.png" /></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
 
-        <div class="navBar">
-            <ul>
-                <li><a href="solucao.html">Solução</a></li>
-                <li>|</li>
 
-                <li><a href="simulacao.html">Simulação</a></li>
-                <li>|</li>
+    <section class="login">
 
-                <li><a href="sobre.html">Sobre</a></li>
-                <li>|</li>
+        <div class="containerCadastro">
 
-                <li><a href="contato.html">Contato</a></li>
-                <li>|</li>
+            <div class="cardCadastro">
 
-                <li><a href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Login.html"><img
-                            src="imagens/Img login.png"> </a></li>
-            </ul>
+                <img src="./img/Group 2.png" alt="Logo da empresa" class="imagemLogo">
+
+            </div>
+
+            <div class="formCadastro">
+                <div id="telaEmpresa">
+
+                    <div class="camposCadastro">
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Nome da Empresa" name="Nome da Empresa"
+                                id='ipt_nome' autofocus required />
+                            <label for="Nome da Empresa" class="input_label">Nome da Empresa</label>
+                        </div>
+
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="CNPJ" name="CNPJ" id='ipt_cnpj' required />
+                            <label for="CNPJ" class="input_label">CNPJ</label>
+                        </div>
+
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Endereço" name="Endereço" id='ipt_endereco'
+                                required />
+                            <label for="Endereço" class="input_label">Endereço</label>
+                        </div>
+
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Cidade" name="Cidade" id='ipt_cidade'
+                                required />
+                            <label for="Cidade" class="input_label">Cidade</label>
+                        </div>
+
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Número" name="numero" id='ipt_numero'
+                                required />
+                            <label for="numero" class="input_label">Número</label>
+                        </div>
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Complemento" name="Complemento"
+                                id='ipt_complemento' />
+                            <label for="Complemento" class="input_label">Complemento</label>
+                        </div>
+
+
+                        <div class="botoesTexto">
+
+                            <div class="botoesLoginCadastro">
+                                <button onclick="proximo()" class="botaoLogin">Próximo</button>
+                                <a class="cadastrar" href="Login.html">Já sou membro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="telaRepresentante">
+                    <div class="camposCadastro">
+
+
+                        <div class="inputsCadastro">
+                            <input type="text" class="input" placeholder="Nome completo" name="Nome" id='ipt_repre'
+                                required />
+                            <label for="Nome" class="input_label">Nome completo</label>
+                        </div>
+    
+                        <div class="inputsCadastro">
+                            <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email' required />
+                            <label for="Email" class="input_label">Email</label>
+                        </div>
+    
+                        <div class="inputsCadastro">
+                            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel' required />
+                            <label for="Telefone" class="input_label">Telefone</label>
+                        </div>
+    
+                        <div class="inputsCadastro">
+                            <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
+                                required />
+                            <label for="WhatsApp" class="input_label">WhatsApp</label>
+                        </div>
+    
+                        <div class="inputsCadastro">
+                            <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha' required />
+                            <label for="Senha" class="input_label">Senha</label>
+                        </div>
+                        <div class="inputsCadastro">
+                            <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
+                                id='ipt_confir' required />
+                            <label for="Confirmar" class="input_label">Confirmar senha</label>
+                        </div>
+    
+                        <div class="botoesTexto">
+    
+                            <div class="botoesLoginCadastro">
+                                <button onclick="cadastrar()" class="botaoLogin">Cadastrar</button>
+                                <a class="cadastrar" href="Login.html">Já sou membro</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
         </div>
 
-    </nav>
+    </section>
 
-    <div class="banner">
-        <div class="container">
-            <div class="card">
-                <img src="./imagens/Logo sem nome Isa.png" alt="Logo da empresa sem seu nome" class="imagem">
-                <img src="./imagens/image-removebg-preview 4.png" alt="nome da empresa">
-            </div>
 
-            <div class="form">
-                <div id="div_pagina1" class="pag1">
-                    <input id="ipt_nome" class="input" type="text" placeholder="Nome da Empresa" autofocus> <br>
-                    <input id="ipt_cnpj" class="input" type="number" placeholder="CNPJ"><br>
-                    <input id="ipt_endereco" class="input" type="text" placeholder="Endereço"><br>
-                    <input id="ipt_cidade" class="input" type="text" placeholder="Cidade"><br>
-                    <input id="ipt_bairro" class="input" type="text" placeholder="Bairro"><br>
-                    <input id="ipt_rua" class="input" type="text " placeholder="Rua"><br>
-                    <input id="ipt_numero" class="input" type="number" placeholder="Número"><br>
-                    <input id="ipt_complemento" class="input" type="text" placeholder="Complemento"><br>
-                    <br>
-
-                    <div class="div">
-                        <button onclick="proximo()" class="botao">Próximo</button>
-                        <a class="a" href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Login.html">Já sou
-                            membro</a>
-                    </div>
-
-                </div>
-                <div id="div_pagina2" class="pag2">
-                    <input id="ipt_repre" class="input" type="text" placeholder="Nome completo"><br>
-                    <input id="ipt_email" class="input" type="email" placeholder="Email"><br>
-                    <input id="ipt_tel" class="input" type="tel" placeholder="Telefone"><br>
-                    <input id="ipt_whats" class="input" type="tel" placeholder="WhatsApp"><br>
-                    <input id="ipt_senha" class="input" type="password" placeholder="Senha"><br>
-                    <input id="ipt_confir" class="input" type="password" placeholder="Confirmar senha"> <br>
-
-                    <div class="div">
-                        <button onclick="cadastrar()" class="botao">Cadastrar</button>
-                        <a class="a" href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Login.html">Já sou
-                            membro</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="footer" style="margin-top: 25px;">
-        <div style="width:90%; display:flex; justify-content: space-evenly;align-items: center;">
+    <footer class="footer">
+        <div class="footerConteudo">
 
             <div>
-                <ul>
+                <ul class="logoFooter">
                     <li>
-                        <img width="70%" src="./icon/icon.svg">
+                        <img width="0%" src="./icon/icon.svg">
                     </li>
                     <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
                 </ul>
@@ -100,7 +172,7 @@
                 <hr>
             </div>
             <div>
-                <ul>
+                <ul class="paginasFooter">
                     <li>
                         <h2>Navegue</h2>
                     </li>
@@ -113,7 +185,7 @@
                 <hr>
             </div>
             <div>
-                <ul>
+                <ul class="paginasFooter">
                     <li>
                         <h2>Contatos</h2>
                     </li>
@@ -126,7 +198,7 @@
                 <hr>
             </div>
             <div>
-                <ul id="institucional">
+                <ul class="paginasFooterInsti">
                     <li>
                         <h2>Institucional</h2>
                     </li>
@@ -135,7 +207,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </footer>
 
 </body>
 
@@ -147,8 +219,8 @@
         if (validacoes) {
             alert("Por favor, preencher todos os campos")
         } else {
-            div_pagina1.style.display = "none"
-            div_pagina2.style.display = "block"
+            telaEmpresa.style.display = "none"
+            telaRepresentante.style.display = "block"
         }
 
     }

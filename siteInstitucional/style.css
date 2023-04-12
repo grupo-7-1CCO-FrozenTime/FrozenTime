@@ -1,26 +1,28 @@
-  @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+
+/* Começo do css da página inicial*/
 
 
 .body_index{
     background:
     linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
-    url('img/background.jpg');
-    background-size: cover;  
+    url('img/backgroundNovo.png');
     background-repeat: no-repeat;
-    height: 100%;
-}
-
-.body_contato{
-    background:
-    linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat,
-    url('img/background_contato.jpeg');
+    background-attachment:fixed;
     background-size: cover;  
-    background-repeat: no-repeat;
     height: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
     margin: 0;
 }
+
 
 .cabecalho {
     margin: 20px 27px;
@@ -82,172 +84,311 @@ ul img{
     background-color: #288396;
     color: #ffffff;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.192);
-    margin-bottom: 274px;
+    margin-bottom: 450px;
 }
 
-.contato {
-    display: flex;
+/* Fim do css da página inicial */
+
+
+/* Começo do css da página de beneficios */
+
+
+.tituloBeneficios {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 3%;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+}
+.divHorientacao{
+    display:flex; justify-content: space-evenly;
 }
 
-.localizacao {
+.card {
+    margin-top: 5%;
+    width: 265px;
+    height: 170px;
+    /* background: rgba(27, 30, 43, 0.6); */
+    background: #d9d9d9c9;
+    /* box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    border: 1px solid #000000;
+    color: white; */
+    box-shadow: 10px 10px 4px d9d9d9c9;
+    border-radius: 40px;
+    
+    color: rgb(0, 0, 0);
+    font-family: 'Encode Sans Condensed', sans-serif;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+}
+.card div{
+    display: flex; justify-content: center;
+}
+.card div p{
+    text-align: center;
+}
+.conteudoCard{
     display: flex;
+    justify-content: center;
+} 
+
+
+/* Fim do css da página de beneficios */
+
+/* Começo do css da página de sobre nós */
+
+#sobreNos {
+    width: 100%;
+    margin: auto;
+
+}
+
+#divBeneficios {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column;
-    margin-left: 15%;
-    width: 50%;
-    height: 500px;
+    justify-content: space-evenly;
+}
+
+#divBeneficios h1 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#idTitulo{
+    margin-top: 10%;
+    font-size: 50px;
+}
+
+#divQuemSomos {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px 120px 90px 1px;
+    width: 100%;
+    gap: 120px;
+}
+
+#divQuemSomos h1 {
+    font-size: 50px;
+    align-items: center;
     justify-content: center;
 }
 
-.localizacao p {
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-weight: 600;
+#divQuemSomos p {
+    border: 3px rgba(255, 255, 255, 0.658) solid;
+    font-size: 18px;
+    width: auto;
+    padding: 25px;
+    margin-left: 18%;
+}
+#divParagrafo{
+    width: 26%;
+}
+
+#divFotos {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    
+}
+
+#divFotos img {
+    width: 200px;
+    height: 200px;
+}
+
+#divFotos #fotoGrande {
+    width: 250px;
+    height: 250px;
+}
+
+#divContent {
+    color: black;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 100px;
+    margin-left: 11%;
+}
+
+.cardSobre {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 310px;
+    background-color: #d9d9d9c9;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.cardSobre h1 {
     font-size: 15px;
 }
 
-#rua{
-    display: flex;
+.cardSobre img {
+    margin-left: 65px;
     align-items: center;
-    text-align: center;
-    width: 50%;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
 }
 
-#rua img{
-    width: 45px;
-    height: 45px;
-}
-
-iframe {
-    border-radius: 15px;
+.pic-ctn {
+    width: 100vw;
     height: 200px;
-    width: 310px;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes display {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+}
+
+.pic-ctn {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    margin-top: 15vh;
+}
+
+.pic-ctn>img {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+    border-radius: 100px;
+    background-color: #d9d9d970;
+}
+
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+
+img:nth-child(6) {
+    animation-delay: 10s;
+}
+
+img:nth-child(7) {
+    animation-delay: 12s;
 }
 
 
-#info {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 20px;
-    padding-top: 10px;
-}
+/* Fim do css da página de contato */
 
-#info p {
-    margin: 0;
-    font-weight: 500;
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-size: 20px;
-}
-
-#info img {
-    width: 20px;
-    height: 20px;
-}
-
-#whats, #telefone, #email {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 15pt;
-}
-
-.formulario {
-    height: 80%;
-    width: 50%;
-}
-
-.formulario h1 {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 32px;
-    color: #E6E6E6;
-    font-weight: 550;
-    margin-left: 5%;
-    margin-bottom: 0;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.formulario input, #txtArea{
-    background-color: #EFE9E9;
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid #174556;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25); 
-}
-
-#iptNome, #iptEmail, #iptCelular {
-    height: 6px;
-    width: 270px;
-}
-
-#txtArea {
-    width: 270px;
-    font-family: 'Noto Sans', sans-serif;
-    resize: none;
-}
-
-#btnMsg {
-    border: 2px solid rgba(255, 255, 255, 0.76);
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-    background-color: #0B0368;
-    color: #ffffff;
-    border-radius: 20px;
-    width: 150px;
-    height: 35px;
-    margin-top: 20px;
-    margin-left: 25%;
-    margin-bottom: 70px;
-}
-
+/* Começo do css do footer */
 
 
 .footer {
     background-color: #8BC3DE;
     height: 200px;
-    width: 1481px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 1%;
-    /* margin-right: 2%; */
-    margin: 0;
+    margin-top: 6%;
+    /* padding-bottom: 1%;
+    margin-right: 2%;
+    margin: 0; */
+    
 }
 
-.footer hr {
+.footerConteudo {
+    width:88%;
+    display:flex; 
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logoFooter {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.hr {
     width: 120px;
     border: 0.2px solid black;
     transform: rotate(90deg);
     margin-top: 50%;
+    margin-bottom: 50%;
 }
 
-.footer ul {
+.paginasFooter {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    align-items: flex-start;
     list-style: none;
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
+    gap: 0;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
 
+.paginasFooterInsti {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    gap: 0;
 }
 
 .footer li {
     align-self: flex-start;
     display: flex;
     font-size: 14px;
-    margin-top: 6%;
-}
-
+    margin-top: 6%; 
+} 
 .footer li:hover {
     cursor: pointer;
     color: #1B1E2B;
-}
+} 
 
-#institucional {
-    margin-bottom: 45px;
-}
 
+
+
+/* Fim do css do footer */
