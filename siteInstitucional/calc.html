@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frozen Time</title>
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Calculadora Financeira</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="calc.css">
 </head>
 
-<body class="body_contato">
+<body>
+    <!-- Começo do Header -->
     <header>
         <nav class="cabecalho">
             <a href="index.html"><img src="img/logo.png" id="logo"></a>
@@ -38,58 +40,58 @@
 
         </nav>
     </header>
+    <!-- Fim do Header -->
 
-    <main>
-        <section class="contato">
-            <div class="localizacao">
-                <div id="rua">
-                    <img src="icon/pin.ico"> <!--mudar para icone-->
-                    <p>Rua Haddock Lobo, 595 - Cerqueira César,
-                        São Paulo - SP, 01414-001
-                    </p>
+    <div class="corpo">
+        <!-- Começo da Calculadora -->
+        <div class="container">
+            <div class="calc">
+                <div class="titulo">
+                    <img src="img/calc.png" alt="imagem calculadora">
+
+                    <h2>SIMULE SEUS <br> LUCROS CONOSCO!</h2>
                 </div>
-                <div id="iframe">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2981389556066!2d-46.66117322297425!3d-23.557733459854955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1spt-BR!2sbr!4v1680197408895!5m2!1spt-BR!2sbr"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="form">
+                    <span>Insira:</span>
+                    <input id="ipt_areaLote" type="number" placeholder="Área do lote:"> <br><br>
+                    <span>Agora informe:</span>
+                    <input id="ipt_informe" type="number" placeholder="Lucro total:"> <br><br>
+
+                    <button onclick="simular()">Calcular</button>
                 </div>
-                <div id="info">
-                    <div id="whats">
-                        <img src="img/icons8-whatsapp-16.png">
-                        <p>(11) xxxxx-xxxx</p>
+            </div>
+            <!-- Fim da Calculadora -->
+            <!-- Começo das Mensagens -->
+            <div class="conjMsgs">
+                <div class="msg1">
+                    <div class="perdas">
+                        <span>Com base nas pesquisas feitas, <br> você já perdeu cerca de <br> <b>R$xxx</b></span>
                     </div>
-                    <div id="telefone">
-                        <img src="img/icons8-telefone-16.png">
-                        <p>(11) xxxxx-xxxx</p>
-                    </div>
-                    <div id="email">
-                        <img src="img/icons8-nova-mensagem-16.png">
-                        <p>frozentime@gmail.com</p>
+                </div>
+                <div class="msg2">
+
+                    <div class="lucros">
+                        <span>Com os nossos sensores, você <br> consegue aumentar seus lucros em <b>R$xxx%</b>
+                        Assim, aumentando a eficácia <br> dos seus  produtos em transporte.</span>
                     </div>
                 </div>
             </div>
-            <div class="formulario">
-                <form>
-                    <h1>FALE CONOSCO</h1>
-                    <input id="iptNome" placeholder="Nome Completo">
-                    <input id="iptEmail" placeholder="Email">
-                    <input id="iptCelular" placeholder="(00) 91234-5678">
-                    <textarea name="" id="txtArea" cols="30" rows="10" placeholder="Mensagem..."></textarea>
-                </form>
-                <button onclick="" id="btnMsg">Enviar mensagem</button>
-            </div>
-        </section>
-    </main>
+
+        </div>
+
+
+
+    </div>
+
     <footer class="footer">
         <div class="footerConteudo">
 
             <div>
                 <ul class="logoFooter">
-                    <li>
+                    <li class="imgLogoFooter">
                         <img width="0%" src="./icon/icon.svg">
                     </li>
-                    <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
+                    <li class="txtLogoFooter">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
                 </ul>
 
             </div>
@@ -133,6 +135,10 @@
             </div>
         </div>
     </footer>
+
+
+
+
 </body>
 
 </html>

@@ -13,24 +13,30 @@ body {
 
 .container{
     display: flex;
-    margin-left: 20%;
-    margin-top: 90px;
+    margin-left: 25%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 
 .cardLogin {
     background: #499EAE;
-    width: 596px;
-    height: 580px;
+    width: 60%;
+    height: 115%;
     box-shadow: 5px 5px 20px 10px  rgba(0, 0, 0, 0.582);
     
 }
 
 .imagemLogo{
-    width: 50%;
-    height: 50%;
-    margin-top: 25%;
+    width: 40%;
+    height: 55%;
+    margin-top: 10%;
+    margin-left: 25%; 
+}
+
+.imagemFrozenTime {
     margin-left: 25%;
+    
 }
 
 
@@ -41,9 +47,9 @@ body {
     display: flex;
     flex-direction: column;
     background: #f5f1e6;
-    width: 532px;
-    height: 511px;
-    margin-top: 34px;
+    width: 55%;
+    height: 105%;
+    margin-top: 2%;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-size: 15pt;
     font-weight: 500;
@@ -51,7 +57,7 @@ body {
 
 .campos{
     margin-left: 52px;
-    margin-top: 100px;
+    margin-top: 12%;
 } 
 
 .inputs {
@@ -62,7 +68,7 @@ body {
 
 .input {
   font-family:'Encode Sans Condensed', sans-serif;
-  width: 416px;
+  width: 170%;
   border: 0;
   border-bottom: 2px solid #BAB372;
   outline: 0;
@@ -125,7 +131,7 @@ input:placeholder-shown ~ .input_label {
 
 }
 
-.botoesLoginCadastro{
+.botoesLogin{
     display: flex;
     flex-direction: row;
     margin-bottom: 2%;
@@ -133,25 +139,43 @@ input:placeholder-shown ~ .input_label {
     align-items:baseline;
 }
 
+.botoesCadastro {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60%;
+    gap: 52px;
+    /* align-items: baseline; */
+    /* padding-bottom: 50px; */
+}
+
 .botaoLogin {
     background: #BAB372;
     border: none;
-    border-radius: 20px;
-    width: 50%;
-    padding: 15px;
-    font-size: 20px;
+    border-radius: 15px;
+    width: 40%;
+    padding: 2%;
+    font-size: 18px;
+}
+
+.botaoProximo {
+    background: #BAB372;
+    border: none;
+    border-radius: 15px;
+    width: 40%;
+    padding: 2%;
+    font-size: 18px;
 }
 
 .cadastrar {
     color: #000000;
     text-decoration: underline;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .textoRecuperar a {
     color: #000;
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: 12px;
+    margin-left: 5%;
 }
 
 
@@ -160,21 +184,28 @@ input:placeholder-shown ~ .input_label {
 
 
 .containerCadastro{
-    display: flex;
+    /* display: flex;
     margin-left: 15%;
-    margin-top: 70px;
+    margin-top: 70px; */
+    display: flex;
+    margin-left: 25%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 .cardCadastro {
-    background: #499EAE;
+    /* background: #499EAE;
     width: 650px;
     height: 700px;
+    box-shadow: 5px 5px 20px 10px  rgba(0, 0, 0, 0.582); */
+    background: #499EAE;
+    width: 75%;
+    height: 70%;
     box-shadow: 5px 5px 20px 10px  rgba(0, 0, 0, 0.582);
-    
 }
 
 .formCadastro{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     background: #f5f1e6;
     width: 586px;
@@ -182,16 +213,41 @@ input:placeholder-shown ~ .input_label {
     margin-top: 34px;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-size: 15pt;
+    font-weight: 500; */
+    display: flex;
+    flex-direction: column;
+    background: #f5f1e6;
+    width: 60%;
+    height: 65%;
+    margin-top: 2%;
+    font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: 500;
+    
 }
 
+
+
 .camposCadastro{
-    margin-left: 52px;
-    margin-top: 50px;
+    margin-left: 10%;
+    margin-top: 20px;
+    
 } 
 
 .inputsCadastro {
     padding: 1px;
-    margin-bottom: 30px;
-    width: 62%;
+    margin-bottom: 15px;
+    width: 55%;
+}
+
+.inputCadastro {
+    font-family:'Encode Sans Condensed', sans-serif;
+    width: 160%;
+    border: 0;
+    border-bottom: 2px solid #BAB372;
+    outline: 0;
+    color: #000000;
+    padding: 5px;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-size: 15px;
 }
