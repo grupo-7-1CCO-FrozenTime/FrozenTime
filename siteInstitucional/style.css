@@ -11,7 +11,16 @@
 
 /* Começo do css da página inicial*/
 
-
+body{
+    overflow-x: hidden;
+}
+header{
+    position: sticky;
+    top: 0;
+    padding: 1px 0;
+    background-color: #558498;
+    z-index: 10;
+}
 .body_index{
     background:
     linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
@@ -29,6 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
 }
 
 #logo {
@@ -213,9 +223,7 @@ ul img{
     color: black;
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
-    gap: 100px;
-    margin-left: 3%;
+    justify-content: space-evenly;
 }
 
 .cardSobre {
