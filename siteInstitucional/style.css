@@ -38,7 +38,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    /* position: sticky; */
 }
 
 #logo {
@@ -107,10 +107,11 @@ ul img{
     display: flex; 
     justify-content: center;
     margin-bottom: 3%;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    font-size: 130%;
 }
-.divHorientacao{
+.divOrientacao{
     display:flex; justify-content: space-evenly;
 }
 
@@ -171,7 +172,10 @@ ul img{
 }
 #idTitulo{
     margin-top: 10%;
-    font-size: 50px;
+    font-size: 300%;
+    font-weight: 400;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 #divQuemSomos {
@@ -191,11 +195,13 @@ ul img{
 }
 
 #divQuemSomos p {
-    border: 3px rgba(255, 255, 255, 0.658) solid;
+    border: 3px rgba(255, 255, 255, 0.4) solid;
     font-size: 18px;
-    width: auto;
-    padding: 25px;
-    margin-left: 18%;
+    /* color: #ffffff; */
+    width: 100%;
+    padding: 7%;
+    margin-left: 15%;
+    /* text-align: center; */
 }
 #divParagrafo{
     width: 26%;

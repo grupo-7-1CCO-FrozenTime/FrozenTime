@@ -6,6 +6,10 @@ body {
     
 }
 
+header {
+ background-color: #76c3cf;
+}
+
 .login {
     display: flex;
     flex-direction: row;

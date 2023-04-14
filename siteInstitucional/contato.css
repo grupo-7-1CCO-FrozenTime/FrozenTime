@@ -1,5 +1,56 @@
 /* Começo do css da página de contato */
 
+/* Início do header */
+header{
+    top: 0;
+    padding: 1px 0;
+}
+.body_index{
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
+    url('img/backgroundNovo.png');
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;  
+    height: 100%;
+    margin: 0;
+}
+
+
+.cabecalho {
+    margin: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: sticky; */
+}
+
+#logo {
+    width: 60%;
+    height: 60%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+ul img{
+    width: 60%;
+    height: 50%;
+}
+/* Fim do Header */
+
 .body_contato{
     background:
     linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat,
@@ -13,8 +64,8 @@
 } 
 .contato {
     display: flex;
-    margin-top: 7%;
-    margin-bottom: 7%;
+    margin-top: 2%;
+    /* margin-bottom: 2%; */
 }
 
 .localizacao {
@@ -130,6 +181,87 @@ form {
     width: 150px;
     height: 35px;
     margin-top: 20px;
-    margin-left: 19%;
+    margin-left: 25%;
     margin-bottom: 70px;
 } 
+
+/* Início Footer */
+.footer {
+    background-color: #8BC3DE;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+    
+}
+
+.footerConteudo {
+    width: 88%;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logoFooter {
+    display:flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0;
+}
+
+.imgLogoFooter {
+    margin-bottom: 16%;
+}
+
+.txtLogoFooter {
+  position: absolute;
+    left: 13%;
+    margin-bottom: 20%;
+}
+
+hr {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    border: 0.1px solid black;
+    transform: rotate(90deg);
+    /* margin-top: 50%;
+    margin-bottom: 50%; */
+}
+
+.paginasFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    gap: 0;
+    margin-bottom: 30%;
+    padding-left: 0;
+    
+}
+
+.paginasFooterInsti {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    gap: 0;
+    margin-bottom: 45%;
+    padding-left: 0;
+}
+
+.footer li {
+    align-self: flex-start;
+    display: flex;
+    font-size: 14px;
+    margin-top: 6%; 
+} 
+.footer li:hover {
+    cursor: pointer;
+    color: #1B1E2B;
+} 
+/* Fim Footer */

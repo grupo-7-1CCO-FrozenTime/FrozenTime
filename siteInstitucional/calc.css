@@ -117,7 +117,7 @@
 
     .msg1 {
         /* border: 1px black solid; */
-        padding: 50px 25px;
+        padding: 5%;
         border-radius: 40px;
         height: 30%;
         background-color: rgb(177, 194, 204, 0.8);
@@ -133,9 +133,9 @@
 
     .msg2 {
         /* border: 1px black solid; */
-        padding: 50px 25px;
+        padding: 10%;
         border-radius: 40px;      
-        height: 30%;
+        height: 40%;
         background-color: rgb(177, 194, 204, 0.8);
         margin-top: 10%;
         box-shadow: 5px 5px rgba(0, 0, 0, 0.2);

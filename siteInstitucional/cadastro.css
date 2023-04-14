@@ -1,0 +1,109 @@
+*{
+    background-color: #6DACB5;
+}
+
+body{
+    margin: 0;
+}
+
+header {
+    background-color: #76c3cf;
+}
+
+
+/* começo do banner*/
+
+.banner{
+    margin: 10px 60px;
+}
+
+.container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+}
+
+.card{
+    background-color:rgba(73, 158, 174, 0.57);
+    width: 50%;
+    height: 400px;
+    box-shadow: 5px 5px 20px 10px  rgba(0, 0, 0, 0.582);
+    justify-content: center;
+    display: flex;
+    padding: 30px 0px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.imagem{
+    width: 35%;
+}
+
+.form{
+    background-color: #f5f1e6;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+    color: #ffffff;
+    width: 37%;
+    height: 325px;
+}
+
+.input{
+    border-top: #BAB372;
+    border-bottom-color: #a09a62;
+    border-left: none;
+    border-right: none;
+    background-color: #f5f1e6;
+    padding: 10px;
+    padding-bottom: 5px;
+    padding-right: 0px;
+}
+
+textarea::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.botao{
+    background-color: #BAB372;
+    color: rgb(0, 0, 0);
+    border: 0;
+    border-radius: 20px;
+    width: 170px;
+    padding: 10px;
+    font-size: medium;
+}
+
+.a{
+    text-decoration: underline;
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #f5f1e6;
+}
+
+.div{
+    background-color:#f5f1e6;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin-top: 13px ;
+}
+
+.pag1{
+    display: block;
+    background-color: #f5f1e6;
+   
+}
+
+.pag2{
+    display: none;
+    background-color: #f5f1e6;
+}
+
+
+
