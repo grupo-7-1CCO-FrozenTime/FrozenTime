@@ -1,17 +1,57 @@
-//Sensor de temperatura usando o LM35
+#include <DHT.h>
+#include <DHT_U.h>
+
+#include <Adafruit_Sensor.h>
+
+#include <DHT.h>
+#include <DHT_U.h>
+
+#include "DHT.h"
  
-const int LM35 = A0; // Define o pino que lera a saída do LM35
-float temperatura; // Variável que armazenará a temperatura medida
+#define DHTPIN A1
+#define LM35PIN A5
+#define LUMIPIN A0
+#define CHAVPIN 7
  
-//Função que será executada uma vez quando ligar ou resetar o Arduino
-void setup() {
-Serial.begin(9600); // inicializa a comunicação serial
+
+DHT dht(DHTPIN, DHT11);
+
+void setup()
+{
+  pinMode(DHTPIN, INPUT);
+  pinMode(CHAVPIN, INPUT);
+  Serial.begin(9600);
+  dht.begin();
 }
  
-//Função que será executada continuamente
-void loop() {
-temperatura = (float(analogRead(LM35))*5/(1023))/0.01;
-Serial.print("Temperatura: ");
-Serial.println(temperatura);
-delay(2000);
+void loop() 
+{
+  float dht11_umidade = dht.readHumidity();
+  float dht11_temperatura = dht.readTemperature();
+  Serial.print(dht11_umidade);
+  Serial.print(";");
+  Serial.print(dht11_temperatura);
+  Serial.print(";");
+
+  float luminosidade =  analogRead(LUMIPIN);
+  Serial.print(luminosidade);
+  Serial.print(";");
+  
+  float lm35_temperatura = analogRead(LM35PIN);
+  lm35_temperatura = lm35_temperatura * 0.00488;
+  lm35_temperatura = lm35_temperatura * 100;
+  Serial.print(lm35_temperatura);
+  Serial.print(";");
+
+  int chave = digitalRead(7);
+  if (chave == 0)  
+  {  
+    Serial.print("1");  
+  }  
+  else  
+  {  
+    Serial.print("0");  
+  }
+
+  Serial.println();
 }

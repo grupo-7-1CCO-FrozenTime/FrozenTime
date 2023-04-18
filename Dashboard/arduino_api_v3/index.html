@@ -1,13 +1,18 @@
+<!-- Página na internet que contém os gráficos sem os dados e a estilização do dashboard-->
+
 <!doctype html>
 <html>
 
 <head>
     <title>Line Chart</title>
+    <!-- Linkagem de páginas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <style>
+        /* canvas é como uma tela em branco */
         canvas {
+            /* De maneira simples o user-selection serve para controlar o conteúdo que pode ser selecionado no site. Separado em navegadores (Moz - MozillaFireFox, webkit - chrome e ms - microsoft edge ou explorer*/
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -17,7 +22,9 @@
 
 <body>
     <div>
+        
         <h1>Sensor DHT 11 - Umidade</h1>
+        <!-- Uma section é estilizado por si só, diferente da div -->
         <section style="width:100%">
             <canvas id="dht11Umidade"></canvas>
         </section>
@@ -52,14 +59,17 @@
                     datasets: [{
                         label: 'Umidade',
                         type: 'line',
+                        // com os colchetes 
                         borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0']
+                        backgroundColor: ['#89cff0'], 
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
+                            // distribuição dos valores em série, um valor após o outro
                             distribution: 'series',
+                            // Os pontos do gráfico
                             ticks: {
                                 beginAtZero: true
                             }
@@ -247,7 +257,9 @@
             var http = new XMLHttpRequest();
             http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
             http.send(null);
+            // .parse tranforma os elementos dentro da parênteses em JSON
             var valores = JSON.parse(http.responseText);
+            // endpoint é o último endereço do IP
             if (paginacao[endpoint] == null) {
                 paginacao[endpoint] = 0;
             }
@@ -257,11 +269,14 @@
             // Exibir à partir do último elemento exibido anteriormente
             var ultimaPaginacao = paginacao[endpoint];
             paginacao[endpoint] = valores.length;
+            // .slice despedaça os valores da variável 
             var valores = valores.slice(ultimaPaginacao);
+            // para cada valor de uma array repete o que tem dentro da função
             valores.forEach((valor) => {
                 //Máximo de 60 itens exibidos no gráfico
                 if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
                     grafico.data.labels.shift();
+                    // O método shift remove o elemento de índice zero, diminui em 1 os indices dos demais valores e retorna o valor removido.
                     grafico.data.datasets[0].data.shift();
                 }
 
