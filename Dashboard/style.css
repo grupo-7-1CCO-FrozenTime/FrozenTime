@@ -6,3 +6,6 @@ a, h3, h4{
 p{
     font-weight: bold;
 }
+.txtHeader{
+    font-size: 18px;
+}
