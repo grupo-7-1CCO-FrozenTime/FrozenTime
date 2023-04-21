@@ -185,7 +185,9 @@ form {
     margin-bottom: 70px;
 } 
 
-/* Início Footer */
+/* Começo do css do footer */
+
+
 .footer {
     background-color: #8BC3DE;
     height: 200px;
@@ -193,7 +195,8 @@ form {
     display: flex;
     justify-content: center;
     margin-top: 6%;
-    
+    text-decoration: none;
+    color: #000000;
 }
 
 .footerConteudo {
@@ -201,22 +204,24 @@ form {
     display: flex; 
     justify-content: space-evenly;
     align-items: center;
+    color: #000000;
 }
 
 .logoFooter {
     display:flex;
     flex-direction: column;
     gap: 0;
+    
     padding-left: 0;
 }
 
 .imgLogoFooter {
-    margin-bottom: 16%;
+    margin-bottom: 19%;
 }
 
 .txtLogoFooter {
   position: absolute;
-    left: 13%;
+    left: 11%;
     margin-bottom: 20%;
 }
 
@@ -239,6 +244,7 @@ hr {
     gap: 0;
     margin-bottom: 30%;
     padding-left: 0;
+    text-decoration: none;
     
 }
 
@@ -252,6 +258,7 @@ hr {
     gap: 0;
     margin-bottom: 45%;
     padding-left: 0;
+    
 }
 
 .footer li {
@@ -259,9 +266,21 @@ hr {
     display: flex;
     font-size: 14px;
     margin-top: 6%; 
+    text-decoration: none;
+   
 } 
+
+.footer a {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+}
 .footer li:hover {
     cursor: pointer;
     color: #1B1E2B;
 } 
-/* Fim Footer */
+
+
+
+
+/* Fim do css do footer */

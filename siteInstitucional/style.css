@@ -53,7 +53,7 @@ ul {
     gap: 32px;
 }
 
-a{
+ a{
     text-decoration: none;
     color: #ffffff;
     font-family: 'Encode Sans Condensed', sans-serif;
@@ -95,6 +95,7 @@ ul img{
     color: #ffffff;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.192);
     margin-bottom: 450px;
+    text-decoration: none;
 }
 
 /* Fim do css da página inicial */
@@ -175,7 +176,7 @@ ul img{
     margin-top: 10%;
     font-size: 300%;
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-
+    font-family: 'Poppins', sans-serif;
 }
 
 #divQuemSomos {
@@ -203,8 +204,10 @@ ul img{
     margin-left: 15%;
     /* text-align: center; */
 }
-#divParagrafo{
+#ParagrafoSobre{
     width: 26%;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 #divFotos {
@@ -236,11 +239,12 @@ ul img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 300px;
     height: 310px;
     background-color: #d9d9d9c9;
     border-radius: 25px;
-    padding: 10px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cardSobre h1 {
@@ -248,7 +252,7 @@ ul img{
 }
 
 .cardSobre img {
-    margin-left: 65px;
+    margin-left: 100px;
     align-items: center;
     justify-content: center;
     width: 100px;
@@ -342,7 +346,8 @@ img:nth-child(7) {
     display: flex;
     justify-content: center;
     margin-top: 6%;
-    
+    text-decoration: none;
+    color: #000000;
 }
 
 .footerConteudo {
@@ -350,22 +355,24 @@ img:nth-child(7) {
     display: flex; 
     justify-content: space-evenly;
     align-items: center;
+    color: #000000;
 }
 
 .logoFooter {
     display:flex;
     flex-direction: column;
     gap: 0;
+    
     padding-left: 0;
 }
 
 .imgLogoFooter {
-    margin-bottom: 16%;
+    margin-bottom: 19%;
 }
 
 .txtLogoFooter {
   position: absolute;
-    left: 13%;
+    left: 11%;
     margin-bottom: 20%;
 }
 
@@ -388,6 +395,7 @@ hr {
     gap: 0;
     margin-bottom: 30%;
     padding-left: 0;
+    text-decoration: none;
     
 }
 
@@ -401,6 +409,7 @@ hr {
     gap: 0;
     margin-bottom: 45%;
     padding-left: 0;
+    
 }
 
 .footer li {
@@ -408,7 +417,15 @@ hr {
     display: flex;
     font-size: 14px;
     margin-top: 6%; 
+    text-decoration: none;
+   
 } 
+
+.footer a {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+}
 .footer li:hover {
     cursor: pointer;
     color: #1B1E2B;

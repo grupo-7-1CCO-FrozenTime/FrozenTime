@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Financeira</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="calc.css">
@@ -23,7 +22,7 @@
                     <li><a href="index.html#beneficios">Solução</a></li>
                     <li><img src="img/linha.png"></li>
 
-                    <li><a href="calc.html">Simulação</a></li>
+                    <li><a href="calculadora.html">Simulação</a></li>
                     <li><img src="img/linha.png"></li>
 
                     <li><a href="index.html#sobreNos">Sobre</a></li>
@@ -47,7 +46,7 @@
         <div class="container">
             <div class="calc">
                 <div class="titulo">
-                    <img src="img/calc.png" alt="imagem calculadora">
+                    <img src="img/calculadoraSimulador.png" alt="imagem calculadora">
 
                     <h2>SIMULE SEUS <br> LUCROS CONOSCO!</h2>
                 </div>
@@ -55,25 +54,26 @@
                     <span>Insira:</span>
                     <input id="ipt_areaLote" type="number" placeholder="Área do lote:"> <br><br>
                     <span>Agora informe:</span>
-                    <input id="ipt_informe" type="number" placeholder="Lucro total:"> <br><br>
+                    <input id="ipt_informe" type="number" placeholder="Lucro total da empresa:"> <br><br>
 
                     <button onclick="simular()">Calcular</button>
                 </div>
             </div>
             <!-- Fim da Calculadora -->
             <!-- Começo das Mensagens -->
-            <div class="conjMsgs">
-                <div class="msg1">
-                    <div class="perdas">
-                        <span>Com base nas pesquisas feitas, <br> você já perdeu cerca de <br> <b>R$xxx</b></span>
+            <div class="todasMensagens">
+                
+                <div class="mensagem">
+                    <div id="msg1">
+                        <p class="pCalculadora">Com um lote de área <b  class="dados">XXX m²</b>, seus produtos precisam de apenas <b class="dados">XXX</b> sensores por lote! </p>
                     </div>
+                    <div id="msg1Dados"></div>
                 </div>
-                <div class="msg2">
-
-                    <div class="lucros">
-                        <span>Com os nossos sensores, você <br> consegue aumentar seus lucros em <b>R$xxx%</b>
-                        Assim, aumentando a eficácia <br> dos seus  produtos em transporte.</span>
+                <div class="mensagem">
+                    <div id="msg2">
+                        <p class="pCalculadora">Com base em pesquisas feitas, seu lucro de <b class="dados">R$XXX</b> reais, é equivalente a  uma perda de <b class="dados">R$XXX</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$XXX</b> reais!</p>
                     </div>
+                    <div id="msg2Dados"></div>
                 </div>
             </div>
 
@@ -142,3 +142,31 @@
 </body>
 
 </html>
+
+<script>
+    
+    function simular() {
+        var area = Number(ipt_areaLote.value);
+        var qtdSensor = area * 2;
+        var lucro = Number(ipt_informe.value);
+        var perda = lucro * 0.43;
+        var margem = perda * 0.15;
+        var erro = false;
+
+        
+        if (area <= 0 || lucro <= 0) {
+            alert("Número inválido, preencha novamente")
+            area = ""; lucro = "";
+            erro = true;
+        }
+        else if (erro == false) {
+            msg1.style.display = 'none';
+            msg2.style.display = 'none';
+    
+            msg1Dados.innerHTML = `Com um lote de área <b class="dados">${area} m²</b>, seus produtos precisam de apenas <b class="dados">${qtdSensor}</b> sensores por lote! ` 
+            
+            msg2Dados.innerHTML = `Com base em pesquisas feitas, seu lucro de <b class="dados">R$${lucro}</b> reais, é equivalente a  uma perda de <b class="dados">R$${perda.toFixed(2)}</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$${margem.toFixed(2)}</b> reais!`
+        }
+    }
+        
+</script>
