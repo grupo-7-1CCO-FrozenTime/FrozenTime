@@ -17,23 +17,22 @@ main h1 {
 
 .accordion {
     background-color: #D9D9D9;
-    color: #000;    
+    color: #000;
     cursor: pointer;
     padding: 18px;
     width: 90%;
-    height: 5%;
+    height: 6%;
     text-align: left;
     border: #288396 1px solid;
     border-radius: 5px;
     outline: none;
     transition: 0.4s;
-    margin-top: 4%;
-  }
+    margin-top: 3%;
+}
 
-  .text{
+.text {
     display: flex;
     flex-direction: row;
-    /* gap: 10%; */
     margin-left: 3%;
     font-size: 25px;
 }
@@ -41,7 +40,6 @@ main h1 {
 .text p {
     margin-top: 0;
     gap: 0;
-
 }
 
 .numero {
@@ -57,7 +55,6 @@ main h1 {
 .alertas {
     margin-left: 28%;
     position: absolute;
-
 }
 
 .text li {
@@ -65,34 +62,29 @@ main h1 {
     list-style-type: disc;
     margin-left: 45%;
     position: absolute;
-
 }
 
-.panel {
+.info {
     display: flex;
     flex-direction: column;
     background-color: #D9D9D9;
-    color: #000;    
+    color: #000;
     cursor: pointer;
     width: 90%;
     height: 13%;
-    /* border: #288396 1px solid; */
     border-radius: 5px;
     outline: none;
     transition: 0.4s;
-    margin-left: 2%;
-} 
+}
 
-.panel li {
-    /* margin-top: 1%; */
+.info li {
     font-size: 20px;
     margin-left: 5%;
-    /* margin-bottom: 1%; */
     padding-top: 2%;
 
 }
 
-main button {
+.info button {
     background-color: #288396;
     border: #000 1px solid;
     border-radius: 5px;
@@ -103,22 +95,21 @@ main button {
     margin-left: 2%;
 }
 
-.active, .accordion:hover {
+.seta,
+.accordion:hover {
     background-color: #ccc;
-  }
-
-.accordion:after {
-  content: '\2304'; 
-  font-size: 40px;
-  color: #000;
-  float: right;
-  position: relative;
-  top: -80px;
-
 }
 
-.active:after {
-  content: "\2303"; 
-  top: -53px;
+.accordion:after {
+    content: '\2304';
+    font-size: 40px;
+    color: #000;
+    float: right;
+    position: relative;
+    top: -80px;
+}
 
+.seta:after {
+    content: "\2303";
+    top: -53px;
 }

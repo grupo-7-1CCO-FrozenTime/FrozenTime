@@ -11,7 +11,9 @@
     </head>
 
     <body style="margin: 0; display: flex;">
-        <div style="background-color: #72AAB5;width: 20%;height: 100vh;display: flex; justify-content: center; position:fixed;">
+        <!-- Início do Menu lateral -->
+        <div
+            style="background-color: #72AAB5;width: 20%;height: 100vh;display: flex; justify-content: center; position:fixed;">
             <div style="margin-top: 18px;">
                 <div style="display:flex;justify-content: center;">
                     <img style="width: 80%;" src="icon.svg" />
@@ -85,12 +87,17 @@
                 </div>
             </div>
         </div>
+        <!-- Fim do Menu lateral -->
 
+        <!-- Início da Tela de Produtos -->
         <main>
+            <!-- Título -->
             <div class="titulo">
                 <h1>Produtos</h1>
             </div>
+            <!-- Início das informações sobre os produtos -->
 
+            <!-- Informações que aparecem antes de clicar -->
             <button class="accordion">
                 <div class="text">
                     <p>Adriblastina</p>
@@ -99,7 +106,9 @@
                     <li>em transporte</li>
                 </div>
             </button>
-            <div class="panel" style="display: none;">
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <div class="info" style="display: none;">
                 <li>Variação aceitável: Entre 15ºC e 30ºC</li>
                 <li>Tipo: Injetável</li>
                 <li>Quantidade de rotas: 14
@@ -115,7 +124,7 @@
                     <li>em transporte</li>
                 </div>
             </button>
-            <div class="panel" style="display: none;">
+            <div class="info" style="display: none;">
                 <li>Variação aceitável: Entre 15ºC e 30ºC</li>
                 <li>Tipo: Injetável</li>
                 <li>Quantidade de rotas: 14
@@ -131,7 +140,7 @@
                     <li>em transporte</li>
                 </div>
             </button>
-            <div class="panel" style="display: none;">
+            <div class="info" style="display: none;">
                 <li>Variação aceitável: Entre 2ºC e 8ºC</li>
                 <li>Tipo: Injetável</li>
                 <li>Quantidade de rotas: 14
@@ -147,7 +156,7 @@
                     <li>em transporte</li>
                 </div>
             </button>
-            <div class="panel" style="display: none;">
+            <div class="info" style="display: none;">
                 <li>Variação aceitável: Entre 2ºC e 8ºC</li>
                 <li>Tipo: Injetável</li>
                 <li>Quantidade de rotas: 14
@@ -163,34 +172,46 @@
                     <li>em transporte</li>
                 </div>
             </button>
-            <div class="panel" style="display: none;">
+            <div class="info" style="display: none;">
                 <li>Variação aceitável: Entre 15ºC e 30ºC</li>
                 <li>Tipo: Injetável</li>
                 <li>Quantidade de rotas: 14
                     <a href=""><button>Ver rotas</button></a>
                 </li>
             </div>
+            <!-- Fim das informações sobre os produtos -->
+
         </main>
+        <!-- Fim da Tela de Produtos -->
     </body>
+
 </html>
 
 
 <script>
+    // Criação de uma variável que retorna aos elementos que possuem o nome da class 'accordion'
     var acc = document.getElementsByClassName("accordion");
+    // Declaração de uma variável i que será usada como contador no loop a seguir.
     var i;
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            /* Toggle between adding and removing the "active" class,
-            to highlight the button that controls the panel */
-            this.classList.toggle("active");
 
-            /* Toggle between hiding and showing the active panel */
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
+    // Loop que percorre todos os elementos selecionados na variável acc
+    for (i = 0; i < acc.length; i++) {
+        // Adicionando um evento que irá acontecer quando houver um 'click' no botão
+        acc[i].addEventListener("click", function () {
+            
+            // this: se refere ao botão que foi clicado.
+            // classList: contém uma lista de todas as classes CSS aplicadas ao botão
+            // toggle faz a alternância da aparência do elemento toda vez que é clicado  
+            this.classList.toggle("seta");
+
+            // Está armazenando a próxima informação que será mostrada (ou seja, quando o botão for clicado)
+            var informacao = this.nextElementSibling;
+            // Alterna entre mostrar e ocultar o painel
+            if (informacao.style.display == "block") {
+                informacao.style.display = "none";
             } else {
-                panel.style.display = "block";
+                informacao.style.display = "block";
             }
         });
     }
