@@ -63,7 +63,7 @@
 
                         <div class="divBotoes">
                             <div class="botoesLoginCadastro">
-                                <button onclick="login()" class="botaoLogin">Login</button>
+                                <button onclick="Login()" class="botaoLogin">Login</button>
                                 <a class="cadastrar" href="CadastroEmpresa.html">Cadastrar</a>
                             </div>
                         </div>
@@ -142,11 +142,15 @@
 
 </html>
 <script>
-    function login() {
-        var valida = ipt_senha.value;
+    var senhaCheck  = 0;
+    var emailCheck = ''
+    function Login() {
+        emailCheck = email.value;
+        senhaCheck = senha.value;
+        var valida = senha.value;
         var length = valida.length <= 5;
 
-        if (ipt_email.value == "") {
+        if (email.value == "") {
             alert("Favor informar o e-mail");
         }
 
@@ -154,12 +158,20 @@
         //   alert("Favor por uma senha válida de no mínimo 5 caractéres")
         // }
 
-        if (ipt_senha.value == "" && length) {
-            alert("Favor por uma senha");
-        }
+        //Descomentar após sprint
+        // if (senha.value == "" && length) {
+        //     alert("Favor por uma senha");
+        // }
 
-        if (ipt_senha.value != "" && length) {
-            alert("Favor por uma senha válida de no mínimo 5 caractéres");
+        // if (senha.value != "" && length) {
+        //     alert("Favor por uma senha válida de no mínimo 5 caractéres");
+        // }
+
+        if(senhaCheck == 12345 && emailCheck == 'Brandao'){
+            window.location.href = "../Dashboard/index.html";
+        }
+        else{
+            alert('Login e/ou Senha inválidos');
         }
     }
 </script>
