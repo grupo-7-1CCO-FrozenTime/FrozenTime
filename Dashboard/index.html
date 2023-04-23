@@ -10,7 +10,7 @@
 </head>
 
 <body style="margin: 0; display: flex;">
-  <div style="background-color: #72AAB5;width: 20%;height: 300vh;display: flex; justify-content: center;">
+  <div style="background-color: #72AAB5;width: 20%;height: 300vh;display: flex; justify-content: center; position: fixed;">
     <div style="margin-top: 18px;">
       <div style="display:flex;justify-content: center;">
         <img style="width: 80%;" src="icon.svg" />
@@ -25,7 +25,7 @@
               <img style="width: 40%;margin-right: 10px;" src="iconePerfilDashboard.svg" />
             </div>
             <div style="margin-top: 3%;">
-              Bem-vindo, (nomeEmpresa)
+              Bem-vindo(a), (nomeEmpresa)
             </div>
             <div style="margin-top: 1%;display: flex;justify-content:center;text-decoration: underline;">
               Sair
@@ -53,7 +53,7 @@
         </a>
       </div>
       <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-        <a href="" style="text-decoration: none; color: white;">
+        <a href="produtos.html" style="text-decoration: none; color: white;">
           <div style="display:flex; align-items: center; justify-content: center;">
             <img style="width: 25%;margin-right: 10px;" src="iconesProdutos.svg" />
             <p class="txtHeader">Produtos</p>
@@ -78,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div style="width: 80%;">
+  <div style="width: 80%; margin-left: 20%;" >
     <div style="display:flex; justify-content: space-evenly; margin-left: 30px;margin-top: 40px;">
       <div style="background-color: #6DACB5; width: 280px;
             height: 214px; border-radius: 10px;">aaaaa</div>
@@ -96,7 +96,57 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-      const ctx = document.getElementById('myChart');
+      
+      
+    </script>
+
+    <div style="justify-content: center; display: flex;margin-top: 78px;">
+      <div style="width: 80%;height: 50vh; background-color: #4E7A83;border-radius: 10px;">
+        <h3 style="margin-left: 15px;color:white;">Produtos em Transportes:</h3>
+        <div style="display:flex;justify-content: space-around;">
+          <div style="width: 80%;background-color:#F5F1E6;margin-left: 10px;height: 35vh;border-radius: 10px;">
+            <h4 style="margin-left: 40px;margin-top: 15px; margin-bottom: 0;" id="nomeRemedio"><h4>
+            <hr style="width:612.03px; border: 1px solid black;">
+            <!-- Conteudo cards -->
+            <div style="display:flex;justify-content: space-around;">
+              <img id="imgRemedio" style="width: 20%;" ></img>
+            <div>
+                <h4>N° do Lote: <span id="numLoteRemedio"></span></h4>
+                <div
+                  style="margin-bottom:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
+                  <p id="tempMin"></p>
+                </div>
+                <div
+                  style="margin-top:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
+                  <p id="tempMax"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="align-self: center; cursor: pointer;">
+            <img onclick="MudarProduto()"  src="arrow_right.svg">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+
+const ctx = document.getElementById('myChart');
+
+      var maior = 0;
+      var menor = 0;
+      var maiorDois = 0;
+      var menorDois = 0;
+      var maiorTres = 0;
+      var menorTres = 0;
 
       var labels = new Array();
       var horario = new Array(
@@ -220,11 +270,19 @@
             data.push(Math.floor(Math.random() * 9));
             chart.update();
             i++;
-            var maior = Math.max.apply(null, data);
-            var menor = Math.min.apply(null, data);
-            console.log(maior);
-            tempMin.innerHTML = `°C min atingida -  ${menor} °C`
-            tempMax.innerHTML = `°C max atingida -  ${maior} °C`
+            maior = Math.max.apply(null, data);
+            menor = Math.min.apply(null, data);
+            maiorDois = Math.max.apply(null, data2);
+            menorDois = Math.min.apply(null, data2);
+            maiorTres = Math.max.apply(null, data3);
+            menorTres = Math.min.apply(null, data3);
+
+            jsonProdutos[0].valorMaior = maior;
+            jsonProdutos[0].valorMenor = menor;
+            jsonProdutos[1].valorMaior = maiorDois;
+            jsonProdutos[1].valorMenor = menorDois;
+            jsonProdutos[2].valorMaior = maiorTres;
+            jsonProdutos[2].valorMenor = menorTres;
       }
     else{
       i = 0;
@@ -271,41 +329,58 @@
       });
       chart.update();
     }}, 1200);
-      
-    </script>
+    
+  var contadorProduto = 0;
 
-    <div style="justify-content: center; display: flex;margin-top: 78px;">
-      <div style="width: 80%;height: 50vh; background-color: #4E7A83;border-radius: 10px;">
-        <h3 style="margin-left: 15px;color:white;">Produtos em Transportes:</h3>
-        <div style="display:flex;justify-content: space-around;">
-          <div style="width: 80%;background-color:#F5F1E6;margin-left: 10px;height: 35vh;border-radius: 10px;">
-            <h4 style="margin-left: 40px;margin-top: 15px; margin-bottom: 0;">CEFALEXINA &reg;</h4>
-            <hr style="width:612.03px; border: 1px solid black;">
-            <!-- Conteudo cards -->
-            <div style="display:flex;justify-content: space-around;">
-              <img src="cefalexina.png" />
-              <div>
-                <h4>N° do Lote: XXXX</h4>
-                <div
-                  style="margin-bottom:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
-                  <p id="tempMin"></p>
-                </div>
-                <div
-                  style="margin-top:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
-                  <p id="tempMax"></p>
-                </div>
-              </div>
-            </div>
-          </div>
+  var jsonProdutos = new Array({
+    nome: '',
+    urlImg: '',
+    numLote: 0,
+    valorMaior: 0,
+    valorMenor: 0
+  });
 
-          <div style="align-self: center;">
-            <img src="arrow_right.svg">
-          </div>
+  jsonProdutos = [{
+    nome: 'CEFALEXINA',
+    urlImg: 'cefalexina.png',
+    numLote: 1256,
+    valorMaior: maior,
+    valorMenor: menor
+    },
+    {
+      nome: 'DRAMIN',
+      urlImg:  'dramin.png',
+      numLote: 509,
+      valorMaior: maiorDois,
+      valorMenor: menorDois
+  },
+  {
+    nome: 'Dipirona - Monohidratada',
+      urlImg:  'dipirona.png',
+      numLote: 2350,
+      valorMaior: maiorTres,
+      valorMenor: menorTres
+  }];
 
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
 
-</html>
+    nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
+    imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
+    numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
+    tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
+    tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
+
+  function MudarProduto(){
+    if(contadorProduto < jsonProdutos.length){
+      nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
+      imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
+      numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
+      tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
+      tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
+      contadorProduto++;
+    }
+    else{
+      contadorProduto = 0;
+    }
+  }
+ 
+</script>

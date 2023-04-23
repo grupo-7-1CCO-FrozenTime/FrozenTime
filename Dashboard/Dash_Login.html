@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="Dash_Login.css">
+</head>
+
+<body style="margin: 0; display: flex;">
+  <div
+    style="background-color: #72AAB5;width: 20%;height: 300vh;display: flex; justify-content: center; position: fixed;">
+    <div style="margin-top: 18px;">
+      <div style="display:flex;justify-content: center;">
+        <img style="width: 80%;" src="icon.svg" />
+      </div>
+      <div style="display:flex;justify-content: center;">
+        <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+      </div>
+      <div style="display: flex; align-self: center; justify-content: center;margin-top: 30px;">
+        <a href="" style="text-decoration: none; color: white;">
+          <div>
+            <div class="container" style="display:flex; align-items: center; justify-content: center;">
+              <img style="width: 40%;margin-right: 10px;" src="iconePerfilDashboard.svg" />
+            </div>
+            <div style="margin-top: 3%;">
+              Bem-vindo(a), (nomeEmpresa)
+            </div>
+            <div style="margin-top: 1%;display: flex;justify-content:center;text-decoration: underline;">
+              Sair
+            </div>
+            <div>
+              <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+        <a href="index.html" style="text-decoration: none; color: white;">
+          <div style="display:flex; align-items: center; justify-content: center;">
+            <img style="width: 20%;margin-right: 10px;" src="dashboard.svg" />
+            <p class="txtHeader">Dashboard</p>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+        <a href="" style="text-decoration: none; color: white;">
+          <div style="display:flex; align-items: center; justify-content: center;">
+            <img style="width: 25%;margin-right: 10px;" src="iconeAlertas.svg" />
+            <p class="txtHeader">Alertas</p>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+        <a href="produtos.html" style="text-decoration: none; color: white;">
+          <div style="display:flex; align-items: center; justify-content: center;">
+            <img style="width: 25%;margin-right: 10px;" src="iconesProdutos.svg" />
+            <p class="txtHeader">Produtos</p>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+        <a href="" style="text-decoration: none; color: white;">
+          <div style="display:flex; align-items: center; justify-content: center;">
+            <img style="width: 25%;margin-right: 10px;" src="iconeSensor.svg" />
+            <p class="txtHeader">Sensor</p>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+        <a href="" style="text-decoration: none; color: white;">
+          <div style="display:flex; align-items: center; justify-content: center;">
+            <img style="width: 25%;margin-right: 10px;" src="iconeRotas.svg" />
+            <p class="txtHeader">Rotas</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="corpo">
+
+    <div class="campos">
+      <div class="titulo">
+        <h1>Dados do Cadastro</h1>
+      </div>
+
+      <div class="dados">
+        <div class="endereco">
+          <h3 class="meio">Endereço</h3>
+          <div class="contexto">
+            <span class="atributo">CEP:</span> <br>
+            <input id="ipt_cep" type="text" placeholder="06696-000"> <br>
+            <hr size="1"> <br> <br>
+
+            <span class="atributo">Cidade:</span> <br>
+            <input id="ipt_cidade" type="text" placeholder="Itapevi - SP"> <br>
+            <hr size="1"> <br> <br>
+
+            <span class="atributo">Bairro:</span> <br>
+            <input id="ipt_bairro" type="text" placeholder="Ingahi"> <br>
+            <hr size="1"> <br> <br>
+
+            <span class="atributo">Rua:</span> <br>
+            <input id="ipt_rua" type="text" placeholder="Rodovia Presidente Castelo Branco"> <br>
+            <hr size="1"> <br> <br>
+
+            <span class="atributo">Número:</span> <br>
+            <input id="ipt_numero" type="text" placeholder="32.501 - KM 32,5"> <br>
+            <hr size="1"> <br> <br>
+
+            <span class="atributo">Complemento:</span> <br>
+            <input id="ipt_complemento" type="text" placeholder="Edifício de Manufatura - Entrada B"> <br>
+            <hr size="1"> <br> <br>
+          </div>
+        </div>
+
+        <div class="outros">
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">Nome da Empresa:</span> <br>
+              <input id="ipt_nomeEmpresa" type="text" placeholder="06696-000"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">E-mail da Empresa:</span> <br>
+              <input id="ipt_email" type="text" placeholder="empresa@gmail.com"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">CNPJ:</span> <br>
+              <input id="ipt_cnpj" type="text" placeholder="12.345.678/0000-11"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">WhatsApp:</span> <br>
+              <input id="ipt_whats" type="text" placeholder="98765-4321"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">Telefone:</span> <br>
+              <input id="ipt_telefone" type="text" placeholder="(11) 4567-1238"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+
+          <div class="botao">
+            <button onclick="alterarDados()">Alterar Dados</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="bolinhas">
+      <img src="Bolinhas.png" alt="">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+</script>
