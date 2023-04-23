@@ -41,12 +41,11 @@
 
     .calc {
         /* border: 1px black solid; */
-        padding: 20px 5px;
+        padding: 3% 1%;
         border-radius: 50px;
         width: 35%;
         height: 40%;
         background-color:  #d9d9d9c9;
-        ;
         margin-left: 5%;
         box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
     }
