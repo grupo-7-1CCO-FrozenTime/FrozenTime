@@ -10,7 +10,9 @@
 
 
 /* Começo do css da página inicial*/
-
+*{
+    scroll-behavior: smooth;
+}
 body{
     overflow-x: hidden;
 }
