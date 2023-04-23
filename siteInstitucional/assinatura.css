@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.containerAssinatura {
+    box-sizing: border-box;
+    margin: 3% 10% 7% ;
+}
+
+/* Começo .tituloListaAssinatura */
+
+.tituloListaAssinatura{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+.tituloListaAssinatura h1{
+    font-size: 40px;
+}
+
+.tituloListaAssinatura table {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;  
+    
+}
+
+.tituloListaAssinatura td {
+    border-bottom: none;
+    text-align: left;
+    align-items: baseline;
+}
+
+.tituloListaAssinatura li {
+    text-align: left;
+}
+
+.tituloListaAssinatura img {
+    width: 6%;
+    height: 6%;
+}
+
+/* Fim .tituloListaAssinatura */
+
+.nomePlanos {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.caixaPlanos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 80px;
+    background-color: #288396;
+}
+
+.caixaPlanos p{
+    color: #FFF;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 17px;
+   
+}
+
+.descricaoPlanos {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabelaPlanos {
+    margin-top: 3%;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 17px;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.tdPLanos {
+    width: 10%;
+    height: 80px;
+    background-color: #288396;
+    color: #FFF;
+    text-align: center;
+    padding: 0;
+}
+
+.tituloTable {
+    text-align: left;
+}
+
+.descricaoPlanos a{
+    color: black;
+    text-decoration: none;
+}
+
+.btnAssinatura{
+   margin-top: 5%;
+}
+
+.btnAssine {
+    width: 13%;
+    padding: 1%;
+    background-color: #288396;
+    border: none;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.btnAssine:hover {
+    background-color: #2a5c66;
+    border: 1px solid #288396;
+    
+}
