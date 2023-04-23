@@ -7,125 +7,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body style="margin: 0; display: flex;">
-  <div style="background-color: #72AAB5;width: 20%;height: 300vh;display: flex; justify-content: center; position: fixed;">
-    <div style="margin-top: 18px;">
-      <div style="display:flex;justify-content: center;">
-        <img style="width: 80%;" src="icon.svg" />
+<body>
+  <div
+    class="header">
+    <div id="espacamentoTopo">
+      <div class="flexCenter">
+        <img style="width: 80%;" src="./assets/icon.svg" />
       </div>
-      <div style="display:flex;justify-content: center;">
-        <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+      <div class="flexCenter">
+        <hr>
       </div>
-      <div style="display: flex; align-self: center; justify-content: center;margin-top: 30px;">
-        <a href="" style="text-decoration: none; color: white;">
-          <div >
-            <div style="display:flex; align-items: center; justify-content: center;">
-              <img style="width: 40%;margin-right: 10px;" src="iconePerfilDashboard.svg" />
+      <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+        <a href="" style="color: white;">
+          <div>
+            <div class="flexCenterAlignItemsCenter">
+              <img style="width: 40%;margin-right: 10px;" src="./assets/iconePerfilDashboard.svg" />
             </div>
             <div style="margin-top: 3%;">
               Bem-vindo(a), (nomeEmpresa)
             </div>
-            <div style="margin-top: 1%;display: flex;justify-content:center;text-decoration: underline;">
+            <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
               Sair
             </div>
             <div>
-              <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+              <hr>
             </div>
           </div>
         </a>
       </div>
-      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 20px;margin-top: 30px;">
         <a href="index.html" style="text-decoration: none; color: white;">
-          <div style="display:flex; align-items: center; justify-content: center;">
-            <img style="width: 20%;margin-right: 10px;" src="dashboard.svg" />
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/dashboard.svg" />
             <p class="txtHeader">Dashboard</p>
           </div>
         </a>
       </div>
-      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 20px;margin-top: 30px;">
         <a href="" style="text-decoration: none; color: white;">
-          <div style="display:flex; align-items: center; justify-content: center;">
-            <img style="width: 25%;margin-right: 10px;" src="iconeAlertas.svg" />
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
             <p class="txtHeader">Alertas</p>
           </div>
         </a>
       </div>
-      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 20px;margin-top: 30px;">
         <a href="produtos.html" style="text-decoration: none; color: white;">
-          <div style="display:flex; align-items: center; justify-content: center;">
-            <img style="width: 25%;margin-right: 10px;" src="iconesProdutos.svg" />
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
             <p class="txtHeader">Produtos</p>
           </div>
         </a>
       </div>
-      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 20px;margin-top: 30px;">
         <a href="" style="text-decoration: none; color: white;">
-          <div style="display:flex; align-items: center; justify-content: center;">
-            <img style="width: 25%;margin-right: 10px;" src="iconeSensor.svg" />
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
             <p class="txtHeader">Sensor</p>
           </div>
         </a>
       </div>
-      <div style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 20px;margin-top: 30px;">
         <a href="" style="text-decoration: none; color: white;">
-          <div style="display:flex; align-items: center; justify-content: center;">
-            <img style="width: 25%;margin-right: 10px;" src="iconeRotas.svg" />
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeRotas.svg" />
             <p class="txtHeader">Rotas</p>
           </div>
         </a>
       </div>
     </div>
   </div>
-  <div style="width: 80%; margin-left: 20%;" >
-    <div style="display:flex; justify-content: space-evenly; margin-left: 30px;margin-top: 40px;">
-      <div style="background-color: #6DACB5; width: 280px;
-            height: 214px; border-radius: 10px;">aaaaa</div>
-      <div style="background: rgba(73, 158, 174, 0.57); width: 280px;
-            height: 214px;border-radius: 10px;">aaaaa</div>
-      <div style="background: rgba(115, 203, 220, 0.57); width: 280px;
-            height: 214px;border-radius: 10px;">aaaaa</div>
+  <div class="divConteudo">
+    <div class="espacamentoCards">
+      <div class="cards" style="background-color: #6DACB5;">
+        <div style="padding-bottom: 10%;">
+          <div>
+            <p style="font-size: 20px;">Número de Alertas:</p>
+          </div>
+          <div class="flexCenter">
+            <img src="./assets/iconWarningKPI.svg" />
+            <p style="font-size: 40px; margin: 0;color: #FF0342;">15</p>
+          </div>
+        </div>
+      </div>
+      <div class="cards" style="background: rgba(73, 158, 174, 0.57);">
+        <div style="padding-bottom: 10%;">
+          <div class="flexCenter">
+            <p style="font-size: 20px;">Produtos em Transporte:</p>
+          </div>
+          <div class="flexCenter">
+            <img src="./assets/iconProdutoKPI.svg" />
+            <p style="font-size: 40px; margin: 0;">30</p>
+          </div>
+        </div>
+      </div>
+      <div class="cards" style="background: rgba(115, 203, 220, 0.57);">
+        <div style="padding-bottom: 10%;">
+          <div>
+            <p style="font-size: 20px;">Caminhões em atividade:</p>
+          </div>
+          <div class="flexCenter">
+            <img src="./assets/iconCaminhoesKPI.svg" />
+            <p style="font-size: 40px; margin: 0; margin-left: 6%;">2</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div style="display: flex; justify-content: center;margin-top: 50px;">
+    <div class="flexCenter  " style="margin-top: 50px;">
       <div style="width: 80%;">
         <canvas id="myChart"></canvas>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Card dos Produtos-->
 
-    <script>
-      
-      
-    </script>
-
-    <div style="justify-content: center; display: flex;margin-top: 78px;">
-      <div style="width: 80%;height: 50vh; background-color: #4E7A83;border-radius: 10px;">
+    <div class="divCardsProduto">
+      <div class="divConteudoCardsProduto">
         <h3 style="margin-left: 15px;color:white;">Produtos em Transportes:</h3>
-        <div style="display:flex;justify-content: space-around;">
-          <div style="width: 80%;background-color:#F5F1E6;margin-left: 10px;height: 35vh;border-radius: 10px;">
-            <h4 style="margin-left: 40px;margin-top: 15px; margin-bottom: 0;" id="nomeRemedio"><h4>
-            <hr style="width:612.03px; border: 1px solid black;">
-            <!-- Conteudo cards -->
-            <div style="display:flex;justify-content: space-around;">
-              <img id="imgRemedio" style="width: 20%;" ></img>
-            <div>
-                <h4>N° do Lote: <span id="numLoteRemedio"></span></h4>
-                <div
-                  style="margin-bottom:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
-                  <p id="tempMin"></p>
+        <div class="flexSpaceAround">
+          <div class="backgroudInfoProdutos">
+            <h4 style="margin-left: 40px;margin-top: 15px; margin-bottom: 0;" id="nomeRemedio"></h4>
+                <hr class="hrProdutos">
+                <!-- Conteudo cards -->
+                <div class="flexSpaceAround">
+                  <img id="imgRemedio" style="width: 20%;">
+                  <div>
+                    <h4>N° do Lote: <span id="numLoteRemedio"></span></h4>
+                    <div class="backgroundTempMaxMin">
+                      <p id="tempMin"></p>
+                    </div>
+                    <div class="backgroundTempMaxMin">
+                      <p id="tempMax"></p>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  style="margin-top:10px;background: rgba(109, 172, 181, 0.71);width: 295px;border-radius: 20px;height: 35px;display: flex;align-items: center;padding-left: 15px;">
-                  <p id="tempMax"></p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div style="align-self: center; cursor: pointer;">
-            <img onclick="MudarProduto()"  src="arrow_right.svg">
+          <div class="btnPassarProduto">
+            <img onclick="MudarProduto()" src="./assets/arrow_right.svg">
           </div>
 
         </div>
@@ -139,152 +161,152 @@
 <script>
 
 
-const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('myChart');
 
-      var maior = 0;
-      var menor = 0;
-      var maiorDois = 0;
-      var menorDois = 0;
-      var maiorTres = 0;
-      var menorTres = 0;
+  var maior = 0;
+  var menor = 0;
+  var maiorDois = 0;
+  var menorDois = 0;
+  var maiorTres = 0;
+  var menorTres = 0;
 
-      var labels = new Array();
-      var horario = new Array(
-        "00:20",
-        "00:40",
-        "01:00",
-        "01:20",
-        "01:40",
-        "02:00",
-        "02:20",
-        "02:40",
-        "03:00",
-        "03:20",
-        "03:40",
-        "04:00",
-        "04:20",
-        "04:40",
-        "05:00",
-        "05:20",
-        "05:40",
-        "06:00",
-        "06:20",
-        "06:40",
-        "07:00",
-        "07:20",
-        "07:40",
-        "08:00",
-        "08:20",
-        "08:40",
-        "09:00",
-        "09:20",
-        "09:40",
-        "10:00",
-        "10:20",
-        "10:40",
-        "11:00",
-        "11:20",
-        "11:40",
-        "12:00",
-        "12:20",
-        "13:00",
-        "13:20",
-        "13:40",
-        "14:00",
-        "14:20",
-        "14:40",
-        "15:00",
-        "15:20",
-        "15:40",
-        "16:00",
-        "16:20",
-        "16:40",
-        "17:00",
-        "17:20",
-        "17:40",
-        "18:00",
-        "18:20",
-        "18:40",
-        "19:00",
-        "19:20",
-        "19:40",
-        "20:00",
-        "20:20",
-        "20:40",
-        "21:00",
-        "21:20",
-        "21:40",
-        "22:00",
-        "22:20",
-        "22:40",
-        "23:00",
-        "23:20",
-        "23:40",
-        "24:00",
-      )
-      var data = new Array();
-      var data2 = new Array();
-      var data3 = new Array();
-      var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              label: 'Cefalexina',
-              data: data,
-              borderColor: 'rgba(109, 172, 181, 0.71)',
-              backgroundColor: 'rgba(109, 172, 181, 0.71)',
-              yAxisID: 'y',
-            },
-            {
-              label: 'Dramin',
-              data: data2,
-              borderColor: 'rgba(255, 0, 49, 0.71)',
-              backgroundColor: 'rgba(255, 0, 49, 0.71)',
-              yAxisID: 'y',
-            },
-            {
-              label: 'Dipirona - Monohidratada',
-              data: data3,
-              borderColor: 'rgba(8, 201, 8, 0.71)',
-              backgroundColor: 'rgba(8, 201, 8, 0.71)',
-              yAxisID: 'y',
-            }
-          ]
+  var labels = new Array();
+  var horario = new Array(
+    "00:20",
+    "00:40",
+    "01:00",
+    "01:20",
+    "01:40",
+    "02:00",
+    "02:20",
+    "02:40",
+    "03:00",
+    "03:20",
+    "03:40",
+    "04:00",
+    "04:20",
+    "04:40",
+    "05:00",
+    "05:20",
+    "05:40",
+    "06:00",
+    "06:20",
+    "06:40",
+    "07:00",
+    "07:20",
+    "07:40",
+    "08:00",
+    "08:20",
+    "08:40",
+    "09:00",
+    "09:20",
+    "09:40",
+    "10:00",
+    "10:20",
+    "10:40",
+    "11:00",
+    "11:20",
+    "11:40",
+    "12:00",
+    "12:20",
+    "13:00",
+    "13:20",
+    "13:40",
+    "14:00",
+    "14:20",
+    "14:40",
+    "15:00",
+    "15:20",
+    "15:40",
+    "16:00",
+    "16:20",
+    "16:40",
+    "17:00",
+    "17:20",
+    "17:40",
+    "18:00",
+    "18:20",
+    "18:40",
+    "19:00",
+    "19:20",
+    "19:40",
+    "20:00",
+    "20:20",
+    "20:40",
+    "21:00",
+    "21:20",
+    "21:40",
+    "22:00",
+    "22:20",
+    "22:40",
+    "23:00",
+    "23:20",
+    "23:40",
+    "24:00",
+  )
+  var data = new Array();
+  var data2 = new Array();
+  var data3 = new Array();
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Cefalexina',
+          data: data,
+          borderColor: 'rgba(109, 172, 181, 0.71)',
+          backgroundColor: 'rgba(109, 172, 181, 0.71)',
+          yAxisID: 'y',
         },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
+        {
+          label: 'Dramin',
+          data: data2,
+          borderColor: 'rgba(255, 0, 49, 0.71)',
+          backgroundColor: 'rgba(255, 0, 49, 0.71)',
+          yAxisID: 'y',
+        },
+        {
+          label: 'Dipirona - Monohidratada',
+          data: data3,
+          borderColor: 'rgba(8, 201, 8, 0.71)',
+          backgroundColor: 'rgba(8, 201, 8, 0.71)',
+          yAxisID: 'y',
         }
-      });
-      var i = 0;
-      setInterval(() => {
-        if(i <= 72){
-          labels.push(horario[i]);
-            data3.push(Math.floor(Math.random()* 9));
-            data2.push(Math.floor(Math.random()* 9));
-            data.push(Math.floor(Math.random() * 9));
-            chart.update();
-            i++;
-            maior = Math.max.apply(null, data);
-            menor = Math.min.apply(null, data);
-            maiorDois = Math.max.apply(null, data2);
-            menorDois = Math.min.apply(null, data2);
-            maiorTres = Math.max.apply(null, data3);
-            menorTres = Math.min.apply(null, data3);
-
-            jsonProdutos[0].valorMaior = maior;
-            jsonProdutos[0].valorMenor = menor;
-            jsonProdutos[1].valorMaior = maiorDois;
-            jsonProdutos[1].valorMenor = menorDois;
-            jsonProdutos[2].valorMaior = maiorTres;
-            jsonProdutos[2].valorMenor = menorTres;
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
       }
-    else{
+    }
+  });
+  var i = 0;
+  setInterval(() => {
+    if (i <= 72) {
+      labels.push(horario[i]);
+      data3.push(Math.floor(Math.random() * 9));
+      data2.push(Math.floor(Math.random() * 9));
+      data.push(Math.floor(Math.random() * 9));
+      chart.update();
+      i++;
+      maior = Math.max.apply(null, data);
+      menor = Math.min.apply(null, data);
+      maiorDois = Math.max.apply(null, data2);
+      menorDois = Math.min.apply(null, data2);
+      maiorTres = Math.max.apply(null, data3);
+      menorTres = Math.min.apply(null, data3);
+
+      jsonProdutos[0].valorMaior = maior;
+      jsonProdutos[0].valorMenor = menor;
+      jsonProdutos[1].valorMaior = maiorDois;
+      jsonProdutos[1].valorMenor = menorDois;
+      jsonProdutos[2].valorMaior = maiorTres;
+      jsonProdutos[2].valorMenor = menorTres;
+    }
+    else {
       i = 0;
       data = new Array();
       data2 = new Array();
@@ -328,8 +350,9 @@ const ctx = document.getElementById('myChart');
         }
       });
       chart.update();
-    }}, 1200);
-    
+    }
+  }, 1200);
+
   var contadorProduto = 0;
 
   var jsonProdutos = new Array({
@@ -342,35 +365,35 @@ const ctx = document.getElementById('myChart');
 
   jsonProdutos = [{
     nome: 'CEFALEXINA',
-    urlImg: 'cefalexina.png',
+    urlImg: './assets/cefalexina.png',
     numLote: 1256,
     valorMaior: maior,
     valorMenor: menor
-    },
-    {
-      nome: 'DRAMIN',
-      urlImg:  'dramin.png',
-      numLote: 509,
-      valorMaior: maiorDois,
-      valorMenor: menorDois
+  },
+  {
+    nome: 'DRAMIN',
+    urlImg: './assets/dramin.png',
+    numLote: 509,
+    valorMaior: maiorDois,
+    valorMenor: menorDois
   },
   {
     nome: 'Dipirona - Monohidratada',
-      urlImg:  'dipirona.png',
-      numLote: 2350,
-      valorMaior: maiorTres,
-      valorMenor: menorTres
+    urlImg: './assets/dipirona.png',
+    numLote: 2350,
+    valorMaior: maiorTres,
+    valorMenor: menorTres
   }];
 
 
-    nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
-    imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
-    numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
-    tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
-    tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
+  nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
+  imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
+  numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
+  tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
+  tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
 
-  function MudarProduto(){
-    if(contadorProduto < jsonProdutos.length){
+  function MudarProduto() {
+    if (contadorProduto < jsonProdutos.length) {
       nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
       imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
       numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
@@ -378,9 +401,9 @@ const ctx = document.getElementById('myChart');
       tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
       contadorProduto++;
     }
-    else{
+    else {
       contadorProduto = 0;
     }
   }
- 
+
 </script>
