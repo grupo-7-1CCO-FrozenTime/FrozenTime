@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+main {
+    font-family: 'Inter', sans-serif;
+    padding-left: 5%;
+    margin-left: 20%;
+    width: 75%;
+}
+
+.tituloSensores h1{
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.tableSensores td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tr:hover {background-color: #D6EEEE;}
+
+a{
+    color: black;
+    font-weight: 400;
+}
+
+.btnUpgrade{
+    margin-top: 5%;
+}
+
+.btnMelhore {
+    background-color: #288396;
+    width: 17%;
+    padding: 1% 2%;
+    border-radius: 15px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+.btnMelhore a {
+    color: white;   
+}
