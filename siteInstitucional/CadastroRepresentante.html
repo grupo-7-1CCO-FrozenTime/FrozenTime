@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frozen Time</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="cadastro.css"> -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/cadastro.css"> -->
 
 
 </head>
 
-<body>
+<body style="background-color: 
+36DACB5;">
 
     <header style="background-color: #76c3cf;">
-        <nav class="cabecalho">
+        <nav class="cabecalho"> <!-- css style -->
             <a href="index.html"><img src="img/logo.png" id="logo" /></a>
 
             <div class="menu">
@@ -24,7 +25,7 @@
                     <li><a href="index.html#beneficios">Solução</a></li>
                     <li><img src="img/linha.png"></li>
 
-                    <li><a href="calculadora.html">Simulação</a></li>
+                    <li><a href="calc.html">Simulação</a></li>
                     <li><img src="img/linha.png"></li>
 
                     <li><a href="index.html#sobreNos">Sobre</a></li>
@@ -41,67 +42,63 @@
 
 
 
-    <section class="login">
+    <section class="login"> <!-- css login -->
 
-        <div class="containerCadastro">
+        <div class="container"> <!-- css login -->
 
-            <div class="cardCadastro">
+            <div class="cardLogin"> <!-- css login -->
 
-                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo">
+                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo"> <!-- css login -->
 
             </div>
 
-            <div class="formCadastro">
-                <div id="telaRepresentante">
-                    <div class="camposCadastro">
+            <div class="form"> <!-- css login -->
 
-
-                        <div class="inputsCadastro">
-                            <input type="text" class="input" placeholder="Nome completo" name="Nome" id='ipt_repre'
+                    <div class="camposCadastro"> <!-- css login -->
+                        <div class="inputsCadastro"> <!-- css login -->
+                            <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email'
                                 required />
-                            <label for="Nome" class="input_label">Nome completo</label>
-                        </div>
-    
-                        <div class="inputsCadastro">
-                            <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email' required />
                             <label for="Email" class="input_label">Email</label>
                         </div>
-    
-                        <div class="inputsCadastro">
-                            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel' required />
+
+                        <div class="inputsCadastro"> <!-- css login -->
+                            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel'
+                                required />
                             <label for="Telefone" class="input_label">Telefone</label>
                         </div>
-    
-                        <div class="inputsCadastro">
+
+                        <div class="inputsCadastro"> <!-- css login -->
                             <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
                                 required />
                             <label for="WhatsApp" class="input_label">WhatsApp</label>
                         </div>
-    
-                        <div class="inputsCadastro">
-                            <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha' required />
+
+                        <div class="inputsCadastro"> <!-- css login -->
+                            <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha'
+                                required />
                             <label for="Senha" class="input_label">Senha</label>
                         </div>
-                        <div class="inputsCadastro">
+
+                        <div class="inputsCadastro"> <!-- css login -->
                             <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
                                 id='ipt_confir' required />
                             <label for="Confirmar" class="input_label">Confirmar senha</label>
                         </div>
-    
+
                         <div class="botoesTexto">
-    
+
                             <div class="botoesLoginCadastro">
                                 <button onclick="cadastrar()" class="botaoLogin">Cadastrar</button>
                                 <a class="cadastrar" href="Login.html">Já sou membro</a>
                             </div>
+
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
-
-        </div>
 
 
         </div>
@@ -115,7 +112,7 @@
             <div>
                 <ul class="logoFooter">
                     <li>
-                        <img width="0%" src="./icon/icon.svg">
+                        <img width="0%" src="imagens/icon.svg">
                     </li>
                     <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
                 </ul>

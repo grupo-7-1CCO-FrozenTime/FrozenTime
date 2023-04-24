@@ -6,81 +6,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frozen Time</title>
-    <link rel="stylesheet" href="cadastro.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="css/cadastro.css"> -->
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Recuperar_senha.css">
 </head>
 
 <body>
-    <nav class="header">
-        <a href="index.html"><img src="img/logo.png" id="logo"></a>
+
+    <header style="background-color: #76c3cf;">
+        <nav class="cabecalho">
+            <a href="index.html"><img src="img/logo.png" id="logo"></a>
 
 
-        <div class="navBar">
-            <ul>
-                <li><a href="index.html#beneficios">Solução</a></li>
-                <li><img src="img/linha.png"></li>
+            <div class="navBar">
+                <ul>
+                    <li><a href="index.html#beneficios">Solução</a></li>
+                    <li><img src="img/linha.png"></li>
 
-                <li><a href="calculadora.html">Simulação</a></li>
-                <li><img src="img/linha.png"></li>
+                    <li><a href="calc.html">Simulação</a></li>
+                    <li><img src="img/linha.png"></li>
 
-                <li><a href="index.html#sobreNos">Sobre</a></li>
-                <li><img src="img/linha.png"></li>
+                    <li><a href="index.html#sobreNos">Sobre</a></li>
+                    <li><img src="img/linha.png"></li>
 
-                <li><a href="contato.html">Contato</a></li>
-                <li><img src="img/linha.png"></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><img src="img/linha.png"></li>
 
-                <li><a href="login.html"><img src="img/login.png"></a></li>
-            </ul>
+                    <li><a href="login.html"><img src="img/login.png"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <section class="login"> <!-- css login -->
+
+        <div class="container"> <!-- css login -->
+
+            <div class="cardLogin"> <!-- css login -->
+                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo"> <!-- css login -->
+            </div>
+
+            <div class="form">
+
+                <div class="campos">
+
+                    <div id="tela1" style="display: block;">
+                        <div class="inputs">
+                            <input type="email" class="input" placeholder="Email" name="email" id='ipt_email'
+                                required />
+                            <label for="email" class="input_label">Email</label>
+                        </div>
+
+                        <div class="botoesTexto">
+
+                            <div class="divBotoes">
+                                <div class="botoesLoginCadastro">
+                                    <button onclick="enviar()" class="botaoRecuperar">Enviar e-mail</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="CadastroEmpresa.html" class="cadastrar">Não possuo cadastro</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="tela2" style="display: none;" class="tela2">
+
+                        <div>
+                            <h1>Enviamos um e-mail para:</h1>
+
+                            <center>
+                                <p id="par_email" class="paragrafo"></p> 
+                            </center>
+
+                            Caso não tenha recebido o e-mail, clique em <a class="aa"
+                                href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Recuperar_senha.html">Enviar
+                                novamente o e-mail </a>
+
+                            <div class="botoesTexto">
+
+                                <div class="divBotoes">
+                                    <div class="botoesLoginCadastro">
+                                        <button onclick="trocar()" class="botaoRecuperar">Trocar o e-mail</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="Login.html" class="cadastrar">Efetuar Login</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
 
 
         </div>
 
-    </nav>
 
-    <div class="banner">
-        <div class="container">
-            <div class="card">
-                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagem">
-            </div>
+    </section>
 
-            <div id="div_form" class="form">
-                <div id="div_box" class="box">
-                    <input id="ipt_email" class="input" type="email" placeholder="Email">
-                    <div class="div">
-
-                        <button onclick="enviar()" class="botao">Enviar e-mail</button>
-                        <a class="a" href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Login.html">Já sou
-                            membro</a>
-                    </div>
-                </div>
-
-                <div id="div_bloco" class="bloco">
-                    <h1>Enviamos um e-mail para:</h1>
-                    <p id="par_email"></p> <br>
-                    Caso não tenha recebido o e-mail, clique em <a class="aa"
-                        href="file:///C:/Users/gleic/OneDrive/Documentos/Isa/sprint/Recuperar_senha.html">Enviar
-                        novamente o e-mail </a>
-                    <div class="div">
-                        <button onclick="trocar()" class="botao">Trocar e-mail</button>
-                        <a class="a" href="Login.html">Efetuar login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        <div >
+    <footer class="footer"> <!-- CSS style -->
+        <div class="footerConteudo"> <!-- CSS style -->
 
             <div>
-                <ul>
+                <ul class="logoFooter"> <!-- CSS style -->
                     <li>
-                        <img width="70%" src="./icon/icon.svg">
+                        <img width="0%" src="./icon/icon.svg">
                     </li>
-                    <li>&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
+                    <li style="text-align: end;">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
                 </ul>
 
             </div>
@@ -88,7 +136,7 @@
                 <hr>
             </div>
             <div>
-                <ul>
+                <ul class="paginasFooter"> <!-- CSS style -->
                     <li>
                         <h2>Navegue</h2>
                     </li>
@@ -101,7 +149,7 @@
                 <hr>
             </div>
             <div>
-                <ul>
+                <ul class="paginasFooter"> <!-- CSS style -->
                     <li>
                         <h2>Contatos</h2>
                     </li>
@@ -114,7 +162,7 @@
                 <hr>
             </div>
             <div>
-                <ul id="institucional">
+                <ul class="paginasFooterInsti"> <!-- CSS style -->
                     <li>
                         <h2>Institucional</h2>
                     </li>
@@ -123,25 +171,26 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </footer>
 
 </body>
 
 </html>
 <script>
+
     function enviar() {
-        if(ipt_email.value != ""){
-        div_box.style.display = "none";
-        div_bloco.style.display = "block";
-        par_email.innerHTML = `${ipt_email.value}`
+        if (ipt_email.value != "") {
+            tela1.style.display = "none";
+            tela2.style.display = "block";
+            par_email.innerHTML = `${ipt_email.value}`
         } else {
             alert("Favor, informar um e-mail")
         }
     }
-
     function trocar() {
-        div_box.style.display = "block";
-        div_bloco.style.display = "none";
+        tela1.style.display = "block";
+        tela2.style.display = "none";
         ipt_email.value = "";
     }
+
 </script>
