@@ -51,6 +51,7 @@ body {
 hr {
     width: 90%;
     margin: 0;
+    margin-top: -6%;
 }
 
 .contexto {
@@ -77,7 +78,6 @@ hr {
 }
 
 input {
-    margin-bottom: -6%;
     color: rgb(82, 82, 82);
     border: 0;
     background-color: #D9D9D9;
@@ -94,7 +94,7 @@ input {
 .botao {
     margin-top: 2%;
     display: flex;
-    margin-left: 23%;
+    /* margin-left: 23%; */
 }
 
 button {
