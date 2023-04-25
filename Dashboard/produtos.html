@@ -9,83 +9,79 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="produtos.css">
     </head>
-
-    <body style="margin: 0; display: flex;">
-        <!-- Início do Menu lateral -->
+    
+    <!-- Início do Menu lateral -->
+    <body>
         <div
-            style="background-color: #72AAB5;width: 20%;height: 100vh;display: flex; justify-content: center; position:fixed;">
-            <div style="margin-top: 18px;">
-                <div style="display:flex;justify-content: center;">
-                    <img style="width: 80%;" src="./assets/icon.svg" />
-                </div>
-                <div style="display:flex;justify-content: center;">
-                    <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
-                </div>
-                <div style="display: flex; align-self: center; justify-content: center;margin-top: 30px;">
-                    <a href="" style="text-decoration: none; color: white;">
-                        <div>
-                            <div style="display:flex; align-items: center; justify-content: center;">
-                                <img style="width: 40%;margin-right: 10px;" src="./assets/iconePerfilDashboard.svg" />
-                            </div>
-                            <div style="margin-top: 3%; display: flex; justify-content: center;">
-                                Bem-vindo(a), Pfizer
-                            </div>
-                            <div
-                                style="margin-top: 1%;display: flex;justify-content:center;text-decoration: underline;">
-                                Sair
-                            </div>
-                            <div>
-                                <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div
-                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-                    <a href="index.html" style="text-decoration: none; color: white;">
-                        <div style="display:flex; align-items: center; justify-content: center;">
-                            <img style="width: 20%;margin-right: 10px;" src="./assets/dashboard.svg" />
-                            <p class="txtHeader">Dashboard</p>
-                        </div>
-                    </a>
-                </div>
-                <div
-                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-                    <a href="" style="text-decoration: none; color: white;">
-                        <div style="display:flex; align-items: center; justify-content: center;">
-                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeAlertas.svg" />
-                            <p class="txtHeader">Alertas</p>
-                        </div>
-                    </a>
-                </div>
-                <div
-                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-                    <a href="produtos.html" style="text-decoration: none; color: white;">
-                        <div style="display:flex; align-items: center; justify-content: center;">
-                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconesProdutos.svg" />
-                            <p class="txtHeader">Produtos</p>
-                        </div>
-                    </a>
-                </div>
-                <div
-                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-                    <a href="" style="text-decoration: none; color: white;">
-                        <div style="display:flex; align-items: center; justify-content: center;">
-                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeSensor.svg" />
-                            <p class="txtHeader">Assinatura</p>
-                        </div>
-                    </a>
-                </div>
-                <div
-                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
-                    <a href="" style="text-decoration: none; color: white;">
-                        <div style="display:flex; align-items: center; justify-content: center;">
-                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeRotas.svg" />
-                            <p class="txtHeader">Rotas</p>
-                        </div>
-                    </a>
-                </div>
+          class="header">
+          <div id="espacamentoTopo">
+            <div class="flexCenter">
+              <a class="flexCenter" href="../siteInstitucional/index.html">
+                <img style="width: 80%;" src="./assets/icon.svg" />
+              </a>
             </div>
+            <div class="flexCenter">
+              <hr>
+            </div>
+            <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+              <a href="" style="color: white;">
+                <div>
+                  <div class="flexCenterAlignItemsCenter">
+                    <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                  </div>
+                  <div style="margin-top: 3%;">
+                    Bem-vindo(a), (nomeEmpresa)
+                  </div>
+                  <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
+                    Sair
+                  </div>
+                  <div>
+                    <hr>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 10%;">
+              <a href="index.html" style="text-decoration: none; color: white;">
+                <div class="flexCenterAlignItemsCenter">
+                  <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                  <p class="txtHeader">Dashboard</p>
+                </div>
+              </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 10%;">
+              <a href="" style="text-decoration: none; color: white;">
+                <div class="flexCenterAlignItemsCenter">
+                  <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
+                  <p class="txtHeader">Alertas</p>
+                </div>
+              </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 10%;">
+              <a href="produtos.html" style="text-decoration: none; color: white;">
+                <div class="flexCenterAlignItemsCenter">
+                  <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+                  <p class="txtHeader">Produtos</p>
+                </div>
+              </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 10%;">
+              <a href="assinaturaDash.html" style="text-decoration: none; color: white;">
+                <div class="flexCenterAlignItemsCenter">
+                  <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                  <p class="txtHeader">Assinatura</p>
+                </div>
+              </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 10%;">
+              <a href="" style="text-decoration: none; color: white;">
+                <div class="flexCenterAlignItemsCenter">
+                  <img class="widthiconHeader" src="./assets/iconeRotas.svg" />
+                  <p class="txtHeader">Rotas</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
         <!-- Fim do Menu lateral -->
 
