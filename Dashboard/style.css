@@ -14,22 +14,23 @@ p {
   font-weight: bold;
 }
 hr{
-    width:230px; 
+    width: 90%; 
     border: 1px solid rgb(255,255,255, 0.6) ;
 }
 #espacamentoTopo{
-    margin-top: 18px;
+    margin-top: 10%;
 }
 
 /*Classes do Menu*/
 .header {
     background-color: #72aab5;
     width: 20%;
-    height: 300vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     position: fixed;
   }
+  
   .txtHeader {
     font-size: 18px;
 }
@@ -59,7 +60,7 @@ hr{
 }
 .widthiconHeader{
     width: 20%;
-    margin-right: 10px;
+    margin-right: 6%;
 }
 .divConteudo{
     width: 80%; 
@@ -69,11 +70,10 @@ hr{
 .espacamentoCards{
     display:flex;
     justify-content: space-evenly; 
-    margin-left: 30px;
-    margin-top: 40px;
+    margin-top: 5%;
 }
 .cards{
-    width: 280px;
+    width: 24%;
     height: 214px; 
     border-radius: 10px; 
     display: flex; 
@@ -86,35 +86,35 @@ hr{
 .divCardsProduto{
     justify-content: center; 
     display: flex;
-    margin-top: 78px; 
-    margin-bottom: 110px;
+    margin-top: 10%; 
+    margin-bottom: 20%;
 }
 .divConteudoCardsProduto{
     width: 80%;
-    height: 50vh; 
+    height: 379px; 
     background-color: #4E7A83;
     border-radius: 10px;  
 }
 .backgroudInfoProdutos{
     width: 80%;
     background-color:#F5F1E6;
-    margin-left: 10px;
-    height: 35vh;
+    margin-left: 1%;
+    height: 250px;
     border-radius: 10px;
 }
 .hrProdutos{
-    width:612.03px;
+    width: 90%;
     border: 1px solid black;
 }
 .backgroundTempMaxMin{
     margin-bottom:10px;
     background: rgba(109, 172, 181, 0.71);
-    width: 295px;
+    width: 100%;
     border-radius: 20px;
     height: 35px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    padding-left: 5%;
 }
 .btnPassarProduto{
     align-self: center; 
