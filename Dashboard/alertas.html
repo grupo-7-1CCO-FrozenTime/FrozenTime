@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="alertas.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bananinha">
+        <!-- Início da tela de Menu -->
+        <div
+            style="background-color: #72AAB5;width: 20%;height: 100vh;display: flex; justify-content: center; position:fixed;">
+            <div style="margin-top: 18px;">
+                <div style="display:flex;justify-content: center;">
+                    <img style="width: 80%;" src="./assets/icon.svg" />
+                </div>
+                <div style="display:flex;justify-content: center;">
+                    <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+                </div>
+                <div style="display: flex; align-self: center; justify-content: center;margin-top: 30px;">
+                    <a href="" style="text-decoration: none; color: white;">
+                        <div>
+                            <div style="display:flex; align-items: center; justify-content: center;">
+                                <img style="width: 40%;margin-right: 10px;" src="./assets/iconePerfilDashboard.svg" />
+                            </div>
+                            <div style="margin-top: 3%; display: flex; justify-content: center;">
+                                Bem-vindo(a), Pfizer
+                            </div>
+                            <div
+                                style="margin-top: 1%;display: flex;justify-content:center;text-decoration: underline;">
+                                Sair
+                            </div>
+                            <div>
+                                <hr style="width:230px; border: 1px solid rgb(255,255,255, 0.6)">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+                    <a href="index.html" style="text-decoration: none; color: white;">
+                        <div style="display:flex; align-items: center; justify-content: center;">
+                            <img style="width: 20%;margin-right: 10px;" src="./assets/dashboard.svg" />
+                            <p class="txtHeader">Dashboard</p>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+                    <a href="" style="text-decoration: none; color: white;">
+                        <div style="display:flex; align-items: center; justify-content: center;">
+                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeAlertas.svg" />
+                            <p class="txtHeader">Alertas</p>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+                    <a href="produtos.html" style="text-decoration: none; color: white;">
+                        <div style="display:flex; align-items: center; justify-content: center;">
+                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconesProdutos.svg" />
+                            <p class="txtHeader">Produtos</p>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+                    <a href="" style="text-decoration: none; color: white;">
+                        <div style="display:flex; align-items: center; justify-content: center;">
+                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeSensor.svg" />
+                            <p class="txtHeader">Sensor</p>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    style="display: flex; align-self: center; justify-content: start; margin-left: 20px;margin-top: 30px;">
+                    <a href="" style="text-decoration: none; color: white;">
+                        <div style="display:flex; align-items: center; justify-content: center;">
+                            <img style="width: 25%;margin-right: 10px;" src="./assets/iconeRotas.svg" />
+                            <p class="txtHeader">Rotas</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--  Fim da tela de Menu  -->
+
+
+        <!-- começo da teala com os alertas -->
+        <div class="div_tela">
+            <!-- título -->
+            <div>
+                <h1>Alertas</h1>
+            </div>
+
+            <!-- informações dos alertas de cada medicaqmento -->
+            <div class="">
+
+                <!-- medicamento 1 -->
+                <div class="produtos">
+                    <div class="telaAlertas">
+                        <button onclick="produto1()" class="botaoProdutos" >
+                            <div>XALACOM</div>
+                            <div class="rotaSeta"> ROTA
+                                <img src="seta.png" class="imagem" id="img_seta" >
+                            </div>
+                        </button>
+
+                    </div>
+                    <div class="informacoes" style="display: none;" id="div_xalacom">
+                        <h3>DESCRIÇÃO DO ALERTA</h3>
+                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
+                        <li>Temperatura 10°C</li>
+                    </div>
+                </div>
+
+                <!-- medicamento 2 -->
+                <div class="produtos">
+                    <div class="telaAlertas">
+
+                        <button onclick="produto2()" class="botaoProdutos" >
+                            <div>PREVENAR-13</div>
+                            <div class="rotaSeta"> ROTA
+                                <img src="seta.png" class="imagem" id="img_seta" >
+                            </div>
+                        </button>
+                    </div>
+                    <div class="informacoes" style="display: none;" id="div_prevenar">
+                        <h3>DESCRIÇÃO DO ALERTA</h3>
+                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
+                        <li>Temperatura 10°C</li>
+                    </div>
+                </div>
+
+                <!-- medicamento 2 -->
+                <div class="produtos">
+                    <div class="telaAlertas">
+
+                        <button onclick="produto3()" class="botaoProdutos">
+                            <div>GENOTROPIN</div>
+                            <div class="rotaSeta"> ROTA
+                                <img src="seta.png" class="imagem" id="img_seta" >
+                            </div>
+                        </button>
+                    </div>
+                    <div class="informacoes" style="display: none;" id="div_genotropin">
+                        <h3>DESCRIÇÃO DO ALERTA</h3>
+                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
+                        <li>Temperatura 10°C</li>
+                    </div>
+                </div>
+
+                <!-- medicamento 3 -->
+                <div class="produtos">
+                    <div class="telaAlertas">
+
+                        <button onclick="produto4()" class="botaoProdutos">
+                            <div>COMINATY</div>
+                            <div class="rotaSeta"> ROTA
+                                <img src="seta.png" class="imagem" id="img_seta" >
+                            </div>
+                        </button>
+                    </div>
+                    <div class="informacoes" style="display: none;" id="div_cominaty">
+                        <h3>DESCRIÇÃO DO ALERTA</h3>
+                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
+                        <li>Temperatura 10°C</li>
+                    </div>
+                </div>
+
+                <!-- medicamento 4 -->
+                <div class="produtos">
+                    <div class="telaAlertas">
+
+                        <button onclick="produto5()" class="botaoProdutos">
+                            <div>SAYANA</div>
+                            <div class="rotaSeta"> ROTA
+                                <img src="seta.png" class="imagem" id="img_seta" >
+                            </div>
+                        </button>
+                    </div>
+                    <div class="informacoes" style="display: none;" id="div_sayana">
+                        <h3>DESCRIÇÃO DO ALERTA</h3>
+                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
+                        <li>Temperatura 10°C</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    function produto1(){
+        if(div_xalacom.style.display == "block"){
+            div_xalacom.style.display = "none"
+        } else{
+            div_xalacom.style.display = "block"
+        }
+    }
+
+    function produto2(){
+        if(div_prevenar.style.display == "block"){
+            div_prevenar.style.display = "none"
+        } else{
+            div_prevenar.style.display = "block"
+        }
+    }
+
+    function produto3(){
+        if(div_genotropin.style.display == "block"){
+            div_genotropin.style.display = "none"
+        } else{
+            div_genotropin.style.display = "block"
+        }
+    }
+
+    function produto4(){
+        if(div_cominaty.style.display == "block"){
+            div_cominaty.style.display = "none"
+        } else{
+            div_cominaty.style.display = "block"
+        }
+    }
+
+    function produto5(){
+        if(div_sayana.style.display == "block"){
+            div_sayana.style.display = "none"
+        } else{
+            div_sayana.style.display = "block"
+        }
+    }
+</script>

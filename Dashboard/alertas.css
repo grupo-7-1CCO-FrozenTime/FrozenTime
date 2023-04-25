@@ -1,0 +1,71 @@
+.produtos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20%;
+}
+
+.telaAlertas{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 1%;
+width: 70%;
+}
+
+.botaoProdutos{
+background-color: #D9D9D9;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+border-style: none;
+}
+
+.imagem{
+    height: 30px;
+    margin-left: 65%;
+}
+
+.rotaSeta{
+    display: flex;
+    align-items: center;
+}
+
+.divTela {
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.informacoes{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bananinha{
+/* display: flex;
+justify-content: space-around; */
+width: 100%;
+/* flex-direction: column; */
+}
+
+.div_tela h1{
+    margin-left: 40%;
+}
+/* 
+.produtos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
