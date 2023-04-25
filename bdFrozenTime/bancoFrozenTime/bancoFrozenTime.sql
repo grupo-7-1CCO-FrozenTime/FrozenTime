@@ -1,121 +1,123 @@
-CREATE DATABASE bancoFrozenTime;
-USE bancoFrozenTime;
-CREATE TABLE tbProduto(
-	idProduto INT PRIMARY KEY AUTO_INCREMENT,
-	nomeProduto VARCHAR(50),
-	categoriaProduto VARCHAR(50),
-	tempMaxProduto VARCHAR(50),
-	tempMinProduto VARCHAR(50),
-	fabricanteProduto VARCHAR(50),
-	descricaoProduto VARCHAR(50),
-	dtFabricacao DATETIME,
-	dtVencimento DATETIME,
-	valorProduto DECIMAL
-);
-SELECT *
-FROM tbProduto;
-CREATE TABLE tbEnderecoEmpresa(
-idEndereco INT PRIMARY KEY AUTO_INCREMENT,
-CEP CHAR(9),
-rua VARCHAR(40),
-bairro VARCHAR(30),
+CREATE DATABASE FrozenTime;
+USE FrozenTime;
+
+CREATE TABLE EnderecoEmpresa (
+idEndereco INT PRIMARY KEY,
+cep CHAR(9),
 cidade VARCHAR(30),
+bairro VARCHAR(30),
+rua VARCHAR(40),
 numero INT,
-complemento VARCHAR(10)
+complemento VARCHAR(20)
 );
 
-CREATE TABLE tbEmpresa(
-	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
-    nomeEmpresa VARCHAR(50),
-    cnpjEmpresa VARCHAR(50),
-    descricaoEmpresa VARCHAR(50),
-    telefoneEmpresa int,
-    emailEmpresa VARCHAR(50),
-    whatsappEmpresa int,
-    fkEndereco int,
-    FOREIGN KEY (fkEndereco) REFERENCES tbEnderecoEmpresa(idEndereco)
-    );
-    
-CREATE TABLE tbColaborador(
-	idColaborador INT PRIMARY KEY AUTO_INCREMENT,
-	nomeColaborador VARCHAR(50),
-	fkEmpresa INT,
-	cargoColaborador VARCHAR(50),
-	telefoneColaborador VARCHAR(20),
-	emailColaborador VARCHAR(50),
-    FOREIGN KEY (fkEmpresa) REFERENCES tbEmpresa(idEmpresa)
+CREATE TABLE Empresa (
+idEmpresa INT PRIMARY KEY,
+nomeEmpresa VARCHAR(30),
+cnpjEmpresa CHAR(14),
+descricao VARCHAR(50),
+emailEmpresa VARCHAR(50),
+telefoneEmpresa CHAR(12),
+fkEndereco INT,
+FOREIGN KEY(fkEndereco) REFERENCES EnderecoEmpresa(idEndereco)
 );
-SELECT *
-FROM tbColaborador;
-CREATE TABLE tbDistribuidoras(
-	idDistribuidora INT PRIMARY KEY AUTO_INCREMENT,
-	nomeDistribuidora VARCHAR(50),
-	cnpjDistribuidora CHAR(14),
-	emailDistribuidora VARCHAR(50)
-);
-CREATE TABLE tbMotorista(
-	idMotorista INT PRIMARY KEY AUTO_INCREMENT,
-	nomeMotorista VARCHAR(50),
-	CNH CHAR(10),
-	fkDistribuidora INT,
-    FOREIGN KEY (fkDistribuidora) REFERENCES tbDistribuidoras(idDistribuidora)
-);
-SELECT *
-FROM tbMotorista;
-CREATE TABLE tbFornecedores(
-	idFornecedor INT PRIMARY KEY AUTO_INCREMENT,
-	nomeFornecedor VARCHAR(50),
-	cnpjFornecedor CHAR(14),
-	emailFornecedor VARCHAR(50)
-);
-SELECT *
-FROM tbMotorista;
 
-SELECT *
-FROM tbDistribuidoras;
-CREATE TABLE tbAutomoveis(
-	idTransporte INT PRIMARY KEY AUTO_INCREMENT,
-	modelo VARCHAR(25),
-	placa CHAR(7),
-	cor VARCHAR(25)
+CREATE TABLE Representante (
+idRepresentante INT PRIMARY KEY,
+nomeRepresentante VARCHAR(50),
+emailRepresentante VARCHAR(50),
+whatsappRepresentante CHAR(13),
+fkEmpresa INT,
+FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
-SELECT *
-FROM tbAutomoveis;
-CREATE TABLE tbRotas(
-	idRotas INT PRIMARY KEY AUTO_INCREMENT,
-	tempMin VARCHAR(50),
-	tempMax VARCHAR(50),
-	localPartida VARCHAR(50),
-	localDestino VARCHAR(50),
-	dtSaida DATETIME,
-	dtChegada DATETIME,
-	distancia INT
+
+CREATE TABLE Login (
+idLogin INT PRIMARY KEY,
+emailCliente VARCHAR(50),
+senhaCliente VARCHAR(50),
+fkRepresentante INT, 
+FOREIGN KEY(fkRepresentante) REFERENCES Representante(idRepresentante),
+fkEmpresa INT, 
+FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
-SELECT *
-FROM tbRotas;
-CREATE TABLE tbLogin(
-	idLogin INT PRIMARY KEY AUTO_INCREMENT,
-	emailCliente VARCHAR(50),
-	senhaCliente VARCHAR(20)
+
+CREATE TABLE Fornecedores (
+idFornecedor INT PRIMARY KEY,
+nomeFornecedor VARCHAR(50),
+cnpjFornecedor CHAR(14),
+emailFornecedor VARCHAR(50),
+fkEmpresa INT,
+FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
-SELECT *
-FROM tbLogin;
-CREATE TABLE tbSensor(
-	idSensor INT PRIMARY KEY AUTO_INCREMENT,
-	fkTransporte INT,
-	statusSensor VARCHAR(20),
-    FOREIGN KEY (fkTransporte) REFERENCES tbAutomoveis(idTransporte)
+
+CREATE TABLE Distribuidoras (
+idDistribuidora INT PRIMARY KEY,
+nomeDistribuidora VARCHAR(50),
+cnpjDistribuidora CHAR(14),
+emailDistribuidora VARCHAR(50),
+fkFornecedor INT,
+FOREIGN KEY(fkFornecedor) REFERENCES Fornecedores(idFornecedor)
 );
-SELECT *
-FROM tbSensor;
-CREATE TABLE tbLotes(
-	idLote INT PRIMARY KEY AUTO_INCREMENT,
-	qtdeProdutos INT,
-	dimensao DECIMAL,
-	fkTransporte INT,
-	fkProduto INT,
-    FOREIGN KEY (fkTransporte) REFERENCES tbAutomoveis(idTransporte),
-    FOREIGN KEY (fkProduto) REFERENCES tbProduto(idProduto)
+
+CREATE TABLE Rotas (
+idRota INT PRIMARY KEY,
+tempMin DECIMAL(4,2),
+tempMax DECIMAL(4,2),
+localPartida VARCHAR(50),
+localDestino VARCHAR(50),
+dtSaida DATETIME,
+dtChegada DATETIME,
+distancia DECIMAL(5,2)
 );
-SELECT *
-FROM tbLotes;
+
+CREATE TABLE Automoveis (
+idTransporte INT PRIMARY KEY,
+modelo VARCHAR(25),
+placa CHAR(7),
+cor VARCHAR(25),
+fkRota INT,
+FOREIGN KEY(fkRota) REFERENCES Rotas(idRota),
+fkDistribuidora INT,
+FOREIGN KEY(fkDistribuidora) REFERENCES Distribuidoras(idDistribuidora)
+);
+
+CREATE TABLE Kit (
+idKit INT PRIMARY KEY
+);
+
+CREATE TABLE Sensor (
+fkKit INT,
+idSensor INT,
+PRIMARY KEY(fkKit, idSensor),
+statusSensor VARCHAR(20),
+fkTransporte INT,
+FOREIGN KEY(fkTransporte) REFERENCES Automoveis(idTransporte)
+);
+
+CREATE TABLE Produto (
+idProduto INT PRIMARY KEY,
+nomeProduto VARCHAR(50),
+categoriaProduto VARCHAR(50),
+tempMinProduto DECIMAL(4,2),
+tempMaxProduto DECIMAL(4,2),
+fabricanteProduto CHAR(50),
+descricaoProduto VARCHAR(50),
+dtFabricacao DATE,
+dtVencimento DATE,
+valorProduto DECIMAL(5,2),
+fkFornecedor INT,
+FOREIGN KEY(fkFornecedor) REFERENCES Fornecedores(idFornecedor)
+);
+
+CREATE TABLE Lotes (
+idLotes INT PRIMARY KEY,
+qtdProdutos INT,
+dimensao DECIMAL(4,2),
+fkTransporte INT,
+FOREIGN KEY(fkTransporte) REFERENCES Automoveis(idTransporte),
+fkProduto INT,
+FOREIGN KEY(fkProduto) REFERENCES Produto(idProduto)
+);
+
+
+
