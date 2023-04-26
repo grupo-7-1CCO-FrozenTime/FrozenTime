@@ -105,6 +105,7 @@ button {
     background-color: #288396;
     color: white;
     font-size: 21px;   
+    cursor: pointer;
 }
 
 .bolinhas {

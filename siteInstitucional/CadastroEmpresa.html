@@ -166,13 +166,12 @@
 </html>
 <script>
     function proximo() {
-        var validacoes = ipt_nome.value == "" || ipt_cnpj.value == "" || ipt_endereco.value == "" || ipt_endereco.value == "" || ipt_cidade.value == "" || ipt_bairro.value == "" || ipt_rua.value == "" || ipt_numero.value == "" || ipt_complemento.value == "";
+        var validacoes = ipt_nome.value == "" || ipt_cnpj.value == "" || ipt_endereco.value == "" || ipt_endereco.value == "" || ipt_cidade.value == "" || ipt_numero.value == "" || ipt_complemento.value == "";
 
         if (validacoes) {
             alert("Por favor, preencher todos os campos")
         } else {
-            telaEmpresa.style.display = "none"
-            telaRepresentante.style.display = "block"
+            window.location.href="./CadastroRepresentante.html"
         }
 
     }
