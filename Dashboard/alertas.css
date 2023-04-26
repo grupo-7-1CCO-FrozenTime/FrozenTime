@@ -31,6 +31,7 @@ border-style: none;
 .rotaSeta{
     display: flex;
     align-items: center;
+    font-size: medium;
 }
 
 .divTela {
@@ -44,7 +45,7 @@ flex-direction: column;
     width: 60%;
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.3);;
+    background-color: rgba(0, 0, 0, 0.3);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     flex-direction: column;
