@@ -1,19 +1,10 @@
 /* Começo do css da página de contato */
-
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 /* Início do header */
 header{
     top: 0;
     padding: 1px 0;
-}
-.body_index{
-    background:
-    linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
-    url('img/backgroundNovo.png');
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size: cover;  
-    height: 100%;
-    margin: 0;
 }
 
 
@@ -37,12 +28,12 @@ ul {
     gap: 32px;
 }
 
-a{
+.menu a{
     text-decoration: none;
     color: #ffffff;
     font-family: 'Encode Sans Condensed', sans-serif;
     font-size: 15pt;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 ul img{
@@ -274,6 +265,7 @@ hr {
     color: #000000;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
+    text-decoration: none;
 }
 .footer li:hover {
     cursor: pointer;
