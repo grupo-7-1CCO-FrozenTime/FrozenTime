@@ -1,25 +1,15 @@
 CREATE DATABASE FrozenTime;
 USE FrozenTime;
 
-CREATE TABLE EnderecoEmpresa (
-idEndereco INT PRIMARY KEY,
-cep CHAR(9),
-cidade VARCHAR(30),
-bairro VARCHAR(30),
-rua VARCHAR(40),
-numero INT,
-complemento VARCHAR(20)
-);
 
 CREATE TABLE Empresa (
 idEmpresa INT PRIMARY KEY,
 nomeEmpresa VARCHAR(30),
 cnpjEmpresa CHAR(14),
-descricao VARCHAR(50),
-emailEmpresa VARCHAR(50),
-telefoneEmpresa CHAR(12),
-fkEndereco INT,
-FOREIGN KEY(fkEndereco) REFERENCES EnderecoEmpresa(idEndereco)
+cidade VARCHAR(30),
+rua VARCHAR(40),
+numero INT,
+complemento VARCHAR(20)
 );
 
 CREATE TABLE Representante (
@@ -48,15 +38,6 @@ cnpjFornecedor CHAR(14),
 emailFornecedor VARCHAR(50),
 fkEmpresa INT,
 FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
-);
-
-CREATE TABLE Distribuidoras (
-idDistribuidora INT PRIMARY KEY,
-nomeDistribuidora VARCHAR(50),
-cnpjDistribuidora CHAR(14),
-emailDistribuidora VARCHAR(50),
-fkFornecedor INT,
-FOREIGN KEY(fkFornecedor) REFERENCES Fornecedores(idFornecedor)
 );
 
 CREATE TABLE Rotas (
