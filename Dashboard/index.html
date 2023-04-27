@@ -196,8 +196,8 @@
     var maiorTres = 0;
     var menorTres = 0;
 
-    var labels = new Array();
-    var horario = new Array(
+    var labels = [];
+    var horario = [
         "00:20",
         "00:40",
         "01:00",
@@ -269,10 +269,10 @@
         "23:20",
         "23:40",
         "24:00",
-    )
-    var data = new Array();
-    var data2 = new Array();
-    var data3 = new Array();
+        ];
+    var data = [];
+    var data2 = [];
+    var data3 =[];
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -357,10 +357,10 @@
         }
         else {
             i = 0;
-            data = new Array();
-            data2 = new Array();
-            data3 = new Array();
-            labels = new Array();
+            data = [];
+            data2 = [];
+            data3 = [];
+            labels = [];
             chart.destroy();
             chart = new Chart(ctx, {
                 type: 'line',
@@ -404,13 +404,13 @@
 
     var contadorProduto = 0;
 
-    var jsonProdutos = new Array({
+    var jsonProdutos = [{
         nome: '',
         urlImg: '',
         numLote: 0,
         valorMaior: 0,
         valorMenor: 0
-    });
+    }];
 
     jsonProdutos = [{
         nome: 'XALACOM',
