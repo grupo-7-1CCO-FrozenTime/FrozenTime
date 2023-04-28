@@ -1,5 +1,34 @@
-CREATE DATABASE bdFrozenTime;
-USE bdFrozenTime;
+CREATE DATABASE FrozenTime;
+USE FrozenTime;
+
+CREATE TABLE Empresa (
+idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+nomeEmpresa VARCHAR(30),
+cnpjEmpresa CHAR(14),
+cidade VARCHAR(30),
+rua VARCHAR(40),
+numero INT,
+complemento VARCHAR(20)
+);
+
+INSERT INTO Empresa VALUES (null, "Pfizer", "83920374619304", "São Paulo", "Alexandre DUmas", 1860, "Prédio"),
+						   (null, "Butantã", "94738502847294", "São Paulo", "Vital Brasil", 1500, "Prédio"),
+						   (null, "Dismed", "38492840286323", "São Paulo", "Avenida Moça Bonita", 559, "Prédio"),
+						   (null, "J&J", "7483975836599", "São Paulo", "Av. Pres. Juscelino Kubitschek", 2041, "Prédio");
+
+CREATE TABLE Representante (
+idRepresentante INT PRIMARY KEY AUTO_INCREMENT,
+nomeRepresentante VARCHAR(50),
+emailRepresentante VARCHAR(50),
+whatsappRepresentante CHAR(13),
+fkEmpresa INT,
+FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
+);
+INSERT INTO Representante VALUES (null, "Marcelo Rossi", "marcelo.rossi@gmail.com", "986850073", null),
+								 (null, "Teresa Aragão", "aragaoteresa@gmail.com", "982305138", null),
+								 (null, "Miguel Freitas", "miguelfreitas@gmail.com", "984920002", null);
+
+
 CREATE TABLE Produto(
 	idProduto INT PRIMARY KEY AUTO_INCREMENT,
 	nomeProduto VARCHAR(50),
@@ -54,13 +83,13 @@ CREATE TABLE Automoveis(
 );
 SELECT * FROM Automoveis;
 
-INSERT INTO Automoveis(idTransporte, modelo, placa, cor) VALUES(null, 'Bitruck com baú Frigorifico', 'MINI-6620', 'Branca', null),
+INSERT INTO Automoveis VALUES									 (null, 'Bitruck com baú Frigorifico', 'MINI-6620', 'Branca', null),
                                                                  (null, 'VUC com baú Frigorifico', 'MMC-1134', 'Cinza', null),
                                                                  (null, 'Toco com baú Frigorifico', 'NEV-7762', 'Branca', null),
                                                                  (null, 'Bitruck com baú Frigorifico', 'MXR-9421', 'Branca', null),
                                                                  (null, 'Toco com baú Frigorifico', 'MOE-3389', 'Branca', null);
 
-ALTER TABLE tutomoveis MODIFY COLUMN modelo VARCHAR(50);
+ALTER TABLE Automoveis MODIFY COLUMN modelo VARCHAR(50);
 
 CREATE TABLE Rotas(
 	idRotas INT PRIMARY KEY AUTO_INCREMENT,
@@ -70,7 +99,7 @@ CREATE TABLE Rotas(
 	localDestino VARCHAR(50),
 	dtSaida DATETIME,
 	dtChegada DATETIME,
-	distancia VARCHAR(50)
+	distancia DECIMAL(5,2)
 );
 
 INSERT INTO Rotas(idRotas, tempMin, tempMax, localPartida, localDestino, dtSaida, dtChegada, distancia) 
@@ -91,7 +120,8 @@ CREATE TABLE Login(
 	senhaCliente VARCHAR(20),
     fkRepresentante INT,
     fkEmpresa INT,
-    FOREIGN KEY (fkRepresentante) REFERENCES Representante(idRepresentante)
+    FOREIGN KEY (fkRepresentante) REFERENCES Representante(idRepresentante),	
+    FOREIGN KEY(fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
 
 INSERT INTO Login VALUES											 (null, 'anderson@pfizer.com', '024463401$', null, null),
@@ -100,15 +130,17 @@ INSERT INTO Login VALUES											 (null, 'anderson@pfizer.com', '024463401$', 
                                                                      (null, 'bruna@biontech.com', '560$1044%1', null, null),
                                                                      (null, 'contato@butantan.com', '28##2964', null, null);
 SELECT * FROM Login;
+
 CREATE TABLE Kit(
 idKit INT PRIMARY KEY AUTO_INCREMENT
 );
+
 CREATE TABLE Sensor(
-	idSensor INT PRIMARY KEY AUTO_INCREMENT,
 	fkTransporte INT,
+	idSensor INT,
 	statusSensor VARCHAR(20),
     fkKit INT,
-    FOREIGN KEY (fkKit) REFERENCES Kit(idKit),
+    PRIMARY KEY (idSensor, fKit),
     FOREIGN KEY (fkTransporte) REFERENCES automoveis(idTransaporte)
 );
 INSERT INTO Sensor VALUES 
