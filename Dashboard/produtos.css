@@ -16,14 +16,14 @@ main h1 {
 }
 
 .accordion {
-    background-color: #D9D9D9;
+    background-color: #ffff;
     color: #000;
     cursor: pointer;
     padding: 18px;
     width: 90%;
     height: 6%;
     text-align: left;
-    border: #288396 1px solid;
+    border: #72AAB5 1px solid;
     border-radius: 5px;
     outline: none;
     transition: 0.4s;
@@ -43,8 +43,8 @@ main h1 {
 }
 
 .numero {
-    width: 2%;
-    height: 4%;
+    width: 2.1%;
+    height: 3.5%;
     margin-top: 0;
     margin-left: 24%;
     padding-left: 1.1%;
@@ -67,7 +67,8 @@ main h1 {
 .info {
     display: flex;
     flex-direction: column;
-    background-color: #D9D9D9;
+    background-color: #fff;
+    border: 1px solid #72AAB5;
     color: #000;
     cursor: pointer;
     width: 90%;
@@ -95,10 +96,7 @@ main h1 {
     margin-left: 2%;
 }
 
-.seta,
-.accordion:hover {
-    background-color: #ccc;
-}
+
 
 .accordion:after {
     content: '\2304';
