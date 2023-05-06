@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dadosEmpresa.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div
+    class="header">
+    <div id="espacamentoTopo">
+      <div class="flexCenter">
+        <a class="flexCenter" href="../siteInstitucional/index.html">
+          <img style="width: 80%;" src="./assets/icon.svg" />
+        </a>
+      </div>
+      <div class="flexCenter">
+        <hr>
+      </div>
+      <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+        <a href="Dash_Login.html" style="color: white;">
+          <div>
+            <div class="flexCenterAlignItemsCenter">
+              <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+            </div>
+            <div style="margin-top: 3%;">
+              Bem-vindo(a), (nomeEmpresa)
+            </div>
+            <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
+              Sair
+            </div>
+            <div>
+              <hr>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+        <a href="index.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/dashboard.svg" />
+            <p class="txtHeader">Dashboard</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./alertas.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
+            <p class="txtHeader">Alertas</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./produtos.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+            <p class="txtHeader">Produtos</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+            <p class="txtHeader">Assinatura</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./rotas.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeRotas.svg" />
+            <p class="txtHeader">Rotas</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="corpo">
+
+    <div class="campos">
+      <div class="titulo">
+        <h1>Dados do Cadastro</h1>
+      </div>
+
+      <div class="dados">
+        <div class="outros">
+
+          <a href="perfil.html"><h3>← Voltar para perfil</h3></a>
+
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">Nome da Empresa:</span> <br>
+              <input id="ipt_nomeEmpresa" placeholder="NomeEmpresa"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">E-mail da Empresa:</span> <br>
+              <input id="ipt_email" placeholder="empresa@gmail.com"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">CNPJ:</span> <br>
+              <input id="ipt_cnpj" placeholder="12.345.678/0000-11"> <br>
+              <hr size="1"> <br>
+            </div>
+          </div>
+          <br>
+
+          <div class="botao">
+            <button onclick="alterarDados()">Alterar Dados</button>
+          </div>
+
+          <div class="alteracao">Ultima alteração feita por: Rafael Matos</div>
+        </div>
+
+        <div class="endereco">
+          <h3 class="meio">Endereço</h3>
+          <div class="contexto">
+            <label class="atributo">CEP:</label> <br>
+            <input id="ipt_cep" placeholder="06696-000"> <br>
+            <hr size="1"> <br> <br>
+
+            <label class="atributo">Cidade:</label> <br>
+            <input id="ipt_cidade" placeholder="Itapevi - SP"> <br>
+            <hr size="1"> <br> <br>
+
+            <label class="atributo">Bairro:</label> <br>
+            <input id="ipt_bairro" placeholder="Ingahi"> <br>
+            <hr size="1"> <br> <br>
+
+            <label class="atributo">Rua:</label> <br>
+            <input id="ipt_rua" placeholder="Rodovia Presidente Castelo Branco"> <br>
+            <hr size="1"> <br> <br>
+
+            <label class="atributo">Número:</label> <br>
+            <input id="ipt_numero" placeholder="32.501 - KM 32,5"> <br>
+            <hr size="1"> <br> <br>
+
+            <label class="atributo">Complemento:</label> <br>
+            <input id="ipt_complemento" placeholder="Edifício de Manufatura - Entrada B"> <br>
+            <hr size="1"> <br> <br>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="bolinhas">
+      <img src="assets/Bolinhas.png" alt="">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+</script>
