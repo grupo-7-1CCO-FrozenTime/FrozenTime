@@ -138,13 +138,13 @@ main h1 {
 }
 
 
-.alerta{
+.critico{
     color: #FF0342;
     margin-left: 17%;
     position: absolute;
 }
 
-.critico{
+.alerta{
     margin-left: 17%;
     position: absolute;
     color: #9A9408;
