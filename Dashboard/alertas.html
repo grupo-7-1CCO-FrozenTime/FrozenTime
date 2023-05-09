@@ -5,279 +5,220 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="alertas.css">
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alertas.css">
 </head>
 
+<!-- Início do Menu lateral -->
+
 <body>
-    <div class="bananinha">
-        <!-- Início da tela de Menu -->
-        <div
-  class="header">
-  <div id="espacamentoTopo">
-    <div class="flexCenter">
-      <a class="flexCenter" href="../siteInstitucional/index.html">
-        <img style="width: 80%;" src="./assets/icon.svg" />
-      </a>
-    </div>
-    <div class="flexCenter">
-      <hr>
-    </div>
-    <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
-      <a href="perfil.html" style="color: white;">
-        <div>
-          <div class="flexCenterAlignItemsCenter">
-            <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
-          </div>
-          <div style="margin-top: 3%;">
-            Bem-vindo(a), (nomeEmpresa)
-          </div>
-          <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
-            Sair
-          </div>
-          <div>
-            <hr>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
-      <a href="index.html" style="text-decoration: none; color: white;">
-        <div class="flexCenterAlignItemsCenter">
-          <img class="widthiconHeader" src="./assets/dashboard.svg" />
-          <p class="txtHeader">Dashboard</p>
-        </div>
-      </a>
-    </div>
-    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
-      <a href="./alertas.html" style="text-decoration: none; color: white;">
-        <div class="flexCenterAlignItemsCenter">
-          <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
-          <p class="txtHeader">Alertas</p>
-        </div>
-      </a>
-    </div>
-    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
-      <a href="./produtos.html" style="text-decoration: none; color: white;">
-        <div class="flexCenterAlignItemsCenter">
-          <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
-          <p class="txtHeader">Produtos</p>
-        </div>
-      </a>
-    </div>
-    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
-      <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
-        <div class="flexCenterAlignItemsCenter">
-          <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
-          <p class="txtHeader">Assinatura</p>
-        </div>
-      </a>
-    </div>
-    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
-      <a href="./rotas.html" style="text-decoration: none; color: white;">
-        <div class="flexCenterAlignItemsCenter">
-          <img class="widthiconHeader" src="./assets/iconeRotas.svg" />
-          <p class="txtHeader">Rotas</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-        <!--  Fim da tela de Menu  -->
-
-
-        <!-- começo da teala com os alertas -->
-        <div class="div_tela">
-            <!-- título -->
-            <div>
-                <h1>Alertas</h1>
+    <div class="header">
+        <div id="espacamentoTopo">
+            <div class="flexCenter">
+                <a class="flexCenter" href="../siteInstitucional/index.html">
+                    <img style="width: 80%;" src="./assets/icon.svg" />
+                </a>
             </div>
-
-            <!-- informações dos alertas de cada medicaqmento -->
-            <div class="">
-
-                <!-- medicamento 1 -->
-                <div class="produtos">
-                    <div class="telaAlertas">
-                        <button onclick="produto1()" class="botaoProdutos">
-                            <div>XALACOM</div>
-                            <div class="rotaSeta"> SÃO BERNARDO
-                                <div id="div_img1">
-                                    <img src="./assets/seta.png" class="imagem">
-                                </div>
-                                <div id="div_seta1" style="display: none;">
-                                    <img src="./assets/seta para baixo.png" class="imagem">
-                                </div>
-                            </div>
-                        </button>
-
+            <div class="flexCenter">
+                <hr>
+            </div>
+            <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+                <a href="Dash_Login.html" style="color: white;">
+                    <div>
+                        <div class="flexCenterAlignItemsCenter">
+                            <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                        </div>
+                        <div style="margin-top: 3%;">
+                            Bem-vindo(a), (nomeEmpresa)
+                        </div>
+                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
+                            Sair
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
                     </div>
-                    <div class="informacoes" style="display: none;" id="div_xalacom">
-                        <h3>DESCRIÇÃO DO ALERTA</h3>
-                        <p>Seu produto está em risco de perder a eficácia. Abaixe a temperatura </p>
-                        <li>Temperatura 10°C</li>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+                <a href="index.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                        <p class="txtHeader">Dashboard</p>
                     </div>
-                </div>
-
-                <!-- medicamento 2 -->
-                <div class="produtos">
-                    <div class="telaAlertas">
-
-                        <button onclick="produto2()" class="botaoProdutos">
-                            <div>PREVENAR-13</div>
-                            <div class="rotaSeta"> SANTA CATARINA
-                                <div id="div_img2">
-                                    <img src="./assets/seta.png" class="imagem" id="img_seta">
-                                </div>
-                                <div id="div_seta2" style="display: none;">
-                                    <img src="./assets/seta para baixo.png" class="imagem">
-                                </div>
-                            </div>
-                        </button>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./alertas.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
+                        <p class="txtHeader">Alertas</p>
                     </div>
-                    <div class="informacoes" style="display: none;" id="div_prevenar">
-                        <h3>DESCRIÇÃO DO ALERTA</h3>
-                        <p>Seu produto está fora de risco </p>
-                        <li>Temperatura 5°C</li>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./produtos.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+                        <p class="txtHeader">Produtos</p>
                     </div>
-                </div>
-
-                <!-- medicamento 3 -->
-                <div class="produtos">
-                    <div class="telaAlertas">
-
-                        <button onclick="produto3()" class="botaoProdutos">
-                            <div>GENOTROPIN</div>
-                            <div class="rotaSeta"> TARAUACÁ
-                                <div id="div_img3">
-                                    <img src="./assets/seta.png" class="imagem" id="img_seta">
-                                </div>
-                                <div id="div_seta3" style="display: none;">
-                                    <img src="./assets/seta para baixo.png" class="imagem">
-                                </div>
-                            </div>
-                        </button>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                        <p class="txtHeader">Assinatura</p>
                     </div>
-                    <div class="informacoes" style="display: none;" id="div_genotropin">
-                        <h3>DESCRIÇÃO DO ALERTA</h3>
-                        <p>Seu produto está quase em risco de perder a eficácia. </p>
-                        <li>Temperatura 8°C</li>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./rotas.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeRotas.svg" />
+                        <p class="txtHeader">Rotas</p>
                     </div>
-                </div>
-
-                <!-- medicamento 4 -->
-                <div class="produtos">
-                    <div class="telaAlertas">
-
-                        <button onclick="produto4()" class="botaoProdutos">
-                            <div>COMINATY</div>
-                            <div class="rotaSeta"> SALVADOR
-                                <div id="div_img4">
-                                    <img src="./assets/seta.png" class="imagem" id="img_seta">
-                                </div>
-                                <div id="div_seta4" style="display: none;">
-                                    <img src="./assets/seta para baixo.png" class="imagem">
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="informacoes" style="display: none;" id="div_cominaty">
-                        <h3>DESCRIÇÃO DO ALERTA</h3>
-                        <p>Seu produto está quase em risco de perder a eficácia.  </p>
-                        <li>Temperatura 3°C</li>
-                    </div>
-                </div>
-
-                <!-- medicamento 5 -->
-                <div class="produtos">
-                    <div class="telaAlertas">
-
-                        <button onclick="produto5()" class="botaoProdutos">
-                            <div>SAYANA</div>
-                            <div class="rotaSeta"> COPACABANA
-                                <div id="div_img5">
-                                    <img src="./assets/seta.png" class="imagem" id="img_seta">
-                                </div>
-                                <div id="div_seta5" style="display: none;">
-                                    <img src="./assets/seta para baixo.png" class="imagem">
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="informacoes" style="display: none;" id="div_sayana">
-                        <h3>DESCRIÇÃO DO ALERTA</h3>
-                        <p>Seu produto está fora de risco de perder a eficácia.</p>
-                        <li>Temperatura 4°C</li>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
-
     </div>
+    <!-- Fim do Menu lateral -->
+
+    <!-- Início da Tela de Produtos com os Alertas -->
+    <main>
+        <!-- Título -->
+        <div class="titulo">
+            <h1>Alertas</h1>
+        </div>
+        <!-- Início das informações sobre os produtos -->
+
+        <!-- início o primeiro produto -->
+        <h2>Xalacom</h2>
+        <hr class="separadorRemedioRotas">
+        <!-- Informações que aparecem antes de clicar -->
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 1  <span class="alerta"> •Crítico</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: 4°C - 13h</b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 <span class="transporte">•Em transporte</span> </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 2 <span class="alerta"> •Crítico</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #FF0342;">
+            <li> <b class="titulo"> Último registro: <span class="alerta"> 13°C</span> - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 <span class="transporte">•Em transporte</span> </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color:#9A9408;">
+            <div class="text">
+                <p>Lote 3   <span class="critico"> •Cuidado</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#9A9408;">
+            <li> <b class="titulo"> Último registro: <span class="critico"> 2°C</span> 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 <span class="transporte">•Em transporte</span></li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+        <!-- fim das informações do primeiro produto  -->
+
+
+        <!-- começo das ifromaçoes do segundo produto -->
+        <br>
+        <h2>Prevenar</h2>
+        <hr class="separadorRemedioRotas">
+        <button class="accordion" style="border-color:#9A9408;">
+            <div class="text">
+                <p>Lote 1 <span class="critico"> •Cuidado</span></p>
+                <p class="kits">Kit 5</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#9A9408;">
+            <li> <b class="titulo"> Último registro: <span class="critico"> 7°C</span> - 20h</b> </li>
+            <li>Lote 1 - São Paulo(SP) - Rio de Janiero(RJ) </li>
+            <li>Saída: 02/01/2023 <span class="transporte">•Em transporte</span></li>
+            <li>Chegada prevista: 02/01/2023</li>
+        </div>
+
+
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 2  <span class="alerta"> •Crítico</span></p>
+                <p class="kits">Kit 10</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #FF0342;">
+            <li> <b class="titulo">Último registro: <span class="alerta"> 13°C</span> - 12:30</b> </li>
+            <li>São Paulo(SP) - Vitória da Conquista(BA)</li>
+            <li>Saída: 13/03/2023 <span class="transporte">•Em transporte</span></li>
+            <li>Chegada prevista: 16/03/2023</li>
+        </div>
+        <!-- Fim das informações sobre os produtos -->
+
+    </main>
+    <!-- Fim da Tela de Produtos -->
+
 </body>
 
 </html>
+
+
 <script>
+    // Criação de uma variável que retorna aos elementos que possuem o nome da class 'accordion'
+    var acc = document.getElementsByClassName("accordion");
+    // Declaração de uma variável i que será usada como contador no loop a seguir.
+    var i;
 
-    function produto1() {
-        if (div_xalacom.style.display == "block") {
-            div_xalacom.style.display = "none"
-            div_img1.style.display = "block"
-            div_seta1.style.display = "none"
-        } else {
-            div_xalacom.style.display = "block";
-            div_img1.style.display = "none"
-            div_seta1.style.display = "block"
-        }
 
-    }
+    // Loop que percorre todos os elementos selecionados na variável acc
+    for (i = 0; i < acc.length; i++) {
+        // Adicionando um evento que irá acontecer quando houver um 'click' no botão
+        acc[i].addEventListener("click", function () {
 
-    function produto2() {
-        if (div_prevenar.style.display == "block") {
-            div_prevenar.style.display = "none";
-            div_img2.style.display = "block";
-            div_seta2.style.display = "none";
-        } else {
-            div_prevenar.style.display = "block"
-            div_img2.style.display = "none"
-            div_seta2.style.display = "block"
-        }
-    }
+            // this: se refere ao botão que foi clicado.
+            // classList: contém uma lista de todas as classes CSS aplicadas ao botão
+            // toggle faz a alternância da aparência do elemento toda vez que é clicado  
+            this.classList.toggle("seta");
 
-    function produto3() {
-        if (div_genotropin.style.display == "block") {
-            div_genotropin.style.display = "none";
-            div_img3.style.display = "block";
-            div_seta3.style.display = "none";
-        } else {
-            div_genotropin.style.display = "block"
-            div_img3.style.display = "none"
-            div_seta3.style.display = "block"
-        }
-    }
-
-    function produto4() {
-        if (div_cominaty.style.display == "block") {
-            div_cominaty.style.display = "none";
-            div_img4.style.display = "block";
-            div_seta4.style.display = "none";
-        } else {
-            div_cominaty.style.display = "block";
-            div_img4.style.display = "none"
-            div_seta4.style.display = "block"
-        }
-    }
-
-    function produto5() {
-        if (div_sayana.style.display == "block") {
-            div_sayana.style.display = "none";
-            div_img5.style.display = "block";
-            div_seta5.style.display = "none";
-        } else {
-            div_sayana.style.display = "block"
-            div_img5.style.display = "none"
-            div_seta5.style.display = "block"
-        }
+            // Está armazenando a próxima informação que será mostrada (ou seja, quando o botão for clicado)
+            var informacao = this.nextElementSibling;
+            // Alterna entre mostrar e ocultar o painel
+            if (informacao.style.display == "block") {
+                informacao.style.display = "none";
+            } else {
+                informacao.style.display = "block";
+            }
+        });
     }
 </script>
