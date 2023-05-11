@@ -55,7 +55,7 @@
             </div>
 
             <div class="form"> <!-- css login -->
-                <div id="telaEmpresa"> <!-- css login -->
+                <div id="camposEmpresa"> <!-- css login -->
 
                     <div class="camposCadastro"> <!-- css login -->
                         <div class="inputsCadastro"> <!-- css login -->
@@ -91,8 +91,6 @@
                                 id='ipt_complemento' />
                             <label for="Complemento" class="input_label">Complemento</label>
                         </div>
-
-
                         <div class="botoesTexto">
 
                             <div class="botoesLoginCadastro">
@@ -101,11 +99,52 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                <!-- Campos Cadastro Funcionario -->
+
+                <div class="camposCadastro" id="camposFuncionario" style="display: none;"> <!-- css login -->
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email'
+                            required />
+                        <label for="Email" class="input_label">Email</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel'
+                            required />
+                        <label for="Telefone" class="input_label">Telefone</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
+                            required />
+                        <label for="WhatsApp" class="input_label">WhatsApp</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha'
+                            required />
+                        <label for="Senha" class="input_label">Senha</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
+                            id='ipt_confir' required />
+                        <label for="Confirmar" class="input_label">Confirmar senha</label>
+                    </div>
+                    <div class="botoesTexto">
+
+                        <div class="botoesLoginCadastro">
+                            <button onclick="cadastrar()" class="botaoLogin"><a href="Login.html">Cadastrar</a> </button>
+                            <a class="cadastrar" href="Login.html">Já sou membro</a>
+                        </div>
+
+                    </div>
+                </div>
+                
 
             </div>
-
-        </div>
 
 
         </div>
@@ -175,7 +214,8 @@
         if (validacoes) {
             alert("Por favor, preencher todos os campos")
         } else {
-            window.location.href="./CadastroRepresentante.html"
+            camposEmpresa.style.display = "none";
+            camposFuncionario.style.display = "block";
         }
 
     }
