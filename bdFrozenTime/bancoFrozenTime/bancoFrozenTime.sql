@@ -1,7 +1,6 @@
 CREATE DATABASE FrozenTime;
 USE FrozenTime;
 
-
 CREATE TABLE Empresa (
 idEmpresa INT PRIMARY KEY,
 nomeEmpresa VARCHAR(30),
