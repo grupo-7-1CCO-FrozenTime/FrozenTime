@@ -342,6 +342,10 @@ img:nth-child(7) {
     text-decoration: none;
     color: #000000;
 }
+/* .logoFooter{
+    width: 85%;
+    height: 85%;
+} */
 
 .footerConteudo {
     width: 88%;
@@ -362,6 +366,11 @@ img:nth-child(7) {
 .imgLogoFooter {
     margin-bottom: 19%;
 }
+.imgLogoFooter img{
+    width: 75%;
+    height: 75%;
+}
+
 
 .txtLogoFooter {
   position: absolute;

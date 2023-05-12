@@ -217,7 +217,10 @@ form {
 .imgLogoFooter {
     margin-bottom: 19%;
 }
-
+.imgLogoFooter img{
+    width: 75%;
+    height: 75%;
+}
 .txtLogoFooter {
   position: absolute;
     left: 11%;
