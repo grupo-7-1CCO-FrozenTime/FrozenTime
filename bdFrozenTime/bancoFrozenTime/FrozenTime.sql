@@ -20,7 +20,7 @@ SELECT * FROM Clientes;
 CREATE TABLE Empresas (
 idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 nomeEmpresa VARCHAR(30),
-cnpjEmpresa CHAR(14),
+cnpjEmpresa CHAR(18),
 cidade VARCHAR(30),
 rua VARCHAR(40),
 bairro VARCHAR(45),
@@ -28,11 +28,11 @@ numero INT,
 complemento VARCHAR(20)
 );
 
-INSERT INTO Empresas VALUES 
-(null, "Pfizer", "83920374619304", "São Paulo", "Alexandre DUmas", 1860, "Prédio"),
-(null, "Butantã", "94738502847294", "São Paulo", "Vital Brasil", 1500, "Prédio"),
-(null, "Dismed", "38492840286323", "São Paulo", "Avenida Moça Bonita", 559, "Prédio"),
-(null, "J&J", "7483975836599", "São Paulo", "Av. Pres. Juscelino Kubitschek", 2041, "Prédio");
+INSERT INTO Empresas (nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento) VALUES 
+("Pfizer", "83920374619304", "São Paulo", "Alexandre Dumas", 1860, "Prédio"),
+("Butantã", "94738502847294", "São Paulo", "Vital Brasil", 1500, "Prédio"),
+("Dismed", "38492840286323", "São Paulo", "Avenida Moça Bonita", 559, "Prédio"),
+("J&J", "7483975836599", "São Paulo", "Av. Pres. Juscelino Kubitschek", 2041, "Prédio");
 
 SELECT * FROM Empresas;
 
@@ -63,7 +63,12 @@ CREATE TABLE Produtos(
 
 
 CREATE TABLE ProdutosEmpresa (
-
+fkProduto INT,
+FOREIGN KEY(fkProduto) REFERENCES Produtos(idProduto),
+fkEmpresa INT,
+FOREIGN KEY(fkEmpresa) REFERENCES Empresas(idEmpresa),
+PRIMARY KEY (fkProduto, fkEmpresa)
+);
 
 
 INSERT INTO Produtos (nomeProduto, categoriaProduto) VALUES 
@@ -92,14 +97,27 @@ values ('Rua Alexandre Dunas, 1860- Santo Amaro, São Paulo- SP, 04717-904', 'Pr
 SELECT * FROM Rotas;
 
 
-
-
-
 CREATE TABLE Kits(
 idKit INT PRIMARY KEY AUTO_INCREMENT,
-fkLote int,
-foreign key (fkLote) references Lotes(idLote)
+fkLote INT,
+FOREIGN KEY (fkLote) REFERENCES Lotes(idLote)
 );
+
+
+create table Refrigerados (
+idRefrigerador INT PRIMARY KEY AUTO_INCREMENT,
+cidade VARCHAR(40),
+rua VARCHAR(40),
+cep CHAR(9),
+bairro VARCHAR(30),
+numero INT,
+complemento VARCHAR(30),
+nomeFarmacia VARCHAR(30),
+fkKit INT,
+FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
+FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa) 
+);
+
 
 CREATE TABLE Sensores(
 	fkKit INT,
