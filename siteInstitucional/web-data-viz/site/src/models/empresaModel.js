@@ -37,21 +37,21 @@ module.exports = {
 };
 
 
-CADASTRO:
-nomeEmpresa
-CNPJEmpresa
-EndereçoEmpresa
-CidadeEmpresa
-NúmeroEmpresa
-ComplementoEMpresa
+// CADASTRO:
+// nomeEmpresa
+// CNPJEmpresa
+// EndereçoEmpresa
+// CidadeEmpresa
+// NúmeroEmpresa
+// ComplementoEMpresa
 
-nomeFuncionario,
-emailCliente,
-telefone
-whatsapp,
-fk_empresa,
-senhaCliente
+// nomeFuncionario,
+// emailCliente,
+// telefone
+// whatsapp,
+// fk_empresa,
+// senhaCliente
 
 
-LOGIN
-fk_login
+// LOGIN
+// fk_login
