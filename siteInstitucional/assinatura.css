@@ -83,6 +83,12 @@ td {
     padding: 15px;
     text-align: center;
 }
+tr:hover{
+    background-color: #D6EEEE;
+}
+.celulaSemFundo:hover{
+    background-color: #FFFFFF;
+}   
 
 .tdPLanos {
     width: 10%;
@@ -120,12 +126,3 @@ td {
     /* border: 1px solid #288396; */
     
 }
-.orceaqui{
-    width: 100px;
-    height: 100%;
-}
-.orceaqui:hover{
-    border: solid 1px #cacaca;
-    background-color: #288396;
-    border-radius: 4px;
-} 
