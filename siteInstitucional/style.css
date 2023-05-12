@@ -106,47 +106,40 @@ ul img{
 /* Começo do css da página de beneficios */
 
 
-.tituloBeneficios {
-    display: flex; 
-    justify-content: center;
-    margin-bottom: 3%;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-    font-size: 130%;
-}
-.divOrientacao{
-    display:flex; justify-content: space-evenly;
+
+.containerBeneficios{
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.card {
-    margin-top: 5%;
-    width: 265px;
-    height: 170px;
-    /* background: rgba(27, 30, 43, 0.6); */
-    background: #1b1e2b8f;
-    /* box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 40px;
-    color: white; */
-    box-shadow: 10px 10px 4px #d9d9d934;
-    border: 1px solid #000000;
-    border-radius: 40px;
-    
+.caixabeneficios{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #288396;
+    width: 100%;
     color: white;
     font-family: 'Encode Sans Condensed', sans-serif;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-bottom: 3%;
-}
-.card div{
-    display: flex; justify-content: center;
-}
-.card div p{
+    font-size: 32px;
     text-align: center;
+    margin-top: 2%;
 }
-.conteudoCard{
-    display: flex;
-    justify-content: center;
-} 
+
+.caixabeneficios img{
+    width: 20%;
+    height: 35vh;
+}
+
+.caixabeneficios p{
+    font-weight: 400;
+    width: 30%;
+   
+}
+.caixabeneficios span{
+    
+    font-weight: 600;
+}
 
 
 /* Fim do css da página de beneficios */
