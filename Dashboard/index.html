@@ -15,7 +15,7 @@
         <div id="espacamentoTopo">
             <div class="flexCenter">
                 <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
-                    <img style="width: 80%;" src="./assets/icon.svg" />
+                <img style="width: 80%;" src="./assets/icon.svg" />
                 <!-- </a> -->
             </div>
             <div class="flexCenter">
@@ -30,8 +30,8 @@
                         <div style="margin-top: 3%;">
                             Bem-vindo(a), (nomeEmpresa)
                         </div>
-                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline;">
-                            Sair
+                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
+                            <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
                         </div>
                         <div>
                             <hr>
@@ -47,14 +47,14 @@
                     </div>
                 </a>
             </div>
-            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
-                <a href="./alertas.html" style="text-decoration: none; color: white;">
-                    <div class="flexCenterAlignItemsCenter">
-                        <img class="widthiconHeader" src="./assets/iconeAlertas.svg" />
-                        <p class="txtHeader">Alertas</p>
-                    </div>
+            <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+                <a href="./lotes.html" style="text-decoration: none; color: white;">
+                  <div class="flexCenterAlignItemsCenter">
+                    <img class="widthiconHeader" src="./assets/lotes.png" />
+                    <p class="txtHeader">Lotes</p>
+                  </div>
                 </a>
-            </div>
+              </div>
             <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
                 <a href="./produtos.html" style="text-decoration: none; color: white;">
                     <div class="flexCenterAlignItemsCenter">
@@ -168,14 +168,15 @@
 
         <!-- imagem das métricas  -->
         <div class="cardMetricas">
-        <div>
-            <h3 style="margin-left: 5%;  color: white;">Nossas métricas</h3>
-            <p style="margin-left: 5%;  color: white;">As métricas servem como um parâmetro, é com elas que analisamos a qualidade e as potências de risco de seu produto </p>
+            <div>
+                <h3 style="margin-left: 5%;  color: white;">Nossas métricas</h3>
+                <p style="margin-left: 5%;  color: white;">As métricas servem como um parâmetro, é com elas que
+                    analisamos a qualidade e as potências de risco de seu produto </p>
+            </div>
+            <div class="metricas">
+                <img src="./assets/metricas.png" alt="">
+            </div>
         </div>
-        <div class="metricas">
-            <img src="./assets/metricas.png" alt="">
-        </div>
-    </div>
 
     </div>
 
@@ -269,10 +270,10 @@
         "23:20",
         "23:40",
         "24:00",
-        ];
+    ];
     var data = [];
     var data2 = [];
-    var data3 =[];
+    var data3 = [];
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
