@@ -25,7 +25,7 @@ main h1 {
     background-color: #ffffff;
     color: #000000;
     cursor: pointer;
-    width: 80%;
+    width: 88%;
     margin-top: 2%;
     height: 65px;
     text-align: left;
@@ -80,7 +80,7 @@ main h1 {
     /* background-color: #DDF7FF; */
     color: #000;
     cursor: pointer;
-    width: 80%;
+    width: 88%;
     height: 220px;
     padding-top: 2%;
     border: solid black 1px;
@@ -149,9 +149,14 @@ main h1 {
 .alerta{
     margin-left: 17%;
     position: absolute;
-    color: #9A9408;
+    color: #D3CC13;
 }
 
+.estavel{
+    margin-left: 17%;
+    position: absolute;
+    color: #09640D;
+}
 
 .transporte{
     color: #09640D;
