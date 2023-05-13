@@ -1,20 +1,20 @@
 CREATE DATABASE FrozenTime;
 USE FrozenTime;
 
-CREATE TABLE Clientes(
+CREATE TABLE Login(
 	idLogin INT PRIMARY KEY AUTO_INCREMENT,
-	emailCliente VARCHAR(50),
-	senhaCliente VARCHAR(20)
+	emailFuncionario VARCHAR(50),
+	senhaFuncionario VARCHAR(20)
 );
 
-INSERT INTO Clientes (emailcliente, senhaCliente) VALUES				 
+INSERT INTO Login (emailFuncionario, senhaFuncionario) VALUES				 
 ('anderson@pfizer.com', '024463401$'),
 ('angelica@johnson.com', '$2243105@6'),
 ('contato@biontech.com', '0#%2084793'),
 ('bruna@biontech.com', '560$1044%1'),
 ('contato@butantan.com', '28##2964');
 
-SELECT * FROM Clientes;
+SELECT * FROM Login;
 
 
 CREATE TABLE Empresas (
@@ -40,7 +40,7 @@ SELECT * FROM Empresas;
 CREATE TABLE Funcionarios (
 idFuncionario INT,
 nomeFuncionario VARCHAR(50),
-emailColaborador VARCHAR(50),
+emailFuncionario VARCHAR(50),
 whatsapp CHAR(13),
 gestor INT,
 fkEmpresa INT,
@@ -142,10 +142,8 @@ CREATE TABLE Lotes(
 	dimensao DECIMAL(4,2),
 	fkProduto INT,
     fkRota INT,
-	fkAutomovel INT,
 	FOREIGN KEY (fkProduto) REFERENCES Produtos(idProduto),
-    	FOREIGN KEY (fkRota) REFERENCES Rotas(idRota),
-    FOREIGN KEY (fkAutomovel) REFERENCES Automoveis(idAutomovel)
+    	FOREIGN KEY (fkRota) REFERENCES Rotas(idRota)
 );
 
 INSERT INTO Lotes VALUES  
