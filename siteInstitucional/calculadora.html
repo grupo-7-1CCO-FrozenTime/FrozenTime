@@ -153,7 +153,12 @@
         var margem = perda * 0.15;
         var erro = false;
 
+        ipt_areaLote.value = '';
+        ipt_informe.value = '';
         
+        if (area == '' || lucro == '') {
+            alert("Campos vazios, preencha-os")
+        } else
         if (area <= 0 || lucro <= 0) {
             alert("Número inválido, preencha novamente")
             area = ""; lucro = "";
