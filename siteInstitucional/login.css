@@ -89,15 +89,17 @@ header {
         align-items: center;
         flex-direction: column;
         margin-top: 9%;
+        font-size: 110%;
     }
     
     .botoesLoginCadastro{
         display: flex;
         flex-direction: row;
         margin-bottom: 6%;
-        gap: 52%;
+        gap: 20%;
         align-items:baseline;
         /* margin-right: 70%; */
+        width: 140px;
     }
     
     .botaoLogin {
@@ -107,12 +109,14 @@ header {
         width: 90%;
         padding: 8%;
         font-size: 90%;
+        margin-right: 2px;
     }
 
     .cadastrar {
         color: #000000;
         text-decoration: underline;
         font-size: 80%;
+        margin-right: -30px;
     }
 
 
@@ -198,8 +202,8 @@ header {
 
 .cardLogin {
     background: #499EAE;
-    width: 50%;
-    height: 288px;
+    width: 1048px;
+    height: 370px;
     box-shadow: 5px 5px 20px 10px  rgba(0, 0, 0, 0.582);
     position: relative;
     align-items: center;
@@ -209,17 +213,17 @@ header {
 
      /* Formulário */
 .campos{
-    /* margin-left: 6%; */
+    margin-left: 3%;
     /* margin-top: 7%; */
     flex-direction: column;
     display: flex;
 } 
 
 .inputs {
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     width: 50%;
-    font-size: 130%
+    font-size: 150%
 }
 
 .textoRecuperar{
@@ -235,8 +239,8 @@ header {
 
 .form{
     background-color: #f5f1e6;
-    height: 260px;
-    width: 50%;
+    height: 324px;
+    width: 905px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -246,4 +250,5 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -34px;
 }

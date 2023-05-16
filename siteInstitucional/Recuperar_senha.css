@@ -18,7 +18,7 @@
     background-color: #f5f1e6;
     color: #9B8252;
     text-decoration: underline;
-    font-size: small;
+    font-size: 90%;
 }
 
 .paragrafo{
@@ -39,4 +39,12 @@
     width: 130px;
     padding: 8%;
     font-size: 90%;
+    margin-left: 10px;
+}
+
+.a_cadastrar{
+    color: #000000;
+    text-decoration: underline;
+    font-size: 80%;
+    margin-right: 22px;
 }
