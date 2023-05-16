@@ -102,7 +102,7 @@ input {
 
 button {
     border: black solid 2px;
-    border-radius: 35px;
+    border-radius: 5px;
     width: 225px;
     height: 45px;
     background-color: #288396;
@@ -112,13 +112,11 @@ button {
 }
 
 .alteracao {
-    margin-top: 1%;
+    margin-top: 4%;
     font-size: 13px;
+    color: rgb(82, 82, 82);
 }
 
-.bolinhas {
-    margin-right: 6%;
-}
 
 a, h3, h4{
     font-family: 'Inter', sans-serif;
