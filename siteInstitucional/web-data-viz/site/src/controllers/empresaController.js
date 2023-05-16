@@ -24,6 +24,10 @@ function listarEmpresa(req, res){
         }
     );
 }
+// Terminar!
+// function entrarEmpresa(req, res){
+//     var
+// }
 
 function cadastrarEmpresa(req, res){
     var nomeEmpresa = req.body.nomeEmpresa;
