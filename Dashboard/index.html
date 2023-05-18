@@ -89,8 +89,9 @@
                         <p style="font-size: 20px;">Número de Alertas:</p>
                     </div>
                     <div class="flexCenter">
-                        <img src="./assets/iconWarningKPI.svg" />
-                        <p style="font-size: 40px; margin: 0;color: #FF0342;">15</p>
+                        <img src="./assets/iconWarningKPI.svg" style="fill:
+                        #fff708;"/>
+                        <p style="font-size: 40px; margin: 0;color: #fff708;">7</p>
                     </div>
                 </div>
             </div>
@@ -101,32 +102,32 @@
                     </div>
                     <div class="flexCenter">
                         <img src="./assets/iconProdutoKPI.svg" />
-                        <p style="font-size: 40px; margin: 0;">30</p>
+                        <p style="font-size: 40px; margin: 0;">5</p>
                     </div>
                 </div>
             </div>
             <div class="cards" style="background: rgba(115, 203, 220, 0.57);">
-                <div style="padding-bottom: 10%;">
+                <div style="padding-bottom: 7%;">
                     <div>
-                        <p style="font-size: 20px;">Caminhões em atividade:</p>
+                        <p style="font-size: 20px;">Lotes em transporte:</p>
                     </div>
                     <div class="flexCenter">
-                        <img src="./assets/iconCaminhoesKPI.svg" />
-                        <p style="font-size: 40px; margin: 0; margin-left: 6%;">2</p>
+                        <img style="width: 50px;" src="./assets/iconCaminhoesKPI.svg" />
+                        <p style="font-size: 40px; margin: 0; margin-left: 1%;">18</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flexCenter" style="margin-top: 5%;">
-            <div style="width: 54%;">
+            <div style="width: 50%;">
                 <div class="flexCenter">
-                    <h3 class="titleCharts">TEMPERATURA DOS PRODUTOS:</h3>
+                    <h3  class="titleCharts" style="margin-left: 5%;">TEMPERATURA DOS LOTES:</h3>
                 </div>
                 <canvas id="myChart"></canvas>
             </div>
-            <div style="width: 26%; margin-left: 6%;">
+            <div style="width: 26%; margin-left: 8%;">
                 <div>
-                    <h3 class="titleCharts">CONDIÇÃO DOS CAMINHÕES:</h3>
+                    <h3 class="titleCharts" style="margin-left: 13%;">CONDIÇÃO DOS LOTES:</h3>
                 </div>
                 <div class="flexCenterAlignItemsCenter">
                     <canvas id="myChart2"></canvas>
@@ -174,7 +175,8 @@
                     analisamos a qualidade e as potências de risco de seu produto </p>
             </div>
             <div class="metricas">
-                <img src="./assets/metricas.png" alt="">
+                <img src="./assets/metricaAlertas.png" alt="">
+                <img src="./assets/metricaTemperatura.png" alt="">
             </div>
         </div>
 
@@ -196,9 +198,14 @@
     var menorDois = 0;
     var maiorTres = 0;
     var menorTres = 0;
+    var menorQuatro = 0;
+    var maiorQuatro = 0;
+    var menorCinco = 0;
+    var menorCinco = 0;
 
     var labels = [];
     var horario = [
+    "00:10","00:11","00:12","00:13","00:14",
         "00:20",
         "00:40",
         "01:00",
@@ -274,6 +281,8 @@
     var data = [];
     var data2 = [];
     var data3 = [];
+    var data4 = [];
+    var data5 = [];
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -298,6 +307,20 @@
                     data: data3,
                     borderColor: 'rgba(8, 201, 8, 0.71)',
                     backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Comirnaty',
+                    data: data4,
+                    borderColor: 'rgba(20, 161, 221, 0.71)',
+                    backgroundColor: 'rgb(20, 161, 221, 0.71)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Sayana',
+                    data: data5,
+                    borderColor: 'rgba(157, 92, 227, 0.71)',
+                    backgroundColor: 'rgba(157, 92, 227, 0.71)',
                     yAxisID: 'y',
                 }
             ]
@@ -337,6 +360,8 @@
     setInterval(() => {
         if (i <= 72) {
             labels.push(horario[i]);
+            data5.push(Math.floor(Math.random() * 9));
+            data4.push(Math.floor(Math.random() * 9));
             data3.push(Math.floor(Math.random() * 9));
             data2.push(Math.floor(Math.random() * 9));
             data.push(Math.floor(Math.random() * 9));
@@ -348,6 +373,10 @@
             menorDois = Math.min.apply(null, data2);
             maiorTres = Math.max.apply(null, data3);
             menorTres = Math.min.apply(null, data3);
+            maiorQuatro = Math.max.apply(null, data4);
+            menorQuatro = Math.min.apply(null, data4);
+            maiorCinco = Math.max.apply(null, data5);
+            menorCinco = Math.min.apply(null, data5);
 
             jsonProdutos[0].valorMaior = maior;
             jsonProdutos[0].valorMenor = menor;
@@ -355,12 +384,18 @@
             jsonProdutos[1].valorMenor = menorDois;
             jsonProdutos[2].valorMaior = maiorTres;
             jsonProdutos[2].valorMenor = menorTres;
+            jsonProdutos[3].valorMaior = maiorQuatro;
+            jsonProdutos[3].valorMenor = menorQuatro;
+            jsonProdutos[4].valorMaior = maiorCinco;
+            jsonProdutos[4].valorMenor = menorCinco;
         }
         else {
             i = 0;
             data = [];
             data2 = [];
             data3 = [];
+            data4 = [];
+            data5 = [];
             labels = [];
             chart.destroy();
             chart = new Chart(ctx, {
@@ -385,6 +420,20 @@
                         {
                             label: 'Genotropin',
                             data: data3,
+                            borderColor: 'rgba(8, 201, 8, 0.71)',
+                            backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                            yAxisID: 'y',
+                        },
+                        {
+                            label: 'Comirnaty',
+                            data: data4,
+                            borderColor: 'rgba(255, 0, 49, 0.71)',
+                            backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                            yAxisID: 'y',
+                        },
+                        {
+                            label: 'Sayana',
+                            data: data5,
                             borderColor: 'rgba(8, 201, 8, 0.71)',
                             backgroundColor: 'rgba(8, 201, 8, 0.71)',
                             yAxisID: 'y',
