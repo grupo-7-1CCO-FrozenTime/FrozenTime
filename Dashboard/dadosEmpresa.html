@@ -107,7 +107,7 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">E-mail da Empresa:</span> <br>
-              <input id="ipt_email" placeholder="empresa@gmail.com"> <br>
+              <input id="ipt_emailEmpresa" placeholder="empresa@gmail.com"> <br>
               <hr size="1"> <br>
             </div>
           </div>
@@ -168,6 +168,28 @@
 </html>
 
 <script>
+  var nomeEmpresa = '';
+  var emailEmpresa = '';
+  var cnpj = '';
+  var cep = '';
+  var cidade = '';
+  var bairro = '';
+  var rua = '';
+  var numero = '';
+  var complemento = '';
 
+  function alterarDados() {
+    nomeEmpresa = ipt_nomeEmpresa;
+    emailEmpresa = ipt_emailEmpresa;
+    cnpj = ipt_cnpj;
+    cep = ipt_cep;
+    cidade = ipt_cidade;
+    bairro = ipt_bairro;
+    rua = ipt_rua;
+    numero = ipt_numero;
+    complemento = ipt_complemento;
+
+    
+  }
 
 </script>

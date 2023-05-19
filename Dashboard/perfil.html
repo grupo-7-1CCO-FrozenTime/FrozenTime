@@ -15,7 +15,7 @@
     <div id="espacamentoTopo">
       <div class="flexCenter">
         <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
-          <img style="width: 80%;" src="./assets/icon.svg" />
+        <img style="width: 80%;" src="./assets/icon.svg" />
         <!-- </a> -->
       </div>
       <div class="flexCenter">
@@ -31,7 +31,7 @@
               Bem-vindo(a), (nomeEmpresa)
             </div>
             <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
-              <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a> 
+              <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
             </div>
             <div>
               <hr>
@@ -78,7 +78,7 @@
             <p class="txtHeader">Cadastro</p>
           </div>
         </a>
-    </div>
+      </div>
     </div>
   </div>
 
@@ -95,7 +95,7 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">Nome: </span> <br>
-              <input id="ipt_email" placeholder="Rafael Matos"> <br>
+              <input id="ipt_nome" placeholder="Rafael Matos"> <br>
               <hr size="1"> <br>
             </div>
           </div>
@@ -103,7 +103,7 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">E-mail:</span> <br>
-              <input id="ipt_cnpj" placeholder="rafaelmatos@gmail.com"> <br>
+              <input id="ipt_email" placeholder="rafaelmatos@gmail.com"> <br>
               <hr size="1"> <br>
             </div>
           </div>
@@ -116,7 +116,8 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">WhatsApp:</span> <br>
-              <input id="ipt_email" placeholder="(11) 98343-2839"> <br>
+              <input id="ipt_whats" placeholder="(11) 98343-2839" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
+                required> <br>
               <hr size="1"> <br>
             </div>
           </div>
@@ -124,7 +125,8 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">Telefone:</span> <br>
-              <input id="ipt_cnpj" placeholder="(11) 2737-3849"> <br>
+              <input id="ipt_telefone" placeholder="(11) 2737-3849" maxlength="14" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
+                required> <br>
               <hr size="1"> <br>
             </div>
           </div>
@@ -152,8 +154,74 @@
 </html>
 
 <script>
+
   function dadosEmpresa() {
     window.location.href = 'dadosEmpresa.html'
   }
-  
+
+  var nome = '';
+  var email = '';
+  var whats = '';
+  var telefone = '';
+  var deuErro = false
+
+  const tel = document.getElementById('ipt_telefone') // Seletor do campo de telefone
+
+  ipt_telefone.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+  ipt_telefone.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+
+  const mascaraTelefone = (valor) => {
+    valor = valor.replace(/\D/g, "")
+    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+    valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+    ipt_telefone.value = valor // Insere o(s) valor(es) no campo
+  }
+
+  const whatsMask = document.getElementById('ipt_whats') // Seletor do campo de telefone
+
+  ipt_whats.addEventListener('keypress', (e) => mascaraWhats(e.target.value)) // Dispara quando digitado no campo
+  ipt_whats.addEventListener('change', (e) => mascaraWhats(e.target.value)) // Dispara quando autocompletado o campo
+
+  const mascaraWhats = (valor) => {
+    valor = valor.replace(/\D/g, "")
+    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+    valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+    ipt_whats.value = valor // Insere o(s) valor(es) no campo
+  }
+
+  // https://pt.stackoverflow.com/questions/51109/como-mascarar-um-input-no-html5 -- 
+
+  function alterarDados() {
+    nome = ipt_nome.value;
+    email = ipt_email.value;
+    whats = ipt_whats.value;
+    telefone = ipt_telefone.value;
+
+    if (nome == '' && email == '' && whats == '' && telefone == '') {
+      alert('Insira o campo que deseja ser alterado.')
+      deuErro = true;
+    }
+    if (email.length > 0) {
+      if (email.indexOf('@') == -1 || email.indexOf('.' == -1)) {
+        alert('Insirá um e-mail válido.');
+        deuErro = true;
+      }
+    }
+    if (whats.length > 0) {
+      if (whats.length != 15) {
+        alert('Insirá um número de celular válido.');
+        deuErro = true;
+      }
+    }
+    if (telefone.length > 0) {
+      if (telefone.length != 14) {
+        alert('Insirá um número de telefone válido.');
+        deuErro = true;
+      } 
+    }
+    if (deuErro == false) {
+      alert ('Dados alterados com sucesso!')
+    }
+  }
+
 </script>
