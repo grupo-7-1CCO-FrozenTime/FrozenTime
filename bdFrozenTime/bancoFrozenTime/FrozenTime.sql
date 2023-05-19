@@ -21,7 +21,7 @@ CREATE TABLE Empresas (
 idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 nomeEmpresa VARCHAR(30),
 cnpjEmpresa CHAR(18),
-cidade VARCHAR(30),
+cidade VARCHAR(40),
 rua VARCHAR(40),
 bairro VARCHAR(45),
 numero INT,
@@ -44,9 +44,9 @@ emailFuncionario VARCHAR(50),
 whatsapp CHAR(13),
 gestor INT,
 fkEmpresa INT,
-fkCliente INT,
+fkLogin INT,
 FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa),
-FOREIGN KEY (fkCliente) REFERENCES CLientes(idClientes)
+FOREIGN KEY (fkLogin) REFERENCES Login(idLogin)
 );
 
 INSERT INTO Funcionarios (nomeFuncionario, emailColaborador, whatsapp, gestor, fkEmpresa, fkCliente) VALUES
@@ -97,6 +97,24 @@ values ('Rua Alexandre Dunas, 1860- Santo Amaro, São Paulo- SP, 04717-904', 'Pr
 SELECT * FROM Rotas;
 
 
+CREATE TABLE Lotes(
+	idLote INT PRIMARY KEY AUTO_INCREMENT,
+	fkProduto INT,
+    fkRota INT,
+	FOREIGN KEY (fkProduto) REFERENCES Produtos(idProduto),
+	FOREIGN KEY (fkRota) REFERENCES Rotas(idRotas)
+);
+
+INSERT INTO Lotes VALUES  
+(null, '200', '5cm', null, null),
+(null, '150', '40cm', null, null),
+(null, '300', '1m', null, null),
+(null, '100', '1,5m', null, null),
+(null, '50', '55cm', null, null);
+														
+SELECT * FROM Lotes;
+
+
 CREATE TABLE Kits(
 idKit INT PRIMARY KEY AUTO_INCREMENT,
 fkLote INT,
@@ -114,6 +132,7 @@ numero INT,
 complemento VARCHAR(30),
 nomeFarmacia VARCHAR(30),
 fkKit INT,
+fkEmpresa INT,
 FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
 FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa) 
 );
@@ -123,34 +142,28 @@ CREATE TABLE Sensores(
 	fkKit INT,
 	idSensor INT,
     PRIMARY KEY ( fkKit, idSensor),
-	temperatura INT, 
-    registro DATETIME,
-    FOREIGN KEY (fkKit) REFERENCES Kit(idKit)
+    FOREIGN KEY (fkKit) REFERENCES Kits(idKit)
 );
+
 INSERT INTO Sensores VALUES 
 							(null, null, "ideal", null),
 							(null, null, "alerta", null),
 							(null, null, "critico", null),
 							(null, null, "ideal", null);
-                            
 SELECT * FROM Sensores;
-
-
-CREATE TABLE Lotes(
-	idLote INT PRIMARY KEY AUTO_INCREMENT,
-	qtdProdutos INT,
-	dimensao DECIMAL(4,2),
-	fkProduto INT,
-    fkRota INT,
-	FOREIGN KEY (fkProduto) REFERENCES Produtos(idProduto),
-    	FOREIGN KEY (fkRota) REFERENCES Rotas(idRota)
+                            
+CREATE TABLE Registro (
+idRegistro INT PRIMARY KEY, 
+temperatura INT,
+dataHora DATETIME,
+fkSensor INT,
+FOREIGN KEY (fkSensor) REFERENCES Sensores(idSensor),
+fkKit INT,
+FOREIGN KEY (fkKit) REFERENCES Kit(idKit)
 );
 
-INSERT INTO Lotes VALUES  
-(null, '200', '5cm', null, null),
-(null, '150', '40cm', null, null),
-(null, '300', '1m', null, null),
-(null, '100', '1,5m', null, null),
-(null, '50', '55cm', null, null);
-														
-SELECT * FROM Lotes;
+INSERT INTO Registro VALUES 
+							(null, 4, '2019-04-03 11:30:05', null),
+							(null, 8, '2020-08-03 12:30:00', null),
+							(null, 10, '2022-04-26 20:30:00', null),
+							(null, 6, '2022-10-03 21:00:00', null);
