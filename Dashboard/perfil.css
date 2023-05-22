@@ -41,6 +41,8 @@
     width: 20%;
     margin-right: 6%;
 }
+
+
 .divConteudo{
     width: 80%; 
     margin-left: 20%;
@@ -53,6 +55,9 @@ hr{
     margin-top: 10%;
 }
 
+
+/* fim do css padrão */
+
 body {
     font-family: 'Inter';
     margin: 0;
@@ -61,7 +66,7 @@ body {
 
 .titulo {
     display:flex; 
-    margin-left: 10%; 
+    margin-left: 8%; 
     margin-top: 2%;
 }
 
@@ -92,7 +97,7 @@ body {
 .dados hr {
     width: 90%;
     margin: 0;
-    margin-top: -6%;
+    
     background-color: black;
 }
 
@@ -120,7 +125,6 @@ body {
 
 .atributo {
     font-size: 21px;
-    margin-bottom: -4%;
     color: black;
 }
 
@@ -138,7 +142,7 @@ input {
 }
 
 .botao {
-    margin-top: 2%;
+   
     display: flex;
     font-weight: 400 !important;
 }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Time</title>
+    <link rel="stylesheet" href="perfil.css">
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div id="espacamentoTopo">
+            <div class="flexCenter">
+                <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
+                <img style="width: 80%;" src="./assets/icon.svg" />
+                <!-- </a> -->
+            </div>
+            <div class="flexCenter">
+                <hr>
+            </div>
+            <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+                <a href="perfil.html" style="color: white;">
+                    <div>
+                        <div class="flexCenterAlignItemsCenter">
+                            <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                        </div>
+                        <div style="margin-top: 3%;">
+                            Bem-vindo(a), (nomeEmpresa)
+                        </div>
+                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
+                            <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+                <a href="index.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                        <p class="txtHeader">Dashboard</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+                <a href="./lotes.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/lotes.png" />
+                        <p class="txtHeader">Lotes</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./produtos.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+                        <p class="txtHeader">Produtos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                        <p class="txtHeader">Assinatura</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./cadastro.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
+                        <p class="txtHeader">Cadastro</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="corpo">
+
+
+        <div class="campos">
+            <div class="titulo">
+                <h1>Dados do Cadastro</h1>
+            </div>
+            <a href="perfil.html" style="text-decoration: none; color: black;">
+                <h3 style="margin-left: 8%;">← Voltar para perfil</h3>
+            </a>
+
+            <div class="dados">
+                <div class="outros">
+
+                    <div class="container2">
+                        <div class="contexto">
+                            <span class="atributo">Nome: </span> <br>
+                            <input id="ipt_nome" placeholder="Rafael Matos"> 
+                            <hr size="1"> <br>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="container2" style="display: flex; justify-content: space-between;" >
+                        <div class="contexto">
+                            <span class="atributo">E-mail:</span> <br>
+                            <input id="ipt_email" placeholder="rafaelmatos@gmail.com"> 
+                            <hr size="1"> <br>
+                        </div>
+                    </div>
+                    
+                    <div class="contBotao" style="margin-left: 79%;">
+
+                        <div class="columnBotao">
+        
+                            <div class="botao" style="margin-top: 0px;">
+        
+                                <button onclick="alterarDados()">Cadastrar funcionários</button>
+        
+                            </div>
+        
+        
+                        </div>
+        
+                    </div>
+
+                </div>
+
+                <div class="outros">
+
+                    <div class="container2" style="height: 15vh;">
+                        <div class="contexto">
+                            <span class="atributo">WhatsApp:</span> <br>
+                            <input id="ipt_whats" placeholder="(11) 98343-2839" required> 
+                            <hr size="1">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function dadosEmpresa() {
+        window.location.href = 'dadosEmpresa.html'
+    }
+
+
+
+
+    function alterarDados() {
+        nome = ipt_nome.value;
+        email = ipt_email.value;
+        whats = ipt_whats.value;
+
+
+        if (nome == '' && email == '' && whats == '' && telefone == '') {
+            alert('Insira o campo que deseja ser alterado.')
+            deuErro = true;
+        }
+        if (email.length > 0) {
+            if (email.indexOf('@') == -1 || email.indexOf('.' == -1)) {
+                alert('Insirá um e-mail válido.');
+                deuErro = true;
+            }
+        }
+        if (whats.length > 0) {
+            if (whats.length != 15) {
+                alert('Insirá um número de celular válido.');
+                deuErro = true;
+            }
+        }
+
+        if (deuErro == false) {
+            alert('Dados alterados com sucesso!')
+        }
+    }
+
+</script>

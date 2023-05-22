@@ -95,7 +95,7 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">Nome: </span> <br>
-              <input id="ipt_nome" placeholder="Rafael Matos"> <br>
+              <input id="ipt_nome" placeholder="Rafael Matos">
               <hr size="1"> <br>
             </div>
           </div>
@@ -103,7 +103,7 @@
           <div class="container2">
             <div class="contexto">
               <span class="atributo">E-mail:</span> <br>
-              <input id="ipt_email" placeholder="rafaelmatos@gmail.com"> <br>
+              <input id="ipt_email" placeholder="rafaelmatos@gmail.com"> 
               <hr size="1"> <br>
             </div>
           </div>
@@ -117,7 +117,7 @@
             <div class="contexto">
               <span class="atributo">WhatsApp:</span> <br>
               <input id="ipt_whats" placeholder="(11) 98343-2839" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
-                required> <br>
+                required> 
               <hr size="1"> <br>
             </div>
           </div>
@@ -126,7 +126,7 @@
             <div class="contexto">
               <span class="atributo">Telefone:</span> <br>
               <input id="ipt_telefone" placeholder="(11) 2737-3849" maxlength="14" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
-                required> <br>
+                required> 
               <hr size="1"> <br>
             </div>
           </div>
@@ -157,7 +157,7 @@
 
           <div class="botao">
 
-            <button style="margin-top: 7%;"><a href="#" class="btnCadFunci">Cadastrar funcionários</a></button>
+            <button style="margin-top: 7%;"><a href="./cadastroFunc.html" class="btnCadFunci">Cadastrar funcionários</a></button>
 
           </div>
 
@@ -181,37 +181,7 @@
     window.location.href = 'dadosEmpresa.html'
   }
 
-  var nome = '';
-  var email = '';
-  var whats = '';
-  var telefone = '';
-  var deuErro = false
-
-  const tel = document.getElementById('ipt_telefone') // Seletor do campo de telefone
-
-  ipt_telefone.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-  ipt_telefone.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
-
-  const mascaraTelefone = (valor) => {
-    valor = valor.replace(/\D/g, "")
-    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-    valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-    ipt_telefone.value = valor // Insere o(s) valor(es) no campo
-  }
-
-  const whatsMask = document.getElementById('ipt_whats') // Seletor do campo de telefone
-
-  ipt_whats.addEventListener('keypress', (e) => mascaraWhats(e.target.value)) // Dispara quando digitado no campo
-  ipt_whats.addEventListener('change', (e) => mascaraWhats(e.target.value)) // Dispara quando autocompletado o campo
-
-  const mascaraWhats = (valor) => {
-    valor = valor.replace(/\D/g, "")
-    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-    valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-    ipt_whats.value = valor // Insere o(s) valor(es) no campo
-  }
-
-  // https://pt.stackoverflow.com/questions/51109/como-mascarar-um-input-no-html5 -- 
+  
 
   function alterarDados() {
     nome = ipt_nome.value;
