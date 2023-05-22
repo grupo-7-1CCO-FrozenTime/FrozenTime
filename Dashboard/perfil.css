@@ -1,7 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
 
+/*Classes do Menu*/
+.header {
+    background-color: #72aab5;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+  }
+  
+  .txtHeader {
+    font-size: 18px;
+}
+/*Classes de Alinhamento*/
+.flexCenter{
+    display:flex;
+    justify-content: center;  
+}
+.flexCenterAlignSelfCenter{
+    display: flex;
+    align-self: center; 
+    justify-content: center;
+}
+.flexCenterAlignItemsCenter{
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+}
+.flexStartAlignSelfCenter{
+    display: flex; 
+    align-self: center;
+    justify-content: start;
+}
+.flexSpaceAround{
+    display:flex;
+    justify-content: space-around;
+}
+.widthiconHeader{
+    width: 20%;
+    margin-right: 6%;
+}
+.divConteudo{
+    width: 80%; 
+    margin-left: 20%;
+}
+hr{
+    width: 90%; 
+    border: 1px solid rgb(255,255,255, 0.6) ;
+}
+#espacamentoTopo{
+    margin-top: 10%;
+}
+
 body {
-    font-family: 'Inter'
+    font-family: 'Inter';
+    margin: 0;
+    display: flex;
 }
 
 .titulo {
@@ -85,21 +140,24 @@ input {
 .botao {
     margin-top: 2%;
     display: flex;
+    font-weight: 400 !important;
 }
 
 .botao a {
     color: white;
+    font-weight: 400;
 }
 
 button {
     border: black solid 2px;
     border-radius: 5px;
-    width: 225px;
+    width: 240px;
     height: 45px;
     background-color: #288396;
     color: white;
     font-size: 21px;   
     cursor: pointer;
+    font-weight: 400 !important;
 }
 
 .contBotao {
@@ -113,7 +171,7 @@ button {
     font-size: 13px;
 }
 
-a, h3, h4{
+h3, h4{
     font-family: 'Inter', sans-serif;
     font-weight: 800;
 }
@@ -123,3 +181,16 @@ p{
 .txtHeader{
     font-size: 18px;
 }
+
+.btnCadFunci{
+    height: 60px;
+    background-color: #288396;
+    color: white;
+    font-size: 21px;   
+    cursor: pointer;
+    margin-top: 7%;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+
