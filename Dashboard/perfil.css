@@ -85,7 +85,6 @@ body {
 .dados {
     display: flex; 
     justify-content: start;
-    margin-top: 2%;
     margin-left: 8%;
 }
 
@@ -138,13 +137,21 @@ input {
     border: #288396 solid 2px;
     border-radius: 5px;
     width: 60%;
-    height: 50%;
+    margin-bottom: 7%;
+    padding-bottom: 4%;
+
+}
+
+.contexto span {
+    margin-bottom: 9%;
 }
 
 .botao {
    
     display: flex;
     font-weight: 400 !important;
+    margin-bottom: 7%;
+
 }
 
 .botao a {
