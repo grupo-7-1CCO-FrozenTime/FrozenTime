@@ -21,18 +21,19 @@ CREATE TABLE Empresas (
 idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 nomeEmpresa VARCHAR(30),
 cnpjEmpresa CHAR(18),
-cidade VARCHAR(40),
+cidade VARCHAR(30),
 rua VARCHAR(40),
 bairro VARCHAR(45),
 numero INT,
 complemento VARCHAR(20)
 );
 
+
 INSERT INTO Empresas (nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento) VALUES 
-("Pfizer", "83920374619304", "São Paulo", "Alexandre Dumas", 1860, "Prédio"),
-("Butantã", "94738502847294", "São Paulo", "Vital Brasil", 1500, "Prédio"),
-("Dismed", "38492840286323", "São Paulo", "Avenida Moça Bonita", 559, "Prédio"),
-("J&J", "7483975836599", "São Paulo", "Av. Pres. Juscelino Kubitschek", 2041, "Prédio");
+("Pfizer", "83920374619304", "São Paulo", "Alexandre Dumas", 'São Paulo', 1860, "Prédio"),
+("Butantã", "94738502847294", "São Paulo", "Vital Brasil", 'São Paulo', 1500, "Prédio"),
+("Dismed", "38492840286323", "São Paulo", "Avenida Moça Bonita", 'São Paulo', 559, "Prédio"),
+("J&J", "7483975836599", "São Paulo", "Av. Pres. Juscelino Kubitschek", 'São Paulo', 2041, "Prédio");
 
 SELECT * FROM Empresas;
 
@@ -49,8 +50,8 @@ FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa),
 FOREIGN KEY (fkLogin) REFERENCES Login(idLogin)
 );
 
-INSERT INTO Funcionarios (nomeFuncionario, emailColaborador, whatsapp, gestor, fkEmpresa, fkCliente) VALUES
-();
+INSERT INTO Funcionarios (nomeFuncionario, emailFuncionario, whatsapp, gestor, fkEmpresa, fkLogin) VALUES
+('Gustavo', 'gustavodessunte@gmail.com', '(11)942961501', 1, 1, 1);
 
 SELECT * FROM Funcionarios JOIN Empresas JOIN Clientes;
 
@@ -89,13 +90,12 @@ CREATE TABLE Rotas(
 
 INSERT INTO Rotas(localPartida, localDestino, dtSaida, dtChegada) 
 values ('Rua Alexandre Dunas, 1860- Santo Amaro, São Paulo- SP, 04717-904', 'Praça Canáririas, 322- Vila Formosa, São Paulo-SP, 03359-120', '2017-09-08 08:30:05', '2017-09-08 09:30:05'),
-       ('Av.Pres. Juscelino Kubitscheck, 2041- Vila Nova Conceição, São Paulo-SP, 04543-011', 'Av.Paulista, 2125- Bela Vista, São paulo-SP, 01311-000', '2023-03-10 10:00:40', '2023-03-10 :30:05'),
+       ('Av.Pres. Juscelino Kubitscheck, 2041- Vila Nova Conceição, São Paulo-SP, 04543-011', 'Av.Paulista, 2125- Bela Vista, São paulo-SP, 01311-000', '2023-03-10 10:00:40', '2023-03-10 12:30:05'),
        ('Av.Mateo Bei, 3066-Cidade São Mateus, São Paulo-SP, 03949-300', 'Av.Conselheiro Carrão, 2186- Vila Carrão, São Paulo- SP, 03402-002', '2019-04-03 09:50:30', '2019-04-03 11:30:05'),
        ('R.Martins Fontes, 166-Consolação, são Paulo-SP, 01050-000', 'Av.dos jequitibás, 446-Jabaquara, Mato Grosso do sul-MS, 04321-090', '2022-11-06 11:30:05', '2022-11-07 08:30:05'),
        ('Av,Lins de Vasconcelos, 1837- Cambuci, São Paulo-SP, 01537-001', 'R.Sete de Abril, 268-República, São Paulo-SP, 01044-000', '2021-10-20 08:00:05', '2022-10-20 09:00:35');
 
 SELECT * FROM Rotas;
-
 
 CREATE TABLE Lotes(
 	idLote INT PRIMARY KEY AUTO_INCREMENT,
@@ -106,14 +106,13 @@ CREATE TABLE Lotes(
 );
 
 INSERT INTO Lotes VALUES  
-(null, '200', '5cm', null, null),
-(null, '150', '40cm', null, null),
-(null, '300', '1m', null, null),
-(null, '100', '1,5m', null, null),
-(null, '50', '55cm', null, null);
+(null, '200', 5, null, null),
+(null, '150', 40, null, null),
+(null, '300', 1, null, null),
+(null, '100', 1.5, null, null),
+(null, '50', 55, null, null);
 														
 SELECT * FROM Lotes;
-
 
 CREATE TABLE Kits(
 idKit INT PRIMARY KEY AUTO_INCREMENT,
@@ -121,49 +120,46 @@ fkLote INT,
 FOREIGN KEY (fkLote) REFERENCES Lotes(idLote)
 );
 
+INSERT INTO Kits VALUES
+(null, 1),
+(null, 2),
+(null, 3),
+(null, 4);
 
-create table Refrigerados (
+create table Refrigeradores (
 idRefrigerador INT PRIMARY KEY AUTO_INCREMENT,
 cidade VARCHAR(40),
 rua VARCHAR(40),
 cep CHAR(9),
 bairro VARCHAR(30),
 numero INT,
-complemento VARCHAR(30),
 nomeFarmacia VARCHAR(30),
-fkKit INT,
 fkEmpresa INT,
+fkKit INT,
 FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
 FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa) 
 );
-
-
+INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo'),
+								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil');
 CREATE TABLE Sensores(
 	fkKit INT,
 	idSensor INT,
-    PRIMARY KEY ( fkKit, idSensor),
-    FOREIGN KEY (fkKit) REFERENCES Kits(idKit)
+    FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
+    PRIMARY KEY ( fkKit, idSensor)
 );
-
 INSERT INTO Sensores VALUES 
-							(null, null, "ideal", null),
-							(null, null, "alerta", null),
-							(null, null, "critico", null),
-							(null, null, "ideal", null);
+							(1, 1),
+							(2, 2),
+							(3, 3),
+							(4, 4);
 SELECT * FROM Sensores;
-                            
-CREATE TABLE Registro (
-idRegistro INT PRIMARY KEY, 
+
+CREATE TABLE Registros(
+idRegistro INT PRIMARY KEY AUTO_INCREMENT,
 temperatura INT,
 dataHora DATETIME,
 fkSensor INT,
-FOREIGN KEY (fkSensor) REFERENCES Sensores(idSensor),
 fkKit INT,
+FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor),
 FOREIGN KEY (fkKit) REFERENCES Kit(idKit)
 );
-
-INSERT INTO Registro VALUES 
-							(null, 4, '2019-04-03 11:30:05', null),
-							(null, 8, '2020-08-03 12:30:00', null),
-							(null, 10, '2022-04-26 20:30:00', null),
-							(null, 6, '2022-10-03 21:00:00', null);
