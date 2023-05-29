@@ -15,24 +15,24 @@
     <header style="background-color: #76c3cf;">
         <nav class="cabecalho">
             <a href="index.html"><img src="img/logo.png" id="logo" /></a>
-    
+
             <div class="menu">
                 <ul>
                     <li><a href="index.html#beneficios">Solução</a></li>
                     <li><img src="img/linha.png" /></li>
-    
+
                     <li><a href="calculadora.html">Simulação</a></li>
                     <li><img src="img/linha.png" /></li>
-    
+
                     <li><a href="assinatura.html">Assine</a></li>
                     <li><img src="img/linha.png" /></li>
-    
+
                     <li><a href="index.html#sobreNos">Sobre</a></li>
                     <li><img src="img/linha.png" /></li>
-    
+
                     <li><a href="contato.html">Contato</a></li>
                     <li><img src="img/linha.png" /></li>
-    
+
                     <li>
                         <a href="login.html"><img src="img/login.png" /></a>
                     </li>
@@ -123,8 +123,8 @@
                         <h2>Contatos</h2>
                     </li>
                     <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
-                    <li><a>Telefone</a></li>
-                    <li><a>E-mail</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
                 </ul>
             </div>
             <div>
@@ -166,11 +166,31 @@
         // if (senha.value != "" && length) {
         //     alert("Favor por uma senha válida de no mínimo 5 caractéres");
         // }
-        if(senha.value == 12345 && email.value == 'Brandao'){
+        if (senha.value == 12345 && email.value == 'Brandao') {
             window.location.href = "../Dashboard/index.html";
         }
-        else{
+        else {
             alert("Usuário e/ou senha inválidos!");
         }
     }
+
+    function copiarTelefone() {
+        navigator.clipboard.writeText("11 95369-8849")
+            .then(() => {
+                alert("Telefone para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+    function copiarEmail() {
+        navigator.clipboard.writeText("desk@frozentime.atlassian.net")
+            .then(() => {
+                alert("Email para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+
 </script>

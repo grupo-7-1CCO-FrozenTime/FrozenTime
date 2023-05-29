@@ -55,7 +55,7 @@
             </div>
 
             <div class="form"> <!-- css login -->
-                <div > <!-- css login -->
+                <div> <!-- css login -->
 
                     <div class="camposCadastro" id="camposEmpresa"> <!-- css login -->
                         <div class="inputsCadastro"> <!-- css login -->
@@ -106,52 +106,54 @@
                     </div>
                 </div>
 
-                <div class="camposCadastro" id="camposFuncionario" style="display: none;  padding-left: 20px"> <!-- css login -->
+                <div class="camposCadastro" id="camposFuncionario" style="display: none;  padding-left: 20px">
+                    <!-- css login -->
                     <div class="inputsCadastro"> <!-- css login -->
                         <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email' required />
                         <label for="Email" class="input_label">Email</label>
                     </div>
-                    
+
                     <div class="inputsCadastro"> <!-- css login -->
                         <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel' required />
                         <label for="Telefone" class="input_label">Telefone</label>
                     </div>
-                    
+
                     <div class="inputsCadastro"> <!-- css login -->
-                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats' required />
-                    <label for="WhatsApp" class="input_label">WhatsApp</label>
-                </div>
-                
-                <div class="inputsCadastro"> <!-- css login -->
-                    <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha' required />
-                    <label for="Senha" class="input_label">Senha</label>
-                </div>
-                
-                <div class="inputsCadastro"> <!-- css login -->
-                    <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar" id='ipt_confir'
-                    required />
-                    <label for="Confirmar" class="input_label">Confirmar senha</label>
-                </div>
-                <div class="botoesTexto">
-                    
-                    <div class="" style="display: flex; justify-content: space-evenly; width: 100%;">
-                        <div>
-                            <button onclick="proximo()" style="width: 120px;height: 3;"
-                            class="botaoLogin">Próximo</button>
-                        </div>
-                        <div>
-                            <a class="cadastrar" href="Login.html">Já sou membro</a>
+                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
+                            required />
+                        <label for="WhatsApp" class="input_label">WhatsApp</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha' required />
+                        <label for="Senha" class="input_label">Senha</label>
+                    </div>
+
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
+                            id='ipt_confir' required />
+                        <label for="Confirmar" class="input_label">Confirmar senha</label>
+                    </div>
+                    <div class="botoesTexto">
+
+                        <div class="" style="display: flex; justify-content: space-evenly; width: 100%;">
+                            <div>
+                                <button onclick="proximo()" style="width: 120px;height: 3;"
+                                    class="botaoLogin">Próximo</button>
+                            </div>
+                            <div>
+                                <a class="cadastrar" href="Login.html">Já sou membro</a>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-                
-                
+                <!-- Campos Cadastro Funcionario -->
+
             </div>
-            <!-- Campos Cadastro Funcionario -->
-            
-        </div>
-            
-            
+
+
         </div>
 
 
@@ -194,8 +196,8 @@
                         <h2>Contatos</h2>
                     </li>
                     <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
-                    <li><a>Telefone</a></li>
-                    <li><a>E-mail</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
                 </ul>
             </div>
             <div>
@@ -254,4 +256,24 @@
         }
 
     }
+
+    function copiarTelefone() {
+        navigator.clipboard.writeText("11 95369-8849")
+            .then(() => {
+                alert("Telefone para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+    function copiarEmail() {
+        navigator.clipboard.writeText("desk@frozentime.atlassian.net")
+            .then(() => {
+                alert("Email para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+
 </script>

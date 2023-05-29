@@ -159,8 +159,8 @@
                         <h2>Contatos</h2>
                     </li>
                     <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
-                    <li><a>Telefone</a></li>
-                    <li><a>E-mail</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
                 </ul>
             </div>
             <div>
@@ -195,6 +195,25 @@
         tela1.style.display = "block";
         tela2.style.display = "none";
         ipt_email.value = "";
+    }
+   
+    function copiarTelefone(){
+        navigator.clipboard.writeText( "11 95369-8849")
+        .then(() => {
+        alert("Telefone para contato copiado!");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
+    }
+    function copiarEmail(){
+        navigator.clipboard.writeText( "desk@frozentime.atlassian.net")
+        .then(() => {
+        alert("Email para contato copiado!");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
     }
 
 </script>

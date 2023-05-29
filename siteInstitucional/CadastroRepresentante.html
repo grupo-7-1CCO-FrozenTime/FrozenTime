@@ -16,34 +16,34 @@
 <body style="background-color: 
 36DACB5;">
 
-<header style="background-color: #76c3cf;">
-    <nav class="cabecalho">
-        <a href="index.html"><img src="img/logo.png" id="logo" /></a>
+    <header style="background-color: #76c3cf;">
+        <nav class="cabecalho">
+            <a href="index.html"><img src="img/logo.png" id="logo" /></a>
 
-        <div class="menu">
-            <ul>
-                <li><a href="index.html#beneficios">Solução</a></li>
-                <li><img src="img/linha.png" /></li>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html#beneficios">Solução</a></li>
+                    <li><img src="img/linha.png" /></li>
 
-                <li><a href="calculadora.html">Simulação</a></li>
-                <li><img src="img/linha.png" /></li>
+                    <li><a href="calculadora.html">Simulação</a></li>
+                    <li><img src="img/linha.png" /></li>
 
-                <li><a href="assinatura.html">Assine</a></li>
-                <li><img src="img/linha.png" /></li>
+                    <li><a href="assinatura.html">Assine</a></li>
+                    <li><img src="img/linha.png" /></li>
 
-                <li><a href="index.html#sobreNos">Sobre</a></li>
-                <li><img src="img/linha.png" /></li>
+                    <li><a href="index.html#sobreNos">Sobre</a></li>
+                    <li><img src="img/linha.png" /></li>
 
-                <li><a href="contato.html">Contato</a></li>
-                <li><img src="img/linha.png" /></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><img src="img/linha.png" /></li>
 
-                <li>
-                    <a href="login.html"><img src="img/login.png" /></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+                    <li>
+                        <a href="login.html"><img src="img/login.png" /></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
 
 
@@ -59,44 +59,40 @@
 
             <div class="form"> <!-- css login -->
 
-                    <div class="camposCadastro"> <!-- css login -->
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email'
-                                required />
-                            <label for="Email" class="input_label">Email</label>
-                        </div>
+                <div class="camposCadastro"> <!-- css login -->
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email' required />
+                        <label for="Email" class="input_label">Email</label>
+                    </div>
 
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel'
-                                required />
-                            <label for="Telefone" class="input_label">Telefone</label>
-                        </div>
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel' required />
+                        <label for="Telefone" class="input_label">Telefone</label>
+                    </div>
 
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
-                                required />
-                            <label for="WhatsApp" class="input_label">WhatsApp</label>
-                        </div>
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
+                            required />
+                        <label for="WhatsApp" class="input_label">WhatsApp</label>
+                    </div>
 
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha'
-                                required />
-                            <label for="Senha" class="input_label">Senha</label>
-                        </div>
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Senha" name="Senha" id='ipt_senha' required />
+                        <label for="Senha" class="input_label">Senha</label>
+                    </div>
 
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
-                                id='ipt_confir' required />
-                            <label for="Confirmar" class="input_label">Confirmar senha</label>
-                        </div>
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
+                            id='ipt_confir' required />
+                        <label for="Confirmar" class="input_label">Confirmar senha</label>
+                    </div>
 
-                        <div class="botoesTexto">
+                    <div class="botoesTexto">
 
-                            <div class="botoesLoginCadastro">
-                                <button onclick="cadastrar()" class="botaoLogin"><a href="Login.html">Cadastrar</a> </button>
-                                <a class="cadastrar" href="Login.html">Já sou membro</a>
-                            </div>
-
+                        <div class="botoesLoginCadastro">
+                            <button onclick="cadastrar()" class="botaoLogin"><a href="Login.html">Cadastrar</a>
+                            </button>
+                            <a class="cadastrar" href="Login.html">Já sou membro</a>
                         </div>
 
                     </div>
@@ -104,6 +100,8 @@
                 </div>
 
             </div>
+
+        </div>
 
 
         </div>
@@ -145,8 +143,8 @@
                         <h2>Contatos</h2>
                     </li>
                     <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
-                    <li><a>Telefone</a></li>
-                    <li><a>E-mail</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
                 </ul>
             </div>
             <div>
@@ -205,4 +203,24 @@
         }
 
     }
+
+    function copiarTelefone() {
+        navigator.clipboard.writeText("11 95369-8849")
+            .then(() => {
+                alert("Telefone para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+    function copiarEmail() {
+        navigator.clipboard.writeText("desk@frozentime.atlassian.net")
+            .then(() => {
+                alert("Email para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+
 </script>

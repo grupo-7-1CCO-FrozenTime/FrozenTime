@@ -63,16 +63,19 @@
             <!-- Fim da Calculadora -->
             <!-- Começo das Mensagens -->
             <div class="todasMensagens">
-                
+
                 <div class="mensagem">
                     <div id="msg1">
-                        <p class="pCalculadora">Com um lote de área <b  class="dados">XXX m²</b>, seus produtos precisam de apenas <b class="dados">XXX</b> sensores por lote! </p>
+                        <p class="pCalculadora">Com um lote de área <b class="dados">XXX m²</b>, seus produtos precisam
+                            de apenas <b class="dados">XXX</b> sensores por lote! </p>
                     </div>
                     <div id="msg1Dados"></div>
                 </div>
                 <div class="mensagem">
                     <div id="msg2">
-                        <p class="pCalculadora">Com base em pesquisas feitas, seu lucro de <b class="dados">R$XXX</b> reais, é equivalente a  uma perda de <b class="dados">R$XXX</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$XXX</b> reais!</p>
+                        <p class="pCalculadora">Com base em pesquisas feitas, seu lucro de <b class="dados">R$XXX</b>
+                            reais, é equivalente a uma perda de <b class="dados">R$XXX</b> reais. Com os nossos
+                            sensores, seu lucro aumentará em <b class="dados">R$XXX</b> reais!</p>
                     </div>
                     <div id="msg2Dados"></div>
                 </div>
@@ -118,8 +121,8 @@
                         <h2>Contatos</h2>
                     </li>
                     <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
-                    <li><a>Telefone</a></li>
-                    <li><a>E-mail</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
                 </ul>
             </div>
             <div>
@@ -144,7 +147,7 @@
 </html>
 
 <script>
-    
+
     function simular() {
         var area = Number(ipt_areaLote.value);
         var qtdSensor = area * 2;
@@ -155,23 +158,42 @@
 
         ipt_areaLote.value = '';
         ipt_informe.value = '';
-        
+
         if (area == '' || lucro == '') {
             alert("Campos vazios, preencha-os")
         } else
-        if (area <= 0 || lucro <= 0) {
-            alert("Número inválido, preencha novamente")
-            area = ""; lucro = "";
-            erro = true;
-        }
-        else if (erro == false) {
-            msg1.style.display = 'none';
-            msg2.style.display = 'none';
-    
-            msg1Dados.innerHTML = `Com um lote de área <b class="dados">${area} m²</b>, seus produtos precisam de apenas <b class="dados">${qtdSensor}</b> sensores por lote! ` 
-            
-            msg2Dados.innerHTML = `Com base em pesquisas feitas, seu lucro de <b class="dados">R$${lucro}</b> reais, é equivalente a  uma perda de <b class="dados">R$${perda.toFixed(2)}</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$${margem.toFixed(2)}</b> reais!`
-        }
+            if (area <= 0 || lucro <= 0) {
+                alert("Número inválido, preencha novamente")
+                area = ""; lucro = "";
+                erro = true;
+            }
+            else if (erro == false) {
+                msg1.style.display = 'none';
+                msg2.style.display = 'none';
+
+                msg1Dados.innerHTML = `Com um lote de área <b class="dados">${area} m²</b>, seus produtos precisam de apenas <b class="dados">${qtdSensor}</b> sensores por lote! `
+
+                msg2Dados.innerHTML = `Com base em pesquisas feitas, seu lucro de <b class="dados">R$${lucro}</b> reais, é equivalente a  uma perda de <b class="dados">R$${perda.toFixed(2)}</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$${margem.toFixed(2)}</b> reais!`
+            }
     }
-        
+
+    function copiarTelefone() {
+        navigator.clipboard.writeText("11 95369-8849")
+            .then(() => {
+                alert("Telefone para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+    function copiarEmail() {
+        navigator.clipboard.writeText("desk@frozentime.atlassian.net")
+            .then(() => {
+                alert("Email para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+
 </script>
