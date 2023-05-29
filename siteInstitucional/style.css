@@ -44,8 +44,8 @@ header{
 }
 
 #logo {
-    width: 60%;
-    height: 60%;
+    width: 30%;
+    height: 30%;
 }
 
 ul {
@@ -53,6 +53,10 @@ ul {
     display: flex;
     align-items: center;
     gap: 32px;
+}
+
+.menu {
+    width: 60%;
 }
 
  a{
@@ -64,7 +68,7 @@ ul {
 }
 
 ul img{
-    width: 60%;
+    width: 65%;
     height: 50%;
 }
 
@@ -364,11 +368,12 @@ img:nth-child(7) {
 }
 
 .imgLogoFooter {
-    margin-bottom: 19%;
+    margin-bottom: 20%;
+    
 }
-.imgLogoFooter img{
-    width: 75%;
-    height: 75%;
+.imgLogoFooter img{ 
+    width: 240px;
+    height: 80px;
 }
 
 

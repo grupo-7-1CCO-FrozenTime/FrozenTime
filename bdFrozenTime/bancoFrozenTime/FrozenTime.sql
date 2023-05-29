@@ -1,6 +1,5 @@
 CREATE DATABASE FrozenTime;
 USE FrozenTime;
-
 CREATE TABLE Login(
 	idLogin INT PRIMARY KEY AUTO_INCREMENT,
 	emailFuncionario VARCHAR(50),
@@ -37,7 +36,6 @@ INSERT INTO Empresas VALUES
 
 SELECT * FROM Empresas;
 
-
 CREATE TABLE Funcionarios (
 idFuncionario INT,
 nomeFuncionario VARCHAR(50),
@@ -52,8 +50,6 @@ FOREIGN KEY (fkLogin) REFERENCES Login(idLogin)
 
 INSERT INTO Funcionarios VALUES
 (null, 'Gustavo', 'gustavodessunte@gmail.com', '(11)942961501', 1, 1, 1);
-
-SELECT * FROM Funcionarios JOIN Empresas JOIN Clientes;
 
 
 CREATE TABLE Produtos(
@@ -76,7 +72,7 @@ fkEmpresa INT,
 FOREIGN KEY(fkEmpresa) REFERENCES Empresas(idEmpresa),
 PRIMARY KEY (fkProduto, fkEmpresa)
 );
-INSERT INTO ProdutoEmpresa VALUES (1, 1),
+INSERT INTO ProdutosEmpresa VALUES (1, 1),
 								  (1, 2),
                                   (2, 1),
                                   (2, 2),
@@ -146,13 +142,12 @@ fkKit INT,
 FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
 FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa) 
 );
-INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo'),
-								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil');
+INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo', 1, 2),
+								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil', 2, 2);
 CREATE TABLE Sensores(
-	fkKit INT,
-	idSensor INT,
-    FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
-    PRIMARY KEY ( fkKit, idSensor)
+	idSensor INT PRIMARY KEY AUTO_INCREMENT,
+    fkKit INT,
+    FOREIGN KEY (fkKit) REFERENCES Kits(idKit)
 );
 INSERT INTO Sensores VALUES 
 							(1, 1),
@@ -167,6 +162,17 @@ temperatura INT,
 dataHora DATETIME,
 fkSensor INT,
 fkKit INT,
-FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor),
-FOREIGN KEY (fkKit) REFERENCES Kit(idKit)
+FOREIGN KEY (fkSensor) REFERENCES Sensores(idSensor),
+FOREIGN KEY (fkKit) REFERENCES Kits(idKit)
+);
+
+SHOW TABLES;
+
+CREATE TABLE HistoricoAvisos(
+idAvisos INT AUTO_INCREMENT,
+fkLote INT,
+fkKit INT,
+FOREIGN KEY (fkLote) REFERENCES Lotes(idLote),
+FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
+PRIMARY KEY (idAvisos, fkLote, fkKit)
 );

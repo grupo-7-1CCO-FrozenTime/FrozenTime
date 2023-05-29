@@ -17,8 +17,8 @@ header{
 }
 
 #logo {
-    width: 60%;
-    height: 60%;
+    width: 30%;
+    height: 30%;
 }
 
 ul {
@@ -26,6 +26,10 @@ ul {
     display: flex;
     align-items: center;
     gap: 32px;
+}
+
+.menu {
+    width: 60%;
 }
 
 .menu a{
@@ -37,7 +41,7 @@ ul {
 }
 
 ul img{
-    width: 60%;
+    width: 65%;
     height: 50%;
 }
 /* Fim do Header */
@@ -262,11 +266,11 @@ footer {
 }
 
 .imgLogoFooter {
-    margin-bottom: 19%;
+    margin-bottom: 20%;
 }
 .imgLogoFooter img{
-    width: 75%;
-    height: 75%;
+    width: 240px;
+    height: 80px;
 }
 .txtLogoFooter {
   position: absolute;
