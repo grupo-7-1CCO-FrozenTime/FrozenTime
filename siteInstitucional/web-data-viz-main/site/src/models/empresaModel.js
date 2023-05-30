@@ -29,29 +29,9 @@ function cadastrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero,
         
     return database.executar(instrucao);
 }
-
+ 
 module.exports = {
     entrarEmpresa,
     cadastrarEmpresa,
     listarEmpresa,
 };
-
-
-// CADASTRO:
-// nomeEmpresa
-// CNPJEmpresa
-// EndereçoEmpresa
-// CidadeEmpresa
-// NúmeroEmpresa
-// ComplementoEMpresa
-
-// nomeFuncionario,
-// emailCliente,
-// telefone
-// whatsapp,
-// fk_empresa,
-// senhaCliente
-
-
-// LOGIN
-// fk_login

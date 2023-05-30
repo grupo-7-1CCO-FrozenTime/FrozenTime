@@ -10,7 +10,7 @@
         /* background-color: #6DACB5; */
         background:
         linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,
-        url('img/backgroundNovo.png');
+        url('../img/backgroundNovo.png');
         background-repeat: no-repeat;
         background-attachment:fixed;
         background-size: cover;  
