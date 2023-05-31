@@ -84,7 +84,7 @@ function cadastrarEmpresa(req, res){
         res.status(400).send("O Complemento de sua Empresa está undefined!");
     }
     else{
-        empresaModel.entrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento)
+        empresaModel.cadastrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento)
         .then(
             function(resultado){
                 res.json(resultado);

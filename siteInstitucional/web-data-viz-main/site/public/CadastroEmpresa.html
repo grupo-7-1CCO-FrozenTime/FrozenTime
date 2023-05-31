@@ -60,7 +60,7 @@
                     <div class="camposCadastro" id="camposEmpresa"> <!-- css login -->
                         <div class="inputsCadastro"> <!-- css login -->
                             <input type="text" class="input" placeholder="Nome da Empresa" name="Nome da Empresa"
-                                id='ipt_nome' autofocus required />
+                                id='ipt_nomeEmpresa' autofocus required />
                             <label for="Nome da Empresa" class="input_label">Nome da Empresa</label>
                         </div>
 
@@ -70,32 +70,38 @@
                         </div>
 
                         <div class="inputsCadastro"> <!-- css login -->
-                            <input type="text" class="input" placeholder="Endereço" name="Endereço" id='ipt_endereco'
-                                required />
-                            <label for="Endereço" class="input_label">Endereço</label>
-                        </div>
-
-                        <div class="inputsCadastro"> <!-- css login -->
-                            <input type="text" class="input" placeholder="Cidade" name="Cidade" id='ipt_cidade'
+                            <input type="text" class="input" placeholder="Cidade" name="Cidade" id='ipt_cidadeEmpresa'
                                 required />
                             <label for="Cidade" class="input_label">Cidade</label>
                         </div>
 
                         <div class="inputsCadastro"> <!-- css login -->
-                            <input type="text" class="input" placeholder="Número" name="numero" id='ipt_numero'
+                            <input type="text" class="input" placeholder="Rua" name="Rua" id='ipt_ruaEmpresa'
+                                required />
+                            <label for="Rua" class="input_label">Rua</label>
+                        </div>
+
+                        <div class="inputsCadastro"> <!-- css login -->
+                            <input type="text" class="input" placeholder="bairro" name="bairro" id='ipt_bairroEmpresa'
+                                required />
+                            <label for="bairro" class="input_label">Bairro</label>
+                        </div>
+
+                        <div class="inputsCadastro"> <!-- css login -->
+                            <input type="text" class="input" placeholder="Número" name="numero" id='ipt_numeroEmpresa'
                                 required />
                             <label for="numero" class="input_label">Número</label>
                         </div>
                         <div class="inputsCadastro"> <!-- css login -->
                             <input type="text" class="input" placeholder="Complemento" name="Complemento"
-                                id='ipt_complemento' />
+                                id='ipt_complementoEmpresa' />
                             <label for="Complemento" class="input_label">Complemento</label>
                         </div>
                         <div class="botoesTexto">
 
                             <div class="" style="display: flex; justify-content: space-evenly; width: 100%;">
                                 <div>
-                                    <button onclick="proximo()" style="width: 120px;height: 3;"
+                                    <button onclick="cadastrarEmpresa()" style="width: 120px;height: 3;"
                                         class="botaoLogin">Próximo</button>
                                 </div>
                                 <div>
@@ -274,6 +280,56 @@
             .catch(() => {
                 alert("something went wrong");
             });
+    }
+
+
+    function cadastrarEmpresa() {
+
+        var nomeEmpresa = ipt_nomeEmpresa.value;
+        var cnpjEmpresa = ipt_cnpj.value;
+        var cidadeEmpresa = ipt_cidadeEmpresa.value;
+        var ruaEmpresa = ipt_ruaEmpresa.value;
+        var bairroEmpresa = ipt_bairroEmpresa.value;
+        var numeroEmpresa = Number(ipt_numeroEmpresa.value);
+        var complementoEmpresa = ipt_complementoEmpresa.value;
+
+        if (nomeEmpresa == "" || cnpjEmpresa == "" || cidadeEmpresa == "" || ruaEmpresa == ""|| bairroEmpresa == "" || numeroEmpresa == 0 || complementoEmpresa == "") {
+            alert('Campos de cadastro não podem ser nulos!')
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/empresa/cadastrarEmpresa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeEmpresa: nomeEmpresa,
+                cnpjEmpresa : cnpjEmpresa,
+                cidade: cidadeEmpresa,
+                rua: ruaEmpresa,
+                bairro: bairroEmpresa,
+                numero: numeroEmpresa,
+                complemento: complementoEmpresa
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                    window.location = "login.html";
+            } else {
+                throw alert("Houve um erro ao tentar realizar o cadastro da Empresa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
 
 </script>
