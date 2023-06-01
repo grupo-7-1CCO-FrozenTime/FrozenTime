@@ -26,7 +26,6 @@ function listarEmpresa(req, res){
 }
 
 function entrarEmpresa(req, res){
-    var idEmpresa = 1;
     if(idEmpresa == undefined){
         res.status(400).send("Seu idEmpresa está undefined!");
     }

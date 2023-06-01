@@ -115,17 +115,21 @@
                 <div class="camposCadastro" id="camposFuncionario" style="display: none;  padding-left: 20px">
                     <!-- css login -->
                     <div class="inputsCadastro"> <!-- css login -->
-                        <input type="email" class="input" placeholder="Email" name="Email" id='ipt_email' required />
+                        <input type="email" class="input" placeholder="Nome Funcionario" name="nomeFuncionario" id='ipt_nomeFuncionario' required />
+                        <label for="ipt_nomeFuncionario" class="input_label">Nome Funcionário:</label>
+                    </div>
+                    <div class="inputsCadastro"> <!-- css login -->
+                        <input type="email" class="input" placeholder="Email" name="Email" id='ipt_emailFuncionario' required />
                         <label for="Email" class="input_label">Email</label>
                     </div>
 
                     <div class="inputsCadastro"> <!-- css login -->
-                        <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_tel' required />
+                        <input type="tel" class="input" placeholder="Telefone" name="Telefone" id='ipt_telFuncionario' required />
                         <label for="Telefone" class="input_label">Telefone</label>
                     </div>
 
                     <div class="inputsCadastro"> <!-- css login -->
-                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whats'
+                        <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id='ipt_whatsFuncionario'
                             required />
                         <label for="WhatsApp" class="input_label">WhatsApp</label>
                     </div>
@@ -137,7 +141,7 @@
 
                     <div class="inputsCadastro"> <!-- css login -->
                         <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar"
-                            id='ipt_confir' required />
+                            id='ipt_checkSenha' required />
                         <label for="Confirmar" class="input_label">Confirmar senha</label>
                     </div>
                     <div class="botoesTexto">
@@ -224,44 +228,8 @@
 
 </html>
 <script>
-    function proximo() {
-        var validacoes = ipt_nome.value == "" || ipt_cnpj.value == "" || ipt_endereco.value == "" || ipt_endereco.value == "" || ipt_cidade.value == "" || ipt_numero.value == "" || ipt_complemento.value == "";
 
-        if (validacoes) {
-            alert("Por favor, preencher todos os campos")
-        } else {
-            camposEmpresa.style.display = "none";
-            camposFuncionario.style.display = "block";
-        }
-
-    }
-
-    function cadastrar() {
-        var validacoes = ipt_repre.value == "" || ipt_email.value == "" || ipt_tel.value == "" || ipt_whats.value == "" || ipt_senha.value == "" || ipt_confir.value == "";
-
-        var telefone = ipt_tel.value
-        var length = telefone.length != "" && (telefone.length > 9 || telefone.length < 9);
-
-        var whats = ipt_whats.value
-        var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
-
-        if (validacoes) {
-            alert("Por favor, preencher todos os campos")
-        }
-
-        if (length) {
-            alert("Favor, por um telefone válido")
-        }
-
-        if (app) {
-            alert("Favor, por um WhatsApp válido")
-        }
-
-        if (ipt_senha.value != ipt_confir.value) {
-            alert("As senhas devem ser iguais")
-        }
-
-    }
+   
 
     function copiarTelefone() {
         navigator.clipboard.writeText("11 95369-8849")
@@ -320,8 +288,8 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-
-                    window.location = "login.html";
+                camposEmpresa.style.display = "none";
+            camposFuncionario.style.display = "block";
             } else {
                 throw alert("Houve um erro ao tentar realizar o cadastro da Empresa!");
             }
@@ -331,5 +299,68 @@
 
         return false;
     }
+
+    function cadastrarFuncionario(){
+        var erro = false;
+        var validacoes = ipt_nomeFuncionario.value == "" || ipt_emailFuncionario.value == "" || ipt_telFuncionario.value == "" 
+        || ipt_whatsFuncionario.value == "" || ipt_senha.value == "" || ipt_checkSenha.value == "";
+
+        var telefone = ipt_telFuncionario.value
+        var length = telefone.length != "" && (telefone.length > 9 || telefone.length < 9);
+
+        var whats = ipt_whatsFuncionario.value
+        var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
+
+        if (validacoes) {
+            alert("Por favor, preencher todos os campos");
+            erro = true;
+        }
+
+        if (length) {
+            alert("Favor, por um telefone válido")
+            erro = true;
+        }
+
+        if (app) {
+            alert("Favor, por um WhatsApp válido")
+            erro = true;
+        }
+
+        if (ipt_senha.value != ipt_confir.value) {
+            alert("As senhas devem ser iguais")
+            erro = true;
+        }
+        if(!erro){
+            fetch("/empresa/cadastrarEmpresa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeEmpresa: nomeEmpresa,
+                cnpjEmpresa : cnpjEmpresa,
+                cidade: cidadeEmpresa,
+                rua: ruaEmpresa,
+                bairro: bairroEmpresa,
+                numero: numeroEmpresa,
+                complemento: complementoEmpresa
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                camposEmpresa.style.display = "none";
+            camposFuncionario.style.display = "block";
+            } else {
+                throw alert("Houve um erro ao tentar realizar o cadastro da Empresa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        }
+            }
 
 </script>
