@@ -25,6 +25,23 @@ function listarEmpresa(req, res){
     );
 }
 
+function listarUltimoIdEmpresa(req, res){
+    empresaModel.listarUltimoIdEmpresa()
+    .then(function (resultado){
+        if(resultado.length > 0){
+            res.status(200).json(resultado);
+        }
+        else{
+            res.status(204).send("Nenhum resultado de empresa encontrados");
+        }
+    }).catch(
+        function(erro){
+            console.log("Houve um erro ao realizar a consulta! Erro:", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 function entrarEmpresa(req, res){
     if(idEmpresa == undefined){
         res.status(400).send("Seu idEmpresa está undefined!");
@@ -105,5 +122,6 @@ module.exports = {
     entrarEmpresa,
     cadastrarEmpresa,
     listarEmpresa,
-    testarEmpresa
+    testarEmpresa,
+    listarUltimoIdEmpresa
 }

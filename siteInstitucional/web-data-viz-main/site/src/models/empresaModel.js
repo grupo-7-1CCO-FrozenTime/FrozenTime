@@ -29,9 +29,17 @@ function cadastrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero,
         
     return database.executar(instrucao);
 }
+
+function listarUltimoIdEmpresa(){
+    var instrucao = ` 
+    select idEmpresa from Empresas order by idEmpresa desc LIMIT 1;
+    `
+    return database.executar(instrucao);
+}
  
 module.exports = {
     entrarEmpresa,
     cadastrarEmpresa,
     listarEmpresa,
+    listarUltimoIdEmpresa
 };

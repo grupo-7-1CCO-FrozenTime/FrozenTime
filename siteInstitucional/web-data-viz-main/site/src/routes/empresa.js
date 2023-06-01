@@ -11,6 +11,10 @@ router.get("/listarEmpresa", function (req, res){
     empresaController.listarEmpresa(req, res);
 });
 
+router.get("/listarUltimoIdEmpresa", function (req, res){
+    empresaController.listarUltimoIdEmpresa(req, res);
+});
+
 router.post("/cadastrarEmpresa", function (req, res){
     empresaController.cadastrarEmpresa(req, res);
 })

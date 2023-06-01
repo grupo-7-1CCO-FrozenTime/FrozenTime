@@ -54,16 +54,16 @@ function entrarFuncionario(req, res){
 
 function cadastrarFuncionario(req, res){
     var nomeFuncionario = req.body.nomeFuncionario;
-    var emailColaborador = req.body.emailColaborador;
+    var emailFuncionario = req.body.emailFuncionario;
     var whatsapp = req.body.whatsapp;
     var gestor = 1;
-    var fkEmpresa = req.body.idEmpresa;
-    var fkLogin = req.body.idLogin;
+    var fkEmpresa = req.body.fkEmpresa;
+    var fkLogin = req.body.fkLogin;
 
     if(nomeFuncionario == undefined){
         res.status(400).send("O Nome de seu Funcionário está undefined!");
     }
-    else if(emailColaborador == undefined){
+    else if(emailFuncionario == undefined){
         res.status(400).send("O Email de seu Funcionário está undefined!");
     }
     else if(whatsapp == undefined){
@@ -79,20 +79,21 @@ function cadastrarFuncionario(req, res){
         res.status(400).send("A fkLogin de seu Funcionário está undefined!");
     }
     else{
-        funcionarioModel.cadastrarFuncionario(nomeFuncionario, emailColaborador, whatsapp, gestor, fkEmpresa, fkLogin).then(
+        funcionarioModel.cadastrarFuncionario(nomeFuncionario, emailFuncionario, whatsapp, gestor, fkEmpresa, fkLogin)
+        .then(
             function(resultado){
-                res.json(resultado)
-            }.catch(
-                function (erro){
-                    console.log(erro);
-                    coonsole.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            )
-        )
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro){
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
     }
 
 }
