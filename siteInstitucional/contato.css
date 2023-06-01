@@ -82,7 +82,7 @@ ul img{
 }
 
 .body_contato{
-    background: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat, url('../img/background_contato.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat, url('img/background_contato.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 1550px;
