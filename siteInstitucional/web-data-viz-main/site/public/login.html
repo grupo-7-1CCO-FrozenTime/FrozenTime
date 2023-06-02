@@ -68,7 +68,7 @@
 
                         <div class="divBotoes">
                             <div class="botoesLoginCadastro">
-                                <button onclick="login()" class="botaoLogin">Login</button>
+                                <button onclick="Login()" class="botaoLogin">Login</button>
                                 <a class="cadastrar" href="CadastroEmpresa.html">Cadastrar</a>
                             </div>
                         </div>
@@ -146,33 +146,56 @@
 
 </html>
 <script>
-    function login() {
-        var valida = senha.value;
-        var length = valida.length <= 5;
+    function Login() {
+        var emailVar = email.value;
+        var senhaVar = senha.value;
 
-        if (email.value == "") {
-            alert("Favor informar o e-mail");
+        if (emailVar == "" || senhaVar == "") {
+            return false;
         }
 
-        // if(ipt_senha.value == "" || length){
-        //   alert("Favor por uma senha válida de no mínimo 5 caractéres")
-        // }
+        fetch("/loginTabela/autenticarLoginTabela", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailLogin: emailVar,
+                senhaLogin: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-        //Descomentar após link com banco de dados 
-        // if (senha.value == "" && length) {
-        //     alert("Favor por uma senha");
-        // }
+            if (resposta.ok) {
+                console.log(resposta);
 
-        // if (senha.value != "" && length) {
-        //     alert("Favor por uma senha válida de no mínimo 5 caractéres");
-        // }
-        if (senha.value == 12345 && email.value == 'Brandao') {
-            window.location.href = "../Dashboard/index.html";
-        }
-        else {
-            alert("Usuário e/ou senha inválidos!");
-        }
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.IDUSUARIO = json.idLogin;
+                    setTimeout(function () {
+                        console.log('Usuario Logado com sucesso!')
+                        window.location = "./Dashboard/index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
+
 
     function copiarTelefone() {
         navigator.clipboard.writeText("11 95369-8849")
@@ -191,6 +214,10 @@
             .catch(() => {
                 alert("something went wrong");
             });
+    }
+
+    function selectNomeEmpresa(){
+
     }
 
 </script>

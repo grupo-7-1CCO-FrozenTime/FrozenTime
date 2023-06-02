@@ -41,46 +41,45 @@ function listarUltimoIdLoginTabela(req, res){
     )
 }
 
-// function entrarLoginTabela(req, res) {
-//     var emailLogin = req.body.emailLogin;
-//     var senhaLogin = req.body.senhaLogin;
+function entrarLoginTabela(req, res) {
+    var emailLogin = req.body.emailLogin;
+    var senhaLogin = req.body.senhaLogin;
 
-//     if (emailLogin == undefined) {
-//         res.status(400).send("Seu email está undefined!");
-//     } else if (senhaLogin == undefined) {
-//         res.status(400).send("Sua senha está indefinida!");
-//     } else {
+    if (emailLogin == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senhaLogin == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
         
-//         loginTabelaModel.entrar(emailLogin, senhaLogin)
-//             .then(
-//                 function (resultado) {
-//                     console.log(`\nResultados encontrados: ${resultado.length}`);
-//                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+        loginTabelaModel.entrarLoginTabela(emailLogin, senhaLogin)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
-//                     if (resultado.length == 1) {
-//                         console.log(resultado);
-//                         res.json(resultado[0]);
-//                     } else if (resultado.length == 0) {
-//                         res.status(403).send("Email e/ou senha inválido(s)");
-//                     } else {
-//                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
-//                     }
-//                 }
-//             ).catch(
-//                 function (erro) {
-//                     console.log(erro);
-//                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-//                     res.status(500).json(erro.sqlMessage);
-//                 }
-//             );
-//     }
-
-// }
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 function cadastrarLoginTabela(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var emailLogin = req.body.emailCliente;
-    var senhaLogin = req.body.senhaCliente;
+    var emailLogin = req.body.emailLogin;
+    var senhaLogin = req.body.senhaLogin;
 
     // Faça as validações dos valores
     if (emailLogin == undefined) {
@@ -109,7 +108,7 @@ function cadastrarLoginTabela(req, res) {
 }
 
 module.exports = {
-    // entrarLoginTabela,
+    entrarLoginTabela,
     cadastrarLoginTabela,
     listarUltimoIdLoginTabela,
     // listarLoginTabela,

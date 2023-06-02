@@ -27,8 +27,8 @@
                         <div class="flexCenterAlignItemsCenter">
                             <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                         </div>
-                        <div style="margin-top: 3%;">
-                            Bem-vindo(a), (nomeEmpresa)
+                        <div id="nomeEmpresa" style="margin-top: 3%;">
+                            
                         </div>
                         <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                             <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
@@ -186,6 +186,8 @@
 </html>
 
 <script>
+    const nomeEmpresa = sessionStorage.NOME_USUARIO;
+    nomeEmpresa.innerHTML = `Bem-vindo(a), ${nomeEmpresa}`;
 
     const ctx2 = document.getElementById('myChart2');
 

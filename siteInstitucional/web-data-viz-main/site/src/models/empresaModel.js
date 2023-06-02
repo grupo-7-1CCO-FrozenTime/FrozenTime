@@ -36,6 +36,16 @@ function listarUltimoIdEmpresa(){
     `
     return database.executar(instrucao);
 }
+function listarIdEmpresa(fkLogin){
+    var instrucao = `
+    select idEmpresa from Empresas JOIN Funcionarios on idEmpresa = fkEmpresa where fkLogin = ${fkLogin};
+    `
+}
+
+function listarNomeEmpresa(idEmpresa){
+    var instrucao = `
+    select distinct(nomeEmpresa) from Empresas JOIN Funcionarios on idEmpresa = ${idEmpresa} JOIN Login on idLogin = fkLogin;`
+}
  
 module.exports = {
     entrarEmpresa,
