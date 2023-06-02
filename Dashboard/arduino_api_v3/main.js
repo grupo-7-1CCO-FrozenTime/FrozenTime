@@ -25,9 +25,9 @@ const serial = async (
         {
             host: 'localhost',
             port: 3306,
-            user: 'urubu',
-            password: 'urubu100',
-            database: 'metricas'
+            user: 'root',
+            password: 'Nino0911',
+            database: 'FrozenTime'
         }
     ).promise();
         // await espera a resposta da função assíncrona
@@ -46,12 +46,14 @@ const serial = async (
         console.log(`A leitura do arduino foi iniciada na porta ${portaArduino.path} utilizando Baud Rate de ${SERIAL_BAUD_RATE}`);
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
-        const valores = data;
+        const valores = data.split(';');
+        console.log(valores)
         // tradução pra float dos valores que estão em parênteses
         // const dht11Umidade = parseFloat(valores[0]);
         // const dht11Temperatura = parseFloat(valores[1]);
         // const luminosidade = parseFloat(valores[2]);
-        const lm35Temperatura = parseFloat(valores);
+        const lm35Temperatura = parseFloat(valores[0]);
+        const fkSensor = parseInt(valores[1]);
         // const chave = parseInt(valores[4]);
         // Mandando o vetor para o array
         // valoresDht11Umidade.push(dht11Umidade);
@@ -62,8 +64,8 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                `INSERT INTO Registros (temperatura, dataHora, fkSensor, fkKit) VALUES (${lm35Temperatura})`,
-                [lm35Temperatura]
+                `INSERT INTO Registros(temperatura, horaRegistro, minutoRegistro, fkSensor, fkKit) VALUES (${lm35Temperatura}, 12, 32, ${fkSensor}, (select distinct(idKit) from Kits JOIN Sensores on fkKit = idKit and idSensor = fkSensor))`,
+                [lm35Temperatura, fkSensor]
             );
         }
 
@@ -78,7 +80,6 @@ const servidor = (
     // valoresDht11Umidade,
     // valoresDht11Temperatura,
     // valoresLuminosidade,
-    fkSensor,
     valoresLm35Temperatura,
     // valoresChave
 ) => {
@@ -104,7 +105,6 @@ const servidor = (
     // app.get('/sensores/luminosidade', (_, response) => {
     //     return response.json(valoresLuminosidade);
     // });
-    
     app.get('/sensores/lm35/temperatura', (_, response) => {
         return response.json(valoresLm35Temperatura);
     });
@@ -118,13 +118,11 @@ const servidor = (
     // const valoresDht11Temperatura = [];
     // const valoresLuminosidade = [];
     const valoresLm35Temperatura = [];
-    var fkSensor = 0; 
     // const valoresChave = [];
     await serial(
         // valoresDht11Umidade,
         // valoresDht11Temperatura,
         // valoresLuminosidade,
-        fkSensor,
         valoresLm35Temperatura,
         // valoresChave
     );
@@ -132,7 +130,6 @@ const servidor = (
         // valoresDht11Umidade,
         // valoresDht11Temperatura,
         // valoresLuminosidade,
-        fkSensor,
         valoresLm35Temperatura,
         // valoresChave
     );
