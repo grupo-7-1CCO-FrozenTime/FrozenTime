@@ -121,9 +121,18 @@
         <div class="flexCenter" style="margin-top: 5%;">
             <div style="width: 50%;">
                 <div class="flexCenter">
-                    <h3  class="titleCharts" style="margin-left: 5%;">TEMPERATURA DOS LOTES:</h3>
+                    <h3  class="titleCharts" style="margin-left: 5%;">TEMPERATURA DOS LOTES EM ALERTA:</h3>
                 </div>
-                <canvas id="myChart"></canvas>
+                <div style="display: flex;">
+
+                    <div class="btnPassarProduto">
+                    <img onclick="MudarProduto()" src="./assets/arrow_right_azul.png" style="width: 40px; transform: rotate(180deg);">
+                </div>
+                <canvas id="myChart" style="width: 30%;"></canvas>
+                <div class="btnPassarProduto">
+                    <img onclick="MudarProduto()" src="./assets/arrow_right_azul.png" style="width: 40px;">
+                </div>
+            </div>
             </div>
             <div style="width: 26%; margin-left: 8%;">
                 <div>
@@ -289,40 +298,40 @@
             labels: labels,
             datasets: [
                 {
-                    label: 'Xalacom',
+                    label: 'Xalacom - Lote 1',
                     data: data,
                     borderColor: 'rgba(109, 172, 181, 0.71)',
                     backgroundColor: 'rgba(109, 172, 181, 0.71)',
                     yAxisID: 'y',
                 },
-                {
-                    label: 'Prevenar-13',
-                    data: data2,
-                    borderColor: 'rgba(255, 0, 49, 0.71)',
-                    backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                    yAxisID: 'y',
-                },
-                {
-                    label: 'Genotropin',
-                    data: data3,
-                    borderColor: 'rgba(8, 201, 8, 0.71)',
-                    backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                    yAxisID: 'y',
-                },
-                {
-                    label: 'Comirnaty',
-                    data: data4,
-                    borderColor: 'rgba(20, 161, 221, 0.71)',
-                    backgroundColor: 'rgb(20, 161, 221, 0.71)',
-                    yAxisID: 'y',
-                },
-                {
-                    label: 'Sayana',
-                    data: data5,
-                    borderColor: 'rgba(157, 92, 227, 0.71)',
-                    backgroundColor: 'rgba(157, 92, 227, 0.71)',
-                    yAxisID: 'y',
-                }
+                // {
+                //     label: 'Prevenar-13',
+                //     data: data2,
+                //     borderColor: 'rgba(255, 0, 49, 0.71)',
+                //     backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Genotropin',
+                //     data: data3,
+                //     borderColor: 'rgba(8, 201, 8, 0.71)',
+                //     backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Comirnaty',
+                //     data: data4,
+                //     borderColor: 'rgba(20, 161, 221, 0.71)',
+                //     backgroundColor: 'rgb(20, 161, 221, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Sayana',
+                //     data: data5,
+                //     borderColor: 'rgba(157, 92, 227, 0.71)',
+                //     backgroundColor: 'rgba(157, 92, 227, 0.71)',
+                //     yAxisID: 'y',
+                // }
             ]
         },
         options: {
