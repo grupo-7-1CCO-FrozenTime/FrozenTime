@@ -119,15 +119,16 @@ SELECT * FROM Lotes;
 CREATE TABLE Kits(
 idKit INT PRIMARY KEY AUTO_INCREMENT,
 fkLote INT,
+nomeKit VARCHAR(45),
 FOREIGN KEY (fkLote) REFERENCES Lotes(idLote)
 );
 
 INSERT INTO Kits VALUES
-(null, 1),
-(null, 2),
-(null, 3),
-(null, 4),
-(null, 5);
+(null, 1, 'Alfa'),
+(null, 2, 'Ômega'),
+(null, 3, 'Beta'),
+(null, 4, 'Charlie'),
+(null, 5, 'Bravo');
 
 create table Refrigeradores (
 idRefrigerador INT PRIMARY KEY AUTO_INCREMENT,
@@ -159,7 +160,8 @@ SELECT * FROM Sensores;
 CREATE TABLE Registros(
 idRegistro INT PRIMARY KEY AUTO_INCREMENT,
 temperatura INT,
-dataHora DATETIME,
+horaRegistro INT,
+minutoRegistro INT,
 fkSensor INT,
 fkKit INT,
 FOREIGN KEY (fkSensor) REFERENCES Sensores(idSensor),

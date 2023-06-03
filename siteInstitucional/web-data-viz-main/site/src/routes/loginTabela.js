@@ -16,10 +16,8 @@ router.post("/cadastrarLoginTabela", function (req, res) {
     loginTabelaController.cadastrarLoginTabela(req, res);
 })
 
-
-
-// router.post("/autenticarLogin", function (req, res) {
-//     loginTabelaController.entrarLoginTabela(req, res);
-// });
+router.post("/autenticarLoginTabela", function (req, res) {
+    loginTabelaController.entrarLoginTabela(req, res);
+});
 
 module.exports = router;

@@ -85,23 +85,27 @@ ul img{
     background: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat, url('../img/background_contato.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 1550px;
+    height: 2500px;
+    margin-left: 50px;
+    margin-right: 50px;
     margin: 0;
     overflow-x: hidden;
 } 
 .contato {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2%;
     width: 100%;
-    height: 500px;
 }
 
 .localizacao {
     display: flex;
     flex-direction: column;
+    margin-left: 15%;
     width: 100%;
-    align-items: center;
-    margin-top: 5%;
+    /* height: 500px; */
+    margin-top: 15%;
+    /* margin-bottom: 25%; */
 }
 
 .localizacao p {
@@ -127,8 +131,7 @@ ul img{
     display: flex;
     align-items: center;
     text-align: center;
-    color: #ffffff;
-    width: 30%;
+    width: 20%;
 }
 
 #rua img{
@@ -138,21 +141,20 @@ ul img{
 
 iframe {
     border-radius: 15px;
-    height: 300px;
-    width: 1000px;
+    height: 200px;
+    width: 300px;
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 #info {
     display: flex;
-    justify-content: center;
-    width: 70%;
-    gap: 20%;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
     margin-top: 2%;
     margin-left: 15%;
     margin-bottom: 29%;
-    color: #ffffff;
 }
 
 #info p {
@@ -242,9 +244,9 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 6%;
     text-decoration: none;
     color: #000000;
-    margin-top: 5%;
 }
 
 .footerConteudo {
