@@ -92,11 +92,13 @@ input{
     font-size: 20px;
 }
 
-.btnCadastrar{
-    margin-left: 80%;
+.btnCadastrar, .btnLote{
+    margin-left: 75%;
     background-color: #288396;
     border-radius: 5px;
     padding: 10px;
     color:#D6EEEE;
-    
+}
+.btnLote {
+    margin-top: 2%;
 }

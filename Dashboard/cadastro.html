@@ -178,11 +178,11 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td>Nome do produto:</td>
+                            <td>ID do lote:</td>
                           <td style="text-align: center"><input id="ipt_NomeProdutoLote"></td>
                         </tr>
                         <tr>
-                            <td>Local de partida::</td>
+                            <td>Local de partida</td>
                           <td style="text-align: center"><input id="ipt_LocalPartida"></td>
                         </tr>
                         <tr>
@@ -202,6 +202,24 @@
                 
     
                 <button  class="btnCadastrar">Cadastrar</button>
+                <button class="btnLote" onclick="cadastroLoteCadastrado()">Já possuo um lote cadastrado</button>
+                <div id="lotesJaCadastrados" style="display: none;">
+                <p>Lotes já cadastrados</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>ID do lote já cadastrado:</td>
+                                <td style="text-align: center"><input id="ipt_idLoteCadastrado"></td>
+                            </tr>
+                            <tr>
+                            <td>ID do sensor:</td>
+                          <td style="text-align: center"><input id="ipt_idSensor"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button  class="btnCadastrar">Cadastrar</button>
+            </div>
             </div>
         </div>
         <div class="divTable">
@@ -267,5 +285,8 @@
         kit.style = "display: none"
         lotes.style = "display: none"
         produtos.style = "display: block"
+    }
+    function cadastroLoteCadastrado() {
+        lotesJaCadastrados.style = "display: block"
     }
 </script>
