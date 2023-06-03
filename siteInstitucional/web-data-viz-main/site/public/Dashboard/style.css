@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+a,h3,h4,h2,p {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  text-decoration: none;
+}
+p {
+  font-weight: bold;
+}
+hr{
+    width: 90%; 
+    border: 1px solid rgb(255,255,255, 0.6) ;
+}
+#espacamentoTopo{
+    margin-top: 10%;
+}
+
+/*Classes do Menu*/
+.header {
+    background-color: #72aab5;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+  }
+  
+  .txtHeader {
+    font-size: 18px;
+}
+/*Classes de Alinhamento*/
+.flexCenter{
+    display:flex;
+    justify-content: center;  
+}
+.flexCenterAlignSelfCenter{
+    display: flex;
+    align-self: center; 
+    justify-content: center;
+}
+.flexCenterAlignItemsCenter{
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+}
+.flexStartAlignSelfCenter{
+    display: flex; 
+    align-self: center;
+    justify-content: start;
+}
+.flexSpaceAround{
+    display:flex;
+    justify-content: space-around;
+}
+.widthiconHeader{
+    width: 20%;
+    margin-right: 6%;
+}
+.divConteudo{
+    width: 80%; 
+    margin-left: 20%;
+}
+/*Card KPIS*/
+.espacamentoCards{
+    display:flex;
+    justify-content: space-evenly; 
+    margin-top: 5%;
+}
+.cards{
+    width: 24%;
+    height: 214px; 
+    border-radius: 10px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Card PRODUTOS*/
+.divCardsProduto{
+    justify-content: center; 
+    display: flex;
+    margin-top: 10%; 
+    margin-bottom: 10%;
+}
+.divConteudoCardsProduto{
+    width: 80%;
+    height: 379px; 
+    background-color: #4E7A83;
+    border-radius: 10px;  
+}
+.backgroudInfoProdutos{
+    width: 80%;
+    background-color:#F5F1E6;
+    margin-left: 1%;
+    height: 250px;
+    border-radius: 10px;
+}
+.hrProdutos{
+    width: 90%;
+    border: 1px solid black;
+}
+.backgroundTempMaxMin{
+    margin-bottom:10px;
+    background: rgba(109, 172, 181, 0.71);
+    width: 100%;
+    border-radius: 20px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+.btnPassarProduto{
+    align-self: center; 
+    cursor: pointer;
+}
+
+.metricas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    background-color: #4E7A83;
+    margin-top: 5%;
+}
+
+.metricas img {
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 80%;
+
+}
+
+.cardMetricas{
+    background-color: #4E7A83;
+     display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 10px;
+    /* padding: 5px; */
+    margin-bottom: 10%;
+}

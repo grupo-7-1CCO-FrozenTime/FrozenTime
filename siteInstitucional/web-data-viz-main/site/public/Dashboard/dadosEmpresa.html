@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frozen Time</title>
+  <link rel="stylesheet" href="dadosEmpresa.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/siteInstitucional/img/logoAba.png">
+</head>
+
+<body>
+  <div class="header">
+    <div id="espacamentoTopo">
+      <div class="flexCenter">
+        <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
+        <img style="width: 80%;" src="./assets/icon.png" />
+        <!-- </a> -->
+      </div>
+      <div class="flexCenter">
+        <hr>
+      </div>
+      <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+        <a href="perfil.html" style="color: white;">
+          <div>
+            <div class="flexCenterAlignItemsCenter">
+              <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+            </div>
+            <div style="margin-top: 3%;">
+              Bem-vindo(a), (nomeEmpresa)
+            </div>
+            <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
+              <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
+            </div>
+            <div>
+              <hr>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+        <a href="index.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/dashboard.svg" />
+            <p class="txtHeader">Dashboard</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+        <a href="./lotes.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/lotes.png" />
+            <p class="txtHeader">Lotes</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./produtos.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+            <p class="txtHeader">Produtos</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+            <p class="txtHeader">Assinatura</p>
+          </div>
+        </a>
+      </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./cadastro.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
+            <p class="txtHeader">Cadastro</p>
+          </div>
+        </a>
+    </div>
+    </div>
+  </div>
+
+  <div class="corpo">
+
+    <div class="campos">
+      <div class="titulo">
+        <h1>Dados do Cadastro</h1>
+      </div>
+
+      <div class="dados">
+        <div class="outros">
+
+          <a href="perfil.html">
+            <h3>← Voltar para perfil</h3>
+          </a>
+
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">Nome da Empresa:</span> 
+              <input id="ipt_nomeEmpresa" placeholder="NomeEmpresa"> 
+              <hr size="1"> 
+            </div>
+          </div>
+          
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">E-mail da Empresa:</span> 
+              <input id="ipt_emailEmpresa" placeholder="empresa@gmail.com"> 
+              <hr size="1"> 
+            </div>
+          </div>
+          
+          <div class="container2">
+            <div class="contexto">
+              <span class="atributo">CNPJ:</span> 
+              <input id="ipt_cnpj" placeholder="12.345.678/0000-11"> 
+              <hr size="1"> 
+            </div>
+          </div>
+          
+
+          <div class="botao">
+            <button onclick="alterarDados()">Alterar Dados</button>
+          </div>
+
+          <div class="alteracao">Ultima alteração feita por: Rafael Matos</div>
+        </div>
+
+        <div class="endereco">
+          <h3 class="meio">Endereço</h3>
+          <div class="contexto">
+            <label class="atributo">CEP:</label> 
+            <input id="ipt_cep" placeholder="06696-000"> 
+            <hr size="1">  
+
+            <label class="atributo">Cidade:</label> 
+            <input id="ipt_cidade" placeholder="Itapevi - SP"> 
+            <hr size="1">  
+
+            <label class="atributo">Bairro:</label> 
+            <input id="ipt_bairro" placeholder="Ingahi"> 
+            <hr size="1">  
+
+            <label class="atributo">Rua:</label> 
+            <input id="ipt_rua" placeholder="Rodovia Presidente Castelo Branco"> 
+            <hr size="1">  
+
+            <label class="atributo">Número:</label> 
+            <input id="ipt_numero" placeholder="32.501 - KM 32,5"> 
+            <hr size="1">  
+
+            <label class="atributo">Complemento:</label> 
+            <input id="ipt_complemento" placeholder="Edifício de Manufatura - Entrada B"> 
+            <hr size="1">  
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  var nomeEmpresa = '';
+  var emailEmpresa = '';
+  var cnpj = '';
+  var cep = '';
+  var cidade = '';
+  var bairro = '';
+  var rua = '';
+  var numero = '';
+  var complemento = '';
+
+  function alterarDados() {
+    nomeEmpresa = ipt_nomeEmpresa;
+    emailEmpresa = ipt_emailEmpresa;
+    cnpj = ipt_cnpj;
+    cep = ipt_cep;
+    cidade = ipt_cidade;
+    bairro = ipt_bairro;
+    rua = ipt_rua;
+    numero = ipt_numero;
+    complemento = ipt_complemento;
+
+    
+  }
+
+</script>
