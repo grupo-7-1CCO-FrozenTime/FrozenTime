@@ -133,20 +133,10 @@
                     <div style="width: 100%;">
                         <div id="grafico1">
                             <canvas id="myChart1" style="width: 30%;"></canvas>
-
-
                             <canvas id="myChart2" style="width: 30%; display: none;"></canvas>
-
-
                             <canvas id="myChart3" style="width: 30%; display: none;"></canvas>
-
-
                             <canvas id="myChart4" style="width: 30%; display: none;"></canvas>
-
-
                             <canvas id="myChart5" style="width: 30%; display: none;"></canvas>
-
-
                             <canvas id="myChart6" style="width: 30%; display: none;"></canvas>
                         </div>
 
@@ -396,35 +386,14 @@
         }
     });
 
-    var chart2 = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 2',
-                    data: data2,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var chart3 = new Chart(ctx3, {
+    var chart3 = new Chart(ctx4, {
         type: 'line',
         data: {
             labels: labels,
             datasets: [
                 {
                     label: 'Xalacom - Lote 3',
-                    data: data3,
+                    data: data4,
                     borderColor: 'rgba(109, 172, 181, 0.71)',
                     backgroundColor: 'rgba(109, 172, 181, 0.71)',
                     yAxisID: 'y',
@@ -438,6 +407,7 @@
             }
         }
     });
+
     var chart4 = new Chart(ctx4, {
         type: 'line',
         data: {
@@ -503,231 +473,226 @@
     });
 
 
-    var i = 0;
-    setInterval(() => {
-        if (i <= 72) {
-            labels.push(horario[i]);
-            data6.push(Math.floor(Math.random() * 9));
-            data5.push(Math.floor(Math.random() * 9));
-            data4.push(Math.floor(Math.random() * 9));
-            data3.push(Math.floor(Math.random() * 9));
-            data2.push(Math.floor(Math.random() * 9));
-            data.push(Math.floor(Math.random() * 9));
+    // var i = 0;
+    // setInterval(() => {
+    //     if (i <= 72) {
+    //         labels.push(horario[i]);
+    //         data6.push(Math.floor(Math.random() * 9));
+    //         data5.push(Math.floor(Math.random() * 9));
+    //         data4.push(Math.floor(Math.random() * 9));
+    //         data3.push(Math.floor(Math.random() * 9));
+    //         data2.push(Math.floor(Math.random() * 9));
+    //         data.push(Math.floor(Math.random() * 9));
 
 
-            chart.update();
-            chart1.update();
-            chart2.update();
-            chart3.update();
-            chart4.update();
-            chart5.update();
-            chart6.update();
+    //         chart.update();
+    //         chart1.update();
+    //         chart2.update();
+    //         chart3.update();
+    //         chart4.update();
+    //         chart5.update();
+    //         chart6.update();
 
 
-            i++;
-            maior = Math.max.apply(null, data);
-            menor = Math.min.apply(null, data);
-            maiorDois = Math.max.apply(null, data2);
-            menorDois = Math.min.apply(null, data2);
-            maiorTres = Math.max.apply(null, data3);
-            menorTres = Math.min.apply(null, data3);
-            maiorQuatro = Math.max.apply(null, data4);
-            menorQuatro = Math.min.apply(null, data4);
-            maiorCinco = Math.max.apply(null, data5);
-            menorCinco = Math.min.apply(null, data5);
+    //         i++;
+    //         maior = Math.max.apply(null, data);
+    //         menor = Math.min.apply(null, data);
+    //         maiorDois = Math.max.apply(null, data2);
+    //         menorDois = Math.min.apply(null, data2);
+    //         maiorTres = Math.max.apply(null, data3);
+    //         menorTres = Math.min.apply(null, data3);
+    //         maiorQuatro = Math.max.apply(null, data4);
+    //         menorQuatro = Math.min.apply(null, data4);
+    //         maiorCinco = Math.max.apply(null, data5);
+    //         menorCinco = Math.min.apply(null, data5);
 
 
-            jsonProdutos[0].valorMaior = maior;
-            jsonProdutos[0].valorMenor = menor;
-            jsonProdutos[1].valorMaior = maiorDois;
-            jsonProdutos[1].valorMenor = menorDois;
-            jsonProdutos[2].valorMaior = maiorTres;
-            jsonProdutos[2].valorMenor = menorTres;
-            jsonProdutos[3].valorMaior = maiorQuatro;
-            jsonProdutos[3].valorMenor = menorQuatro;
-            jsonProdutos[4].valorMaior = maiorCinco;
-            jsonProdutos[4].valorMenor = menorCinco;
-        }
-        else {
-            i = 0;
-            data = [];
-            data1 = [];
-            data2 = [];
-            data3 = [];
-            data4 = [];
-            data5 = [];
-            data6 = [];
-            labels = [];
+    //         jsonProdutos[0].valorMaior = maior;
+    //         jsonProdutos[0].valorMenor = menor;
+    //         jsonProdutos[1].valorMaior = maiorDois;
+    //         jsonProdutos[1].valorMenor = menorDois;
+    //         jsonProdutos[2].valorMaior = maiorTres;
+    //         jsonProdutos[2].valorMenor = menorTres;
+    //         jsonProdutos[3].valorMaior = maiorQuatro;
+    //         jsonProdutos[3].valorMenor = menorQuatro;
+    //         jsonProdutos[4].valorMaior = maiorCinco;
+    //         jsonProdutos[4].valorMenor = menorCinco;
+    //     }
+    //     else {
+    //         i = 0;
+    //         data = [];
+    //         data1 = [];
+    //         data2 = [];
+    //         data3 = [];
+    //         data4 = [];
+    //         data5 = [];
+    //         data6 = [];
+    //         labels = [];
 
 
-            chart.destroy();
-            chart1.destroy();
-            chart2.destroy();
-            chart3.destroy();
-            chart4.destroy();
-            chart5.destroy();
-            chart6.destroy();
+    //         chart.destroy();
+    //         chart1.destroy();
 
 
-            chart1 = new Chart(ctx1, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom',
-                            data: data1,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        },
-                        //                     {
-                        //                         label: 'Prevenar-13',
-                        //                         data: data2,
-                        //                         borderColor: 'rgba(255, 0, 49, 0.71)',
-                        //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                        //                         yAxisID: 'y',
-                        //                     },
-                        //                     {
-                        //                         label: 'Genotropin',
-                        //                         data: data3,
-                        //                         borderColor: 'rgba(8, 201, 8, 0.71)',
-                        //                         backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                        //                         yAxisID: 'y',
-                        //                     },
-                        //                     {
-                        //                         label: 'Comirnaty',
-                        //                         data: data4,
-                        //                         borderColor: 'rgba(255, 0, 49, 0.71)',
-                        //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                        //                         yAxisID: 'y',
-                        //                     },
-                        //     {
-                        //         label: 'Sayana',
-                        //         data: data5,
-                        //         borderColor: 'rgba(8, 201, 8, 0.71)',
-                        //         backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                        //         yAxisID: 'y',
-                        //     }
-                    ]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
+    //         chart1 = new Chart(ctx1, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom',
+    //                         data: data1,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     },
+    //                     //                     {
+    //                     //                         label: 'Prevenar-13',
+    //                     //                         data: data2,
+    //                     //                         borderColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //                     {
+    //                     //                         label: 'Genotropin',
+    //                     //                         data: data3,
+    //                     //                         borderColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //                         backgroundColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //                     {
+    //                     //                         label: 'Comirnaty',
+    //                     //                         data: data4,
+    //                     //                         borderColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //     {
+    //                     //         label: 'Sayana',
+    //                     //         data: data5,
+    //                     //         borderColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //         backgroundColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //         yAxisID: 'y',
+    //                     //     }
+    //                 ]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
 
-            chart2 = new Chart(ctx2, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 2',
-                            data: data2,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart3 = new Chart(ctx3, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 3',
-                            data: data3,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart4 = new Chart(ctx4, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 4',
-                            data: data4,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart5 = new Chart(ctx5, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 8',
-                            data: data5,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart6 = new Chart(ctx6, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 12',
-                            data: data6,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart.update()
-        }
-    }, 3000)
+    //         chart2 = new Chart(ctx2, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 2',
+    //                         data: data2,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart3 = new Chart(ctx3, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 3',
+    //                         data: data3,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart4 = new Chart(ctx4, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 4',
+    //                         data: data4,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart5 = new Chart(ctx5, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 8',
+    //                         data: data5,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart6 = new Chart(ctx6, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 12',
+    //                         data: data6,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart.update()
+    //     }
+    // }, 3000)
 
 
 
@@ -784,37 +749,37 @@
         }
     }
 
-    var contadorGrafico = 0
+    
     var vtGraficos = [chart1, chart2, chart3, chart4, chart5, chart6];
+
+    var contadorGrafico = 1;
+    var teste;
     function mudarGraficoFrente() {
-        if (contadorGrafico < vtGraficos.length) {
-            grafico1.style.display = "none"
-            grafico2.style.display = "block"
-        }
-    }
-
-
-
-
-
-
-
-
-    var contadorGrafico = 0;
-
-    function mudarGraficoFrente() {
+        contadorGrafico++
+        teste = eval('chart' + contadorGrafico);
+        teste.destroy();
         if (contadorGrafico == vtGraficos.length) {
             contadorGrafico = 0;
         }
-        grafico1.innerHTML = vtGraficos[2]
-        contadorGrafico++
+        grafico1.innerHTML = vtGraficos[contadorGrafico]
         console.log("oi")
     }
 
-    function mudarGraficoTras() {
-        contadorGrafico--;
-        grafico1.innerHTML = vtGraficos[contadorGrafico]
+    // function mudarGraficoTras() {
+    //     contadorGrafico--;
+    //     grafico1.innerHTML = vtGraficos[contadorGrafico]
+    // }
+
+    function MudarGraficoFrente(){
+        var teste = chart;
+        (teste + contadorGrafico).destroy();
+        (teste + contadorGrafico).style.display = 'none';
+        contadorGrafico++
+        (teste + contadorGrafico).style.display = 'block';
+       
     }
+
+    
     // var contadorGrafico = 0;
     // function mudarGraficoFrente() {
     //     if (contadorGrafico <= 5) {
