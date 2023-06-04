@@ -47,14 +47,16 @@ void loop()
   /*float luminosidade =  analogRead(LUMIPIN);
   Serial.print(luminosidade);
   Serial.print(";");*/
-  
+
+  int idSensor = 1;
   float lm35_temperatura = analogRead(LM35PIN);
   /*Conversão da temperatura de bytes paara dados*/
   lm35_temperatura = lm35_temperatura * 0.00488;
   /*E transformando-os em inteiros*/
-  lm35_temperatura = (lm35_temperatura * 100) - 24;
+  lm35_temperatura = (lm35_temperatura * 100) - 20;
   Serial.print(lm35_temperatura);
-  /*Serial.print(";");*/
+  Serial.print(";");
+  Serial.print(idSensor);
   /*declaração da variável do tipo inteira que está sendo atribuido o valor do retorno da função digital Read */
  /* int chave = digitalRead(7);*/
   /*Quando o valor da chave for zero significa que está sendo bloqueado*/
@@ -68,5 +70,5 @@ void loop()
   }*/
 
   Serial.println();
-  delay(10000);
+  delay(1000);
 }

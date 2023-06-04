@@ -146,21 +146,27 @@ FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa)
 INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo', 1, 2),
 								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil', 2, 2);
 CREATE TABLE Sensores(
-	idSensor INT PRIMARY KEY AUTO_INCREMENT,
+	idSensor INT AUTO_INCREMENT,
     fkKit INT,
-    FOREIGN KEY (fkKit) REFERENCES Kits(idKit)
+    fkRefrigerador INT,
+    fkLote INT,
+	PRIMARY KEY(idSensor, fkKit),
+    FOREIGN KEY (fkKit) REFERENCES Kits(idKit),
+    FOREIGN KEY(fkRefrigerador) REFERENCES Refrigeradores(idRefrigerador),
+    FOREIGN KEY (fkLote) REFERENCES Lotes(idLote)
 );
 INSERT INTO Sensores VALUES 
-							(1, 1),
-							(2, 2),
-							(3, 3),
-							(4, 4);
+							(1, 1, 2, 4),
+							(2, 2, 2, 5),
+							(3, 3, 1, 2),
+							(4, 4, 1, 1);
 SELECT * FROM Sensores;
 
 CREATE TABLE Registros(
 idRegistro INT PRIMARY KEY AUTO_INCREMENT,
 temperatura INT,
-dataHora DATETIME,
+horaRegistro INT,
+minutoRegistro INT,
 fkSensor INT,
 fkKit INT,
 FOREIGN KEY (fkSensor) REFERENCES Sensores(idSensor),
