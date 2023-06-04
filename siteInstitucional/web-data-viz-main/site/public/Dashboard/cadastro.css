@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.tituloCadastro{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    margin-top: 2%;
+}
+
+.divSelects{
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+}
+
+.divSelects p{
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+
+table{
+    margin-left: 4%;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tr:hover {background-color: #D6EEEE;}
+
+input{
+    border: none;
+}
+
+.dropbtn {
+    background-color: #fff;
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #288396
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #fff;
+}
+
+.btnMostrar{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnMostrar button{
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+.btnCadastrar, .btnLote{
+    margin-left: 75%;
+    background-color: #288396;
+    border-radius: 5px;
+    padding: 10px;
+    color:#D6EEEE;
+}
+.btnLote {
+    margin-top: 2%;
+}

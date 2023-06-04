@@ -1,0 +1,50 @@
+.a{
+    font-size: small;
+    margin: 3px;
+}
+
+.box{
+    display: block;
+    background-color: #f5f1e6;
+}
+
+
+.bloco h1{
+    background-color: #f5f1e6;
+    font-style: Inter;
+}
+
+.aa{
+    background-color: #f5f1e6;
+    color: #9B8252;
+    text-decoration: underline;
+    font-size: 90%;
+}
+
+.paragrafo{
+    color: #9B8252;
+}
+
+.tela2{
+    display: flex;
+    justify-content: center;
+    margin-left: 7%;
+    padding-right: 4%;
+}
+
+.botaoRecuperar{
+    background: #BAB372;
+    border: none;
+    border-radius: 20px;
+    width: 130px;
+    padding: 8%;
+    font-size: 90%;
+    margin-left: 10px;
+}
+
+.a_cadastrar{
+    color: #000000;
+    text-decoration: underline;
+    font-size: 80%;
+    margin-right: 22px;
+}

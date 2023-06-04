@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Frozen Time</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cadastro.css">
+        <link rel="icon" href="/siteInstitucional/img/logoAba.png">
+    </head>
+
+    <body>
+        <div style="width: 20%;">
+
+            <div class="header">
+                <div id="espacamentoTopo">
+                    <div class="flexCenter">
+                        <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
+                        <img style="width: 80%;" src="./assets/icon.png" />
+                        <!-- </a> -->
+                    </div>
+                    <div class="flexCenter">
+                        <hr>
+                    </div>
+                    <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+                        <a href="perfil.html" style="color: white;">
+                            <div>
+                                <div class="flexCenterAlignItemsCenter">
+                                    <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                                </div>
+                                <div style="margin-top: 3%;">
+                                    Bem-vindo(a), (nomeEmpresa)
+                                </div>
+                                <div class="flexCenter"
+                                    style="margin-top: 1%;text-decoration: underline; color: white;">
+                                    <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
+                                </div>
+                                <div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+                        <a href="index.html" style="text-decoration: none; color: white;">
+                            <div class="flexCenterAlignItemsCenter">
+                                <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                                <p class="txtHeader">Dashboard</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+                        <a href="./lotes.html" style="text-decoration: none; color: white;">
+                            <div class="flexCenterAlignItemsCenter">
+                                <img class="widthiconHeader" src="./assets/lotes.png" />
+                                <p class="txtHeader">Lotes</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                        <a href="./produtos.html" style="text-decoration: none; color: white;">
+                            <div class="flexCenterAlignItemsCenter">
+                                <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+                                <p class="txtHeader">Produtos</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                        <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+                            <div class="flexCenterAlignItemsCenter">
+                                <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                                <p class="txtHeader">Assinatura</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                        <a href="./cadastro.html" style="text-decoration: none; color: white;">
+                            <div class="flexCenterAlignItemsCenter">
+                                <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
+                                <p class="txtHeader">Cadastro</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 80%;">
+
+
+
+            <div class="divSelects">
+                <div class="tituloCadastro">
+                    <p>Cadastro de </p>
+                    <div class="dropdown">
+                        <button class="dropbtn" id="tituloBtn"><u>Selecione</u></button>
+                        <div class="dropdown-content">
+                            <div class="btnMostrar">
+                                <button onclick="mostrarRefrigerador()">Refrigerador</button>
+                                <!-- <button onclick="mostrarKit()">Kit</a> -->
+                                    <button onclick="mostrarProdutos()">Produto</a>
+                                        <button onclick="mostrarLotes()">Lotes/Sensores</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divTable">
+                    <div id="refrigerador" style="display: none;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Identificação do refrigerador:</td>
+                                    <td style="text-align: center"><input id="ipt_idRefrigerador"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nome da farmácia:</td>
+                                    <td style="text-align: center"><input id="ipt_NomeFarmacia"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Localização</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Cidade</td>
+                                    <td style="text-align: center"><input id="ipt_Cidade"></td>
+                                </tr>
+                                <tr>
+                                    <td>Rua:</td>
+                                    <td style="text-align: center"><input id="ipt_Rua"></td>
+                                </tr>
+                                <tr>
+                                    <td>CEP</td>
+                                    <td style="text-align: center"><input id="ipt_cep"></td>
+                                </tr>
+                                <tr>
+                                    <td>Bairro:</td>
+                                    <td style="text-align: center"><input id="ipt_Bairro"></td>
+                                </tr>
+                                <tr>
+                                    <td>Número</td>
+                                    <td style="text-align: center"><input id="ipt_Número"></td>
+                                </tr>
+                                <tr>
+                                    <td>Complemento:</td>
+                                    <td style="text-align: center"><input id="ipt_Complemento"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="btnCadastrar">Cadastrar</button>
+                    </div>
+                </div>
+                <!-- <div class="divTable">
+                    <div id="kit" style="display: none;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Nome do kit:</td>
+                                    <td style="text-align: center"><input id="ipt_nomeKit"></td>
+                                </tr>
+                                <tr>
+                                    <td>Id:</td>
+                                    <td style="text-align: center"><input id="ipt_idKit"
+                                            placeholder="fornecido na entrega"></td>
+                                </tr>
+                                <tr>
+                                    <td>Quantidade de sensores:</td>
+                                    <td style="text-align: center"><input id="ipt_qtdKit"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <button class="btnCadastrar">Cadastrar</button>
+                    </div>
+                </div> -->
+                <div class="divTable">
+                    <div id="lotes" style="display: none;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>ID do lote:</td>
+                                    <td style="text-align: center"><input id="ipt_NomeProdutoLote"></td>
+                                </tr>
+                                <tr>
+                                    <td>Local de partida</td>
+                                    <td style="text-align: center"><input id="ipt_LocalPartida"></td>
+                                </tr>
+                                <tr>
+                                    <td>Destino:</td>
+                                    <td style="text-align: center"><input id="ipt_destino"></td>
+                                </tr>
+                                <tr>
+                                    <td>Data da saída:</td>
+                                    <td style="text-align: center"><input id="ipt_dataSaida"></td>
+                                </tr>
+                                <tr>
+                                    <td>Data de chegada:</td>
+                                    <td style="text-align: center"><input id="ipt_dataChegada"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <button class="btnCadastrar" onclick="cadastroLotes()">Cadastrar</button>
+                        <button class="btnLote" onclick="cadastroLoteCadastrado()">Já possuo um lote cadastrado</button>
+                        <div id="cadastroDeSensores" style="display: none;">
+                            <p>Cadastro de sensores</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Os sensores serão registrados no lote cadastrado acima</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID do sensor:</td>
+                                        <td style="text-align: center"><input id="ipt_idSensor"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button class="btnCadastrar">Cadastrar</button>
+                        </div>
+                        <div id="cadastroDeSensoresLotesExistentes" style="display: none;">
+                            <p>Cadastro de sensores</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>ID do lote já existente:</td><td style="text-align: center"><input id="ipt_idLoteExistente"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID do sensor:</td>
+                                        <td style="text-align: center"><input id="ipt_idSensor"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button class="btnCadastrar">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="divTable">
+                    <div id="produtos" style="display: none;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Nome do produto:</td>
+                                    <td style="text-align: center"><input id="ipt_NomeProduto"></td>
+                                </tr>
+                                <tr>
+                                    <td>Categoria:</td>
+                                    <td style="text-align: center"><input id="ipt_categoriaProduto"
+                                            placeholder="ex: injetável, líquido..."></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <button class="btnCadastrar">Cadastrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </body>
+
+</html>
+
+<script>
+    function mostrarRefrigerador() {
+        tituloBtn.innerHTML = '';
+        tituloBtn.innerHTML = "Refrigerador"
+        refrigerador.style = "display: block"
+        
+        lotes.style = "display: none"
+        produtos.style = "display: none"
+    }
+    function mostrarKit() {
+        tituloBtn.innerHTML = '';
+        tituloBtn.innerHTML = "Kit"
+
+        refrigerador.style = "display: none"
+        kit.style = "display: block"
+        lotes.style = "display: none"
+        produtos.style = "display: none"
+    }
+    function mostrarLotes() {
+        tituloBtn.innerHTML = '';
+        tituloBtn.innerHTML = "Lotes e Sensores"
+
+        refrigerador.style = "display: none"
+        
+        lotes.style = "display: block"
+        produtos.style = "display: none"
+    }
+    function mostrarProdutos() {
+        tituloBtn.innerHTML = '';
+        tituloBtn.innerHTML = "Produtos"
+
+        refrigerador.style = "display: none"
+        
+        lotes.style = "display: none"
+        produtos.style = "display: block"
+    }
+    function cadastroLotes() {
+        cadastroDeSensores.style = "display: block"
+        cadastroDeSensoresLotesExistentes.style = "display: none"
+    }
+    function cadastroLoteCadastrado() {
+        cadastroDeSensores.style = "display: none"
+        cadastroDeSensoresLotesExistentes.style = "display: block"
+    }
+</script>

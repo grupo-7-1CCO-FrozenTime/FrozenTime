@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frozen Time</title>
-    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/calc.css">
 </head>
 
 <body>
-
-    <header style="background-color: #76c3cf;">
+    <!-- Começo do Header -->
+    <header>
         <nav class="cabecalho">
             <a href="index.html"><img src="img/logo.png" id="logo" /></a>
 
@@ -40,54 +40,52 @@
             </div>
         </nav>
     </header>
+    <!-- Fim do Header -->
 
-    <section class="login">
-
+    <div class="corpo">
+        <!-- Começo da Calculadora -->
         <div class="container">
+            <div class="calc">
+                <div class="titulo">
+                    <img src="img/calculadoraSimulador.png" alt="imagem calculadora">
 
-            <div class="cardLogin">
+                    <h2>SIMULE SEUS <br> LUCROS CONOSCO!</h2>
+                </div>
+                <div class="form">
+                    <span>Insira:</span>
+                    <input id="ipt_areaLote" placeholder="Área do lote:"> <br><br>
+                    <span>Agora informe:</span>
+                    <input id="ipt_informe" placeholder="Lucro total da empresa:"> <br><br>
 
-                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo">
-
+                    <button onclick="simular()">Calcular</button>
+                </div>
             </div>
+            <!-- Fim da Calculadora -->
+            <!-- Começo das Mensagens -->
+            <div class="todasMensagens">
 
-            <div class="form">
-
-                <div class="campos">
-                    <div class="inputs">
-                        <input type="email" class="input" placeholder="Email" name="email" id='email' required />
-                        <label for="email" class="input_label">Email</label>
+                <div class="mensagem">
+                    <div id="msg1">
+                        <p class="pCalculadora">Com um lote de área <b class="dados">XXX m²</b>, seus produtos precisam
+                            de apenas <b class="dados">XXX</b> sensores por lote! </p>
                     </div>
-
-                    <div class="inputs">
-                        <input type="password" class="input" placeholder="Senha" name="senha" id='senha' required />
-                        <label for="senha" class="input_label">Senha</label>
+                    <div id="msg1Dados"></div>
+                </div>
+                <div class="mensagem">
+                    <div id="msg2">
+                        <p class="pCalculadora">Com base em pesquisas feitas, seu lucro de <b class="dados">R$XXX</b>
+                            reais, é equivalente a uma perda de <b class="dados">R$XXX</b> reais. Com os nossos
+                            sensores, seu lucro aumentará em <b class="dados">R$XXX</b> reais!</p>
                     </div>
-
-                    <div class="botoesTexto">
-
-                        <div class="divBotoes">
-                            <div class="botoesLoginCadastro">
-                                <button onclick="Login()" class="botaoLogin">Login</button>
-                                <a class="cadastrar" href="CadastroEmpresa.html">Cadastrar</a>
-                            </div>
-                        </div>
-
-                        <div class="textoRecuperar">
-                            <a href="./Recuperar_senha.html">Esqueci minha senha</a>
-                        </div>
-
-                    </div>
+                    <div id="msg2Dados"></div>
                 </div>
             </div>
 
         </div>
 
 
-        </div>
 
-    </section>
-
+    </div>
 
     <footer class="footer">
         <div class="footerConteudo">
@@ -142,60 +140,42 @@
     </footer>
 
 
+
+
 </body>
 
 </html>
+
 <script>
-    function Login() {
-        var emailVar = email.value;
-        var senhaVar = senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            return false;
-        }
+    function simular() {
+        var area = Number(ipt_areaLote.value);
+        var qtdSensor = area * 2;
+        var lucro = Number(ipt_informe.value);
+        var perda = lucro * 0.43;
+        var margem = perda * 0.15;
+        var erro = false;
 
-        fetch("/loginTabela/autenticarLoginTabela", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailLogin: emailVar,
-                senhaLogin: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+        ipt_areaLote.value = '';
+        ipt_informe.value = '';
 
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.IDUSUARIO = json.idLogin;
-                    setTimeout(function () {
-                        console.log('Usuario Logado com sucesso!')
-                        window.location = "";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
+        if (area == '' || lucro == '') {
+            alert("Campos vazios, preencha-os")
+        } else
+            if (area <= 0 || lucro <= 0) {
+                alert("Número inválido, preencha novamente")
+                area = ""; lucro = "";
+                erro = true;
             }
+            else if (erro == false) {
+                msg1.style.display = 'none';
+                msg2.style.display = 'none';
 
-        }).catch(function (erro) {
-            console.log(erro);
-        })
+                msg1Dados.innerHTML = `Com um lote de área <b class="dados">${area} m²</b>, seus produtos precisam de apenas <b class="dados">${qtdSensor}</b> sensores por lote! `
 
-        return false;
+                msg2Dados.innerHTML = `Com base em pesquisas feitas, seu lucro de <b class="dados">R$${lucro}</b> reais, é equivalente a  uma perda de <b class="dados">R$${perda.toFixed(2)}</b> reais. Com os nossos sensores, seu lucro aumentará em <b class="dados">R$${margem.toFixed(2)}</b> reais!`
+            }
     }
-
 
     function copiarTelefone() {
         navigator.clipboard.writeText("11 95369-8849")
@@ -214,10 +194,6 @@
             .catch(() => {
                 alert("something went wrong");
             });
-    }
-
-    function selectNomeEmpresa(){
-
     }
 
 </script>

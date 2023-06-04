@@ -24,10 +24,50 @@ function listarEmpresa(req, res){
         }
     );
 }
-// Terminar!
-// function entrarEmpresa(req, res){
-//     var
-// }
+
+function listarUltimoIdEmpresa(req, res){
+    empresaModel.listarUltimoIdEmpresa()
+    .then(function (resultado){
+        if(resultado.length > 0){
+            res.status(200).json(resultado);
+        }
+        else{
+            res.status(204).send("Nenhum resultado de empresa encontrados");
+        }
+    }).catch(
+        function(erro){
+            console.log("Houve um erro ao realizar a consulta! Erro:", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
+function entrarEmpresa(req, res){
+    if(idEmpresa == undefined){
+        res.status(400).send("Seu idEmpresa está undefined!");
+    }
+    else{
+        empresaModel.entrarEmpresa(idEmpresa)
+        .then(
+            function(resultado){
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Empresa não encontrada");
+                } else {
+                    res.status(403).send("Mais de uma empresa cadastrada com o mesmo ID!");
+                }
+            }
+        ).catch(
+            function(erro){
+                console.log(erro);
+                console.log("\nHouve um erro entrar na Empresa! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
 
 function cadastrarEmpresa(req, res){
     var nomeEmpresa = req.body.nomeEmpresa;
@@ -60,7 +100,7 @@ function cadastrarEmpresa(req, res){
         res.status(400).send("O Complemento de sua Empresa está undefined!");
     }
     else{
-        empresaModel.entrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento)
+        empresaModel.cadastrarEmpresa(nomeEmpresa, cnpjEmpresa, cidade, rua, bairro, numero, complemento)
         .then(
             function(resultado){
                 res.json(resultado);
@@ -79,7 +119,9 @@ function cadastrarEmpresa(req, res){
 }
 
 module.exports = {
-    testarEmpresa,
+    entrarEmpresa,
     cadastrarEmpresa,
-    listarEmpresa
+    listarEmpresa,
+    testarEmpresa,
+    listarUltimoIdEmpresa
 }

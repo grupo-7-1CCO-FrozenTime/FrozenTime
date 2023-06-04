@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Time</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/siteInstitucional/img/logoAba.png">
+</head>
+
+<body>
+    <div class="header">
+        <div id="espacamentoTopo">
+            <div class="flexCenter">
+                <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
+                <img style="width: 80%;" src="./assets/icon.png" />
+                <!-- </a> -->
+            </div>
+            <div class="flexCenter">
+                <hr>
+            </div>
+            <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+                <a href="perfil.html" style="color: white;">
+                    <div>
+                        <div class="flexCenterAlignItemsCenter">
+                            <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                        </div>
+                        <div style="margin-top: 3%;">
+                            Bem-vindo(a), (nomeEmpresa)
+                        </div>
+                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
+                            <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+                <a href="index.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                        <p class="txtHeader">Dashboard</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+                <a href="./lotes.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/lotes.png" />
+                        <p class="txtHeader">Lotes</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./produtos.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconesProdutos.svg" />
+                        <p class="txtHeader">Produtos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                        <p class="txtHeader">Assinatura</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./cadastro.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
+                        <p class="txtHeader">Cadastro</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="divConteudo">
+        <div class="espacamentoCards">
+            <div class="cards" style="background-color: #6DACB5;">
+                <div style="padding-bottom: 10%;">
+                    <div>
+                        <p style="font-size: 20px;">Número de Alertas:</p>
+                    </div>
+                    <div class="flexCenter">
+                        <img src="./assets/icons8-alerta-50.png" style="height: 45px; width: 45px;" />
+                        <p style="font-size: 40px; margin: 0;color: #fff708;">7</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cards" style="background: rgba(73, 158, 174, 0.57);">
+                <div style="padding-bottom: 10%;">
+                    <div class="flexCenter">
+                        <p style="font-size: 20px;">Produtos em Transporte:</p>
+                    </div>
+                    <div class="flexCenter">
+                        <img src="./assets/iconProdutoKPI.svg" />
+                        <p style="font-size: 40px; margin: 0;">5</p><span
+                            style="display: flex; align-items: end; ">/100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards" style="background: rgba(115, 203, 220, 0.57);">
+                <div style="padding-bottom: 7%;">
+                    <div>
+                        <p style="font-size: 20px;">Lotes em transporte:</p>
+                    </div>
+                    <div class="flexCenter">
+                        <img style="width: 50px;" src="./assets/iconCaminhoesKPI.svg" />
+                        <p style="font-size: 40px; margin: 0; margin-left: 1%;">18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flexCenter" style="margin-top: 5%;">
+            <div style="width: 50%;">
+                <div class="flexCenter">
+                    <h3 class="titleCharts" style="margin-left: 5%;">TEMPERATURA DOS LOTES EM ALERTA:</h3>
+                </div>
+                <div style="display: flex;">
+
+                    <div class="btnPassarProduto">
+                        <img onclick="mudarGraficoTras()" src="./assets/arrow_right_azul.png"
+                            style="width: 40px; transform: rotate(180deg);">
+                    </div>
+                    <div style="width: 100%;">
+                        <div id="grafico1">
+                            <canvas id="myChart1" style="width: 30%;"></canvas>
+                            <canvas id="myChart2" style="width: 30%; display: none;"></canvas>
+                            <canvas id="myChart3" style="width: 30%; display: none;"></canvas>
+                            <canvas id="myChart4" style="width: 30%; display: none;"></canvas>
+                            <canvas id="myChart5" style="width: 30%; display: none;"></canvas>
+                            <canvas id="myChart6" style="width: 30%; display: none;"></canvas>
+                        </div>
+
+
+                    </div>
+                    <div class="btnPassarProduto">
+                        <img onclick="mudarGraficoFrente()" src="./assets/arrow_right_azul.png" style="width: 40px;">
+                    </div>
+                </div>
+            </div>
+            <div style="width: 26%; margin-left: 8%;">
+                <div>
+                    <h3 class="titleCharts" style="margin-left: 13%;">CONDIÇÃO DOS LOTES:</h3>
+                </div>
+                <div class="flexCenterAlignItemsCenter">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card dos Produtos-->
+
+        <div class="divCardsProduto">
+            <div class="divConteudoCardsProduto">
+                <h3 style="margin-left: 5%;color:white;">Produtos em Transportes:</h3>
+                <div class="flexSpaceAround">
+                    <div class="backgroudInfoProdutos">
+                        <h4 style="margin-left: 8%;margin-top: 2%; margin-bottom: 0;" id="nomeRemedio"></h4>
+                        <hr class="hrProdutos">
+                        <!-- Conteudo cards -->
+                        <div class="flexSpaceAround">
+                            <img id="imgRemedio" style="width: 25%;">
+                            <div style="width: 40%;">
+                                <h4>N° do Lote: <span id="numLoteRemedio"></span></h4>
+                                <div class="backgroundTempMaxMin">
+                                    <p id="tempMin"></p>
+                                </div>
+                                <div class="backgroundTempMaxMin">
+                                    <p id="tempMax"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btnPassarProduto">
+                        <img onclick="MudarProduto()" src="./assets/arrow_right.svg">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- imagem das métricas  -->
+        <div class="cardMetricas">
+            <div>
+                <h3 style="margin-left: 5%;  color: white;">Nossas métricas</h3>
+                <p style="margin-left: 5%;  color: white;">As métricas servem como um parâmetro, é com elas que
+                    analisamos a qualidade e as potências de risco de seu produto </p>
+            </div>
+            <div class="metricas">
+                <img src="./assets/metricaAlertas.png" alt="">
+                <img src="./assets/metricaTemperatura.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    const ctx = document.getElementById('myChart');
+
+    const ctx1 = document.getElementById('myChart1');
+    const ctx2 = document.getElementById('myChart2');
+    const ctx3 = document.getElementById('myChart3');
+    const ctx4 = document.getElementById('myChart4');
+    const ctx5 = document.getElementById('myChart5');
+    const ctx6 = document.getElementById('myChart6');
+
+    var maior = 0;
+    var menor = 0;
+    var maiorDois = 0;
+    var menorDois = 0;
+    var maiorTres = 0;
+    var menorTres = 0;
+    var menorQuatro = 0;
+    var maiorQuatro = 0;
+    var maiorCinco = 0;
+    var menorCinco = 0;
+
+    var labels = [];
+    var horario = [
+        "00:10", "00:11", "00:12", "00:13", "00:14",
+        "00:20",
+        "00:40",
+        "01:00",
+        "01:20",
+        "01:40",
+        "02:00",
+        "02:20",
+        "02:40",
+        "03:00",
+        "03:20",
+        "03:40",
+        "04:00",
+        "04:20",
+        "04:40",
+        "05:00",
+        "05:20",
+        "05:40",
+        "06:00",
+        "06:20",
+        "06:40",
+        "07:00",
+        "07:20",
+        "07:40",
+        "08:00",
+        "08:20",
+        "08:40",
+        "09:00",
+        "09:20",
+        "09:40",
+        "10:00",
+        "10:20",
+        "10:40",
+        "11:00",
+        "11:20",
+        "11:40",
+        "12:00",
+        "12:20",
+        "13:00",
+        "13:20",
+        "13:40",
+        "14:00",
+        "14:20",
+        "14:40",
+        "15:00",
+        "15:20",
+        "15:40",
+        "16:00",
+        "16:20",
+        "16:40",
+        "17:00",
+        "17:20",
+        "17:40",
+        "18:00",
+        "18:20",
+        "18:40",
+        "19:00",
+        "19:20",
+        "19:40",
+        "20:00",
+        "20:20",
+        "20:40",
+        "21:00",
+        "21:20",
+        "21:40",
+        "22:00",
+        "22:20",
+        "22:40",
+        "23:00",
+        "23:20",
+        "23:40",
+        "24:00",
+    ];
+    var data = [];
+    var data1 = [];
+    var data2 = [];
+    var data3 = [];
+    var data4 = [];
+    var data5 = [];
+    var data6 = [];
+
+
+    var chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Alerta', 'Atenção', 'Estável'],
+            datasets: [{
+                label: 'Quantidade de Caminhões',
+                data: [5, 3, 22],
+                borderWidth: 1,
+                backgroundColor: [
+                    '#FF0342',
+                    '#D3CC13',
+                    'rgba(9, 100, 13, 0.5)'
+                ],
+            }]
+        },
+        options: {
+            scales: {
+
+            }
+        }
+    });
+    var chart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Xalacom - Lote 1',
+                    data: data1,
+                    borderColor: 'rgba(109, 172, 181, 0.71)',
+                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
+                    yAxisID: 'y',
+                },
+                // {
+                //     label: 'Prevenar-13',
+                //     data: data2,
+                //     borderColor: 'rgba(255, 0, 49, 0.71)',
+                //     backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Genotropin',
+                //     data: data3,
+                //     borderColor: 'rgba(8, 201, 8, 0.71)',
+                //     backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Comirnaty',
+                //     data: data4,
+                //     borderColor: 'rgba(20, 161, 221, 0.71)',
+                //     backgroundColor: 'rgb(20, 161, 221, 0.71)',
+                //     yAxisID: 'y',
+                // },
+                // {
+                //     label: 'Sayana',
+                //     data: data5,
+                //     borderColor: 'rgba(157, 92, 227, 0.71)',
+                //     backgroundColor: 'rgba(157, 92, 227, 0.71)',
+                //     yAxisID: 'y',
+                // }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var chart3 = new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Xalacom - Lote 3',
+                    data: data4,
+                    borderColor: 'rgba(109, 172, 181, 0.71)',
+                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
+                    yAxisID: 'y',
+                }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var chart4 = new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Xalacom - Lote 4',
+                    data: data4,
+                    borderColor: 'rgba(109, 172, 181, 0.71)',
+                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
+                    yAxisID: 'y',
+                }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    var chart5 = new Chart(ctx5, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Xalacom - Lote 8',
+                    data: data5,
+                    borderColor: 'rgba(109, 172, 181, 0.71)',
+                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
+                    yAxisID: 'y',
+                }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    var chart6 = new Chart(ctx6, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Xalacom - Lote 12',
+                    data: data6,
+                    borderColor: 'rgba(109, 172, 181, 0.71)',
+                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
+                    yAxisID: 'y',
+                }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    // var i = 0;
+    // setInterval(() => {
+    //     if (i <= 72) {
+    //         labels.push(horario[i]);
+    //         data6.push(Math.floor(Math.random() * 9));
+    //         data5.push(Math.floor(Math.random() * 9));
+    //         data4.push(Math.floor(Math.random() * 9));
+    //         data3.push(Math.floor(Math.random() * 9));
+    //         data2.push(Math.floor(Math.random() * 9));
+    //         data.push(Math.floor(Math.random() * 9));
+
+
+    //         chart.update();
+    //         chart1.update();
+    //         chart2.update();
+    //         chart3.update();
+    //         chart4.update();
+    //         chart5.update();
+    //         chart6.update();
+
+
+    //         i++;
+    //         maior = Math.max.apply(null, data);
+    //         menor = Math.min.apply(null, data);
+    //         maiorDois = Math.max.apply(null, data2);
+    //         menorDois = Math.min.apply(null, data2);
+    //         maiorTres = Math.max.apply(null, data3);
+    //         menorTres = Math.min.apply(null, data3);
+    //         maiorQuatro = Math.max.apply(null, data4);
+    //         menorQuatro = Math.min.apply(null, data4);
+    //         maiorCinco = Math.max.apply(null, data5);
+    //         menorCinco = Math.min.apply(null, data5);
+
+
+    //         jsonProdutos[0].valorMaior = maior;
+    //         jsonProdutos[0].valorMenor = menor;
+    //         jsonProdutos[1].valorMaior = maiorDois;
+    //         jsonProdutos[1].valorMenor = menorDois;
+    //         jsonProdutos[2].valorMaior = maiorTres;
+    //         jsonProdutos[2].valorMenor = menorTres;
+    //         jsonProdutos[3].valorMaior = maiorQuatro;
+    //         jsonProdutos[3].valorMenor = menorQuatro;
+    //         jsonProdutos[4].valorMaior = maiorCinco;
+    //         jsonProdutos[4].valorMenor = menorCinco;
+    //     }
+    //     else {
+    //         i = 0;
+    //         data = [];
+    //         data1 = [];
+    //         data2 = [];
+    //         data3 = [];
+    //         data4 = [];
+    //         data5 = [];
+    //         data6 = [];
+    //         labels = [];
+
+
+    //         chart.destroy();
+    //         chart1.destroy();
+
+
+    //         chart1 = new Chart(ctx1, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom',
+    //                         data: data1,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     },
+    //                     //                     {
+    //                     //                         label: 'Prevenar-13',
+    //                     //                         data: data2,
+    //                     //                         borderColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //                     {
+    //                     //                         label: 'Genotropin',
+    //                     //                         data: data3,
+    //                     //                         borderColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //                         backgroundColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //                     {
+    //                     //                         label: 'Comirnaty',
+    //                     //                         data: data4,
+    //                     //                         borderColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         backgroundColor: 'rgba(255, 0, 49, 0.71)',
+    //                     //                         yAxisID: 'y',
+    //                     //                     },
+    //                     //     {
+    //                     //         label: 'Sayana',
+    //                     //         data: data5,
+    //                     //         borderColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //         backgroundColor: 'rgba(8, 201, 8, 0.71)',
+    //                     //         yAxisID: 'y',
+    //                     //     }
+    //                 ]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+
+    //         chart2 = new Chart(ctx2, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 2',
+    //                         data: data2,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart3 = new Chart(ctx3, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 3',
+    //                         data: data3,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart4 = new Chart(ctx4, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 4',
+    //                         data: data4,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart5 = new Chart(ctx5, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 8',
+    //                         data: data5,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart6 = new Chart(ctx6, {
+    //             type: 'line',
+    //             data: {
+    //                 labels: labels,
+    //                 datasets: [
+    //                     {
+    //                         label: 'Xalacom - Lote 12',
+    //                         data: data6,
+    //                         borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                         backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                         yAxisID: 'y',
+    //                     }]
+    //             },
+    //             options: {
+    //                 scales: {
+    //                     y: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         chart.update()
+    //     }
+    // }, 3000)
+
+
+
+    var contadorProduto = 0;
+
+    var jsonProdutos = [{
+        nome: '',
+        urlImg: '',
+        numLote: 0,
+        valorMaior: 0,
+        valorMenor: 0
+    }];
+
+    jsonProdutos = [{
+        nome: 'XALACOM',
+        urlImg: './assets/xalacom.png',
+        numLote: 1256,
+        valorMaior: maior,
+        valorMenor: menor
+    },
+    {
+        nome: 'PREVENAR-13',
+        urlImg: './assets/prevenar13.png',
+        numLote: 509,
+        valorMaior: maiorDois,
+        valorMenor: menorDois
+    },
+    {
+        nome: 'GENOTROPIN',
+        urlImg: './assets/genetropin.png',
+        numLote: 2350,
+        valorMaior: maiorTres,
+        valorMenor: menorTres
+    }];
+
+
+    nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
+    imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
+    numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
+    tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
+    tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
+
+    function MudarProduto() {
+        if (contadorProduto < jsonProdutos.length) {
+            nomeRemedio.innerHTML = `${jsonProdutos[contadorProduto].nome} &reg;`;
+            imgRemedio.src = `${jsonProdutos[contadorProduto].urlImg}`;
+            numLoteRemedio.innerHTML = `${jsonProdutos[contadorProduto].numLote}`;
+            tempMin.innerHTML = `°C min atingida -  ${jsonProdutos[contadorProduto].valorMenor} °C`
+            tempMax.innerHTML = `°C max atingida -  ${jsonProdutos[contadorProduto].valorMaior} °C`
+            contadorProduto++;
+        }
+        else {
+            contadorProduto = 0;
+        }
+    }
+
+    
+    var vtGraficos = [chart1, chart2, chart3, chart4, chart5, chart6];
+
+    var contadorGrafico = 1;
+    var teste;
+    function mudarGraficoFrente() {
+        contadorGrafico++
+        teste = eval('chart' + contadorGrafico);
+        teste.destroy();
+        if (contadorGrafico == vtGraficos.length) {
+            contadorGrafico = 0;
+        }
+        grafico1.innerHTML = vtGraficos[contadorGrafico]
+        console.log("oi")
+    }
+
+    // function mudarGraficoTras() {
+    //     contadorGrafico--;
+    //     grafico1.innerHTML = vtGraficos[contadorGrafico]
+    // }
+
+    function MudarGraficoFrente(){
+        var teste = chart;
+        (teste + contadorGrafico).destroy();
+        (teste + contadorGrafico).style.display = 'none';
+        contadorGrafico++
+        (teste + contadorGrafico).style.display = 'block';
+       
+    }
+
+    
+    // var contadorGrafico = 0;
+    // function mudarGraficoFrente() {
+    //     if (contadorGrafico <= 5) {
+    //         for (i = 0; i <= 5; i++) {
+
+    //             // if (vtGraficos[i] == 0) {
+    //             //     console.log('Estou aqq')
+    //             //     grafico1.style.display = "block"
+    //             //     grafico2.style.display = "none"
+    //             //     grafico3.style.display = "none"
+    //             //     grafico4.style.display = "none"
+    //             //     grafico5.style.display = "none"
+    //             //     grafico6.style.display = "none"
+    //             // } else
+    //             if (vtGraficos[i] == 1) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "block"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 2) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "block"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 3) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "block"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 4) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "block"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 5) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "block"
+    //             } else {
+    //                 contadorGrafico = 0;
+    //             }
+    //         }
+    //     }
+    // }
+
+</script>

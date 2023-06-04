@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Time</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lotes.css">
+    <link rel="icon" href="/siteInstitucional/img/logoAba.png">
+</head>
+
+<!-- Início do Menu lateral -->
+
+<body>
+    <div class="header">
+        <div id="espacamentoTopo">
+            <div class="flexCenter">
+                <!-- <a class="flexCenter" href="../siteInstitucional/index.html"> -->
+                <img style="width: 80%;" src="./assets/icon.png" />
+                <!-- </a> -->
+            </div>
+            <div class="flexCenter">
+                <hr>
+            </div>
+            <div class="flexCenterAlignSelfCenter" style="margin-top: 30px;">
+                <a href="perfil.html" style="color: white;">
+                    <div>
+                        <div class="flexCenterAlignItemsCenter">
+                            <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
+                        </div>
+                        <div style="margin-top: 3%;">
+                            Bem-vindo(a), (nomeEmpresa)
+                        </div>
+                        <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
+                            <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+                <a href="index.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/dashboard.svg" />
+                        <p class="txtHeader">Dashboard</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-top: 2%;">
+                <a href="./lotes.html" style="text-decoration: none; color: white;">
+                  <div class="flexCenterAlignItemsCenter">
+                    <img class="widthiconHeader" src="./assets/lotes.png" />
+                    <p class="txtHeader">Lotes</p>
+                  </div>
+                </a>
+              </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./produtos.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconesProdutos.svg" width="50%">
+                        <p class="txtHeader">Produtos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./assinaturaDash.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/iconeSensor.svg" />
+                        <p class="txtHeader">Assinatura</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./cadastro.html" style="text-decoration: none; color: white;">
+                  <div class="flexCenterAlignItemsCenter">
+                    <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
+                    <p class="txtHeader">Cadastro</p>
+                  </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Menu lateral -->
+
+    <!-- Início da Tela de Produtos com os Alertas -->
+    <main>
+        <!-- Título -->
+        <div class="titulo">
+            <h1>Lotes</h1>
+        </div>
+        <!-- Início das informações sobre os produtos -->
+
+        <!-- início o primeiro produto -->
+        <h2>Xalacom</h2>
+        <hr class="separadorRemedioRotas">
+        <!-- Informações que aparecem antes de clicar -->
+        <button class="accordion" style="border-color: #09640D;">
+            <div class="text">
+
+                <p>Lote 1 <span class="estavel"> •Estável</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: <span class="estavel">5°C</span> 19/12/2022 - 13h </b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 2 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 6°C</span> 09/01/2023 - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 3 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 4°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+        <!-- fim das informações do primeiro produto  -->
+
+
+        <!-- começo das ifromaçoes do segundo produto -->
+        <br>
+        <h2>Prevenar-13</h2>
+        <hr class="separadorRemedioRotas">
+        <button class="accordion" style="border-color:#9A9408;">
+            <div class="text">
+                <p>Lote 1 <span class="alerta"> •Cuidado</span></p>
+                <p class="kits">Kit 5</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#9A9408;">
+            <li> <b class="titulo"> Último registro: <span class="alerta"> 7°C</span> 02/01/2023 20h</b> </li>
+            <li>Lote 1 - São Paulo(SP) - Rio de Janiero(RJ) </li>
+            <li>Saída: 02/01/2023</li>
+            <li>Chegada prevista: 02/01/2023</li>
+        </div>
+
+
+        <button class="accordion" style="border-color:#9A9408;">
+            <div class="text">
+                <p>Lote 2 <span class="alerta"> •Cuidado</span></p>
+                <p class="kits">Kit 10</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #9A9408;">
+            <li> <b class="titulo">Último registro: <span class="alerta"> 3°C</span> 16/03/2023 - 12:30</b> </li>
+            <li>São Paulo(SP) - Vitória da Conquista(BA)</li>
+            <li>Saída: 13/03/2023 </li>
+            <li>Chegada prevista: 16/03/2023</li>
+        </div>
+
+
+        <h2>Genotropin</h2>
+        <hr class="separadorRemedioRotas">
+        <!-- Informações que aparecem antes de clicar -->
+        <button class="accordion" style="border-color: #09640D;">
+            <div class="text">
+
+                <p>Lote 1 <span class="estavel"> •Estável</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: <span class="estavel">5°C</span> 19/12/2022 - 13h </b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 2 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 5°C</span> 09/01/2023 - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 3 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 6°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+
+
+        <h2>Comirnaty</h2>
+        <hr class="separadorRemedioRotas">
+        <!-- Informações que aparecem antes de clicar -->
+        <button class="accordion" style="border-color: #09640D;">
+            <div class="text">
+
+                <p>Lote 1 <span class="estavel"> •Estável</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: <span class="estavel">5°C</span> 19/12/2022 - 13h </b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 2 <span class="critico"> •Crítico</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #FF0342;">
+            <li> <b class="titulo"> Último registro: <span class="critico"> 13°C</span> 09/01/2023 - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color:#D3CC13;">
+            <div class="text">
+                <p>Lote 3 <span class="alerta"> •Cuidado</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#9A9408;">
+            <li> <b class="titulo"> Último registro: <span class="alerta"> 2°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+
+
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 4 <span class="critico"> •Crítico</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#FF0342;">
+            <li> <b class="titulo"> Último registro: <span class="critico"> 10°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+
+
+        <button class="accordion" style="border-color:#FF0342;">
+            <div class="text">
+                <p>Lote 5 <span class="critico"> •Crítico</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#FF0342;">
+            <li> <b class="titulo"> Último registro: <span class="critico"> 9°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+
+
+        <h2>Sayana</h2>
+        <hr class="separadorRemedioRotas">
+        <!-- Informações que aparecem antes de clicar -->
+        <button class="accordion" style="border-color: #09640D;">
+            <div class="text">
+
+                <p>Lote 1 <span class="estavel"> •Estável</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: <span class="estavel">5°C</span> 19/12/2022 - 13h </b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 2 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 5°C</span> 09/01/2023 - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color: #09640D;">
+            <div class="text">
+
+                <p>Lote 3 <span class="estavel"> •Estável</span></p>
+                <!-- <p class="numero" style="background-color:rgb(9, 100, 13, 0.5);">0</p> -->
+                <p class="kits">Kit 1</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+            <!-- Infos que aparecem após clicar -->
+            <!-- Display: none- para não aparecer quando a página carrega -->
+            <!-- A class da tag span, varia de acordo com o estado do produto, exemplo: alerta-> para o texto ficar vermelho e crítico para o amarelo. -->
+        </button>
+        <div class="info" style="display: none;">
+            <li> <b class="titulo"> Último registro: <span class="estavel">5°C</span> 19/12/2022 - 13h </b> </li>
+            <li>São Paulo(SP) - Vitória(ES)</li>
+            <li>Saída: 13/12/2022 </li>
+            <li>Chegada prevista: 27/12/2022</li>
+            <p>Adicionado por: André Luiz</p>
+        </div>
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 4 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 42</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color: #09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 4°C</span> 09/01/2023 - 14:30h </b> </li>
+            <li>São Paulo(SP) - Recife(PE)</li>
+            <li>Saída: 04/01/2023 </li>
+            <li>Chegada prevista: 13/01/2023</li>
+            <p>Adicionado por: Márcia Cassita</p>
+        </div>
+
+
+        <button class="accordion" style="border-color:#09640D;">
+            <div class="text">
+                <p>Lote 5 <span class="estavel"> •Estável</span></p>
+                <p class="kits">Kit 12</p>
+                <!-- <li>em transporte</li> -->
+            </div>
+        </button>
+        <!-- div com as nformaçoes dos produtos -->
+        <div class="info" style="display: none;" style="border-color:#09640D;">
+            <li> <b class="titulo"> Último registro: <span class="estavel"> 6°C</span> 01/02/2023 - 17:30h</b></li>
+            <li>São Paulo(SP) - Manaus(AM)</li>
+            <li>Saída: 30/01/2023 </li>
+            <li>Chegada prevista: 12/03/2023 </li>
+        </div>
+        <!-- Fim das informações sobre os produtos -->
+
+    </main>
+    <!-- Fim da Tela de Produtos -->
+
+</body>
+
+</html>
+
+
+<script>
+    // Criação de uma variável que retorna aos elementos que possuem o nome da class 'accordion'
+    var acc = document.getElementsByClassName("accordion");
+    // Declaração de uma variável i que será usada como contador no loop a seguir.
+    var i;
+
+
+    // Loop que percorre todos os elementos selecionados na variável acc
+    for (i = 0; i < acc.length; i++) {
+        // Adicionando um evento que irá acontecer quando houver um 'click' no botão
+        acc[i].addEventListener("click", function () {
+
+            // this: se refere ao botão que foi clicado.
+            // classList: contém uma lista de todas as classes CSS aplicadas ao botão
+            // toggle faz a alternância da aparência do elemento toda vez que é clicado  
+            this.classList.toggle("seta");
+
+            // Está armazenando a próxima informação que será mostrada (ou seja, quando o botão for clicado)
+            var informacao = this.nextElementSibling;
+            // Alterna entre mostrar e ocultar o painel
+            if (informacao.style.display == "block") {
+                informacao.style.display = "none";
+            } else {
+                informacao.style.display = "block";
+            }
+        });
+    }
+</script>

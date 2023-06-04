@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frozen Time</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- <link rel="stylesheet" href="cadastro.css"> -->
+</head>
+
+<body>
+  <header style="background-color: #76c3cf">
+    <nav class="cabecalho">
+      <a href="index.html"><img src="img/logo.png" id="logo" /></a>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html#beneficios">Solução</a></li>
+          <li><img src="img/linha.png" /></li>
+
+          <li><a href="calculadora.html">Simulação</a></li>
+          <li><img src="img/linha.png" /></li>
+
+          <li><a href="assinatura.html">Assine</a></li>
+          <li><img src="img/linha.png" /></li>
+
+          <li><a href="index.html#sobreNos">Sobre</a></li>
+          <li><img src="img/linha.png" /></li>
+
+          <li><a href="contato.html">Contato</a></li>
+          <li><img src="img/linha.png" /></li>
+
+          <li>
+            <a href="login.html"><img src="img/login.png" /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="login">
+    <!-- css login -->
+
+    <div class="container">
+      <!-- css login -->
+
+      <div class="cardLogin">
+        <!-- css login -->
+        <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo" />
+        <!-- css login -->
+      </div>
+
+      <div class="form">
+        <!-- css login -->
+        <div>
+          <!-- css login -->
+
+          <div class="camposCadastro" id="camposEmpresa">
+            <!-- css login -->
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="Nome da Empresa" name="Nome da Empresa" id="ipt_nomeEmpresa"
+                autofocus required />
+              <label for="Nome da Empresa" class="input_label">Nome da Empresa</label>
+            </div>
+
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="CNPJ" name="CNPJ" id="ipt_cnpj" required />
+              <label for="CNPJ" class="input_label">CNPJ</label>
+            </div>
+
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="Cidade" name="Cidade" id="ipt_cidadeEmpresa" required />
+              <label for="Cidade" class="input_label">Cidade</label>
+            </div>
+
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="Rua" name="Rua" id="ipt_ruaEmpresa" required />
+              <label for="Rua" class="input_label">Rua</label>
+            </div>
+
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="bairro" name="bairro" id="ipt_bairroEmpresa" required />
+              <label for="bairro" class="input_label">Bairro</label>
+            </div>
+
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="Número" name="numero" id="ipt_numeroEmpresa" required />
+              <label for="numero" class="input_label">Número</label>
+            </div>
+            <div class="inputsCadastro">
+              <!-- css login -->
+              <input type="text" class="input" placeholder="Complemento" name="Complemento"
+                id="ipt_complementoEmpresa" />
+              <label for="Complemento" class="input_label">Complemento</label>
+            </div>
+            <div class="botoesTexto">
+              <div class="" style="
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 100%;
+                  ">
+                <div>
+                  <button onclick="cadastrarEmpresa()" style="width: 120px; height: 3" class="botaoLogin">
+                    Próximo
+                  </button>
+                </div>
+                <div>
+                  <a class="cadastrar" href="Login.html">Já sou membro</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="camposCadastro" id="camposFuncionario" style="display: none; padding-left: 20px">
+          <!-- css login -->
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="email" class="input" placeholder="Nome Funcionario" name="nomeFuncionario"
+              id="ipt_nomeFuncionario" required />
+            <label for="ipt_nomeFuncionario" class="input_label">Nome Funcionário:</label>
+          </div>
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="email" class="input" placeholder="Email" name="Email" id="ipt_emailFuncionario" required />
+            <label for="Email" class="input_label">Email</label>
+          </div>
+
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id="ipt_telFuncionario" required />
+            <label for="Telefone" class="input_label">Telefone</label>
+          </div>
+
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id="ipt_whatsFuncionario" required />
+            <label for="WhatsApp" class="input_label">WhatsApp</label>
+          </div>
+
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="password" class="input" placeholder="Senha" name="Senha" id="ipt_senha" required />
+            <label for="Senha" class="input_label">Senha</label>
+          </div>
+
+          <div class="inputsCadastro">
+            <!-- css login -->
+            <input type="password" class="input" placeholder="Confirmar senha" name="Confirmar" id="ipt_checkSenha"
+              required />
+            <label for="Confirmar" class="input_label">Confirmar senha</label>
+          </div>
+          <div class="botoesTexto">
+            <div class="" style="
+                  display: flex;
+                  justify-content: space-evenly;
+                  width: 100%;
+                ">
+              <div>
+                <button onclick="cadastrarLogin()" style="width: 120px; height: 3" class="botaoLogin">
+                  Cadastrar
+                </button>
+              </div>
+              <div>
+                <a class="cadastrar" href="Login.html">Já sou membro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Campos Cadastro Funcionario -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footerConteudo">
+      <div>
+        <ul class="logoFooter">
+          <li class="imgLogoFooter">
+            <a href="index.html"><img src="./icon/iconPreto.png" /></a>
+          </li>
+          <li class="txtLogoFooter">
+            &copy;2023 FrozenTime, Inc.<br />
+            Todos o direitos reservados
+          </li>
+        </ul>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div>
+        <ul class="paginasFooter">
+          <li>
+            <h2>Navegue</h2>
+          </li>
+          <li><a href="index.html#beneficios">Solução</a></li>
+          <li><a href="calculadora.html">Simulação</a></li>
+          <li><a href="index.html#sobreNos">Sobre</a></li>
+        </ul>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div>
+        <ul class="paginasFooter">
+          <li>
+            <h2>Contatos</h2>
+          </li>
+          <li>
+            <a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a>
+          </li>
+          <li onclick="copiarTelefone()">Telefone</li>
+          <li onclick="copiarEmail()">E-mail</li>
+        </ul>
+      </div>
+      <div>
+        <hr />
+      </div>
+      <div>
+        <ul class="paginasFooterInsti">
+          <li>
+            <h2>Institucional</h2>
+          </li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+  var fkLoginGlobal;
+  var fkEmpresaGlobal
+
+  function copiarTelefone() {
+    navigator.clipboard
+      .writeText("11 95369-8849")
+      .then(() => {
+        alert("Telefone para contato copiado!");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
+  }
+  function copiarEmail() {
+    navigator.clipboard
+      .writeText("desk@frozentime.atlassian.net")
+      .then(() => {
+        alert("Email para contato copiado!");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
+  }
+
+  function cadastrarEmpresa() {
+    var nomeEmpresa = ipt_nomeEmpresa.value;
+    var cnpjEmpresa = ipt_cnpj.value;
+    var cidadeEmpresa = ipt_cidadeEmpresa.value;
+    var ruaEmpresa = ipt_ruaEmpresa.value;
+    var bairroEmpresa = ipt_bairroEmpresa.value;
+    var numeroEmpresa = Number(ipt_numeroEmpresa.value);
+    var complementoEmpresa = ipt_complementoEmpresa.value;
+
+    if (
+      nomeEmpresa == "" ||
+      cnpjEmpresa == "" ||
+      cidadeEmpresa == "" ||
+      ruaEmpresa == "" ||
+      bairroEmpresa == "" ||
+      numeroEmpresa == 0 ||
+      complementoEmpresa == ""
+    ) {
+      alert("Campos de cadastro não podem ser nulos!");
+      return false;
+    }
+
+    // Enviando o valor da nova input
+    fetch("/empresa/cadastrarEmpresa", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeEmpresa: nomeEmpresa,
+        cnpjEmpresa: cnpjEmpresa,
+        cidade: cidadeEmpresa,
+        rua: ruaEmpresa,
+        bairro: bairroEmpresa,
+        numero: numeroEmpresa,
+        complemento: complementoEmpresa,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          camposEmpresa.style.display = "none";
+          camposFuncionario.style.display = "block";
+        } else {
+          throw alert(
+            "Houve um erro ao tentar realizar o cadastro da Empresa!"
+          );
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    selectfkEmpresa();
+    return false;
+  }
+
+  function cadastrarLogin() {
+    var emailFuncionario = ipt_emailFuncionario.value;
+    var senhaFuncionario = ipt_senha.value;
+    var checkSenhaVar = ipt_checkSenha.value;
+
+    if (
+      emailFuncionario == "" ||
+      senhaFuncionario == "" ||
+      checkSenhaVar == ""
+    ) {
+      erro = true;
+      alert("Email e/ou senha não podem ser nulos!");
+    }
+    if (senhaFuncionario != checkSenhaVar) {
+      erro = true;
+      alert('Senhas não conferem!');
+    }
+    fetch("/loginTabela/cadastrarLoginTabela", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        emailLogin: emailFuncionario,
+        senhaLogin: senhaFuncionario,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          console.log("Login Cadastrado com sucesso!");
+          cadastrarFuncionario();
+        } else {
+          throw alert(
+            "Houve um erro ao tentar realizar o cadastro do Login!"
+          );
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+    selectfkLogin();
+  }
+
+  function cadastrarFuncionario() {
+    var nomeFuncionario = ipt_nomeFuncionario.value;
+    var emailFuncionario = ipt_emailFuncionario.value;
+    var whatsappFuncionario = ipt_whatsFuncionario.value;
+    var gestorVar = 1;
+    var fkEmpresaVar = fkEmpresaGlobal;
+    var fkLoginVar = fkLoginGlobal;
+
+    let erro = false;
+
+    var validacoes =
+      nomeFuncionario == "" ||
+      emailFuncionario == "" ||
+      whatsappFuncionario == "";
+
+    var telefone = ipt_telFuncionario.value;
+    var length =
+      telefone.length != "" && (telefone.length > 9 || telefone.length < 9);
+
+    var whats = ipt_whatsFuncionario.value;
+    var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
+
+    if (validacoes) {
+      alert("Por favor, preencher todos os campos");
+      erro = true;
+    }
+
+    if (app) {
+      alert("Favor, por um WhatsApp válido");
+      erro = true;
+    }
+    fetch("/funcionario/cadastrarFuncionario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeFuncionario: nomeFuncionario,
+        emailFuncionario: emailFuncionario,
+        whatsapp: whatsappFuncionario,
+        gestor: gestorVar,
+        fkEmpresa: fkEmpresaGlobal,
+        fkLogin: (Number(fkLoginGlobal) + 1),
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert('Cadastro de Funcionario com sucesso!');
+          window.location.href = 'login.html';
+        } else {
+          throw alert(
+            "Houve um erro ao tentar realizar o cadastro do Funcionario!"
+          );
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function selectfkEmpresa() {
+    var fkEmpresa;
+    fetch('/empresa/listarUltimoIdEmpresa').then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          var fkEmpresaArray = resposta[0];
+          fkEmpresa = fkEmpresaArray.idEmpresa;
+          fkEmpresaGlobal = fkEmpresa;
+          console.log(fkEmpresaGlobal);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ ultimo idEmpresa: ${error.message}`);
+      });
+    return fkEmpresa;
+  }
+
+  function selectfkLogin() {
+    var fkLogin;
+    fetch('loginTabela/listarUltimoIdLoginTabela').then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          var fkLoginArray = resposta[0];
+          fkLogin = fkLoginArray.idLogin;
+          fkLoginGlobal = fkLogin;
+          console.log(fkLoginGlobal);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ ultimo idLogin: ${error.message}`);
+      });
+  }
+</script>
