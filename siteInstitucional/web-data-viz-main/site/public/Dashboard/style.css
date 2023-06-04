@@ -5,7 +5,7 @@ body {
   display: flex;
 }
 
-a,h3,h4,h2,p {
+a,h3,h4,h2,p,span {
   font-family: "Inter", sans-serif;
   font-weight: 800;
   text-decoration: none;

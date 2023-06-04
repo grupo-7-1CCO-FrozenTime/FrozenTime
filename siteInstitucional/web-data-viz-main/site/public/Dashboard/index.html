@@ -91,7 +91,7 @@
                         </div>
                         <div class="flexCenter">
                             <img src="./assets/icons8-alerta-50.png" style="height: 45px; width: 45px;" />
-                            <p style="font-size: 40px; margin: 0;color: #fff708;">7</p>
+                            <p style="font-size: 40px; margin: 0;color: #fff708;">7</p><span style="display: flex; align-items: end; ">/100</span>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="flexCenter">
                             <img src="./assets/iconProdutoKPI.svg" />
-                            <p style="font-size: 40px; margin: 0;">5</p>
+                            <p style="font-size: 40px; margin: 0;">5</p><span style="display: flex; align-items: end; ">/100</span>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="flexCenter">
                             <img style="width: 50px;" src="./assets/iconCaminhoesKPI.svg" />
-                            <p style="font-size: 40px; margin: 0; margin-left: 1%;">18</p>
+                            <p style="font-size: 40px; margin: 0; margin-left: 1%;">18</p><span style="display: flex; align-items: end; ">/100</span>
                         </div>
                     </div>
                 </div>
@@ -221,11 +221,11 @@
     const ctx2 = document.getElementById('myChart2');
 
     const ctx = document.getElementById('myChart');
-    const ctx3 = document.getElementById('myChart3');
-    const ctx4 = document.getElementById('myChart4');
-    const ctx5 = document.getElementById('myChart5');
-    const ctx6 = document.getElementById('myChart6');
-    const ctx7 = document.getElementById('myChart7');
+    // const ctx3 = document.getElementById('myChart3');
+    // const ctx4 = document.getElementById('myChart4');
+    // const ctx5 = document.getElementById('myChart5');
+    // const ctx6 = document.getElementById('myChart6');
+    // const ctx7 = document.getElementById('myChart7');
 
     var maior = 0;
     var menor = 0;
@@ -331,34 +331,34 @@
                     backgroundColor: 'rgba(109, 172, 181, 0.71)',
                     yAxisID: 'y',
                 },
-                // {
-                //     label: 'Prevenar-13',
-                //     data: data2,
-                //     borderColor: 'rgba(255, 0, 49, 0.71)',
-                //     backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                //     yAxisID: 'y',
-                // },
-                // {
-                //     label: 'Genotropin',
-                //     data: data3,
-                //     borderColor: 'rgba(8, 201, 8, 0.71)',
-                //     backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                //     yAxisID: 'y',
-                // },
-                // {
-                //     label: 'Comirnaty',
-                //     data: data4,
-                //     borderColor: 'rgba(20, 161, 221, 0.71)',
-                //     backgroundColor: 'rgb(20, 161, 221, 0.71)',
-                //     yAxisID: 'y',
-                // },
-                // {
-                //     label: 'Sayana',
-                //     data: data5,
-                //     borderColor: 'rgba(157, 92, 227, 0.71)',
-                //     backgroundColor: 'rgba(157, 92, 227, 0.71)',
-                //     yAxisID: 'y',
-                // }
+                {
+                    label: 'Prevenar-13',
+                    data: data2,
+                    borderColor: 'rgba(255, 0, 49, 0.71)',
+                    backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Genotropin',
+                    data: data3,
+                    borderColor: 'rgba(8, 201, 8, 0.71)',
+                    backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Comirnaty',
+                    data: data4,
+                    borderColor: 'rgba(20, 161, 221, 0.71)',
+                    backgroundColor: 'rgb(20, 161, 221, 0.71)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Sayana',
+                    data: data5,
+                    borderColor: 'rgba(157, 92, 227, 0.71)',
+                    backgroundColor: 'rgba(157, 92, 227, 0.71)',
+                    yAxisID: 'y',
+                }
             ]
         },
         options: {
@@ -370,111 +370,111 @@
         }
     });
 
-    var chart3 = new Chart(ctx3, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 2',
-                    data: data2,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var chart4 = new Chart(ctx4, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 3',
-                    data: data3,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var chart5 = new Chart(ctx5, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 4',
-                    data: data4,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var chart6 = new Chart(ctx6, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 8',
-                    data: data5,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var chart7 = new Chart(ctx7, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Xalacom - Lote 12',
-                    data: data6,
-                    borderColor: 'rgba(109, 172, 181, 0.71)',
-                    backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                    yAxisID: 'y',
-                }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    // var chart3 = new Chart(ctx3, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
+    //             {
+    //                 label: 'Xalacom - Lote 2',
+    //                 data: data2,
+    //                 borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                 backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                 yAxisID: 'y',
+    //             }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+    // var chart4 = new Chart(ctx4, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
+    //             {
+    //                 label: 'Xalacom - Lote 3',
+    //                 data: data3,
+    //                 borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                 backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                 yAxisID: 'y',
+    //             }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+    // var chart5 = new Chart(ctx5, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
+    //             {
+    //                 label: 'Xalacom - Lote 4',
+    //                 data: data4,
+    //                 borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                 backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                 yAxisID: 'y',
+    //             }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+    // var chart6 = new Chart(ctx6, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
+    //             {
+    //                 label: 'Xalacom - Lote 8',
+    //                 data: data5,
+    //                 borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                 backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                 yAxisID: 'y',
+    //             }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+    // var chart7 = new Chart(ctx7, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
+    //             {
+    //                 label: 'Xalacom - Lote 12',
+    //                 data: data6,
+    //                 borderColor: 'rgba(109, 172, 181, 0.71)',
+    //                 backgroundColor: 'rgba(109, 172, 181, 0.71)',
+    //                 yAxisID: 'y',
+    //             }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
 
     var chart2 = new Chart(ctx2, {
         type: 'doughnut',
@@ -508,34 +508,34 @@
             data2.push(Math.floor(Math.random() * 9));
             data.push(Math.floor(Math.random() * 9));
             chart.update();
-            chart3.update();
-            chart4.update();
-            chart5.update();
-            chart6.update();
-            chart7.update();
+            // chart3.update();
+            // chart4.update();
+            // chart5.update();
+            // chart6.update();
+            // chart7.update();
             i++;
-            // maior = Math.max.apply(null, data);
-            // menor = Math.min.apply(null, data);
-            // maiorDois = Math.max.apply(null, data2);
-            // menorDois = Math.min.apply(null, data2);
-            // maiorTres = Math.max.apply(null, data3);
-            // menorTres = Math.min.apply(null, data3);
-            // maiorQuatro = Math.max.apply(null, data4);
-            // menorQuatro = Math.min.apply(null, data4);
-            // maiorCinco = Math.max.apply(null, data5);
-            // menorCinco = Math.min.apply(null, data5);
+            maior = Math.max.apply(null, data);
+            menor = Math.min.apply(null, data);
+            maiorDois = Math.max.apply(null, data2);
+            menorDois = Math.min.apply(null, data2);
+            maiorTres = Math.max.apply(null, data3);
+            menorTres = Math.min.apply(null, data3);
+            maiorQuatro = Math.max.apply(null, data4);
+            menorQuatro = Math.min.apply(null, data4);
+            maiorCinco = Math.max.apply(null, data5);
+            menorCinco = Math.min.apply(null, data5);
 
 
-            // jsonProdutos[0].valorMaior = maior;
-            // jsonProdutos[0].valorMenor = menor;
-            // jsonProdutos[1].valorMaior = maiorDois;
-            // jsonProdutos[1].valorMenor = menorDois;
-            // jsonProdutos[2].valorMaior = maiorTres;
-            // jsonProdutos[2].valorMenor = menorTres;
-            // jsonProdutos[3].valorMaior = maiorQuatro;
-            // jsonProdutos[3].valorMenor = menorQuatro;
-            // jsonProdutos[4].valorMaior = maiorCinco;
-            // jsonProdutos[4].valorMenor = menorCinco;
+            jsonProdutos[0].valorMaior = maior;
+            jsonProdutos[0].valorMenor = menor;
+            jsonProdutos[1].valorMaior = maiorDois;
+            jsonProdutos[1].valorMenor = menorDois;
+            jsonProdutos[2].valorMaior = maiorTres;
+            jsonProdutos[2].valorMenor = menorTres;
+            jsonProdutos[3].valorMaior = maiorQuatro;
+            jsonProdutos[3].valorMenor = menorQuatro;
+            jsonProdutos[4].valorMaior = maiorCinco;
+            jsonProdutos[4].valorMenor = menorCinco;
         }
         else {
             i = 0;
@@ -558,34 +558,34 @@
                             backgroundColor: 'rgba(109, 172, 181, 0.71)',
                             yAxisID: 'y',
                         },
-                        //                 {
-                        //                     label: 'Prevenar-13',
-                        //                     data: data2,
-                        //                     borderColor: 'rgba(255, 0, 49, 0.71)',
-                        //                     backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                        //                     yAxisID: 'y',
-                        //                 },
-                        //                 {
-                        //                     label: 'Genotropin',
-                        //                     data: data3,
-                        //                     borderColor: 'rgba(8, 201, 8, 0.71)',
-                        //                     backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                        //                     yAxisID: 'y',
-                        //                 },
-                        //                 {
-                        //                     label: 'Comirnaty',
-                        //                     data: data4,
-                        //                     borderColor: 'rgba(255, 0, 49, 0.71)',
-                        //                     backgroundColor: 'rgba(255, 0, 49, 0.71)',
-                        //                     yAxisID: 'y',
-                        //                 },
-                        // {
-                        //     label: 'Sayana',
-                        //     data: data5,
-                        //     borderColor: 'rgba(8, 201, 8, 0.71)',
-                        //     backgroundColor: 'rgba(8, 201, 8, 0.71)',
-                        //     yAxisID: 'y',
-                        // }
+                                        {
+                                            label: 'Prevenar-13',
+                                            data: data2,
+                                            borderColor: 'rgba(255, 0, 49, 0.71)',
+                                            backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                                            yAxisID: 'y',
+                                        },
+                                        {
+                                            label: 'Genotropin',
+                                            data: data3,
+                                            borderColor: 'rgba(8, 201, 8, 0.71)',
+                                            backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                                            yAxisID: 'y',
+                                        },
+                                        {
+                                            label: 'Comirnaty',
+                                            data: data4,
+                                            borderColor: 'rgba(255, 0, 49, 0.71)',
+                                            backgroundColor: 'rgba(255, 0, 49, 0.71)',
+                                            yAxisID: 'y',
+                                        },
+                        {
+                            label: 'Sayana',
+                            data: data5,
+                            borderColor: 'rgba(8, 201, 8, 0.71)',
+                            backgroundColor: 'rgba(8, 201, 8, 0.71)',
+                            yAxisID: 'y',
+                        }
                     ]
                 },
                 options: {
@@ -597,115 +597,10 @@
                 }
             });
             chart.update();
-            chart3 = new Chart(ctx3, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 2',
-                            data: data2,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart3.update();
-
-            chart4 = new Chart(ctx4, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 3',
-                            data: data3,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart5 = new Chart(ctx5, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 4',
-                            data: data4,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart6 = new Chart(ctx6, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 8',
-                            data: data5,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            chart7 = new Chart(ctx7, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Xalacom - Lote 12',
-                            data: data6,
-                            borderColor: 'rgba(109, 172, 181, 0.71)',
-                            backgroundColor: 'rgba(109, 172, 181, 0.71)',
-                            yAxisID: 'y',
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
         }
-    });
+    }, 3000)
+           
+                
 
     var contadorProduto = 0;
 
@@ -766,61 +661,61 @@
 
 
 
-    var vtGraficos = [0, 1, 2, 3, 4, 5];
-    var contadorGrafico = 0;
-    function mudarGraficoFrente() {
-        if (contadorGrafico <= 5) {
-            for (i = 0; i <= 5; i++) {
+    // var vtGraficos = [0, 1, 2, 3, 4, 5];
+    // var contadorGrafico = 0;
+    // function mudarGraficoFrente() {
+    //     if (contadorGrafico <= 5) {
+    //         for (i = 0; i <= 5; i++) {
 
-                // if (vtGraficos[i] == 0) {
-                //     console.log('Estou aqq')
-                //     grafico1.style.display = "block"
-                //     grafico2.style.display = "none"
-                //     grafico3.style.display = "none"
-                //     grafico4.style.display = "none"
-                //     grafico5.style.display = "none"
-                //     grafico6.style.display = "none"
-                // } else 
-                if (vtGraficos[i] == 1) {
-                    grafico1.style.display = "none"
-                    grafico2.style.display = "block"
-                    grafico3.style.display = "none"
-                    grafico4.style.display = "none"
-                    grafico5.style.display = "none"
-                    grafico6.style.display = "none"
-                } else if (vtGraficos[i] == 2) {
-                    grafico1.style.display = "none"
-                    grafico2.style.display = "none"
-                    grafico3.style.display = "block"
-                    grafico4.style.display = "none"
-                    grafico5.style.display = "none"
-                    grafico6.style.display = "none"
-                } else if (vtGraficos[i] == 3) {
-                    grafico1.style.display = "none"
-                    grafico2.style.display = "none"
-                    grafico3.style.display = "none"
-                    grafico4.style.display = "block"
-                    grafico5.style.display = "none"
-                    grafico6.style.display = "none"
-                } else if (vtGraficos[i] == 4) {
-                    grafico1.style.display = "none"
-                    grafico2.style.display = "none"
-                    grafico3.style.display = "none"
-                    grafico4.style.display = "none"
-                    grafico5.style.display = "block"
-                    grafico6.style.display = "none"
-                } else if (vtGraficos[i] == 5) {
-                    grafico1.style.display = "none"
-                    grafico2.style.display = "none"
-                    grafico3.style.display = "none"
-                    grafico4.style.display = "none"
-                    grafico5.style.display = "none"
-                    grafico6.style.display = "block"
-                } else {
-                    contadorGrafico = 0;
-                }
-            }
-        }
-    }
+    //             // if (vtGraficos[i] == 0) {
+    //             //     console.log('Estou aqq')
+    //             //     grafico1.style.display = "block"
+    //             //     grafico2.style.display = "none"
+    //             //     grafico3.style.display = "none"
+    //             //     grafico4.style.display = "none"
+    //             //     grafico5.style.display = "none"
+    //             //     grafico6.style.display = "none"
+    //             // } else 
+    //             if (vtGraficos[i] == 1) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "block"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 2) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "block"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 3) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "block"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 4) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "block"
+    //                 grafico6.style.display = "none"
+    //             } else if (vtGraficos[i] == 5) {
+    //                 grafico1.style.display = "none"
+    //                 grafico2.style.display = "none"
+    //                 grafico3.style.display = "none"
+    //                 grafico4.style.display = "none"
+    //                 grafico5.style.display = "none"
+    //                 grafico6.style.display = "block"
+    //             } else {
+    //                 contadorGrafico = 0;
+    //             }
+    //         }
+    //     }
+    // }
 
 </script>
