@@ -186,7 +186,7 @@
                         <tbody>
                             <tr>
                                 <td>ID do lote:</td>
-                                <td style="text-align: center"><input id="ipt_nomeProdutoLote"></td>
+                                <td style="text-align: center"><input id="ipt_idLote"></td>
                             </tr>
                             <tr>
                                 <td>Local de partida</td>
@@ -289,6 +289,13 @@
         // cadastro de produtos
         ipt_nomeProduto.value = "";
         ipt_categoriaProduto.value = "";
+
+        // cadastro de rotas/lotes
+        ipt_idLote.value = "";
+        ipt_localPartida.value = "";
+        ipt_destino.value = "";
+        ipt_dataSaida.value = "";
+        ipt_dataChegada.value = "";
     }
     function mostrarRefrigerador() {
         tituloBtn.innerHTML = '';
@@ -328,7 +335,74 @@
     function cadastroLotes() {
         cadastroDeSensores.style = "display: block"
         cadastroDeSensoresLotesExistentes.style = "display: none"
-    }
+
+        var idLote = ipt_idLote.value;
+        var localPartida = ipt_localPartida.value;
+        var destino = ipt_destino.value;
+        var dataSaida = ipt_dataSaida.value;
+        var dataChegada = ipt_dataChegada.value;
+
+        if (idLote == "" || localPartida == "" || destino == "" || dataSaida == "" || dataChegada == "") {
+            alert("Favor preencher todos os campos")
+        } else {
+
+            fetch("/cadastroLotes/cadastrarRota", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    destinoServer: destino,
+                    dataSaidaServer: dataSaida,
+                    dataChegadaServer: dataChegada,
+                    
+                })
+            }).then(function (resposta) {
+                
+                console.log("resposta: ", resposta);
+                
+                if (resposta.ok) {
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`)
+            });
+            
+            return false;
+        }
+
+            fetch("/cadastroLotes/cadastrarLote", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idLoteServer: idLote,
+                })
+            }).then(function (resposta) {
+                
+                console.log("resposta: ", resposta);
+                
+                if (resposta.ok) {
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`)
+            });
+            
+            return false;
+        }
+    
+    
+
     function cadastroLoteCadastrado() {
         cadastroDeSensores.style = "display: none"
         cadastroDeSensoresLotesExistentes.style = "display: block"
@@ -347,95 +421,95 @@
             alert("Favor preencher todos os campos")
         } else {
 
-        fetch("/cadastroRefrigerador/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                idRefrigeradorServer: idRefrigerador,
-                cidadeServer: cidade,
-                ruaServer: rua,
-                cepServer: cep,
-                bairroServer: bairro,
-                numeroServer: numero,
-                nomeFarmaciaServer: nomeFarmacia,
+            fetch("/cadastroRefrigerador/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idRefrigeradorServer: idRefrigerador,
+                    cidadeServer: cidade,
+                    ruaServer: rua,
+                    cepServer: cep,
+                    bairroServer: bairro,
+                    numeroServer: numero,
+                    nomeFarmaciaServer: nomeFarmacia,
 
-            })
-        }).then(function (resposta) {
+                })
+            }).then(function (resposta) {
 
-            console.log("resposta: ", resposta);
+                console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                // cardErro.style.display = "block";
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
 
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-                // setTimeout(() => {
-                //     // window.location = "login.html";
-                // }, "2000")
+                    // setTimeout(() => {
+                    //     // window.location = "login.html";
+                    // }, "2000")
 
-                limparFormulario();
+                    limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
                 // finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
+            });
 
-        return false;
+            return false;
+        }
     }
-}
 
-    function cadastrarProduto(){
+    function cadastrarProduto() {
         var nomeProduto = ipt_nomeProduto.value;
-        var categoriaProduto= ipt_categoriaProduto.value;
+        var categoriaProduto = ipt_categoriaProduto.value;
 
-        if (nomeProduto == "" || categoriaProduto== "") {
+        if (nomeProduto == "" || categoriaProduto == "") {
             alert("Favor preencher todos os campos")
         } else {
             fetch("/cadastroProdutos/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeProdutoServer: nomeProduto,
-                categoriaProdutoServer: categoriaProduto,
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeProdutoServer: nomeProduto,
+                    categoriaProdutoServer: categoriaProduto,
 
-            })
-        }).then(function (resposta) {
+                })
+            }).then(function (resposta) {
 
-            console.log("resposta: ", resposta);
+                console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                // cardErro.style.display = "block";
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
 
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-                // setTimeout(() => {
-                //     // window.location = "login.html";
-                // }, "2000")
+                    // setTimeout(() => {
+                    //     // window.location = "login.html";
+                    // }, "2000")
 
-                limparFormulario();
+                    limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
                 // finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
+            });
 
-        return false;
-        
+            return false;
+
+        }
     }
-}
 
 </script>
