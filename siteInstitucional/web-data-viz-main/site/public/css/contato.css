@@ -46,13 +46,14 @@ ul img{
 }
 /* Fim do Header */
 .conteudo {
+    margin-top: 4%;
     display: flex;
     flex-direction: row;
     
 }
 
 .faq {
-    width: 86%; 
+    width: 40%; 
     color: #E6E6E6;
     margin-left: 10%;
     font-family: 'Inter', sans-serif;
@@ -68,7 +69,7 @@ ul img{
 }
 
 .faq details {
-    width: 45%;
+    width: 100%;
     border: 1px solid rgb(255, 255, 255);
     margin-bottom: 3.5%;
     padding: 0.5%;
@@ -85,40 +86,73 @@ ul img{
     background: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.384))repeat, url('../img/background_contato.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 2500px;
+    height: 800px;
     margin-left: 50px;
     margin-right: 50px;
     margin: 0;
     overflow-x: hidden;
 } 
 .contato {
+    margin-left: 30%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     margin-bottom: 2%;
     width: 100%;
 }
 
-.localizacao {
+#rua{
     display: flex;
-    flex-direction: column;
-    margin-left: 15%;
-    width: 100%;
-    /* height: 500px; */
-    margin-top: 15%;
-    /* margin-bottom: 25%; */
+    color: white;
+    margin-left: 7%;
+}
+#rua img{
+    margin-top: 3%;
+    width: 30px;
+    height: 30px;
+}
+#rua p {
+    width: 70%;
+    text-align: center;
+}
+iframe {
+    border-radius: 15px;
+    height: 200px;
+    width: 400px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+#info {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2%;
+}
+#whats, #telefone, #email{
+    display: flex;
+    color: white;
+}
+#info img {
+    margin-top: 8%;
+    width: 20px;
+    height: 20px;
+}
+#info p {
+    margin-top: 10%;
+    font-size: 12px;
+    padding-left: 5px;
 }
 
-.localizacao p {
+#whats, #telefone {
+    margin-top: 0.8%;
+}
+
+
+/* .localizacao p {
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: 600;
     font-size: 15px;
-}
+} */
 
-.localizacao h4 {
-    font-family: 'Encode Sans Condensed', sans-serif;
-    /* width: 100%; */
-
-}
 
 /* .mapa {
     display: flex;
@@ -127,7 +161,7 @@ ul img{
     margin-bottom: 3%;
 } */
 
-#rua{
+/* #rua{
     display: flex;
     align-items: center;
     text-align: center;
@@ -174,13 +208,17 @@ iframe {
     gap: 4px;
     align-items: center;
     font-size: 15pt;
-}
+} */
 
+
+.contatos {
+    width: 100%;
+}
 .formulario {
-    /* height: 80%;
-    width: 50%; */
-    position: absolute;
-    margin-left: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 38%;
     
 }
 
@@ -189,14 +227,18 @@ iframe {
     font-size: 32px;
     color: #E6E6E6;
     font-weight: 550;
-    margin-left: 11%;
     margin-bottom: 0;
-    margin-top: 10%;
 
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 } 
 
-form {
+.formulario a {
+    color: white;
+    margin-top: 2%;
+
+}
+
+/* form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -222,7 +264,6 @@ form {
 }
 
 #btnMsg {
-    /* border: 2px solid rgba(255, 255, 255, 0.76); */
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
     background-color: #0B0368;
     color: #ffffff;
@@ -231,9 +272,7 @@ form {
     height: 40px;
     margin-top: 20px;
     font-size: 16px;
-    /* margin-left: 20%; */
-    /* margin-bottom: 70px; */
-} 
+}  */
 
 /* Começo do css do footer */
 
