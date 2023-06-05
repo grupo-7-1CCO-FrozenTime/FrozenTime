@@ -64,7 +64,7 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                `INSERT INTO Registros(temperatura, horaRegistro, minutoRegistro, fkSensor, fkKit) VALUES (${lm35Temperatura}, 12, 32, ${fkSensor}, (select distinct(idKit) from Kits JOIN Sensores on fkKit = idKit and idSensor = fkSensor))`,
+                `INSERT INTO Registros(temperatura, horaRegistro, minutoRegistro, fkSensor, fkKit) VALUES (${lm35Temperatura}, HOUR(now()), MINUTE(now()), ${fkSensor}, (select distinct(idKit) from Kits JOIN Sensores on fkKit = idKit and idSensor = fkSensor))`,
                 [lm35Temperatura, fkSensor]
             );
         }
