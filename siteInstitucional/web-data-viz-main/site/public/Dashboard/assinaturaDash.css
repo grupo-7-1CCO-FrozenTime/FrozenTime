@@ -37,6 +37,7 @@ a{
     border: none;
     font-weight: 400;
     font-size: 16px;
+    cursor: pointer;
 }
 .btnMelhore a {
     color: white;   

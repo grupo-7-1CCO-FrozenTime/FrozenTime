@@ -91,6 +91,7 @@ input{
     padding: 5px;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .btnCadastrar, .btnLote{
@@ -99,7 +100,11 @@ input{
     border-radius: 5px;
     padding: 10px;
     color:#D6EEEE;
+    cursor: pointer;
 }
 .btnLote {
     margin-top: 2%;
+}
+.btnCadastrar{
+    cursor: pointer;
 }
