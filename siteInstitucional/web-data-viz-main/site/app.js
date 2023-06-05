@@ -12,7 +12,10 @@ var indexRouter = require("./src/routes/index");
 var empresaRouter = require("./src/routes/empresa");
 var loginTabelaRouter = require("./src/routes/loginTabela");
 var funcionarioRouter = require("./src/routes/funcionario");
+
+// cadastros do dashboard
 var cadastroRefrigerador = require("./src/_routes/cadastroRefrigerador");
+var cadastroProdutos = require("./src/_routes/cadastroProdutos");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,6 +28,7 @@ app.use("/empresa", empresaRouter);
 app.use("/loginTabela", loginTabelaRouter);
 app.use("/funcionario", funcionarioRouter);
 app.use("/cadastroRefrigerador", cadastroRefrigerador);
+app.use("/cadastroProdutos", cadastroProdutos);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
