@@ -8,7 +8,7 @@
     <title>Frozen Time</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" href="/siteInstitucional/img/logoAba.png">
+    <link rel="icon" href="/siteInstitucional/web-data-viz-main/site/public/img/logoAba.png">
 </head>
 
 <body>
@@ -279,10 +279,10 @@
     var chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Alerta', 'Atenção', 'Estável'],
+            labels: ['Alerta', 'Cuidado', 'Estável'],
             datasets: [{
                 label: 'Quantidade de Lotes',
-                data: [5, 3, 22],
+                data: [5, 3, 10],
                 borderWidth: 1,
                 backgroundColor: [
                     '#FF0342',
