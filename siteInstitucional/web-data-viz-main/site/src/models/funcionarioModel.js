@@ -14,7 +14,7 @@ function cadastrarFuncionario(nomeFuncionario, emailFuncionario, whatsapp, gesto
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO Funcionarios (idFuncionario, nomeFuncionario, emailFuncionario, whatsapp, gestor, fkEmpresa, fkLogin) VALUES ('${nomeFuncionario}', '${emailFuncionario}', '${whatsapp}', '${gestor}', ${fkEmpresa}, ${fkLogin})`; 
+        INSERT INTO Funcionarios (nomeFuncionario, emailFuncionario, whatsapp, gestor, fkEmpresa, fkLogin) VALUES ('${nomeFuncionario}', '${emailFuncionario}', '${whatsapp}', '${gestor}', ${fkEmpresa}, ${fkLogin})`; 
     return database.executar(instrucao);
 }
 
