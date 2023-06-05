@@ -77,7 +77,9 @@ main h1 {
     margin-left: 28%;
     position: absolute;
 }
-
+.adicionar a{
+    color: white;
+}
 .text li {
     color: #09640D;
     list-style-type: disc;
