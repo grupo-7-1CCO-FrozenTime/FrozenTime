@@ -233,8 +233,7 @@
                     var idEmpresaArray = resposta[0];
                     idEmpresa = idEmpresaArray.idEmpresa;
                     console.log(`ID Empresa Global: ${idEmpresa}`);
-                    idEmpresaGlobal = idEmpresa;
-                    selectNomeEmpresa(idEmpresa);
+                    selectNomeEmpresa((idEmpresa + 1));
                 });
             }else{
                 console.error('Nenhum dado encontrado ou erro na API');
