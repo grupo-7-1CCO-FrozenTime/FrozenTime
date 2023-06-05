@@ -40,7 +40,7 @@
                     </div>
                 </a>
             </div>
-            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+            <div class="flexStartAlignSelfCenter" style="margin-left: 10%;">
                 <a href="index.html" style="text-decoration: none; color: white;">
                     <div class="flexCenterAlignItemsCenter">
                         <img class="widthiconHeader" src="./assets/dashboard.svg" />
@@ -77,6 +77,14 @@
                     <div class="flexCenterAlignItemsCenter">
                         <img class="widthiconHeader" src="./assets/icons8-cadastro-50.png" />
                         <p class="txtHeader">Cadastro</p>
+                    </div>
+                </a>
+            </div>
+            <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+                <a href="./refrigeradores.html" style="text-decoration: none; color: white;">
+                    <div class="flexCenterAlignItemsCenter">
+                        <img class="widthiconHeader" src="./assets/icons8-geladeira-50.png" />
+                        <p class="txtHeader">Refrigeradores</p>
                     </div>
                 </a>
             </div>
@@ -204,8 +212,10 @@
         <div class="cardMetricas">
             <div>
                 <h3 style="margin-left: 5%;  color: white;">Help</h3>
-                <p style="margin-left: 5%;  color: white;">Em caso de dificuldades na utilização de nosso Dashboard, segue o link para entrar em contato com a nossa equipe de HelpDesk</p>
-                    <button><a href="https://gustavodessunte.atlassian.net/servicedesk/customer/portals">Nosso Help</a></button>
+                <p style="margin-left: 5%;  color: white;">Em caso de dificuldades na utilização de nosso Dashboard,
+                    segue o link para entrar em contato com a nossa equipe de HelpDesk</p>
+                <button><a href="https://gustavodessunte.atlassian.net/servicedesk/customer/portals">Nosso
+                        Help</a></button>
             </div>
         </div>
 
@@ -756,7 +766,7 @@
         }
     }
 
-    
+
     var vtGraficos = [chart1, chart2, chart3, chart4, chart5, chart6];
 
     var contadorGrafico = 1;
@@ -777,16 +787,16 @@
     //     grafico1.innerHTML = vtGraficos[contadorGrafico]
     // }
 
-    function MudarGraficoFrente(){
+    function MudarGraficoFrente() {
         var teste = chart;
         (teste + contadorGrafico).destroy();
         (teste + contadorGrafico).style.display = 'none';
         contadorGrafico++
         (teste + contadorGrafico).style.display = 'block';
-       
+
     }
 
-    
+
     // var contadorGrafico = 0;
     // function mudarGraficoFrente() {
     //     if (contadorGrafico <= 5) {

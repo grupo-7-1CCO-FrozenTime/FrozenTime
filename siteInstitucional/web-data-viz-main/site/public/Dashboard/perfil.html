@@ -8,7 +8,7 @@
   <title>Frozen Time</title>
   <link rel="stylesheet" href="perfil.css">
   <link rel="icon" href="/siteInstitucional/img/logoAba.png">
-  
+
 </head>
 
 <body>
@@ -40,7 +40,7 @@
           </div>
         </a>
       </div>
-      <div class="flexStartAlignSelfCenter" style="margin-left: 10%;margin-top: 10%;">
+      <div class="flexStartAlignSelfCenter" style="margin-left: 10%;">
         <a href="index.html" style="text-decoration: none; color: white;">
           <div class="flexCenterAlignItemsCenter">
             <img class="widthiconHeader" src="./assets/dashboard.svg" />
@@ -80,6 +80,14 @@
           </div>
         </a>
       </div>
+      <div class="flexStartAlignSelfCenter" style="margin-left: 8%;margin-top: 2%;">
+        <a href="./refrigeradores.html" style="text-decoration: none; color: white;">
+          <div class="flexCenterAlignItemsCenter">
+            <img class="widthiconHeader" src="./assets/icons8-geladeira-50.png" />
+            <p class="txtHeader">Refrigeradores</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -97,13 +105,13 @@
             <div class="contexto">
               <span class="atributo">Nome: </span>
               <input id="ipt_nome" placeholder="Rafael Matos">
-              <hr size="1"> 
+              <hr size="1">
             </div>
           </div>
           <div class="container2">
             <div class="contexto">
               <span class="atributo">E-mail:</span>
-              <input id="ipt_email" placeholder="rafaelmatos@gmail.com"> 
+              <input id="ipt_email" placeholder="rafaelmatos@gmail.com">
               <hr size="1">
             </div>
           </div>
@@ -115,22 +123,22 @@
 
           <div class="container2">
             <div class="contexto">
-              <span class="atributo">WhatsApp:</span> 
+              <span class="atributo">WhatsApp:</span>
               <input id="ipt_whats" placeholder="(11) 98343-2839" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
-                required> 
-              <hr size="1"> 
+                required>
+              <hr size="1">
             </div>
           </div>
-          
+
           <div class="container2">
             <div class="contexto">
-              <span class="atributo">Telefone:</span> 
+              <span class="atributo">Telefone:</span>
               <input id="ipt_telefone" placeholder="(11) 2737-3849" maxlength="14" pattern="\(\d{2}\)\s*\d{5}-\d{4}"
-                required> 
-              <hr size="1"> 
+                required>
+              <hr size="1">
             </div>
           </div>
-          
+
 
 
         </div>
@@ -146,7 +154,7 @@
 
           </div>
 
-          
+
 
           <div class="botao">
 
@@ -157,12 +165,13 @@
 
           <div class="botao">
 
-            <button onclick="cadastroFunc()"><a href="./cadastroFunc.html" class="btnCadFunci">Cadastrar funcionários</a></button>
+            <button onclick="cadastroFunc()"><a href="./cadastroFunc.html" class="btnCadFunci">Cadastrar
+                funcionários</a></button>
 
           </div>
 
-          
-         
+
+
 
         </div>
 
@@ -181,7 +190,7 @@
     window.location.href = 'dadosEmpresa.html'
   }
 
-  
+
 
   function alterarDados() {
     nome = ipt_nome.value;
@@ -209,10 +218,10 @@
       if (telefone.length != 14) {
         alert('Insirá um número de telefone válido.');
         deuErro = true;
-      } 
+      }
     }
     if (deuErro == false) {
-      alert ('Dados alterados com sucesso!')
+      alert('Dados alterados com sucesso!')
     }
   }
 
