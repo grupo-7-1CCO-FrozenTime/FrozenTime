@@ -772,13 +772,19 @@
     var contadorGrafico = 1;
     var teste;
     function mudarGraficoFrente() {
-        contadorGrafico++
-        teste = eval('chart' + contadorGrafico);
+        teste = document.getElementById(`myChart${contadorGrafico}`);
+        teste.style.display = "none";
         teste.destroy();
+
+        contadorGrafico++
         if (contadorGrafico == vtGraficos.length) {
-            contadorGrafico = 0;
+            contadorGrafico = 1;
         }
-        grafico1.innerHTML = vtGraficos[contadorGrafico]
+        
+        novo = document.getElementById(`myChart${contadorGrafico}`);
+        novo.style.display = "block";
+        
+        // grafico1.innerHTML = vtGraficos[contadorGrafico]
         console.log("oi")
     }
 
