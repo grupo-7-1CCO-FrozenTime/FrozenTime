@@ -42,6 +42,39 @@ function listarUltimoIdEmpresa(req, res){
     );
 }
 
+function listarIdEmpresa(req, res){
+    var fkLogin = req.params.fkLogin;
+
+    empresaModel.listarIdEmpresa(fkLogin).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function listarNomeEmpresa(req, res) {
+
+    var idEmpresa = req.params.idEmpresa;
+
+    empresaModel.listarNomeEmpresa(idEmpresa).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 function entrarEmpresa(req, res){
     if(idEmpresa == undefined){
         res.status(400).send("Seu idEmpresa está undefined!");
@@ -123,5 +156,7 @@ module.exports = {
     cadastrarEmpresa,
     listarEmpresa,
     testarEmpresa,
-    listarUltimoIdEmpresa
+    listarUltimoIdEmpresa,
+    listarNomeEmpresa,
+    listarIdEmpresa
 }

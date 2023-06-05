@@ -30,8 +30,8 @@
                         <div class="flexCenterAlignItemsCenter">
                             <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                         </div>
-                        <div style="margin-top: 3%;">
-                            Bem-vindo(a), (nomeEmpresa)
+                        <div id="divNomeEmpresa" style="margin-top: 3%;">
+                            
                         </div>
                         <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                             <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
@@ -208,6 +208,8 @@
 
 
 <script>
+ divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
+
     // Criação de uma variável que retorna aos elementos que possuem o nome da class 'accordion'
     var acc = document.getElementsByClassName("accordion");
     // Declaração de uma variável i que será usada como contador no loop a seguir.

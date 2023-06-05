@@ -28,8 +28,8 @@
                     <div class="flexCenterAlignItemsCenter">
                         <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                     </div>
-                    <div style="margin-top: 3%;">
-                        Bem-vindo(a), (nomeEmpresa)
+                    <div id="divNomeEmpresa" style="margin-top: 3%;">
+                            
                     </div>
                     <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                         <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
@@ -129,3 +129,6 @@
 </body>
 
 </html>
+<script>
+      divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
+</script>

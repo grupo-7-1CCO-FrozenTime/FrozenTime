@@ -40,16 +40,21 @@ function listarIdEmpresa(fkLogin){
     var instrucao = `
     select idEmpresa from Empresas JOIN Funcionarios on idEmpresa = fkEmpresa where fkLogin = ${fkLogin};
     `
+    return database.executar(instrucao);
 }
 
 function listarNomeEmpresa(idEmpresa){
     var instrucao = `
     select distinct(nomeEmpresa) from Empresas JOIN Funcionarios on idEmpresa = ${idEmpresa} JOIN Login on idLogin = fkLogin;`
+
+    return database.executar(instrucao);
 }
  
 module.exports = {
     entrarEmpresa,
     cadastrarEmpresa,
     listarEmpresa,
-    listarUltimoIdEmpresa
+    listarUltimoIdEmpresa,
+    listarNomeEmpresa,
+    listarIdEmpresa
 };

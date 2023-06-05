@@ -146,6 +146,8 @@
 
 </html>
 <script>
+    var idFkLoginGlobal;
+    var idEmpresaGlobal;
     function Login() {
         var emailVar = email.value;
         var senhaVar = senha.value;
@@ -172,26 +174,30 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.IDUSUARIO = json.idLogin;
+                    idFkLoginGlobal = json.idLogin;
+                    console.log('idFkLoginGlobal'+idFkLoginGlobal);
+
                     setTimeout(function () {
                         console.log('Usuario Logado com sucesso!')
                         window.location = "./Dashboard/index.html";
                     }, 1000); // apenas para exibir o loading
-
+                    
+                    selectIdEmpresa(idFkLoginGlobal);
                 });
-
+                
             } else {
-
+                
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                
                 resposta.text().then(texto => {
                     console.error(texto);
                 });
             }
-
+            
         }).catch(function (erro) {
             console.log(erro);
         })
+       
 
         return false;
     }
@@ -216,8 +222,68 @@
             });
     }
 
-    function selectNomeEmpresa(){
-
+    function selectIdEmpresa(idLogin){
+        var idEmpresa;
+        fetch(`/empresa/listarIdEmpresa/${idLogin}`).then(function (response){
+            if(response.ok){
+                response.json().then(function (resposta){
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var idEmpresaArray = resposta[0];
+                    idEmpresa = idEmpresaArray.idEmpresa;
+                    console.log(`ID Empresa Global: ${idEmpresa}`);
+                    idEmpresaGlobal = idEmpresa;
+                    selectNomeEmpresa(idEmpresa);
+                });
+            }else{
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ idEmpresa: ${error.message}`);
+      });
     }
+
+    function selectNomeEmpresa(idUsuarioVar){
+        var nomeEmpresa;
+        fetch(`/empresa/listarNomeEmpresa/${idUsuarioVar}`).then(function (response){
+            if(response.ok){
+                response.json().then(function (resposta){
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var nomeEmpresaArray = resposta[0];
+                    console.log('Nome Empresa: ' + nomeEmpresaArray);
+                    nomeEmpresa = nomeEmpresaArray.nomeEmpresa;
+                    sessionStorage.NOMEEMPRESA = nomeEmpresa;
+                    
+            });
+            }else{
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ nomeEmpresa: ${error.message}`);
+      });
+    }
+
+
+    function selectfkEmpresa() {
+    var fkEmpresa;
+    fetch('/empresa/listarUltimoIdEmpresa').then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          var fkEmpresaArray = resposta[0];
+          fkEmpresa = fkEmpresaArray.idEmpresa;
+          fkEmpresaGlobal = fkEmpresa;
+          console.log(fkEmpresaGlobal);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ ultimo idEmpresa: ${error.message}`);
+      });
+    return fkEmpresa;
+  }
 
 </script>
