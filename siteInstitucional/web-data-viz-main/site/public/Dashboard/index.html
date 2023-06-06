@@ -202,7 +202,7 @@
             <div>
                 <h3 style="margin-left: 5%;  color: white;">Nossas métricas</h3>
                 <p style="margin-left: 5%;  color: white;">As métricas servem como um parâmetro, é com elas que
-                    analisamos a qualidade e as potências de risco de seu produto </p>
+                    analisamos a qualidade e as potências de risco de seu produto.</p>
             </div>
             <div class="metricas">
                 <img src="./assets/metricaAlertas.png" alt="">
@@ -211,14 +211,19 @@
         </div>
         <div class="cardMetricas">
             <div>
-                <h3 style="margin-left: 5%;  color: white;">Help</h3>
+                <h3 style="margin-left: 5%;  color: white;">Central de Ajuda</h3>
                 <p style="margin-left: 5%;  color: white;">Em caso de dificuldades na utilização de nosso Dashboard,
-                    segue o link para entrar em contato com a nossa equipe de HelpDesk</p>
-                <button><a href="https://gustavodessunte.atlassian.net/servicedesk/customer/portals">Nosso
-                        Help</a></button>
+                    segue o link para entrar em contato com a nossa equipe de HelpDesk.</p>
+                <button onclick="helpDesk()">Nosso Help</button>
             </div>
         </div>
-
+        <div class="cardMetricas">
+            <div>
+                <h3 style="margin-left: 5%;  color: white;">Manual de instalação</h3>
+                <p style="margin-left: 5%;  color: white;">Caso haja dificuldade na instalação dos sensores, segue em anexo o nosso manual de instalação.</p>
+                <button onclick="manual()">Manual de Instalação</button>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -721,6 +726,10 @@
 
     }
 
-
-
+    function helpDesk(){
+        window.location = "https://gustavodessunte.atlassian.net/servicedesk/customer/portals"
+    }
+    function manual(){
+        window.location = "https://www.flipsnack.com/sofhiautaka/o-melhor-monitoramento-para-o-seu-medicamento-tcs49muo7k.html"
+    }
 </script>
