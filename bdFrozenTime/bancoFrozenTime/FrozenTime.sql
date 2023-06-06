@@ -86,21 +86,21 @@ CREATE TABLE Rotas(
 	idRotas INT PRIMARY KEY AUTO_INCREMENT,
 	localPartida VARCHAR(150),
 	localDestino VARCHAR(150),
-	dtSaida DATETIME,
-	dtChegada DATETIME
+	dtSaida DATE,
+	dtChegada DATE
 );
 
 INSERT INTO Rotas
-values (null, 'Rua Alexandre Dunas, 1860- Santo Amaro, São Paulo- SP, 04717-904', 'Praça Canáririas, 322- Vila Formosa, São Paulo-SP, 03359-120', '2017-09-08 08:30:05', '2017-09-08 09:30:05'),
-       (null, 'Av.Pres. Juscelino Kubitscheck, 2041- Vila Nova Conceição, São Paulo-SP, 04543-011', 'Av.Paulista, 2125- Bela Vista, São paulo-SP, 01311-000', '2023-03-10 10:00:40', '2023-03-10 12:30:05'),
-       (null, 'Av.Mateo Bei, 3066-Cidade São Mateus, São Paulo-SP, 03949-300', 'Av.Conselheiro Carrão, 2186- Vila Carrão, São Paulo- SP, 03402-002', '2019-04-03 09:50:30', '2019-04-03 11:30:05'),
-       (null, 'R.Martins Fontes, 166-Consolação, são Paulo-SP, 01050-000', 'Av.dos jequitibás, 446-Jabaquara, Mato Grosso do sul-MS, 04321-090', '2022-11-06 11:30:05', '2022-11-07 08:30:05'),
-       (null, 'Av,Lins de Vasconcelos, 1837- Cambuci, São Paulo-SP, 01537-001', 'R.Sete de Abril, 268-República, São Paulo-SP, 01044-000', '2021-10-20 08:00:05', '2022-10-20 09:00:35');
+values (null, 'Rua Alexandre Dunas, 1860- Santo Amaro, São Paulo- SP, 04717-904', 'Praça Canáririas, 322- Vila Formosa, São Paulo-SP, 03359-120', '2017-09-08', '2017-09-08'),
+       (null, 'Av.Pres. Juscelino Kubitscheck, 2041- Vila Nova Conceição, São Paulo-SP, 04543-011', 'Av.Paulista, 2125- Bela Vista, São paulo-SP, 01311-000', '2023-03-10', '2023-03-10'),
+       (null, 'Av.Mateo Bei, 3066-Cidade São Mateus, São Paulo-SP, 03949-300', 'Av.Conselheiro Carrão, 2186- Vila Carrão, São Paulo- SP, 03402-002', '2019-04-03', '2019-04-03'),
+       (null, 'R.Martins Fontes, 166-Consolação, são Paulo-SP, 01050-000', 'Av.dos jequitibás, 446-Jabaquara, Mato Grosso do sul-MS, 04321-090', '2022-11-06', '2022-11-07'),
+       (null, 'Av,Lins de Vasconcelos, 1837- Cambuci, São Paulo-SP, 01537-001', 'R.Sete de Abril, 268-República, São Paulo-SP, 01044-000', '2021-10-20', '2022-10-20');
 
 SELECT * FROM Rotas;
 
 CREATE TABLE Lotes(
-	idLote INT PRIMARY KEY AUTO_INCREMENT,
+	idLote INT PRIMARY KEY,
 	fkProduto INT,
     fkRota INT,
 	FOREIGN KEY (fkProduto) REFERENCES Produtos(idProduto),
@@ -108,11 +108,11 @@ CREATE TABLE Lotes(
 );
 
 INSERT INTO Lotes VALUES  
-(null, 3, 5),
-(null, 2, 3),
-(null, 3, 1),
-(null, 1, 2),
-(null, 3, 4);
+(1, 3, 5),
+(2, 2, 3),
+(3, 3, 1),
+(4, 1, 2),
+(5, 3, 4);
 														
 SELECT * FROM Lotes;
 
