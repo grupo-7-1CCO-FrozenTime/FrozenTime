@@ -34,7 +34,9 @@ main h1 {
     color: #fff;
 
 }
-
+.verLotes{
+    cursor: pointer;
+}
 .accordion {
     background-color: #ffff;
     color: #000;
