@@ -30,8 +30,8 @@
                             <div class="flexCenterAlignItemsCenter">
                                 <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                             </div>
-                            <div id="divNomeEmpresa" style="margin-top: 3%;">
-                            
+                            <div style="margin-top: 3%;">
+                                Bem-vindo(a), (nomeEmpresa)
                             </div>
                             <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                                 <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
@@ -190,7 +190,7 @@
                             </tr>
                             <tr>
                                 <td>Local de partida</td>
-                                <td style="text-align: center"><input id="ipt_LocalPartida"></td>
+                                <td style="text-align: center"><input id="ipt_localPartida"></td>
                             </tr>
                             <tr>
                                 <td>Destino:</td>
@@ -224,7 +224,7 @@
                             </tbody>
                         </table>
 
-                        <button class="btnCadastrar">Cadastrar</button>
+                        <button class="btnCadastrar" onclick="cadastrarSensores()">Cadastrar</button>
                     </div>
                     <div id="cadastroDeSensoresLotesExistentes" style="display: none;">
                         <p>Cadastro de sensores</p>
@@ -276,8 +276,6 @@
 </html>
 
 <script>
-  divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
-
     function limparFormulario() {
         // cadastro de refrigeradores
         ipt_idRefrigerador.value = "";
@@ -293,11 +291,14 @@
         ipt_categoriaProduto.value = "";
 
         // cadastro de rotas/lotes
-        ipt_idLote.value = "";
+        // ipt_idLote.value = "";
         ipt_localPartida.value = "";
         ipt_destino.value = "";
         ipt_dataSaida.value = "";
         ipt_dataChegada.value = "";
+
+        // cadastro de sensores 
+        ipt_idSensor.value = "";
     }
     function mostrarRefrigerador() {
         tituloBtn.innerHTML = '';
@@ -335,18 +336,18 @@
         produtos.style = "display: block"
     }
     function cadastroLotes() {
-        cadastroDeSensores.style = "display: block"
-        cadastroDeSensoresLotesExistentes.style = "display: none"
-
+        
         var idLote = ipt_idLote.value;
         var localPartida = ipt_localPartida.value;
         var destino = ipt_destino.value;
         var dataSaida = ipt_dataSaida.value;
         var dataChegada = ipt_dataChegada.value;
-
+        
         if (idLote == "" || localPartida == "" || destino == "" || dataSaida == "" || dataChegada == "") {
             alert("Favor preencher todos os campos")
         } else {
+            cadastroDeSensores.style = "display: block"
+            cadastroDeSensoresLotesExistentes.style = "display: none"
 
             fetch("/cadastroLotes/cadastrarRota", {
                 method: "POST",
@@ -356,6 +357,7 @@
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
+                    localPartidaServer:localPartida,
                     destinoServer: destino,
                     dataSaidaServer: dataSaida,
                     dataChegadaServer: dataChegada,
@@ -507,6 +509,44 @@
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
                 // finalizarAguardar();
+            });
+
+            return false;
+
+        }
+    }
+
+    function cadastrarSensores(){
+        var idSensor = ipt_idSensor.value;
+
+        if (idSensor == "") {
+            alert("Favor preencher todos os campos kk")
+        } else {
+            fetch("/cadastrar/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idSensorServer: idSensor,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    limparFormulario();
+                 
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+             
             });
 
             return false;

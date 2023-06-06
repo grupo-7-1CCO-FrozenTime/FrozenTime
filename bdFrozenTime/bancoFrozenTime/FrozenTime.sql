@@ -1,5 +1,6 @@
 CREATE DATABASE FrozenTime;
 USE FrozenTime;
+DROP DATABASE FrozenTime;
 CREATE TABLE Login(
 	idLogin INT PRIMARY KEY AUTO_INCREMENT,
 	emailFuncionario VARCHAR(50),

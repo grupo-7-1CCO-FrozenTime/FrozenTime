@@ -29,7 +29,7 @@ function cadastrarRota(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo cadastroRefrigeradoresModel.js
-        cadastroLotesModel.cadastrarRota(localPartida, destino)
+        cadastroLotesModel.cadastrarRota(localPartida, destino, dataSaida, dataChegada)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -60,7 +60,7 @@ function cadastrarLote(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo cadastroRefrigeradoresModel.js
-        cadastroLotesModel.cadastrarLote(localPartida, destino)
+        cadastroLotesModel.cadastrarLote(idLote)
             .then(
                 function (resultado) {
                     res.json(resultado);
