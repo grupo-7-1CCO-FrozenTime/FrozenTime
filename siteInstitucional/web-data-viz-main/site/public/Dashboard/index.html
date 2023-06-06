@@ -160,7 +160,7 @@
                     <h3 class="titleCharts" style="margin-left: 13%;">CONDIÇÃO DOS LOTES:</h3>
                 </div>
                 <div class="flexCenterAlignItemsCenter">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChartRosquinha"></canvas>
                 </div>
             </div>
         </div>
@@ -231,11 +231,12 @@
 </html>
 
 <script>
-     divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
+     var dataRosquinha = [0, 0, 0];
+    let proximaAtualizacao;
+    obterDadosGrafico();
+    divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
 
-    const ctx = document.getElementById('myChart');
-
-    const ctx1 = document.getElementById('myChart1');
+    const ctx = document.getElementById('myChartRosquinha');
     const ctx2 = document.getElementById('myChart2');
     // const ctx3 = document.getElementById('myChart3');
     // const ctx4 = document.getElementById('myChart4');
@@ -287,7 +288,7 @@
             labels: ['Alerta', 'Cuidado', 'Estável'],
             datasets: [{
                 label: 'Quantidade de Lotes',
-                data: [3, 3, 12],
+                data: dataRosquinha,
                 borderWidth: 1,
                 backgroundColor: [
                     '#FF0342',
@@ -302,29 +303,6 @@
             }
         }
     });
-    var chart1 = new Chart(ctx1, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Comirnaty - Lote 2',
-                    data: data1,
-                    borderColor: '#FF0342',
-                    backgroundColor: '#FF0342',
-                    yAxisID: 'y',
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
     var chart2 = new Chart(ctx2, {
         type: 'line',
         data: {
@@ -444,12 +422,10 @@
             // data4.push(Math.floor(Math.random() * 9));
             // data3.push(Math.floor(Math.random() * 9));
             data2.push(Math.floor(Math.random() * 9));
-            data1.push(Math.floor(Math.random() * 9));
 
 
 
 
-            chart1.update();
             chart2.update();
             // chart3.update();
             // chart4.update();
@@ -491,34 +467,6 @@
             // data5 = [];
             // data6 = [];
             labels = [];
-
-
-
-
-
-            chart1.destroy();
-            chart1 = new Chart(ctx1, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Comirnaty - Lote 2',
-                            data: data1,
-                            borderColor: '#FF0342',
-                            backgroundColor: '#FF0342',
-                            yAxisID: 'y',
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
             chart2.destroy();
             chart2 = new Chart(ctx2, {
                 type: 'line',
@@ -527,10 +475,10 @@
                     datasets: [
                         {
                             label: 'Prevenar-13- Lote 2',
-                    data: data2,
-                    borderColor: '#D3CC13',
-                    backgroundColor: '#D3CC13',
-                    yAxisID: 'y',
+                            data: data2,
+                            borderColor: '#D3CC13',
+                            backgroundColor: '#D3CC13',
+                            yAxisID: 'y',
                         }]
                 },
                 options: {
@@ -683,7 +631,7 @@
         }
     }
 
-
+    var chart1 = getElementById('myChart1');
     var vtGraficos = [chart1, chart2];
 
     var contadorGrafico = 1;
@@ -726,10 +674,143 @@
 
     }
 
-    function helpDesk(){
-        window.location = "https://gustavodessunte.atlassian.net/servicedesk/customer/portals"
+   
+    function obterDadosGrafico() {
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch('/registros/ultimosRegistros', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var respostaArray = resposta[0];
+                    var respostaJson = respostaArray.temperatura;
+                    if(respostaJson < 2 || respostaJson >= 8.5){
+                        dataRosquinha[0]+=1;
+                    }
+                    else if((respostaJson>= 2 && respostaJson < 2.5) || (respostaJson >= 8 || respostaJson < 8.5)){
+                        dataRosquinha[1]+=1;
+                    }
+                    else if(respostaJson>= 2.5 && respostaJson <= 7.5){
+                        dataRosquinha[2]+=1;
+                    }
+                    chart.update();
+                    resposta.reverse();
+                    
+                    plotarGrafico(resposta, 'myChart1');
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
-    function manual(){
-        window.location = "https://www.flipsnack.com/sofhiautaka/o-melhor-monitoramento-para-o-seu-medicamento-tcs49muo7k.html"
+
+
+    function plotarGrafico(resposta, grafico) {
+       
+        console.log('Iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'XALACOM - LOTE 1',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(199, 52, 52)',
+                    tension: 0.1
+                }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(`${registro.horaRegistro}:${registro.minutoRegistro}`);
+            dados.datasets[0].data.push(registro.temperatura);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        chart1 = new Chart(
+            document.getElementById(`myChart1`),
+            config
+        );
+
+        
+        setTimeout(() => atualizarGrafico(grafico, dados, chart1), 2000);
+    };
+
+
+    function atualizarGrafico(grafico, dados, myChart) {
+        
+        fetch(`/registros/registrosTempoReal`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+                   
+
+                    obterDadosGrafico();
+                    // alertar(novoRegistro, grafico);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    if (2 == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log(`${novoRegistro[0].horaRegistro}:${novoRegistro[0].minutoRegistro}`)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(`${novoRegistro[0].horaRegistro}:${novoRegistro[0].minutoRegistro}`); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                        myChart.update();
+
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(grafico, dados, myChart), 60000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(grafico, dados, myChart), 60000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
     }
+
+
 </script>

@@ -12,6 +12,7 @@ var indexRouter = require("./src/routes/index");
 var empresaRouter = require("./src/routes/empresa");
 var loginTabelaRouter = require("./src/routes/loginTabela");
 var funcionarioRouter = require("./src/routes/funcionario");
+var registrosRouter = require("./src/routes/registros")
 
 // cadastros do dashboard
 var cadastroRefrigerador = require("./src/_routes/cadastroRefrigerador");
@@ -34,6 +35,7 @@ app.use("/cadastroRefrigerador", cadastroRefrigerador);
 app.use("/cadastroProdutos", cadastroProdutos);
 app.use("/cadastroLotes", cadastroLotes);
 app.use("/cadastrar", sensores);
+app.use("/registros", registrosRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
