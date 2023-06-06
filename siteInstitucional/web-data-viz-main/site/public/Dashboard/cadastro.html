@@ -30,9 +30,7 @@
                             <div class="flexCenterAlignItemsCenter">
                                 <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                             </div>
-                            <div style="margin-top: 3%;">
-                                Bem-vindo(a), (nomeEmpresa)
-                            </div>
+                            <div id="divNomeEmpresa" style="margin-top: 3%;">
                             <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                                 <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
                             </div>
@@ -311,6 +309,12 @@
 </html>
 
 <script>
+     divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
+
+function dadosEmpresa() {
+    window.location.href = 'dadosEmpresa.html'
+}
+
     function limparFormulario() {
         // cadastro de refrigeradores
         ipt_idRefrigerador.value = "";
@@ -403,6 +407,30 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
+                    fetch("/cadastroLotes/cadastrarLote", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            // crie um atributo que recebe o valor recuperado aqui
+                            // Agora vá para o arquivo routes/usuario.js
+                            idLoteServer: idLote,
+                        })
+                    }).then(function (resposta) {
+            
+                        console.log("resposta: ", resposta);
+            
+                        if (resposta.ok) {
+                            limparFormulario();
+                        } else {
+                            throw ("Houve um erro ao tentar realizar o cadastro!");
+                        }
+                    }).catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`)
+                    });
+            
+                    return false;
                     limparFormulario();
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -414,30 +442,6 @@
             return false;
         }
 
-        fetch("/cadastroLotes/cadastrarLote", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                idLoteServer: idLote,
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                limparFormulario();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`)
-        });
-
-        return false;
     }
 
 
@@ -568,6 +572,7 @@
     }
 
     function cadastrarSensores() {
+        var fkLote = ipt_idLote;
         var idSensor = ipt_idSensor.value;
 
         if (idSensor == "") {
@@ -582,6 +587,7 @@
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
                     idSensorServer: idSensor,
+                    fkLoteServer: fkLote,
 
                 })
             }).then(function (resposta) {

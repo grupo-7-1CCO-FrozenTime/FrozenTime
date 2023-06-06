@@ -146,6 +146,7 @@ FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa)
 );
 INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo', 1, 2),
 								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil', 2, 2);
+                                  select *from Refrigeradores;
 CREATE TABLE Sensores(
 	idSensor INT AUTO_INCREMENT,
     fkKit INT,
