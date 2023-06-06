@@ -104,7 +104,7 @@
                     <button class="dropbtn" id="tituloBtn"><u>Selecione</u></button>
                     <div class="dropdown-content">
                         <div class="btnMostrar">
-                            <button onclick="mostrarRefrigerador()">Refrigerador</button>
+                            <button onclick="mostrarRefrigerador()">Refrigerador/Sensores</button>
                             <!-- <button onclick="mostrarKit()">Kit</a> -->
                             <button onclick="mostrarProdutos()">Produto</a>
                                 <button onclick="mostrarLotes()">Lotes/Sensores</a>
@@ -154,6 +154,41 @@
                     </table>
 
                     <button class="btnCadastrar" onclick="cadastrarRefrigerador()">Cadastrar</button>
+                    <button class="btnLote" onclick="cadastroRefrigeradorCadastrado()">Já possuo um lote
+                        cadastrado</button>
+                    <div id="cadastroDeSensoresRefrigerador" style="display: none;">
+                        <p>Cadastro de sensores</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Os sensores serão registrados no lote cadastrado acima</td>
+                                </tr>
+                                <tr>
+                                    <td>ID do sensor:</td>
+                                    <td style="text-align: center"><input id="ipt_idSensor"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="btnCadastrar" onclick="cadastrarSensores()">Cadastrar</button>
+                    </div>
+                    <div id="cadastroDeSensoresRefrigeradoresExistentes" style="display: none;">
+                        <p>Cadastro de sensores</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>ID do refrigerador já existente:</td>
+                                    <td style="text-align: center"><input id="ipt_idLoteExistente"></td>
+                                </tr>
+                                <tr>
+                                    <td>ID do sensor:</td>
+                                    <td style="text-align: center"><input id="ipt_idSensor"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="btnCadastrar">Cadastrar</button>
+                    </div>
                 </div>
             </div>
             <!-- <div class="divTable">
@@ -336,13 +371,13 @@
         produtos.style = "display: block"
     }
     function cadastroLotes() {
-        
+
         var idLote = ipt_idLote.value;
         var localPartida = ipt_localPartida.value;
         var destino = ipt_destino.value;
         var dataSaida = ipt_dataSaida.value;
         var dataChegada = ipt_dataChegada.value;
-        
+
         if (idLote == "" || localPartida == "" || destino == "" || dataSaida == "" || dataChegada == "") {
             alert("Favor preencher todos os campos")
         } else {
@@ -357,16 +392,16 @@
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
-                    localPartidaServer:localPartida,
+                    localPartidaServer: localPartida,
                     destinoServer: destino,
                     dataSaidaServer: dataSaida,
                     dataChegadaServer: dataChegada,
-                    
+
                 })
             }).then(function (resposta) {
-                
+
                 console.log("resposta: ", resposta);
-                
+
                 if (resposta.ok) {
                     limparFormulario();
                 } else {
@@ -375,43 +410,58 @@
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`)
             });
-            
+
             return false;
         }
 
-            fetch("/cadastroLotes/cadastrarLote", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
-                    idLoteServer: idLote,
-                })
-            }).then(function (resposta) {
-                
-                console.log("resposta: ", resposta);
-                
-                if (resposta.ok) {
-                    limparFormulario();
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`)
-            });
-            
-            return false;
-        }
-    
-    
+        fetch("/cadastroLotes/cadastrarLote", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idLoteServer: idLote,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`)
+        });
+
+        return false;
+    }
+
+
 
     function cadastroLoteCadastrado() {
         cadastroDeSensores.style = "display: none"
         cadastroDeSensoresLotesExistentes.style = "display: block"
     }
+    function cadastroRefrigeradorCadastrado() {
+        var idRefrigerador = ipt_idRefrigerador.value;
+        var nomeFarmacia = ipt_nomeFarmacia.value;
+        var cidade = ipt_cidade.value;
+        var rua = ipt_rua.value;
+        var cep = ipt_cep.value;
+        var bairro = ipt_bairro.value;
+        var numero = ipt_numero.value;
 
+        if (idRefrigerador == "" || nomeFarmacia == "" || cidade == "" || rua == "" || cep == "" || bairro == "" || numero == "") {
+            alert("Favor preencher todos os campos")
+        } else {
+            cadastroDeSensores.style = "display: none"
+            cadastroDeSensoresRefrigerador.style = "display: block"
+        }
+    }
     function cadastrarRefrigerador() {
         var idRefrigerador = ipt_idRefrigerador.value;
         var nomeFarmacia = ipt_nomeFarmacia.value;
@@ -424,7 +474,8 @@
         if (idRefrigerador == "" || nomeFarmacia == "" || cidade == "" || rua == "" || cep == "" || bairro == "" || numero == "") {
             alert("Favor preencher todos os campos")
         } else {
-
+            cadastroDeSensores.style = "display: none"
+            cadastroDeSensoresRefrigerador.style = "display: block"
             fetch("/cadastroRefrigerador/cadastrar", {
                 method: "POST",
                 headers: {
@@ -516,7 +567,7 @@
         }
     }
 
-    function cadastrarSensores(){
+    function cadastrarSensores() {
         var idSensor = ipt_idSensor.value;
 
         if (idSensor == "") {
@@ -540,13 +591,13 @@
                 if (resposta.ok) {
 
                     limparFormulario();
-                 
+
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
-             
+
             });
 
             return false;
