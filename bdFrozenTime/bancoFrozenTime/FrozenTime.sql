@@ -102,6 +102,7 @@ SELECT * FROM Rotas;
 
 CREATE TABLE Lotes(
 	idLote INT PRIMARY KEY,
+    qtdSensores INT,
 	fkProduto INT,
     fkRota INT,
 	FOREIGN KEY (fkProduto) REFERENCES Produtos(idProduto),
@@ -146,7 +147,9 @@ FOREIGN KEY (fkEmpresa) REFERENCES Empresas(idEmpresa)
 );
 INSERT INTO Refrigeradores VALUES (null, 'São Paulo', 'Alagoas', '01242-001', 'Higienópolis', '10', 'Dograria São Paulo', 1, 2),
 								  (null, 'São Paulo', 'Sabará', '1239011', 'Higienópolis', '390', 'Dograsil', 2, 2);
-                                  select *from Refrigeradores;
+								SELECT * FROM Refrigeradores;
+                                SELECT * FROM Rotas;
+                                SELECT * FROM Produtos;
 CREATE TABLE Sensores(
 	idSensor INT AUTO_INCREMENT,
     fkKit INT,
@@ -179,6 +182,9 @@ SHOW TABLES;
 
 CREATE TABLE HistoricoAvisos(
 idAvisos INT AUTO_INCREMENT,
+temperatura INT,
+horaRegistro INT,
+minutoRegistro INT,
 fkLote INT,
 fkKit INT,
 FOREIGN KEY (fkLote) REFERENCES Lotes(idLote),
