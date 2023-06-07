@@ -7,6 +7,7 @@ router.get("/", function (req, res) {
     cadastroProdutosController.testar(req, res);
 });
 
+
 // router.get("/listar", function (req, res) {
 //     cadastroProdutosController.listar(req, res);
 // });
