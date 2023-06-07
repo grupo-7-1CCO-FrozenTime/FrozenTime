@@ -33,8 +33,11 @@ function cadastrar(nomeProduto, categoriaProduto) {
     return database.executar(instrucao);
 }
 
+
+
 module.exports = {
     // entrar,
     cadastrar,
     // listar,
+ 
 };
