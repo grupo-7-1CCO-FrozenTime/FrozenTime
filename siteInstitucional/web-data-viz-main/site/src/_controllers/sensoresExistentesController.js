@@ -1,4 +1,4 @@
-var cadastroLotesModel = require("../_models/sensoresModel");
+var cadastroLotesModel = require("../_models/sensoresExistentesModel");
 
 var sessoes = [];
 
@@ -11,8 +11,8 @@ function testar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
-    var idSensor = req.body.idSensorLoteServer;
-    var fkLote = req.body.fkLoteServer;
+    var idSensor = req.body.idSensorExistenteServer;
+    var fkLote = req.body.idLoteExistenteServer;
 
 
     // Faça as validações dos valores
@@ -23,7 +23,7 @@ function cadastrar(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo cadastroRefrigeradoresModel.js
-        cadastroLotesModel.cadastrar(idSensor, fkLote)
+        sensoresExistentesModel.cadastrar(idSensor, fkLote)
             .then(
                 function (resultado) {
                     res.json(resultado);

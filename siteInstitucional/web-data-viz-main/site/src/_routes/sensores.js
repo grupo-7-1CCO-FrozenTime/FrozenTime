@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
 
 //Recebendo os dados do html e direcionando para a função cadastrar de sensoresController.js
 router.post("/cadastrar", function (req, res) {
-    sensoresController.cadastrarRota(req, res);
+    sensoresController.cadastrar(req, res);
 })
 
 

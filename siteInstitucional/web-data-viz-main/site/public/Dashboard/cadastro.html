@@ -271,12 +271,12 @@
                                 </tr>
                                 <tr>
                                     <td>ID do sensor:</td>
-                                    <td style="text-align: center"><input id="ipt_idSensor"></td>
+                                    <td style="text-align: center"><input id="ipt_idSensorLoteExistente"></td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <button class="btnCadastrar">Cadastrar</button>
+                        <button class="btnCadastrar" onclick="cadastrarSensoresLotesExistentes()">Cadastrar</button>
                     </div>
                 </div>
             </div>
@@ -508,7 +508,7 @@
 
     function cadastroLoteCadastrado() {
         cadastroDeSensores.style = "display: none"
-        cadastroDeSensoresLotesExistentes.style = "display: block"
+        cadastroDeSensoresLotesExistentes.style = "display: block" 
     }
 
     function cadastrarSensoresLotes() {
@@ -516,7 +516,7 @@
         var idSensorLote = ipt_idSensorLote.value;
 
         if (idSensorLote == "") {
-            alert("Favor preencher todos os campos kk")
+            alert("Favor preencher todos os campos")
         } else {
             fetch("/sensores/cadastrar", {
                 method: "POST",
@@ -546,6 +546,53 @@
 
             });
             
+            return false;
+
+        }
+    }
+
+    function cadastrarSensoresLotesExistentes(){
+        var idLoteExistente = ipt_idLoteExistente.value;
+        var idSensorExistente = ipt_idSensorLoteExistente.value;
+
+        if(idLoteExistente == "" || idSensorExistente == ""){
+            alert("Favor preencher todos os campos lllll")
+        } else {
+            fetch("/sensoresExistentes/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idSensorExistenteServer: idSensorExistente,
+                    idLoteExistenteServer: idLoteExistente,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    // setTimeout(() => {
+                    //     // window.location = "login.html";
+                    // }, "2000")
+
+                    limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
             return false;
 
         }
