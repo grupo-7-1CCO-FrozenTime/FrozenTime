@@ -79,11 +79,11 @@ function cadastrarLote(req, res) {
 }
 
 function listarProdutosTransporte(req, res) {
-    var fkProduto = req.params.fkProduto;
+    
     console.log(`Recuperando medidas em tempo real`);
 
     // Faça as validações dos valores
-    cadastroLotesModel.listarProdutosTransporte(fkProduto).then(function (resultado) {
+    cadastroLotesModel.listarProdutosTransporte().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -96,12 +96,44 @@ function listarProdutosTransporte(req, res) {
     });
 }
 
+function listarLotes(req, res){
+    console.log("cheguei na controller ")
+
+    cadastroLotesModel.listarLotes().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }}
+        ).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
+}
+
+function listarAlertas(req, res){
+    cadastroLotesModel.listarAlertas().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }}
+        ).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
+}
+
 
 
 module.exports = {
     cadastrarRota,
     testar,
     cadastrarLote,
-    listarProdutosTransporte
+    listarProdutosTransporte,
+    listarLotes,
+    listarAlertas
 }
 

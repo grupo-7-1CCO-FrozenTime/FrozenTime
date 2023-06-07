@@ -12,6 +12,10 @@ router.get("/", function (req, res) {
 //     cadastroProdutosController.listar(req, res);
 // });
 
+router.get("/listarProdutos", function (req, res) {
+    cadastroProdutosController.listarProdutos(req, res);
+});
+
 //Recebendo os dados do html e direcionando para a função cadastrar de cadastroProdutosController.js
 router.post("/cadastrar", function (req, res) {
     cadastroProdutosController.cadastrar(req, res);

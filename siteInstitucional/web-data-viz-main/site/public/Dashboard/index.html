@@ -30,7 +30,7 @@
                             <img style="width: 40%;margin-right: 2%;" src="./assets/iconePerfilDashboard.svg" />
                         </div>
                         <div id="divNomeEmpresa" style="margin-top: 3%;">
-                            
+
                         </div>
                         <div class="flexCenter" style="margin-top: 1%;text-decoration: underline; color: white;">
                             <a href="../siteInstitucional/Login.html" style="color: white;">Sair</a>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="flexCenter">
                         <img src="./assets/icons8-alerta-50.png" style="height: 45px; width: 45px;" />
-                        <p style="font-size: 40px; margin: 0;color: #fff708;">6</p>
+                        <p style="font-size: 40px; margin: 0;color: #fff708;" id="qtdeAlertasTotal">0</p>
                     </div>
                 </div>
             </div>
@@ -113,8 +113,9 @@
                     </div>
                     <div class="flexCenter">
                         <img src="./assets/iconProdutoKPI.svg" />
-                        <p style="font-size: 40px; margin: 0;">5</p><span
-                            style="display: flex; align-items: end; ">/100</span>
+                        <p style="font-size: 40px; margin: 0;" id="qtdeProdutosTrans">5</p><span
+                        style="display: flex; align-items: end;">/</span><span
+                            style="display: flex; align-items: end; "id="qtdTotalProd" >/100</span>
                     </div>
                 </div>
             </div>
@@ -125,7 +126,7 @@
                     </div>
                     <div class="flexCenter">
                         <img style="width: 50px;" src="./assets/iconCaminhoesKPI.svg" />
-                        <p style="font-size: 40px; margin: 0; margin-left: 1%;">18</p>
+                        <p style="font-size: 40px; margin: 0; margin-left: 1%;" id="lotesTransporte">18</p>
                     </div>
                 </div>
             </div>
@@ -223,7 +224,8 @@
         <div class="cardMetricas">
             <div>
                 <h3 style="margin-left: 5%;  color: white;">Manual de instalação</h3>
-                <p style="margin-left: 5%;  color: white;">Caso haja dificuldade na instalação dos sensores, segue em anexo o nosso manual de instalação.</p>
+                <p style="margin-left: 5%;  color: white;">Caso haja dificuldade na instalação dos sensores, segue em
+                    anexo o nosso manual de instalação.</p>
                 <button onclick="manual()">Manual de Instalação</button>
             </div>
         </div>
@@ -234,7 +236,7 @@
 </html>
 
 <script>
-     var dataRosquinha = [0, 0, 0];
+    var dataRosquinha = [0, 0, 0];
     let proximaAtualizacao;
     obterDadosGrafico();
     divNomeEmpresa.innerHTML = `Bem-vindo(a),  ${sessionStorage.getItem('NOMEEMPRESA')}`
@@ -634,8 +636,8 @@
         }
     }
 
-    var chart1 = getElementById('myChart1');
-    var vtGraficos = [chart1, chart2];
+    // var chart1 = getElementById('myChart1');
+    // var vtGraficos = [chart1, chart2];
 
     var contadorGrafico = 1;
     var teste;
@@ -677,7 +679,7 @@
 
     }
 
-   
+
     function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -689,18 +691,18 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     var respostaArray = resposta[0];
                     var respostaJson = respostaArray.temperatura;
-                    if(respostaJson < 2 || respostaJson >= 8.5){
-                        dataRosquinha[0]+=1;
+                    if (respostaJson < 2 || respostaJson >= 8.5) {
+                        dataRosquinha[0] += 1;
                     }
-                    else if((respostaJson>= 2 && respostaJson < 2.5) || (respostaJson >= 8 || respostaJson < 8.5)){
-                        dataRosquinha[1]+=1;
+                    else if ((respostaJson >= 2 && respostaJson < 2.5) || (respostaJson >= 8 || respostaJson < 8.5)) {
+                        dataRosquinha[1] += 1;
                     }
-                    else if(respostaJson>= 2.5 && respostaJson <= 7.5){
-                        dataRosquinha[2]+=1;
+                    else if (respostaJson >= 2.5 && respostaJson <= 7.5) {
+                        dataRosquinha[2] += 1;
                     }
                     chart.update();
                     resposta.reverse();
-                    
+
                     plotarGrafico(resposta, 'myChart1');
                 });
             } else {
@@ -714,7 +716,7 @@
 
 
     function plotarGrafico(resposta, grafico) {
-       
+
         console.log('Iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
@@ -764,17 +766,17 @@
             config
         );
 
-        
+
         setTimeout(() => atualizarGrafico(grafico, dados, chart1), 2000);
     };
 
 
     function atualizarGrafico(grafico, dados, myChart) {
-        
+
         fetch(`/registros/registrosTempoReal`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
-                   
+
 
                     obterDadosGrafico();
                     // alertar(novoRegistro, grafico);
@@ -814,6 +816,48 @@
             });
 
     }
+    fetch('/cadastroLotes/listarProdutosTransporte').then((resultado) => {
+        resultado.json().then((res) => {
+            for (let i = 0; i < res.length; i++) {
+                qtdeProdutosTrans.innerHTML = `${res[0].qtde}`
+            }
+        })
+    })
+   
 
+    fetch('/cadastroLotes/listarLotes').then((resultado) => {
+        resultado.json().then((res) => {
+            for (let i = 0; i < res.length; i++) {
+                lotesTransporte.innerHTML = `${res[0].qtdeLotes}`
+            }
+        })
+    })
+
+    fetch('/cadastroProdutos/listarProdutos').then((resultado) => {
+        resultado.json().then((res) => {
+            for (let i = 0; i < res.length; i++) {
+                qtdTotalProd.innerHTML = `${res[0].qtdeProdutos}`
+            }
+        })
+    })
+
+    fetch('/cadastroLotes/listarAlertas').then((resultado) => {
+        if(resultado.ok){
+            resultado.json().then((res) => {
+            if (res.length == 0) {
+                qtdeAlertasTotal.innerHTML = `0`
+            }
+            else {
+                for (let i = 0; i < res.length; i++) {
+                    qtdeAlertasTotal.innerHTML = `${res[0].qtdeLotes}`
+                }
+
+            }
+            })
+        }
+        else{
+            qtdeAlertasTotal.innerHTML = "0"
+        }
+    })
 
 </script>
