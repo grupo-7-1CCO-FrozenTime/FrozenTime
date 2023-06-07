@@ -194,7 +194,7 @@ hr {
   }
   
   .mensagem-alarme {
-    background-color: rgb(0, 45, 160);
+    background-color: rgb(255, 0, 0);
     border: 2px black solid;
     border-radius: 5px;
     width: 300px;

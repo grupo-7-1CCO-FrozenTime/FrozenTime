@@ -135,13 +135,6 @@
             <input type="email" class="input" placeholder="Email" name="Email" id="ipt_emailFuncionario" required />
             <label for="Email" class="input_label">Email</label>
           </div>
-
-          <div class="inputsCadastro">
-            <!-- css login -->
-            <input type="tel" class="input" placeholder="Telefone" name="Telefone" id="ipt_telFuncionario" required />
-            <label for="Telefone" class="input_label">Telefone</label>
-          </div>
-
           <div class="inputsCadastro">
             <!-- css login -->
             <input type="tel" class="input" placeholder="WhatsApp" name="WhatsApp" id="ipt_whatsFuncionario" required />
@@ -385,10 +378,6 @@
       nomeFuncionario == "" ||
       emailFuncionario == "" ||
       whatsappFuncionario == "";
-
-    var telefone = ipt_telFuncionario.value;
-    var length =
-      telefone.length != "" && (telefone.length > 9 || telefone.length < 9);
 
     var whats = ipt_whatsFuncionario.value;
     var app = whats.length != "" && (whats.length > 9 || whats.length < 9);
