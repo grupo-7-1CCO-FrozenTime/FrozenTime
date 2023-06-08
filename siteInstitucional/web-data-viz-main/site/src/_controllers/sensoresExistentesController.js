@@ -1,4 +1,4 @@
-var cadastroLotesModel = require("../_models/sensoresExistentesModel");
+var sensoresExistentesModel= require("../_models/sensoresExistentesModel");
 
 var sessoes = [];
 
@@ -26,7 +26,7 @@ function cadastrar(req, res) {
         sensoresExistentesModel.cadastrar(idSensor, fkLote)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    res.status(200).json(resultado);
                 }
             ).catch(
                 function (erro) {

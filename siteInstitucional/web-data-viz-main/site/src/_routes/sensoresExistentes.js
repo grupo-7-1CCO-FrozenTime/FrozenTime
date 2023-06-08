@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-var sensoresController = require("../_controllers/sensoresExistentesController");
+var sensoresExistentesController = require("../_controllers/sensoresExistentesController");
 
 router.get("/", function (req, res) {
     sensoresExistentesController.testar(req, res);

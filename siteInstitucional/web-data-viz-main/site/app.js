@@ -19,6 +19,7 @@ var cadastroRefrigerador = require("./src/_routes/cadastroRefrigerador");
 var cadastroProdutos = require("./src/_routes/cadastroProdutos");
 var cadastroLotes = require("./src/_routes/cadastroLotes");
 var sensores = require("./src/_routes/sensores");
+var sensoresExistentesRouter = require('./src/_routes/sensoresExistentes');
 
 
 app.use(express.json());
@@ -36,6 +37,7 @@ app.use("/cadastroProdutos", cadastroProdutos);
 app.use("/cadastroLotes", cadastroLotes);
 app.use("/sensores", sensores);
 app.use("/registros", registrosRouter);
+app.use("/sensoresExistentes", sensoresExistentesRouter)
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

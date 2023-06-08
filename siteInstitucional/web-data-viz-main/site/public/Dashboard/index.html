@@ -697,9 +697,9 @@
                         exibirCards(respostaJson);
                         dataRosquinha[0] += 1;
                     }
-                    if(respostaJson > 3 && respostaJson <8){
+                    if(respostaJson > 3 && respostaJson < 8){
                         alerta.innerHTML = '';
-                        
+
                     }
                     chart.update();
                     resposta.reverse();
@@ -840,23 +840,28 @@
         })
     })
 
-    // fetch('/cadastroLotes/listarAlertas').then((resultado) => {
-    //     if(resultado.ok){
-    //         resultado.json().then((res) => {
-    //         if (res.length == 0) {
-    //             qtdeAlertasTotal.innerHTML = `0`
-    //         }
-    //         else {
-    //             for (let i = 0; i < res.length; i++) {
-    //                 qtdeAlertasTotal.innerHTML = `${res[0].qtdeLotes}`
-    //             }
+    fetch('/cadastroLotes/listarAlertas').then((resultado) => {
+        if(resultado.ok){
+            resultado.json().then((res) => {
+            if (res.length == 0) {
+                qtdeAlertasTotal.innerHTML = `0`
+            }
+            else {
+                for (let i = 0; i < res.length; i++) {
+                    qtdeAlertasTotal.innerHTML = `${res[0].qtdeLotes}`
+                }
 
-    //         }
-    //         })
-    //     }
-    //     else{
-    //         qtdeAlertasTotal.innerHTML = "0"
-    //     }
-    // })
-
+            }
+            })
+        }
+        else{
+            qtdeAlertasTotal.innerHTML = "0"
+        }
+    })
+ function helpDesk(){
+    window.location = "https://gustavodessunte.atlassian.net/servicedesk/customer/portal/1"
+ }
+ function manual(){
+    window.location = "https://www.flipsnack.com/sofhiautaka/o-melhor-monitoramento-para-o-seu-medicamento-tcs49muo7k.html"
+ }
 </script>

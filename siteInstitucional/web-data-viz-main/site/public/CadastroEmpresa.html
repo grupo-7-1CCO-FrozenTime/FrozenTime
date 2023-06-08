@@ -386,11 +386,6 @@
       alert("Por favor, preencher todos os campos");
       erro = true;
     }
-
-    if (app) {
-      alert("Favor, por um WhatsApp válido");
-      erro = true;
-    }
     fetch("/funcionario/cadastrarFuncionario", {
       method: "POST",
       headers: {
