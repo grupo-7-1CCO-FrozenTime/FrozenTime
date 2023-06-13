@@ -8,7 +8,7 @@
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-linguagens-utilizadas">Linguagens utilizadas</a> • 
- <a href="#-autora">Autores</a> • 
+ <a href="#-autores">Autores</a> • 
 </p>
 
 
