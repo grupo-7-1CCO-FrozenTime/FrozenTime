@@ -39,6 +39,11 @@
 
 [![Linkedin Badge](https://img.shields.io/badge/-Gustavo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gustavo-luiz-dessunte-bernardes-6a9586223/)](https://www.linkedin.com/in/gustavo-luiz-dessunte-bernardes-6a9586223/) 
 
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/125585130?s=400&u=ed0873579e158508ee99a7cee83b73cf1d1dc35b&v=4" width="100px;" alt=""/>
+ <sub><b>Sofhia Utaka</b></sub>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Sofhia-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/sofhia-utaka-a4598027a/)](https://www.linkedin.com/in/sofhia-utaka-a4598027a/) 
+
 ---
 
 Feito com ❤️ pela equipe Frozen Time 👋🏽
